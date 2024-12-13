@@ -28,14 +28,14 @@ COPY back/package*.json ./
 # Instalar as dependências do back-end
 RUN npm install
 
-# Garantir que o tsc tenha permissões de execução
-RUN chmod +x ./node_modules/.bin/tsc
-
 # Copiar o restante dos arquivos do back-end
 COPY back/ ./ 
 
+# Garantir que o tsc tenha permissões de execução
+RUN chmod +x ./node_modules/.bin/tsc
+
 # Compilar o código TypeScript para JavaScript
-RUN run start
+RUN npm run build   # Isso usa o script "build" para rodar "tsc"
 
 # Etapa 3: Imagem final
 FROM node:18
