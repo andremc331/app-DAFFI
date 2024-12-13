@@ -1,0 +1,168 @@
+codigo,nome,unidade,material,maoDeObra,total
+02.101,"Canteiro de obras",m,0,0,0
+02.101.000005.SER,"Tapume de proteção em chapa de madeira compensada resinada # 6 mm",m²,51.29,11.55,62.84
+02.101.000006.SER,"Portão para tapume em chapa de madeira compensada resinada #10 mm, 2 folhas, largura 3 m e altura 2 m",un,587.52,173.27,760.80
+02.101.000010.SER,"Tapume de tábuas sobrepostas",m²,46.83,23.67,70.50
+02.101.000015.SER,"Tapume de tábua com matajunta de ripas",m²,54.99,28.88,83.87
+02.101.000020.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira",m²,33.16,11.55,44.71
+02.101.000021.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira com 2 reaproveitamentos",m²,16.83,11.55,28.38
+02.101.000022.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira, inclusive pintura esmalte face externa",m²,39.50,14.72,54.22
+02.101.000023.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira com 2 reaproveitamentos, inclusive pintura esmalte face externa",m²,29.52,17.89,47.41
+02.101.000024.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira, inclusive pintura esmalte face externa e interna",m²,45.85,17.89,63.74
+02.101.000025.SER,"Tapume de proteção com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira com 2 reaproveitamentos, inclusive pintura esmalte face externa e interna",m²,29.52,17.89,47.41
+02.101.000026.SER,"Portão para tapume com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira, 2 folhas, largura 3 m altura 2 m",un,448.42,115.52,563.94
+02.101.000027.SER,"Portão para tapume com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira, 2 folhas, largura 3 m altura 2 m, inclusive pintura pintura esmalte face externa",un,486.50,134.54,621.03
+02.101.000028.SER,"Portão para tapume com telha trapezoidal em aço galvanizado # 0,43 mm em estrutura de madeira, 2 folhas, largura 3 m altura 2 m, inclusive pintura pintura esmalte face externa e interna",un,524.57,153.56,678.13
+02.101.000029.SER,"Tapume de proteção guarda corpo com tela de polipropileno",m²,25.50,6.71,32.21
+02.101.000030.SER,"Abrigo provisório de madeira para alojamento e/ou depósito de materiais e ferramentas",m²,229.77,216.00,445.77
+02.101.000031.SER,"Abrigo provisório de madeira com dois pavimentos para alojamento e/ou depósito de materiais e ferramentas",m²,435.72,419.91,855.63
+02.101.000040.SER,"Ligação provisória de água para obra e instalação sanitária provisória, pequenas obras - instalação mínima",un,1669.77,760.69,2430.47
+02.101.000045.SER,"Ligação provisória de luz e força para obra - instalação mínima",un,1476.83,693.09,2169.92
+02.101.000050.SER,"Andaime para uso interno composto de plataforma de tábuas com 0,9 m de largura sobre cavaletes móveis de madeira com elevação de até 1 m",m,111.82,44.31,156.13
+02.101.000055.SER,"Bandeja salva-vidas primária em aço, 2,50 m com extensão 0,80 m a 45°, forro com tábuas",m,612.90,42.60,655.50
+02.101.000056.SER,"Bandeja salva-vidas primária em aço, 2,50 m com extensão 0,80 m a 45°, forro com chapa compensado",m,547.52,56.50,604.02
+02.101.000057.SER,"Bandeja salva-vidas secundária em aço, 1,40 m com extensão 0,80 m a 45°, forro com tábuas",m,499.36,25.62,524.98
+02.101.000058.SER,"Bandeja salva-vidas secundária em aço, 1,40 m com extensão 0,80 m a 45°, forro com chapa compensado",m,417.20,34.11,451.31
+02.101.000100.SER,"Passadiços de madeira para pedestres, com tábua",m²,45.00,28.88,73.88
+02.101.000120.SER,"Travessia de chapa metálica para veículos",m²,316.27,28.87,345.15
+02.101.000150.SER,"Travessia de madeira para veículos",m²,27.41,28.88,56.29
+02.102,"Demolições",m,0,0,0
+02.102.000001.SER,"Demolição de alvenaria de tijolo comum, com reaproveitamento",m³,0,87.67,87.67
+02.102.000002.SER,"Demolição de alvenaria de tijolo comum, sem reaproveitamento",m³,0,43.84,43.84
+02.102.000004.SER,"Demolição de cobertura de telha cerâmica - mão de obra",m²,0,8.77,8.77
+02.102.000005.SER,"Demolição de cobertura de telha ondulada de fibrocimento - mão de obra",m²,0,3.65,3.65
+02.102.000006.SER,"Demolição de concreto com utilização de martelo rompedor pneumático",m³,300.02,156.33,456.34
+02.102.000007.SER,"Demolição de concreto com ferramentas manuais",m³,0,189.96,189.96
+02.102.000009.SER,"Demolição de edificações simples de alvenaria",m²,0,123.24,123.24
+02.102.000010.SER,"Demolição de estrutura de madeira para telhado",m²,0,19.00,19.00
+02.102.000011.SER,"Demolição de forro de estuque ou gesso em placas",m²,0,5.84,5.84
+02.102.000012.SER,"Demolição de forro de ripas madeira",m²,0,4.38,4.38
+02.102.000014.SER,"Demolição de pavimentação asfáltica com utilização de martelo rompedor espessura até 15 cm",m²,5.53,5.21,10.74
+02.102.000016.SER,"Demolição de pavimentação com paralelepípedos",m²,0,11.69,11.69
+02.102.000017.SER,"Demolição de pavimentação com pré-moldado de concreto espessura até 10 cm",m²,0,10.23,10.23
+02.102.000018.SER,"Demolição de assoalho de madeira",m²,0,13.15,13.15
+02.102.000019.SER,"Demolição de piso de tacos de madeira",m²,0,17.53,17.53
+02.102.000020.SER,"Demolição de piso cerâmico",m²,0,10.23,10.23
+02.102.000021.SER,"Demolição de piso cerâmico inclusive retirada da camada de regularização sobre lastro de concreto com espessura até 3 cm",m²,0,20.46,20.46
+02.102.000022.SER,"Demolição de piso revestido com granilite",m²,0,20.46,20.46
+02.102.000024.SER,"Demolição de piso cimentado sobre lastro de concreto",m²,0,19.00,19.00
+02.102.000031.SER,"Remoção de esquadria metálica sem reaproveitamento",m²,0,7.31,7.31
+02.102.000032.SER,"Remoção de esquadria de madeira, inclusive batente",m²,0,11.69,11.69
+02.102.000033.SER,"Remoção de guia pré-fabricada de concreto",m,0,7.31,7.31
+02.102.000035.SER,"Remoção de pintura a látex",m²,0,15.63,15.63
+02.102.000036.SER,"Remoção de pintura a cal",m²,0,11.72,11.72
+02.102.000037.SER,"Remoção de pintura a óleo ou esmalte",m²,20.96,21.50,42.45
+02.102.000041.SER,"Retirada de peitoril de mármore ou granito (largura média de 25 cm)",m,0,5.21,5.21
+02.102.000042.SER,"Retirada de soleira de mármore ou granito (largura média de 15 cm)",m,0,7.17,7.17
+02.102.000043.SER,"Remoção de revestimento de piso de carpete têxtil",m²,0,1.46,1.46
+02.102.000044.SER,"Remoção de revestimento de piso vinílico",m²,0,13.15,13.15
+02.102.000045.SER,"Demolição de revestimento com argamassa",m²,0,7.31,7.31
+02.102.000046.SER,"Demolição de revestimento de azulejo ou lambris",m²,0,3.65,3.65
+02.103,"Limpeza terreno",m,0,0,0
+02.103.000001.SER,"Corte de capoeira fina a foice",m²,0,1.01,1.01
+02.103.000002.SER,"Capina e limpeza manual superficial de terreno",m²,0,3.26,3.26
+02.103.000012.SER,"Desmatamento e limpeza mecanizada de terreno com árvores Ø até 15 cm utilizando trator sobre esteiras",m²,0.52,0.02,0.54
+02.103.000013.SER,"Raspagem mecanizada do terreno até 40 cm de profundidade utilizando trator sobre esteiras",m²,1.52,0.05,1.57
+02.104,"Locação",m,0,0,0
+02.104.000005.SER,"Gabarito perimétrico para locação da obra",m,18.67,22.72,41.39
+02.104.000030.SER,"Equipe de topografia para obras viárias",dia,0,769.62,769.62
+02.104.000050.SER,"Equipe de topografia para serviços de locação e medição em obras",dia,0,465.72,465.72
+02.105,"Movimento de terra",m,0,0,0
+02.105.000005.SER,"Escavação mecanizada em solo de 1ª categoria em campo aberto",m³,2.25,0.24,2.48
+02.105.000010.SER,"Escavação mecanizada de vala em solo de 1ª categoria, profundidade até 4 m",m³,4.48,1.40,5.88
+02.105.000015.SER,"Escavação e carga em solo de 1ª categoria, utilizando trator sobre esteiras e pá-carregadeira sobre pneus",m³,4.78,0.23,5.01
+02.105.000020.SER,"Escavação e espalhamento em solo de 1ª categoria, utilizando trator sobre esteiras, distância média de 50 m",m³,7.19,0.25,7.44
+02.105.000025.SER,"Escavação e espalhamento em solo de 1ª categoria, utilizando trator sobre esteiras, distância média de 100 m",m³,1.27,0.04,1.31
+02.105.000028.SER,"Escarificação, escavação e remoção de terra até 1 km",m³,20.58,1.46,22.05
+02.105.000030.SER,"Escavação, carga e transporte em solo de 1ª categoria, utilizando motoescreiper de 13 m³, incluindo trator pusher, distância até 100 m",m³,4.37,0.13,4.50
+02.105.000031.SER,"Escavação, carga e transporte em solo de 1ª categoria, utilizando motoescreiper de 13 m³, incluindo trator pusher, distância até 200 m",m³,4.93,0.14,5.08
+02.105.000032.SER,"Escavação, carga e transporte em solo de 1ª categoria, utilizando motoescreiper de 13 m³, incluindo trator pusher, distância até 300 m",m³,5.21,0.15,5.37
+02.105.000033.SER,"Escavação, carga e transporte em solo de 1ª categoria, utilizando motoescreiper de 13 m³, incluindo trator pusher, distância até 400 m",m³,5.78,0.17,5.94
+02.105.000034.SER,"Escavação, carga e transporte em solo de 1ª categoria, utilizando motoescreiper de 13 m³, incluindo trator pusher, distância até 500 m",m³,6.45,0.19,6.64
+02.105.000040.SER,"Carga de solo de 1a. categoria ou material granular seco, utilizando carregadeira sobre pneus",m²,0.56,0.05,0.61
+02.105.000045.SER,"Espalhamento e regularização de terra em camadas no aterro utilizando trator sobre esteiras",m³,2.38,0.08,2.47
+02.105.000050.SER,"Aterro mecanizado com reaproveitamento de solo escavado no local",m³,7.91,0.57,8.48
+02.105.000052.SER,"Compactação de aterro",m³,4.51,0.73,5.24
+02.105.000060.SER,"Escavação manual de vala em solo de 1ª categoria profundidade até 2 m",m³,0,52.11,52.11
+02.105.000065.SER,"Escoramento descontínuo de vala empregando pranchas e longarinas de peroba",m²,18.90,29.33,48.23
+02.105.000066.SER,"Escoramento contínuo de vala empregando pranchas e longarinas de peroba",m²,37.80,58.67,96.47
+02.105.000070.SER,"Regularização de fundo de vala com soquete",m²,0,19.54,19.54
+02.105.000072.SER,"Reaterro manual de vala",m³,0,5.86,5.86
+02.105.000073.SER,"Reaterro e compactação manual de vala por apiloamento com soquete",m³,0,51.14,51.14
+02.105.000074.SER,"Carga manual de terra em caminhão basculante",m³,12.45,26.48,38.94
+02.105.000075.SER,"Reaterro mecanizado de vala empregando compactador de placa vibratória em camadas de 20 cm",m³,1.60,7.95,9.55
+02.105.000076.SER,"Carga mecanizada de terra em caminhão basculante",m³,1.97,0.55,2.52
+02.105.000080.SER,"Escavação mecanizada de vala escorada em solo de 1ª categoria, profundidade até 4 m",m³,6.52,2.03,8.55
+02.105.000081.SER,"Escavação mecanizada de vala escorada em solo de 1ª categoria, profundidade entre 4 e 6 m",m³,2.87,0.46,3.33
+02.105.000082.SER,"Escavação mecanizada de vala escorada em solo de 1ª categoria, profundidade entre 6 e 8 m",m³,4.79,0.58,5.36
+02.105.000085.SER,"Abertura de valas em rocha",m³,301.13,1.73,302.86
+02.105.000086.SER,"Escavação em rocha - 3ª categoria, desmonte com uso de explosivos e perfuração manual profundidade até 2 m",m³,33.75,290.52,324.27
+02.105.000087.SER,"Escavação manual de vala em rocha - 3ª categoria com uso de explosivos e perfuração manual profundidade entre 2 e 4 m",m³,33.75,310.06,343.81
+02.105.000088.SER,"Escavação manual de vala em rocha - 3ª categoria com uso de explosivos e perfuração mecânica profundidade até 2 m",m³,38.70,198.26,236.96
+02.105.000089.SER,"Escavação manual de vala em rocha - 3ª categoria com uso de explosivos e perfuração mecânica profundidade entre 2 e 4 m",m³,38.98,217.96,256.94
+02.105.000090.SER,"Escavação manual de vala em rocha - 3ª categoria com uso de explosivos e perfuração mecânica profundidade entre 4 e 6 m",m³,39.25,237.66,276.91
+02.105.000091.SER,"Desmonte de rocha branda incluindo perfuração, carga de explosivos e detonação com aplicação de malha convencional",m³,37.21,7.28,44.49
+02.105.000092.SER,"Desmonte de rocha dura incluindo perfuração, carga de explosivos e detonação com aplicação de malha convencional",m³,73.45,9.33,82.78
+02.105.000110.SER,"Geotêxtil não tecido para estabilização de solos",m²,5.51,0.26,5.77
+02.105.000115.SER,"Solo-cimento ensacado para contenção de talude",m³,73.40,313.40,386.80
+02.105.000120.SER,"Gabião colchão # 30 cm, para execução de obra",m²,450.92,11.67,462.59
+02.105.000125.SER,"Gabião tipo caixa, para execução de obra",m³,272.48,7.05,279.52
+02.105.000130.SER,"Geogrelha em poliéster para reforço de aterro e talude",m²,23.46,0.74,24.20
+02.105.000130.SER,"Estiva - estrutura submersa com gabião-saco malha hexagonal 8 x 10 cm, altura 1 m",m²,1086.46,51.36,1137.81
+02.106,"Sondagem",m,0,0,0
+02.106.000005.SER,"Sondagem de reconhecimento do subsolo com tubo de revestimento Ø 2 1/2",m,72.00,0,72.00
+04,04. "Infraestrutura",m,0,0,0
+04.101,"Armaduras",m,0,0,0
+04.101.000005.SER,"Armadura de aço CA-25 para estruturas de concreto armado, Ø até 12,5 mm, corte, dobra e montagem",kg,5.04,3.87,8.91
+04.101.000006.SER,"Armadura de aço CA-25 para estruturas de concreto armado, Ø >12,5 mm até 25,0 mm, corte, dobra e montagem",kg,6.98,6.31,13.29
+04.101.000020.SER,"Armadura de aço CA-50 para estruturas de concreto armado, Ø até 12,5 mm, corte, dobra e montagem",kg,5.38,3.87,9.25
+04.101.000021.SER,"Armadura de aço CA-50 para estruturas de concreto armado, Ø >12,5 mm até 25,0 mm, corte, dobra e montagem",kg,5.76,6.31,12.07
+04.101.000030.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø até 5,00 mm, corte, dobra e montagem",kg,5.47,3.39,8.86
+04.101.000031.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø de 5,00 até 7,00 mm, corte, dobra e montagem",kg,5.77,3.87,9.64
+04.101.000032.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø de 8,00 até 9,50 mm, corte, dobra e montagem",kg,7.53,2.42,9.95
+04.101.000050.SER,"Armadura de tela de aço CA-60 Ø 4,20 mm, malha de 10 x 10 cm",m²,16.18,1.84,18.02
+04.101.000052.SER,"Armadura de tela de aço CA-60 Ø 4,20 mm, malha de 15 x 15 cm",m²,11.55,1.14,12.69
+04.102,"Concreto",m,0,0,0
+04.102.000005.SER,"Concreto dosado em central C10 S50",m³,220.06,0,220.06
+04.102.000010.SER,"Concreto dosado em central C15 S50",m³,230.54,0,230.54
+04.102.000015.SER,"Concreto dosado em central C20 S50",m³,261.98,0,261.98
+04.102.000020.SER,"Concreto dosado em central C20 S220 (auto-adensável)",m³,293.41,0,293.41
+04.102.000025.SER,"Concreto dosado em central C25 S50",m³,285.56,0,285.56
+04.102.000030.SER,"Concreto dosado em central C25 S220 (auto-adensável)",m³,319.82,0,319.82
+04.102.000035.SER,"Concreto dosado em central C30 S50",m³,298.65,0,298.65
+04.102.000040.SER,"Concreto dosado em central C30 S220 (auto-adensável)",m³,334.49,0,334.49
+04.102.000045.SER,"Concreto dosado em central C30 S100 adicionado de 0",6 Kg/m³ de fibras sintéticas,m³,471.87,471.87
+04.102.000050.SER,"Concreto dosado em central C35 S50",m³,324.85,0,324.85
+04.102.000055.SER,"Concreto dosado em central C35 S220 (auto-adensável)",m³,363.84,0,363.84
+04.102.000060.SER,"Concreto dosado em central C40 S50",m³,343.19,0,343.19
+04.102.000065.SER,"Concreto dosado em central C40 S220 (auto-adensável)",m³,384.37,0,384.37
+04.102.000070.SER,"Concreto dosado em central C45 S50",m³,374.63,0,374.63
+04.102.000075.SER,"Concreto dosado em central C50 S160 relação água/cimento: 0.4",m³,523.95,0,523.95
+04.102.000080.SER,"Concreto dosado em central C75 S160 relação água/cimento: 0.4",m³,720.44,0,720.44
+04.102.000085.SER,"Concreto ciclópico C15 S50 - preparo e lançamento - com 30% de pedra rachão controle B",m³,287.02,133.06,420.08
+04.102.000090.SER,"Concreto preparado na obra C15 S50 controle B",m³,355.60,82.15,437.75
+04.102.000095.SER,"Concreto preparado na obra C15 S50 controle C",m³,360.72,82.15,442.87
+04.102.000100.SER,"Concreto preparado na obra C15 S50 com seixo rolado controle C",m³,408.59,82.15,490.74
+04.102.000105.SER,"Concreto preparado na obra C15 S50 controle A",m³,350.61,82.15,432.76
+04.102.000110.SER,"Concreto preparado na obra C15 S50 controle A brita 1",m³,356.76,82.15,438.91
+04.102.000115.SER,"Concreto preparado na obra C20 S50 controle B",m³,371.08,82.15,453.23
+04.102.000120.SER,"Concreto preparado na obra C20 S50 com seixo rolado controle B",m³,419.43,82.15,501.58
+04.102.000125.SER,"Concreto preparado na obra C20 S50 controle A",m³,365.59,82.15,447.74
+04.102.000130.SER,"Concreto preparado na obra C20 S50 controle A brita 1",m³,317.06,82.15,399.21
+04.102.000135.SER,"Concreto preparado na obra C20 S50 controle B brita 1",m³,326.34,82.15,408.49
+04.102.000140.SER,"Concreto preparado na obra C25 S50 com seixo rolado controle A",m³,431.50,82.15,513.65
+04.102.000145.SER,"Concreto preparado na obra C25 S50 controle A",m³,382.41,82.15,464.57
+04.102.000150.SER,"Concreto preparado na obra C25 S50 controle A brita 1",m³,335.98,82.15,418.13
+04.102.000155.SER,"Concreto preparado na obra C25 S50 controle B brita 1",m³,346.48,82.15,428.63
+04.102.000160.SER,"Concreto preparado na obra C30 S50 controle A",m³,413.19,82.15,495.34
+04.102.000165.SER,"Concreto preparado na obra C30 S50 controle A brita 1",m³,357.26,82.15,439.41
+04.102.000170.SER,"Concreto preparado na obra C30 S50 controle B brita 1",m³,369.80,82.15,451.95
+04.102.000175.SER,"Concreto preparado na obra C35 S50 controle A",m³,420.93,82.15,503.08
+04.102.000180.SER,"Concreto preparado na obra C35 S50 controle A brita 1",m³,382.73,82.15,464.88
+04.102.000185.SER,"Concreto preparado na obra C35 S50 controle B brita 1",m³,397.36,82.15,479.51
+04.102.000190.SER,"Concreto preparado na obra C40 S50 controle A",m³,443.84,82.15,525.99
+04.102.000195.SER,"Concreto preparado na obra C40 S50 controle A brita 1",m³,455.24,82.15,537.39
+04.102.000200.SER,"Concreto - aplicação e adensamento com vibrador de imersão com motor elétrico",m³,0.77,93.25,94.02
+04.102.000205.SER,"Concreto - aplicação e adensamento com vibrador de imersão com motor à gasolina",m³,5.19,93.25,98.44
+04.102.000210.SER,"Concreto - aplicação",m³,0,49.83,49.83
+04.102.000215.SER,"Bombeamento de concreto",m³,28.94,0,28.94
