@@ -1,12 +1,11 @@
 04.103,Contenções
-04.103.0,Composições TCPO
 04.103.000005.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 5,5 t/m², espessura de 15 cm, tipo de perfil i 10"", distanciamento entre perfis de 1,5 m com reforço de barra de aço CA-60 Ø 6,30 mm a cada 15 cm",m²,"122,48","23,83","146,31"
 04.103.000010.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 5,5 t/m², espessura de 15 cm, tipo de perfil i 10"", distanciamento entre perfis de 1,8 m com reforço de barra de aço CA-60 Ø 6,30 mm a cada 15 cm",m²,"127,06","23,83","150,89"
 04.103.000015.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 4,0 t/m², espessura de 15 cm, tipo de perfil i 10"", distanciamento entre perfis de 2,0 m com reforço de barra de aço CA-60 Ø 6,30 mm a cada 15 cm",m²,"127,06","23,83","150,89"
 04.103.000020.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 3,3 t/m², espessura de 15 cm, tipo de perfil i 10"", distanciamento entre perfis de 2,2 m com reforço de barra de aço CA-60 Ø 6,30 mm a cada 15 cm",m²,"127,06","23,83","150,89"
 04.103.000300.SER,"Muro de arrimo com gabião, malha hexagonal 8 x 10 cm, dupla torção, altura 2 m, espessura média 1 m",m,"1045,51","95,21","1140,72"
 04.103.000305.SER,"Muro de arrimo com gabião, malha hexagonal 8 x 10 cm, dupla torção, altura 4 m, espessura média 3 m",m,"2717,41","247,12","2964,53"
-04.103.000600.SER,Concreto projetado via seca consumo de cimento 350 kg/m³,m³,"1954,92","592,33","2547,25"
+04.103.000600.SER,"Concreto projetado via seca consumo de cimento 350 kg/m³,m³","1954,92","592,33","2547,25"
 04.103.000800.SER,"Gabião colchão # 30 cm, para revestimento de talude",m²,"199,60","11,67","211,28"
 04.103.000810.SER,"Gabião tipo caixa, h=0,50m, malha de 8 x 10 cm, galvanizado fio Ø 2,7mm",m³,"545,18","37,92","583,10"
 04.103.000815.SER,"Gabião tipo caixa, h=0,50m, malha de 8 x 10 cm, galvanizado, revestido em PVC, fio Ø 2,4mm",m³,"636,49","37,92","674,41"
@@ -15,22 +14,22 @@
 04.103.000830.SER,"Gabião tipo colchao, h=0,17m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2,0mm",m²,"216,29","11,67","227,97"
 04.103.000835.SER,"Gabião tipo colchao, h=0,23m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2,0mm",m²,"280,18","11,67","291,85"
 04.103.000840.SER,"Gabião tipo colchao, h=0,30m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2,0mm",m²,"203,61","11,67","215,29"
-04.103.000850.SER,Geotêxtil usado como filtro em substituição à transição granulométrica e como proteção à erosão em canais revestidos com gabiões,m²,"5,26","0,39","5,65"
-04.103.000852.SER,Geotêxtil em colchão drenante usado como filtro e distribuidor de carga onde a movimentação do colchão será considerável ao longo do tempo,m²,"5,51","0,26","5,77"
-04.103.001000.SER,Mureta guia para parede diafragma,m,"661,72","360,48","1022,20"
-04.103.001010.SER,Gaiola de aço CA 50 para armadura de parede diafragma,kg,"6,61","4,65","11,26"
+04.103.000850.SER,"Geotêxtil usado como filtro em substituição à transição granulométrica e como proteção à erosão em canais revestidos com gabiões",m²,"5,26","0,39","5,65"
+04.103.000852.SER,"Geotêxtil em colchão drenante usado como filtro e distribuidor de carga onde a movimentação do colchão será considerável ao longo do tempo",m²,"5,51","0,26","5,77"
+04.103.001000.SER,"Mureta guia para parede diafragma",m,"661,72","360,48","1022,20"
+04.103.001010.SER,"Gaiola de aço CA 50 para armadura de parede diafragma",kg,"6,61","4,65","11,26"
 04.103.001011.SER,"Parede diafragma - escavação em solo com SPT até 50 golpes, contenção com lama bentonitica, concreto C30 S50",m³,"1123,75","8,30","1132,05"
 ,,,,,
 04.104,Drenagem,,,,
 ,,,,,
 04.104.0,Composições TCPO,,,,
-04.104.000005.SER,Dreno com areia grossa,m³,"128,66","25,60","154,26"
-04.104.000015.SER,Dreno com brita 2 e 3,m³,"118,96","40,49","159,45"
+04.104.000005.SER,"Dreno com areia grossa",m³,"128,66","25,60","154,26"
+04.104.000015.SER,"Dreno com brita 2 e 3",m³,"118,96","40,49","159,45"
 04.104.000017.SER,"Vala para drenagem de terreno: escavação de valeta, largura 50 cm, profundidade 70 cm, preenchimento até 30 cm com brita 2 e 3, incluindo abertura, enchimento e reaterro",m,"19,63","54,93","74,56"
 04.104.000030.SER,"Esgotamento com bomba elétrica de imersão potência 1,2 KW, até 8 m de profundidade",m³,"0,08","0,47","0,54"
 04.104.000031.SER,"Esgotamento com bomba elétrica de imersão potência 2,7 KW, até 8 m de profundidade",m³,"0,07","0,25","0,32"
-04.104.000050.SER,Ensecadeira de madeira parede simples,m²,"236,23","57,76","293,99"
-04.104.000051.SER,Ensecadeira de madeira parede dupla,m²,"469,56","144,39","613,95"
+04.104.000050.SER,"Ensecadeira de madeira parede simples",m²,"236,23","57,76","293,99"
+04.104.000051.SER,"Ensecadeira de madeira parede dupla",m²,"469,56","144,39","613,95"
 ,,,,,
 04.107,Fôrmas,,,,
 04.107.000010.SER,"Forma de madeira para piso de concreto com sarrafos 2,5 x 7,5 cm",m²,"8,01","5,63","13,64"
@@ -39,7 +38,7 @@
 04.107.000031.SER,"Forma para fundação com tábuas e sarrafos, 3 reaproveitamentos",m²,"20,19","35,07","55,26"
 04.107.000032.SER,"Forma para fundação com tábuas e sarrafos, 5 reaproveitamentos",m²,"13,25","29,85","43,09"
 04.107.000033.SER,"Forma para fundação com tábuas e sarrafos, 8 reaproveitamentos",m²,"9,34","26,91","36,25"
-04.107.000034.SER,Forma para fundação com tábuas e sarrafos - fabricação,m²,"52,06","39,17","91,22"
+04.107.000034.SER,"Forma para fundação com tábuas e sarrafos - fabricação",m²,"52,06","39,17","91,22"
 04.107.000035.SER,Forma para fundação com tábuas e sarrafos - montagem,m²,"2,84","15,41","18,24"
 04.107.000036.SER,Forma para fundação com tábuas e sarrafos - desmontagem,m²,0,"6,60","6,60"
 04.107.000050.SER,Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm,m²,"143,02","39,73","182,75"
