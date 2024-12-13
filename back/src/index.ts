@@ -9,9 +9,7 @@ const app = express();
 
 // Configuração do CORS para permitir apenas o frontend local
 const corsOptions = {
-  origin: 'http://localhost:3000',  // Ajuste o domínio conforme necessário
-  methods: 'GET,POST,PUT,DELETE',  // Métodos permitidos
-  allowedHeaders: 'Content-Type,Authorization',  // Cabeçalhos permitidos
+  origin: '*'
 };
 
 app.use(cors(corsOptions));  // Usando as opções de CORS definidas
@@ -34,6 +32,6 @@ sequelize.sync({ alter: true }).then(() => {
 });
 
 // Iniciando o servidor na porta 3001 (ou outra porta, se preferir)
-app.listen(3001, () => {
-  console.log('Server is running on http://localhost:3001');
+app.listen(3001, '0.0.0.0', () => {
+  console.log('Server is running and accessible externally on http://<your-ip>:3001');
 });
