@@ -28,6 +28,9 @@ COPY back/package*.json ./
 # Instalar as dependências do back-end
 RUN npm install
 
+# Garantir que o tsc tenha permissões de execução
+RUN chmod +x ./node_modules/.bin/tsc
+
 # Copiar o restante dos arquivos do back-end
 COPY back/ ./ 
 
