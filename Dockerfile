@@ -5,13 +5,13 @@ FROM node:18 as frontend-build
 WORKDIR /app
 
 # Copiar os arquivos do package.json e package-lock.json do front-end
-COPY frontend/package*.json ./
+COPY front/package*.json ./
 
 # Instalar as dependências do front-end
 RUN npm install
 
 # Copiar o restante dos arquivos do front-end
-COPY frontend/ ./
+COPY front/ ./
 
 # Construir o projeto React
 RUN npm run build
@@ -23,13 +23,13 @@ FROM node:18 as backend-build
 WORKDIR /app
 
 # Copiar os arquivos do package.json e package-lock.json do back-end
-COPY backend/package*.json ./
+COPY back/package*.json ./
 
 # Instalar as dependências do back-end
 RUN npm install
 
 # Copiar o restante dos arquivos do back-end
-COPY backend/ ./
+COPY back/ ./
 
 # Compilar o código TypeScript para JavaScript
 RUN npm run build
@@ -41,8 +41,8 @@ FROM node:18
 WORKDIR /app
 
 # Copiar o código compilado do front-end e back-end
-COPY --from=frontend-build /app/build /app/build
-COPY --from=backend-build /app/dist /app/dist
+COPY --from=front-build /app/build /app/build
+COPY --from=back-build /app/dist /app/dist
 
 # Expor a porta que o back-end vai rodar
 EXPOSE 3001
