@@ -131,7 +131,7 @@ codigo,nome,unidade,material,maoDeObra,total
 04.102.000030.SER,"Concreto dosado em central C25 S220 (auto-adensável)",m³,319.82,0,319.82
 04.102.000035.SER,"Concreto dosado em central C30 S50",m³,298.65,0,298.65
 04.102.000040.SER,"Concreto dosado em central C30 S220 (auto-adensável)",m³,334.49,0,334.49
-04.102.000045.SER,"Concreto dosado em central C30 S100 adicionado de 0",6 Kg/m³ de fibras sintéticas,m³,471.87,471.87
+04.102.000045.SER,"Concreto dosado em central C30 S100 adicionado de 0,6 Kg/m³ de fibras sintéticas",m³,471.87,0,471.87
 04.102.000050.SER,"Concreto dosado em central C35 S50",m³,324.85,0,324.85
 04.102.000055.SER,"Concreto dosado em central C35 S220 (auto-adensável)",m³,363.84,0,363.84
 04.102.000060.SER,"Concreto dosado em central C40 S50",m³,343.19,0,343.19

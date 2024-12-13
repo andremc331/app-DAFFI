@@ -1336,3 +1336,5 @@ Dados inválidos: {"codigo":"04.102.000210.SER","nome":"Concreto - aplicação",
 Dados inválidos: {"codigo":"04.102.000215.SER","nome":"Bombeamento de concreto","unidade":"m³","material":28.94,"maoDeObra":0,"total":28.94}
 Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
 Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
+Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
+Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
