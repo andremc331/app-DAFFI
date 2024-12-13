@@ -35,7 +35,7 @@ RUN chmod +x ./node_modules/.bin/tsc
 COPY back/ ./ 
 
 # Compilar o código TypeScript para JavaScript
-RUN npm run build
+RUN npx tsc
 
 # Etapa 3: Imagem final
 FROM node:18
