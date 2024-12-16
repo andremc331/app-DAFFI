@@ -39,7 +39,6 @@ export const importarCSV = async () => {
     // Percorra os dados
     for (const row of parsed.data) {
       // Validação mais robusta dos dados antes de salvar no banco
-      // Validação mais robusta dos dados antes de salvar no banco
       if (
         row &&
         row.codigo &&
@@ -87,4 +86,4 @@ export const importarCSV = async () => {
   }
 };
 
-importarCSV().catch(console.error);
+// importarCSV().catch(console.error);

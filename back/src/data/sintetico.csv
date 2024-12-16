@@ -166,3 +166,845 @@ codigo,nome,unidade,material,maoDeObra,total
 04.102.000205.SER,"Concreto - aplicação e adensamento com vibrador de imersão com motor à gasolina",m³,5.19,93.25,98.44
 04.102.000210.SER,"Concreto - aplicação",m³,0,49.83,49.83
 04.102.000215.SER,"Bombeamento de concreto",m³,28.94,0,28.94
+04.103,"Contenções",m,0,0,0
+04.103.000005.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 5.5 t/m², espessura de 15 cm, tipo de perfil i 10, distanciamento entre perfis de 1.5 m com reforço de barra de aço CA-60 Ø 6.30 mm a cada 15 cm",m²,122.48,23.83,146.31
+04.103.000010.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 5.5 t/m², espessura de 15 cm, tipo de perfil i 10, distanciamento entre perfis de 1.8 m com reforço de barra de aço CA-60 Ø 6.30 mm a cada 15 cm",m²,127.06,23.83,150.89
+04.103.000015.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 4.0 t/m², espessura de 15 cm, tipo de perfil i 10, distanciamento entre perfis de 2.0 m com reforço de barra de aço CA-60 Ø 6.30 mm a cada 15 cm",m²,127.06,23.83,150.89
+04.103.000020.SER,"Contenção de solo com cortina de placa dupla pré-fabricada empuxo de 3.3 t/m², espessura de 15 cm, tipo de perfil i 10, distanciamento entre perfis de 2.2 m com reforço de barra de aço CA-60 Ø 6.30 mm a cada 15 cm",m²,127.06,23.83,150.89
+04.103.000300.SER,"Muro de arrimo com gabião, malha hexagonal 8 x 10 cm, dupla torção, altura 2 m, espessura média 1 m",m,1045.51,95.21,1140.72
+04.103.000305.SER,"Muro de arrimo com gabião, malha hexagonal 8 x 10 cm, dupla torção, altura 4 m, espessura média 3 m",m,2717.41,247.12,2964.53
+04.103.000600.SER,"Concreto projetado via seca consumo de cimento 350 kg/m³",m³,1954.92,592.33,2547.25
+04.103.000800.SER,"Gabião colchão # 30 cm, para revestimento de talude",m²,199.60,11.67,211.28
+04.103.000810.SER,"Gabião tipo caixa, h=0.50m, malha de 8 x 10 cm, galvanizado fio Ø 2.7mm",m³,545.18,37.92,583.10
+04.103.000815.SER,"Gabião tipo caixa, h=0.50m, malha de 8 x 10 cm, galvanizado, revestido em PVC, fio Ø 2.4mm",m³,636.49,37.92,674.41
+04.103.000820.SER,"Gabião tipo caixa, h=1.0m, malha de 8 x 10 cm, galvanizado fio Ø 2.7mm",m³,458.69,37.92,496.62
+04.103.000825.SER,"Gabião tipo caixa, h=1.0m, malha de 8 x 10 cm, galvanizado, revestido em PVC, fio Ø 2.4mm",m³,770.14,37.92,808.06
+04.103.000830.SER,"Gabião tipo colchão, h=0.17m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2.0mm",m²,216.29,11.67,227.97
+04.103.000835.SER,"Gabião tipo colchão, h=0.23m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2.0mm",m²,280.18,11.67,291.85
+04.103.000840.SER,"Gabião tipo colchão, h=0.30m, malha de 6 x 8 cm, galvanizado, revestido PVC fio Ø 2.0mm",m²,203.61,11.67,215.29
+04.103.000850.SER,"Geotêxtil usado como filtro em substituição à transição granulométrica e como proteção à erosão em canais revestidos com gabiões",m²,5.26,0.39,5.65
+04.103.000852.SER,"Geotêxtil em colchão drenante usado como filtro e distribuidor de carga onde a movimentação do colchão será considerável ao longo do tempo",m²,5.51,0.26,5.77
+04.103.001000.SER,"Mureta guia para parede diafragma",m,661.72,360.48,1022.20
+04.103.001010.SER,"Gaiola de aço CA 50 para armadura de parede diafragma",kg,6.61,4.65,11.26
+04.103.001011.SER,"Parede diafragma - escavação em solo com SPT até 50 golpes, contenção com lama bentonítica, concreto C30 S50",m³,1123.75,8.30,1132.05
+04.104,"Drenagem",m,0,0,0
+04.104.000005.SER,"Dreno com areia grossa",m³,128.66,25.60,154.26
+04.104.000015.SER,"Dreno com brita 2 e 3",m³,118.96,40.49,159.45
+04.104.000017.SER,"Vala para drenagem de terreno: escavação de valeta, largura 50 cm, profundidade 70 cm, preenchimento até 30 cm com brita 2 e 3, incluindo abertura, enchimento e reaterro",m,19.63,54.93,74.56
+04.104.000030.SER,"Esgotamento com bomba elétrica de imersão potência 1.2 KW, até 8 m de profundidade",m³,0.08,0.47,0.54
+04.104.000031.SER,"Esgotamento com bomba elétrica de imersão potência 2.7 KW, até 8 m de profundidade",m³,0.07,0.25,0.32
+04.104.000050.SER,"Ensecadeira de madeira parede simples",m²,236.23,57.76,293.99
+04.104.000051.SER,"Ensecadeira de madeira parede dupla",m²,469.56,144.39,613.95
+04.107,"Fôrmas",m,0,0,0
+04.107.000010.SER,"Forma de madeira para piso de concreto com sarrafos 2,5 x 7,5 cm",m²,8.01,5.63,13.64
+04.107.000011.SER,"Forma de madeira para piso de concreto com sarrafos 2,5 x 7,5 cm, 3 reaproveitamentos",m²,4.23,5.92,10.14
+04.107.000030.SER,"Forma para fundação com tábuas e sarrafos",m²,54.89,61.18,116.07
+04.107.000031.SER,"Forma para fundação com tábuas e sarrafos, 3 reaproveitamentos",m²,20.19,35.07,55.26
+04.107.000032.SER,"Forma para fundação com tábuas e sarrafos, 5 reaproveitamentos",m²,13.25,29.85,43.09
+04.107.000033.SER,"Forma para fundação com tábuas e sarrafos, 8 reaproveitamentos",m²,9.34,26.91,36.25
+04.107.000034.SER,"Forma para fundação com tábuas e sarrafos - fabricação",m²,52.06,39.17,91.22
+04.107.000035.SER,"Forma para fundação com tábuas e sarrafos - montagem",m²,2.84,15.41,18.24
+04.107.000036.SER,"Forma para fundação com tábuas e sarrafos - desmontagem",m²,0,6.60,6.60
+04.107.000050.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm",m²,143.02,39.73,182.75
+04.107.000051.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm, 3 reaproveitamentos",m²,49.78,22.78,72.56
+04.107.000052.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm - fabricação",m²,139.87,25.42,165.29
+04.107.000053.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm - montagem",m²,3.16,10.01,13.17
+04.107.000054.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm - desmontagem",m²,0,4.30,4.30
+04.107.000070.SER,"Forma para galeria de concreto e muro de arrimo moldados no local em compensado plastificado # 12 mm, travamento com barras de aço CA 50 Ø 6.3 mm e tensores",m²,176.92,41.92,218.83
+04.107.000071.SER,"Forma para galeria de concreto e muro de arrimo moldados no local em compensado plastificado # 12 mm, travamento com barras de aço CA 50 Ø 6.3 mm e tensores, 3 reaproveitamentos",m²,83.67,24.97,108.64
+04.107.000072.SER,"Forma para galeria de concreto e muro de arrimo moldados no local em compensado plastificado # 12 mm, travamento com barras de aço CA 50 Ø 6.3 mm e tensores - fabricação",m²,139.87,25.42,165.29
+04.107.000073.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores - montagem",m²,37.05,11.94,48.99
+04.107.000074.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 12 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores - desmontagem",m²,0,4.55,4.55
+04.107.000090.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm",m²,167.46,40.60,208.06
+04.107.000091.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, 3 reaproveitamentos",m²,57.92,23.07,81.00
+04.107.000092.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, 6 reaproveitamentos",m²,30.54,18.69,49.23
+04.107.000093.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm - fabricação",m²,164.31,26.29,190.60
+04.107.000094.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm - montagem",m²,3.16,10.01,13.17
+04.107.000095.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm - desmontagem",m²,0,4.30,4.30
+04.107.000110.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores",m²,199.56,44.49,244.04
+04.107.000111.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores, 3 reaproveitamentos",m²,90.02,26.46,116.48
+04.107.000112.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores - fabricação",m²,164.31,27.03,191.34
+04.107.000113.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores - montagem",m²,35.25,12.63,47.87
+04.107.000114.SER,"Forma para cortina de concreto em compensado plastificado # 18 mm, travamento com tirantes aço CA 50 Ø 6.3 mm e tensores - desmontagem",m²,0,4.83,4.83
+04.108,"Fundações profundas",m,0,0,0
+04.108.000010.SER,"Estaca de madeira Ø 21 cm e carga nominal de 6 a 8 tf para terreno de condições favoráveis",m,70.43,18.80,89.23
+04.108.000011.SER,"Estaca de madeira Ø 25 cm e carga nominal de 8 a 10 tf para terreno de condições favoráveis",m,92.57,18.80,111.37
+04.108.000012.SER,"Estaca de madeira Ø 21 cm e carga nominal de 6 a 8 tf para terreno de condições pouco favoráveis",m,75.21,29.79,104.99
+04.108.000013.SER,"Estaca de madeira Ø 25 cm e carga nominal de 8 a 10 tf para terreno de condições pouco favoráveis",m,97.34,29.79,127.13
+04.108.000020.SER,"Estaca pré-moldada de concreto protendido cravada seção 17 x 17 cm carga admissível até 40 tf",m,106.35,5.21,111.56
+04.108.000021.SER,"Estaca pré-moldada de concreto protendido cravada seção 23,5 x 23,5 cm carga admissível até 82 tf",m,145.02,5.21,150.23
+04.108.000022.SER,"Estaca pré-moldada de concreto protendido cravada seção 26,5 x 26,5 cm carga admissível até 106 tf",m,167.58,5.21,172.79
+04.108.000023.SER,"Estaca pré-moldada de concreto protendido maciça cravada Ø 15 cm carga admissível 18 tf",m,92.05,5.21,97.26
+04.108.000024.SER,"Estaca pré-moldada de concreto protendido maciça cravada Ø 17 cm carga admissível 25 tf",m,98.99,5.21,104.20
+04.108.000025.SER,"Estaca pré-moldada de concreto protendido maciça cravada Ø 20 cm carga admissível 36 tf",m,111.42,5.21,116.63
+04.108.000026.SER,"Estaca pré-moldada de concreto protendido cravada Ø 23 cm carga admissível 50 tf",m,137.14,5.21,142.35
+04.108.000027.SER,"Estaca pré-moldada de concreto protendido vazada cravada Ø 33 cm carga admissível 75 tf",m,230.56,5.21,235.77
+04.108.000028.SER,"Estaca pré-moldada de concreto armado octogonal vazada cravada Ø 36 cm carga até 138 tf",m,286.83,5.21,292.04
+04.108.000029.SER,"Estaca pré-moldada de concreto armado octogonal vazada cravada Ø 42 cm carga até 158 tf",m,312.61,5.21,317.82
+04.108.000040.SER,"Estaca Franki moldada no local Ø 35 cm carga admissível 55 tf",m,249.92,20.72,270.64
+04.108.000041.SER,"Estaca Franki moldada no local Ø 40 cm carga admissível 75 tf",m,279.02,21.01,300.03
+04.108.000042.SER,"Estaca Franki moldada no local Ø 45 cm carga admissível 95 tf",m,343.08,31.94,375.02
+04.108.000043.SER,"Estaca Franki moldada no local Ø 52 cm carga admissível 130 tf",m,369.80,32.61,402.42
+04.108.000044.SER,"Estaca Franki moldada no local Ø 60 cm carga admissível 170 tf",m,446.18,42.92,489.10
+04.108.000045.SER,"Custo de mobilização ou desmobilização, equipamento estaca Franki, movimentação da equipe e dos equipamentos dentro das regiões metropolitanas (serviço terceirizado)",un,24391.39,0,24391.39
+04.108.000060.SER,"Estaca Strauss moldada no local concreto C20 S50 Ø 25 cm carga admissível 20 tf",m,52.07,0,52.07
+04.108.000061.SER,"Estaca tipo Strauss moldada no local concreto C20 S50 Ø 32 cm carga admissível 30 tf",m,68.69,0,68.69
+04.108.000062.SER,"Estaca Strauss moldada no local concreto C20 S50 Ø 38 cm carga admissível 40 tf",m,92.02,0,92.02
+04.108.000063.SER,"Estaca Strauss moldada no local concreto C20 S50 Ø 45 cm carga admissível 60 tf",m,132.69,0,132.69
+04.108.000064.SER,"Custo de mobilização ou desmobilização, equipamento estaca Strauss, movimentação da equipe e dos equipamentos dentro das regiões metropolitanas (serviço terceirizado)",un,1844.73,0,1844.73
+04.108.000070.SER,"Escavação manual para tubulão a ceú aberto",m³,0,288.79,288.79
+04.108.000071.SER,"Tubulão a céu aberto - empregando concreto C15 S50",m³,355.60,192.02,547.62
+04.108.000072.SER,"Tubulão a céu aberto - empregando concreto C20 S50",m³,371.08,192.02,563.10
+04.108.000073.SER,"Tubulão a céu aberto - empregando concreto C15 S50 com 20% de volume em rachão",m³,304.05,175.59,479.64
+04.108.000074.SER,"Tubulão a céu aberto - empregando concreto C20 S50 com 20% de volume em rachão",m³,316.43,175.59,492.02
+04.108.000075.SER,"Tubulão a céu aberto - empregando concreto dosado em central C15 S50",m³,235.15,109.87,345.02
+04.108.000076.SER,"Tubulão a céu aberto - empregando concreto dosado em central C20 S50",m³,267.21,109.87,377.08
+04.108.000100.SER,"Estaca em perfil metálico cravada - I de 10 x 4 x 5/8",m,324.61,3.47,328.07
+04.108.000105.SER,"Estaca em perfil metálico cravada - I de 12 x 5 x 1/4",m,435.86,3.47,439.33
+04.108.000110.SER,"Estaca em perfil metálico cravada - duplo I de 10 x 4 x 5/8",m,597.71,3.47,601.18
+04.108.000115.SER,"Estaca em perfil metálico cravada - duplo I de 12 x 5 x 1/4",m,812.70,3.47,816.17
+04.108.000130.SER,"Corte de perfil metálico I de 10 x 4 x 5/8",un,97.00,0,97.00
+04.108.000135.SER,"Corte de perfil metálico I de 12 x 5 x 1/4",un,136.60,0,136.60
+04.108.000140.SER,"Corte de perfil metálico duplo I de 10 x 4 x 5/8",un,213.92,0,213.92
+04.108.000145.SER,"Corte de perfil metálico duplo I de 12 x 5 x 1/4",un,259.66,0,259.66
+04.108.000150.SER,"Solda de topo em estaca metálica perfil I 10 x 4 x 5/8",un,255.00,0,255.00
+04.108.000152.SER,"Solda de topo em estaca metálica perfil I 12 x 5 x 1/4",un,282.26,0,282.26
+04.108.000154.SER,"Solda de topo em estaca metálica perfil duplo I de 10 x 4 x 5/8",un,1231.53,0,1231.53
+04.108.000156.SER,"Solda de topo em estaca metálica perfil duplo I de 12 x 5 x 1/4",un,1360.57,0,1360.57
+04.108.000158.SER,"Solda longitudinal em estaca metálica",m,149.75,0,149.75
+04.108.000180.SER,"Estaca raiz perfurada em solo Ø 150 mm carga 25 tf",m,221.60,23.60,245.21
+04.108.000181.SER,"Estaca raiz perfurada em solo Ø 200 mm carga 50 tf",m,263.67,28.17,291.83
+04.108.000182.SER,"Estaca raiz perfurada em solo Ø 250 mm carga 80 tf",m,300.88,33.31,334.19
+04.108.000183.SER,"Estaca raiz perfurada em solo Ø 310 mm carga 100 tf",m,351.80,43.62,395.42
+04.108.000184.SER,"Estaca raiz perfurada em solo Ø 400 mm carga 130 tf",m,515.36,72.93,588.30
+04.108.000200.SER,"Estaca raiz perfurada em rocha Ø 150 mm carga 25 tf",m,600.79,23.60,624.40
+04.108.000201.SER,"Estaca raiz perfurada em rocha Ø 200 mm carga 50 tf",m,617.24,28.17,645.40
+04.108.000202.SER,"Estaca raiz perfurada em rocha Ø 250 mm carga 80 tf",m,833.81,33.31,867.12
+04.108.000203.SER,"Estaca raiz perfurada em rocha Ø 310 mm carga 100 tf",m,1002.58,43.62,1046.20
+04.108.000204.SER,"Estaca raiz perfurada em rocha Ø 400 mm carga 130 tf",m,1268.62,72.93,1341.56
+04.108.000205.SER,"Custo de mobilização ou desmobilização, equipamento estaca raiz, movimentação da equipe e dos equipamentos dentro das regiões metropolitanas (serviço terceirizado)",un,15321.48,0,15321.48
+04.108.000300.SER,"Estaca hélice contínua monitorada Ø 300 mm",m,68.03,5.21,73.24
+04.108.000301.SER,"Estaca hélice contínua monitorada Ø 400 mm",m,99.15,5.99,105.14
+04.108.000302.SER,"Estaca hélice contínua monitorada Ø 500 mm",m,136.92,7.17,144.09
+04.108.000303.SER,"Estaca hélice contínua monitorada Ø 600 mm",m,181.07,8.47,189.54
+04.108.000304.SER,"Estaca hélice contínua monitorada Ø 700 mm",m,232.00,10.42,242.42
+04.108.000305.SER,"Estaca hélice contínua monitorada Ø 800 mm",m,291.13,13.03,304.16
+04.108.000306.SER,"Custo de mobilização ou desmobilização, equipamento estaca hélice contínua, movimentação da equipe e dos equipamentos dentro das regiões metropolitanas (serviço terceirizado)",un,27056.00,0,27056.00
+04.108.000400.SER,"Estaca escavada mecânicamente Ø 250 mm",m,35.29,1.69,36.99
+04.108.000401.SER,"Estaca escavada mecânicamente Ø 300 mm",m,44.17,1.95,46.13
+04.108.000402.SER,"Estaca escavada mecânicamente Ø 350 mm",m,54.30,2.21,56.52
+04.108.000403.SER,"Estaca escavada mecânicamente Ø 400 mm",m,66.16,2.61,68.77
+04.108.000404.SER,"Estaca escavada mecânicamente Ø 500 mm",m,93.76,3.13,96.89
+04.108.000405.SER,"Estaca escavada mecânicamente Ø 600 mm",m,127.08,3.91,130.99
+04.108.000406.SER,"Estaca escavada mecânicamente Ø 700 mm",m,167.08,5.21,172.29
+04.108.000407.SER,"Custo de mobilização ou desmobilização, equipamento estaca escavada mecânicamente, movimentação da equipe e dos equipamentos dentro das regiões metropolitanas (serviço terceirizado)",un,1844.73,0,1844.73
+04.109,"Fundações superficiais",m,0,0,0
+04.109.000010.SER,"Alvenaria de embasamento com pedra rachão empregando argamassa de cimento e areia traço 1:4",m³,207.01,212.35,419.36
+04.109.000011.SER,"Alvenaria de embasamento com pedra rachão empregando argamassa mista de cimento, saibro e areia traço 1:4:5",m³,153.55,138.75,292.29
+04.109.000020.SER,"Alvenaria de embasamento com tijolo comum empregando argamassa mista de cimento, cal e areia traço 1:2:8",m³,383.08,239.28,622.36
+04.109.000030.SER,"Alvenaria de embasamento com blocos cerâmicos portante 14 x 19 x 39 empregando argamassa mista de cimento, cal e areia traço 1:2:8",m³,291.29,206.54,497.83
+04.109.000031.SER,"Alvenaria de embasamento com blocos cerâmicos de vedação 14 x 19 x 39 empregando argamassa mista de cimento, cal e areia traço 1:2:8",m³,205.82,206.54,412.36
+04.109.000035.SER,"Alvenaria de embasamento com blocos cerâmicos laminado 5,5 x 11 x 23,5 empregando argamassa mista de cimento, cal e areia traço 1:2:8",m³,1331.31,623.87,1955.18
+04.109.000050.SER,"Broca de concreto C15 S50 armado Ø 25 cm",m,22.27,30.09,52.36
+04.109.000051.SER,"Broca de concreto C15 S50 armado Ø 30 cm",m,32.06,44.89,76.95
+04.109.000060.SER,"Broca de concreto com seixo C15 S50 armado Ø 20 cm",m,15.76,22.12,37.88
+04.109.000061.SER,"Broca de concreto com seixo C15 S50 armado Ø 25 cm",m,24.62,30.09,54.71
+04.109.000062.SER,"Broca de concreto com seixo C15 S50 armado Ø 30 cm",m,35.44,44.89,80.33
+04.110,"Lastros",m,0,0,0
+04.110.000002.SER,"Geotêxtil usado como filtro envolvendo o material drenante",m²,5.41,0.39,5.80
+04.110.000005.SER,"Geotêxtil em colchão drenante usado como filtro e distribuidor de carga onde a movimentação do colchão será pequena ao longo do tempo",m²,5.26,0.13,5.39
+04.110.000020.SER,"Lastro de areia grossa",m³,147.96,45.60,193.55
+04.110.000030.SER,"Lastro de brita 1 apiloado com soquete manual para regularização",m³,134.30,32.57,166.86
+04.110.000033.SER,"Lastro de brita 3 e 4 apiloado com soquete manual para regularização",m³,136.45,32.57,169.01
+04.110.000035.SER,"Lastro de seixo, inclusive espalhamento",m³,161.55,40.49,202.04
+04.110.000040.SER,"Lastro de concreto magro com seixo # 8 cm, incluindo preparo e lançamento",m²,26.52,19.21,45.73
+04.110.000042.SER,"Lastro de concreto não estrutural impermeabilizado espessura 6 cm",m²,18.62,16.72,35.34
+04.110.000044.SER,"Lastro de concreto não estrutural impermeabilizado espessura 8 cm",m²,24.83,24.72,49.55
+04.110.000046.SER,"Lastro de concreto, incluindo preparo de caixa, # 5 cm",m²,15.05,15.90,30.94
+04.110.000048.SER,"Lastro de concreto, incluindo preparo e lançamento",m³,300.91,192.02,492.93
+05,"Superestrutura",m,0,0,0
+05.101,"Armaduras",m,0,0,0
+05.101.000005.SER,"Armadura de aço CA-25 para estruturas de concreto armado, Ø até 12,5 mm, corte, dobra e montagem",kg,5.04,3.87,8.91
+05.101.000006.SER,"Armadura de aço CA-25 para estruturas de concreto armado, Ø >12,5 mm até 25,0 mm, corte, dobra e montagem",kg,6.98,6.31,13.29
+05.101.000020.SER,"Armadura de aço CA-50 para estruturas de concreto armado, Ø até 12,5 mm, corte, dobra e montagem",kg,5.38,3.87,9.25
+05.101.000021.SER,"Armadura de aço CA-50 para estruturas de concreto armado, Ø >12,5 mm até 25,0 mm, corte, dobra e montagem",kg,5.76,6.31,12.07
+05.101.000030.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø até 5,00 mm, corte, dobra e montagem",kg,5.47,3.39,8.86
+05.101.000031.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø de 5,00 até 7,00 mm, corte, dobra e montagem",kg,5.77,3.87,9.64
+05.101.000032.SER,"Armadura de aço CA-60 para estruturas de concreto armado, Ø de 8,00 até 9,50 mm, corte, dobra e montagem",kg,7.53,2.42,9.95
+05.101.000050.SER,"Armadura de tela de aço CA-60 Ø 4,20 mm, malha de 10 x 10 cm",m²,16.18,1.84,18.02
+05.101.000052.SER,"Armadura de tela de aço CA-60 Ø 4,20 mm, malha de 15 x 15 cm",m²,11.55,1.14,12.69
+05.101.000102.SER,"Armadura de aço CA-50 para pilares, Ø 12,5 mm, corte, dobra e montagem",kg,5.17,3.00,8.17
+05.101.000105.SER,"Armadura de aço CA-50 para pilares, Ø 12,5 mm, fornecimento e montagem (aço adquirido cortado e dobrado)",kg,4.63,1.20,5.83
+05.101.000202.SER,"Armadura de aço CA-50 para vigas Ø 10,0 mm, corte, dobra e montagem",kg,5.67,4.50,10.18
+05.101.000205.SER,"Armadura de aço CA-50 para vigas Ø 10,0 mm, fornecimento e montagem (aço adquirido cortado e dobrado)",kg,4.84,2.79,7.63
+05.101.000302.SER,"Armadura de aço CA-50 para lajes Ø 8,0 mm, corte, dobra e montagem",kg,5.55,2.34,7.88
+05.101.000305.SER,"Armadura de aço CA-50 para lajes Ø 8,0 mm, montagem (aço adquirido cortado e dobrado)",kg,5.17,1.10,6.27
+05.101.000400.SER,"Ancoragem de barras de aço, com resina base de poliéster",dm³,48.42,5.78,54.20
+05.102,"Chumbadores",m,0,0,0
+05.102.000010.SER,"Chumbadores expansíveis Ø 3/8",un,2.75,2.89,5.64
+05.102.000011.SER,"Chumbadores expansíveis Ø 1/2",un,5.80,4.33,10.13
+05.102.000012.SER,"Chumbadores expansíveis Ø 3/4",un,14.31,5.78,20.09
+05.102.000020.SER,"Chumbadores químicos Ø 3/8",un,16.17,4.19,20.36
+05.102.000021.SER,"Chumbadores químicos Ø 1/2",un,21.36,6.29,27.64
+05.102.000022.SER,"Chumbadores químicos Ø 3/4",un,44.23,8.38,52.61
+05.103,"Cimbramento",m,0,0,0
+05.103.000010.SER,"Escoramento em madeira para vigas de edificação, com pontaletes 7,5 x 7,5cm para altura entre 2,2 e 2,6 m",m²,84.13,9.15,93.28
+05.103.000011.SER,"Fabricação de escoramento em madeira para vigas de edificação, com pontaletes",m²,83.15,4.80,87.95
+05.103.000012.SER,"Montagem de escoramento em madeira para vigas de edificação, com pontaletes",m²,0.97,3.66,4.64
+05.103.000013.SER,"Desmontagem de escoramento em pontaletes para vigas de edificação",m²,0,0.69,0.69
+05.103.000015.SER,"Escoramento em madeira para lajes de edificação, com pontaletes 7,5 x 7,5cm para altura de 2,7 a 3 m",m²,53.35,6.11,59.46
+05.103.000016.SER,"Fabricação de escoramento em madeira para lajes de edificação, com pontaletes",m²,53.18,3.91,57.10
+05.103.000017.SER,"Montagem de escoramento em madeira para lajes de edificação, com pontaletes",m²,0.16,2.08,2.25
+05.103.000018.SER,"Desmontagem de escoramento em pontaletes",m²,0,0.12,0.12
+05.103.000020.SER,"Escoramento em madeira para vigas de edificação, com escoras em eucalípto Ø 10cm para altura entre 2,2 e 3 m",m²,43.64,8.27,51.91
+05.103.000021.SER,"Fabricação de escoramento em madeira para vigas de edificação, com escoras em eucalípto",m²,42.66,4.30,46.96
+05.103.000022.SER,"Montagem de escoramento em madeira para vigas de edificação, com escoras em eucalípto",m²,0.97,3.35,4.32
+05.103.000023.SER,"Desmontagem de escoramento em eucalipto",m²,0,0.63,0.63
+05.103.000030.SER,"Cimbramento de madeira para alturas até 4 m, estruturas leves, fornecimento e montagem",m³,5.71,20.95,26.66
+05.103.000040.SER,"Cimbramento metálico tubular com equipamento obtido por locação mensal",m³ x mês,40.80,0,40.80
+05.103.000041.SER,"Cimbramento metálico tubular com equipamento obtido por locação mensal - evento de montagem e desmontagem",m³x nºeven,0,36.70,36.70
+05.103.000050.SER,"Escoramento metálico para vigas de edificação com altura entre 2 e 3,2 m com equipamento obtido por locação mensal",m² x mês,11.39,0,11.39
+05.103.000051.SER,"Escoramento metálico para vigas de edificação com altura entre 2 e 3,2 m com equipamento obtido por locação mensal - evento de montagem e desmontagem",m²x nºeven,22.92,2.61,25.52
+05.103.000060.SER,"Escoramento metálico para lajes de edificação com altura entre 2 e 3,2 m com equipamento obtido por locação mensal",m² x mês,8.42,0,8.42
+05.103.000061.SER,"Escoramento metálico para lajes de edificação com altura entre 2 e 3,2 m com equipamento obtido por locação mensal - evento de montagem e desmontagem",m²x nºeven,16.75,2.61,19.36
+05.106,Fôrmas,m²,0,0.63,0.63
+05.106.000010.SER,"Forma para estruturas de concreto com chapa compensada resinada # 12 mm",m²,154.16,32.70,186.86
+05.106.000012.SER,"Forma para estruturas de concreto com chapa compensada resinada # 12 mm, 3 reaproveitamentos",m²,53.52,17.40,70.92
+05.106.000014.SER,"Forma para estruturas de concreto com chapa compensada resinada # 12 mm - fabricação",m²,150.89,22.93,173.82
+05.106.000016.SER,"Forma para estruturas de concreto com chapa compensada resinada # 12 mm - montagem",m²,3.27,6.84,10.11
+05.106.000018.SER,"Forma para estruturas de concreto com chapa compensada resinada # 12 mm - desmontagem",m²,0,2.93,2.93
+05.106.000030.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm",m²,169.78,32.70,202.48
+05.106.000032.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm, 3 reaproveitamentos",m²,58.72,17.40,76.12
+05.106.000034.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm, 5 reaproveitamentos",m²,36.57,14.35,50.93
+05.106.000036.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm - fabricação",m²,166.51,22.93,189.44
+05.106.000038.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm - montagem",m²,3.27,6.84,10.11
+05.106.000040.SER,"Forma para estruturas de concreto com chapa compensada plastificada # 12 mm - desmontagem",m²,0,2.93,2.93
+05.106.000050.SER,"Forma para estruturas em curva, com tábuas, sarrafos e chapas de compensado naval # 6 mm",m²,107.66,154.13,261.79
+05.106.000052.SER,"Forma para estruturas em curva, com tábuas, sarrafos e chapas de compensado naval # 6 mm, 3 reaproveitamentos",m²,37.27,79.24,116.51
+05.106.000054.SER,"Forma para estruturas em curva, com tábuas, sarrafos e chapas de compensado naval # 6 mm, 5 reaproveitamentos",m²,23.19,64.26,87.45
+05.106.000056.SER,"Forma para estruturas curvas de concreto com tábuas, sarrafos e chapas de compensado naval # 6 mm - fabricação",m²,105.58,112.34,217.92
+05.106.000058.SER,"Forma para estruturas em curva com tábuas, sarrafos e chapas de compensado naval # 6 mm - montagem",m²,2.08,29.24,31.32
+05.106.000060.SER,"Forma para estruturas em curva com tábuas, sarrafos e chapas de compensado naval # 6 mm - desmontagem",m²,0,12.55,12.55
+05.106.000080.SER,"Forma para pilares com tábuas e sarrafos",m²,96.25,50.56,146.81
+05.106.000082.SER,"Forma para pilares com tábuas e sarrafos, 3 reaproveitamentos",m²,37.21,28.97,66.18
+05.106.000084.SER,"Forma para pilares com tábuas e sarrafos, 5 reaproveitamentos",m²,25.40,24.66,50.05
+05.106.000086.SER,"Forma para pilares com tábuas e sarrafos - fabricação",m²,88.57,32.38,120.95
+05.106.000088.SER,"Forma para pilares com tábuas e sarrafos - montagem",m²,7.68,12.68,20.36
+05.106.000090.SER,"Forma para pilares com tábuas e sarrafos - desmontagem",m²,0,5.50,5.50
+05.106.000100.SER,"Forma para pilares com chapa compensada plastificada # 12 mm",m²,170.44,33.63,204.07
+05.106.000102.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, 3 reaproveitamentos",m²,59.02,18.34,77.36
+05.106.000104.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, 5 reaproveitamentos",m²,36.81,15.29,52.09
+05.106.000106.SER,"Forma para pilares com chapa compensada plastificada # 12 mm - fabricação",m²,167.04,22.93,189.97
+05.106.000108.SER,"Forma para pilares com chapa compensada plastificada # 12 mm - montagem",m²,3.40,7.49,10.89
+05.106.000110.SER,"Forma para pilares com chapa compensada plastificada # 12 mm - desmontagem",m²,0,3.21,3.21
+05.106.000126.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, pré fabricada - montagem",m²,1.77,5.67,7.44
+05.106.000128.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, pré fabricada - desmontagem",m²,0,3.21,3.21
+05.106.000140.SER,"Forma cilíndrica para pilares, com sarrafos",m²,174.45,76.47,250.91
+05.106.000142.SER,"Forma cilíndrica para pilares, com sarrafos, 3 reaproveitamentos",m²,60.28,43.85,104.13
+05.106.000144.SER,"Forma cilíndrica para pilares, com sarrafos, 5 reaproveitamentos",m²,37.44,37.33,74.77
+05.106.000146.SER,"Forma cilíndrica para pilares, com sarrafos - fabricação",m²,171.26,48.92,220.17
+05.106.000148.SER,"Forma cilíndrica para pilares, com sarrafos - montagem",m²,3.19,19.29,22.48
+05.106.000150.SER,"Forma cilíndrica para pilares, com sarrafos - desmontagem",m²,0,8.25,8.25
+05.106.000200.SER,"Forma cilíndrica de papelão para pilares - Ø 15 cm",m,49.10,5.12,54.22
+05.106.000201.SER,"Forma cilíndrica de papelão para pilares - Ø 20 cm",m,54.32,5.12,59.44
+05.106.000203.SER,"Forma cilíndrica de papelão para pilares - Ø 25 cm",m,72.27,5.12,77.40
+05.106.000205.SER,"Forma cilíndrica de papelão para pilares - Ø 30 cm",m,84.35,5.12,89.48
+05.106.000207.SER,"Forma cilíndrica de papelão para pilares - Ø 35 cm",m,101.38,5.12,106.50
+05.106.000209.SER,"Forma cilíndrica de papelão para pilares - Ø 40 cm",m,116.59,5.12,121.71
+05.106.000211.SER,"Forma cilíndrica de papelão para pilares - Ø 45 cm",m,129.37,5.12,134.49
+05.106.000213.SER,"Forma cilíndrica de papelão para pilares - Ø 50 cm",m,146.23,5.12,151.36
+05.106.000215.SER,"Forma cilíndrica de papelão para pilares - Ø 55 cm",m,164.73,5.12,169.86
+05.106.000217.SER,"Forma cilíndrica de papelão para pilares - Ø 60 cm",m,192.84,5.12,197.96
+05.106.000250.SER,"Forma para vigas com tábuas e sarrafos",m²,86.87,48.95,135.82
+05.106.000252.SER,"Forma para vigas com tábuas e sarrafos, 3 reaproveitamentos",m²,31.71,28.06,59.77
+05.106.000254.SER,"Forma para vigas com tábuas e sarrafos, 5 reaproveitamentos",m²,20.68,23.88,44.56
+05.106.000256.SER,"Forma para vigas com tábuas e sarrafos - fabricação",m²,82.74,31.34,114.08
+05.106.000258.SER,"Forma para vigas com tábuas e sarrafos - montagem",m²,4.13,12.32,16.45
+05.106.000260.SER,"Forma para vigas com tábuas e sarrafos - desmontagem",m²,0,5.29,5.29
+05.106.000280.SER,"Forma para vigas com chapa compensada plastificada # 12 mm",m²,103.07,38.06,141.13
+05.106.000282.SER,"Forma para vigas com chapa compensada plastificada # 12 mm, 3 reaproveitamentos",m²,35.51,22.77,58.27
+05.106.000284.SER,"Forma para vigas com chapa compensada plastificada # 12 mm, 5 reaproveitamentos",m²,22.03,19.72,41.75
+05.106.000286.SER,"Forma para vigas com chapa compensada plastificada # 12 mm - fabricação",m²,101.29,22.93,124.22
+05.106.000288.SER,"Forma para vigas com chapa compensada plastificada # 12 mm - montagem",m²,1.77,10.59,12.37
+05.106.000290.SER,"Forma para vigas com chapa compensada plastificada # 12 mm - desmontagem",m²,0,4.54,4.54
+05.106.000305.SER,"Forma para vigas com chapa compensada plastificada # 12 mm, pré fabricada - montagem",m²,1.77,10.59,12.37
+05.106.000307.SER,"Forma para vigas com chapa compensada plastificada # 12 mm, pré fabricada - desmontagem",m²,0,4.54,4.54
+05.106.000400.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 18 mm, travamento com barras de aço CA-50 Ø 6.3 mm e tensores, 6 reaproveitamentos",m²,62.64,21.96,84.60
+05.106.000402.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 18 mm, travamento com tirantes aço CA-50 Ø 6.3 mm e tensores - fabricação",m²,164.31,27.03,191.34
+05.106.000404.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 18 mm, travamento com tirantes aço CA-50 Ø 6.3 mm e tensores - montagem",m²,35.25,12.63,47.87
+05.106.000406.SER,"Forma para cortina de concreto ou parede estrutural em compensado plastificado # 18 mm, travamento com tirantes aço CA-50 Ø 6.3 mm e tensores - desmontagem",m²,0,4.83,4.83
+05.106.000500.SER,"Forma para lajes com tábuas e sarrafos",m²,72.96,41.24,114.20
+05.106.000501.SER,"Forma para lajes com tábuas e sarrafos, 3 reaproveitamentos",m²,25.55,23.65,49.21
+05.106.000503.SER,"Forma para lajes com tábuas e sarrafos, 5 reaproveitamentos",m²,16.07,20.14,36.21
+05.106.000505.SER,"Forma para lajes com tábuas e sarrafos, 8 reaproveitamentos",m²,11.19,18.32,29.51
+05.106.000507.SER,"Forma para lajes com tábuas e sarrafos - fabricação",m²,71.10,26.38,97.49
+05.106.000509.SER,"Forma para lajes com tábuas e sarrafos - montagem",m²,1.85,10.41,12.26
+05.106.000511.SER,"Forma para lajes com tábuas e sarrafos - desmontagem",m²,0,4.45,4.45
+05.106.000600.SER,"Forma para lajes com chapa compensada plastificada # 12 mm",m²,93.88,31.03,124.91
+05.106.000601.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, 3 reaproveitamentos",m²,33.72,15.74,49.45
+05.106.000603.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, 5 reaproveitamentos",m²,21.72,12.69,34.41
+05.106.000605.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, 8 reaproveitamentos",m²,14.96,10.97,25.92
+05.106.000607.SER,"Forma para lajes com chapa compensada plastificada # 12 mm - fabricação",m²,90.20,22.93,113.13
+05.106.000609.SER,"Forma para lajes com chapa compensada plastificada # 12 mm - montagem",m²,3.68,5.67,9.35
+05.106.000611.SER,"Forma para lajes com chapa compensada plastificada # 12 mm - desmontagem",m²,0,2.43,2.43
+05.106.000658.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada - montagem",m²,0.39,5.67,6.06
+05.106.000660.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada - desmontagem",m²,0,2.43,2.43
+05.106.000800.SER,"Forma para escadas com chapa compensada plastificada # 12 mm",m²,198.21,54.36,252.57
+05.106.000802.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, 3 reaproveitamentos",m²,68.66,39.06,107.73
+05.106.000804.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, 5 reaproveitamentos",m²,42.83,36.01,78.85
+05.106.000806.SER,"Forma para escadas com chapa compensada plastificada # 12 mm - fabricação",m²,194.22,22.93,217.15
+05.106.000808.SER,"Forma para escadas com chapa compensada plastificada # 12 mm - montagem",m²,3.99,21.98,25.97
+05.106.000810.SER,"Forma para escadas com chapa compensada plastificada # 12 mm - desmontagem",m²,0,9.45,9.45
+05.106.000838.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada - montagem",m²,3.99,21.98,25.97
+05.106.000840.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada - desmontagem",m²,0,9.45,9.45
+05.106.001000.SER,"Forma tipo caixão perdido com poliestireno expandido",m³,369.29,25.36,394.65
+05.106.001500.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada",m²,38.19,8.10,46.29
+05.106.001510.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada, 3 reaproveitamentos",m²,12.99,8.10,21.09
+05.106.001520.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada, 5 reaproveitamentos",m²,7.95,8.10,16.05
+05.106.001530.SER,"Forma para lajes com chapa compensada plastificada # 12 mm, pré fabricada, 8 reaproveitamentos",m²,5.11,8.10,13.21
+05.106.001540.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada",m²,41.79,31.43,73.21
+05.106.001550.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada, 3 reaproveitamentos",m²,16.59,31.43,48.01
+05.106.001560.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada, 5 reaproveitamentos",m²,11.55,31.43,42.97
+05.106.001570.SER,"Forma para escadas com chapa compensada plastificada # 12 mm, pré fabricada, 8 reaproveitamentos",m²,8.71,31.43,40.14
+05.106.001580.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, pré fabricada",m²,39.57,8.88,48.45
+05.106.001590.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, pré fabricada, 3 reaproveitamentos",m²,14.37,8.88,23.25
+05.106.001600.SER,"Forma para pilares com chapa compensada plastificada # 12 mm, pré fabricada, 5 reaproveitamentos",m²,9.33,8.88,18.21
+05.106.001610.SER,"Forma para vigas, com chapa compensada plastificada # 12 mm, pré fabricada",m²,39.57,15.13,54.71
+05.106.001620.SER,"Forma para vigas, com chapa compensada plastificada # 12 mm, pré fabricada, 3 reaproveitamentos",m²,14.37,15.13,29.51
+05.106.001630.SER,"Forma para vigas, com chapa compensada plastificada # 12 mm, pré fabricada, 5 reaproveitamentos",m²,9.33,15.13,24.47
+05.107,Lajes e painéis,m²,0,0.63,0.63
+05.107.000005.SER,"Laje pré-fabricada comum para forro, intereixo 38 cm, espessura da laje 10 cm, capeamento 2 cm, elemento de enchimento 8 cm",m²,63.35,44.21,107.56
+05.107.000010.SER,"Laje pré-fabricada comum para forro, intereixo 38 cm, espessura da laje 12 cm, capeamento 4 cm, elemento de enchimento 8 cm",m²,72.74,45.58,118.32
+05.107.000015.SER,"Laje pré-fabricada comum para forro, intereixo 38 cm, espessura da laje 16 cm, capeamento 4 cm, elemento de enchimento 12 cm",m²,87.97,50.22,138.19
+05.107.000020.SER,"Laje pré-fabricada treliçada para piso ou cobertura, intereixo 50 cm, espessura da laje 20 cm, capeamento 4 cm, elemento de enchimento 16 cm",m²,93.82,30.29,124.12
+05.107.000025.SER,"Laje pré-fabricada treliçada para piso ou cobertura, intereixo 50 cm, espessura da laje 25 cm, capeamento 5 cm, elemento de enchimento 20 cm",m²,109.96,31.63,141.59
+05.107.000030.SER,"Laje pré-fabricada treliçada para piso ou cobertura, intereixo 50 cm, espessura da laje 30 cm, capeamento 5 cm, elemento de enchimento 25 cm",m²,130.41,32.31,162.72
+05.107.000035.SER,"Laje pré-fabricada treliçada para piso ou cobertura, intereixo 50 cm, espessura da laje 35 cm, capeamento 5 cm, elemento de enchimento 30 cm",m²,146.97,34.56,181.53
+05.107.000040.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 13 cm, chapa # 0.80 mm",m²,83.80,24.55,108.35
+05.107.000045.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 20 cm, chapa # 0.80 mm",m²,102.97,28.03,131.01
+05.107.000050.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 20 cm, chapa # 0.95 mm",m²,112.07,28.90,140.97
+05.107.000055.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 20 cm, chapa # 1.25 mm",m²,129.14,30.34,159.49
+05.107.000060.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 13 cm, chapa # 0.95 mm",m²,92.90,25.41,118.31
+05.107.000065.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 13 cm, chapa # 1.25 mm",m²,109.97,26.86,136.83
+05.107.000070.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 15 cm, chapa # 0.80 mm",m²,89.38,25.34,114.72
+05.107.000075.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 15 cm, chapa # 0.95 mm",m²,98.48,26.21,124.68
+05.107.000080.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 15 cm, chapa # 1.25 mm",m²,115.55,26.77,142.31
+05.107.000085.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 18 cm, chapa # 0.80 mm",m²,97.53,24.55,122.08
+05.107.000090.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 18 cm, chapa # 0.95 mm",m²,106.63,27.63,134.27
+05.107.000095.SER,"Laje pré-fabricada steel deck para piso com capa de concreto C25 S50, espessura da laje 18 cm, chapa # 1.25 mm",m²,123.70,29.08,152.78
+05.107.000100.SER,"Laje nervurada moldada com forma de polipropileno 15 x 57 x 60 cm concreto C25 S50, espessura 20 cm, capeamento 5 cm",m²,25.62,30.90,56.52
+05.107.000105.SER,"Laje nervurada moldada com forma de polipropileno 40 x 72.5 x 80 cm concreto C25 S50, espessura 47.5 cm, capeamento 7.5 cm",m²,71.01,45.54,116.55
+05.107.000110.SER,"Laje nervurada moldada com forma de polipropileno 22.5 x 82.5 x 90 cm concreto C25 S50, espessura 32.5 cm, capeamento 10 cm",m²,52.75,39.76,92.51
+05.107.000115.SER,"Laje nervurada moldada com forma de polipropileno 32.5 x 82.5 x 90 cm concreto C25 S50, espessura 42.5 cm, capeamento 10 cm",m²,64.99,43.58,108.57
+05.107.000120.SER,"Laje nervurada moldada com forma de polipropileno 42.5 x 82.5 x 90 cm concreto C25 S50, espessura 52.5 cm, capeamento 10 cm",m²,80.07,48.43,128.51
+05.107.000125.SER,"Laje nervurada moldada com forma de polipropileno 18 x 57 x 60 cm concreto C25 S50, espessura 23 cm, capeamento 5 cm",m²,30.92,32.67,63.59
+05.107.000130.SER,"Laje nervurada moldada com forma de polipropileno com capa de concreto C25 S50, espessura 30 cm, 22.5 x 112.5 x 52.5 cm, capeamento 7.5 cm",m²,42.34,36.31,78.65
+05.107.000135.SER,"Laje nervurada moldada com forma de polipropileno 32.5 x 112.5 x 52.5 cm concreto C25 S50, espessura 40 cm, capeamento 7.5 cm",m²,60.55,42.28,102.82
+05.107.000140.SER,"Laje nervurada moldada com forma de polipropileno 42.5 x 112.5 x 52.5 cm concreto C25 S50, espessura 50 cm, capeamento 7.5 cm",m²,68.34,44.14,112.49
+05.107.000145.SER,"Laje nervurada moldada com forma de polipropileno 20 x 72.5 x 80 cm concreto C25 S50, espessura 27.5 cm, capeamento 7.5 cm",m²,40.56,35.75,76.31
+05.107.000150.SER,"Laje nervurada moldada com forma de polipropileno 25 x 72.5 x 80 cm concreto C25 S50, espessura 32.5 cm, capeamento 7.5 cm",m²,47.01,37.80,84.81
+05.107.000155.SER,"Laje nervurada moldada com forma de polipropileno 30 x 72.5 x 80 cm concreto C25 S50, espessura 37.5 cm, capeamento 7.5 cm",m²,53.74,39.95,93.68
+05.107.000160.SER,"Laje nervurada moldada com forma de polipropileno 35 x 72.5 x 80 cm concreto C25 S50, espessura 42.5 cm, capeamento 7.5 cm",m²,61.55,42.46,104.02
+05.107.000165.SER,"Painel protendido alveolar para piso ou cobertura, espessura do painel 10 cm, comprimento médio 4.2 m",m²,140.92,2.49,143.41
+05.107.000170.SER,"Painel protendido alveolar para piso ou cobertura, espessura do painel 15 cm, comprimento médio 6.3 m",m²,148.75,1.79,150.53
+05.107.000175.SER,"Painel protendido alveolar para piso ou cobertura, espessura do painel 20 cm, comprimento médio 7.85 m",m²,187.87,1.44,189.31
+05.107.000180.SER,"Painel protendido alveolar para piso ou cobertura, espessura do painel 25 cm, comprimento médio 10 m",m²,214.91,4.69,219.60
+05.107.000185.SER,"Painel cobertura de concreto celular autoclavado armado 7.5 x 40 x 280 cm",m²,51.29,2.35,53.64
+05.107.000190.SER,"Painel de laje de concreto celular autoclavado armado 10 x 40 x 280 cm",m²,65.15,2.46,67.61
+05.107.000195.SER,"Painel divisória de concreto celular autoclavado armado 7.5 x 40 x 280 cm",m²,86.29,2.94,89.23
+05.107.000200.SER,"Painel parede de concreto celular autoclavado armado 10 x 40 x 280 cm",m²,117.11,3.53,120.64
+05.107.000205.SER,"Pré-laje pré-fabricada treliçada para piso ou cobertura, largura 25 cm, espessura 8 cm, capeamento 3 cm",m²,77.56,35.41,112.97
+05.107.000210.SER,"Pré-laje pré-fabricada treliçada para piso ou cobertura, largura 25 cm, espessura 12 cm, capeamento 4 cm",m²,98.21,34.05,132.26
+05.107.000215.SER,"Pré-laje pré-fabricada treliçada para piso ou cobertura, largura 25 cm, espessura 20 cm, capeamento 4 cm",m²,128.17,28.11,156.27
+05.107.000220.SER,"Pré-laje pré-fabricada treliçada para piso ou cobertura, largura 25 cm, espessura 30 cm, capeamento 6 cm",m²,182.72,30.74,213.46
+05.108,"Reparo e reforço estrutural",m²,0,0.63,0.63
+05.108.000100.SER,"Aplicação de solvente em substrato impregnado",m²,19.28,4.30,23.58
+05.108.000200.SER,"Preparação do substrato para reparo em estrutura de concreto por apicoamento manual da superfície",m²,0,65.14,65.14
+05.108.000210.SER,"Preparação do substrato para reparo em estrutura de concreto por saturação com água",m²,8.97,2.61,11.58
+05.108.000250.SER,"Queima controlada para preparo do substrato para reparo estrutural",m²,1.03,22.37,23.40
+05.108.000260.SER,"Remoção de concreto com martelo rompedor até 5 cm de profundidade",m²,12.86,29.31,42.17
+05.108.000270.SER,"Escarificação manual, corte de concreto até 3 cm de profundidade",m²,0,130.27,130.27
+05.108.000280.SER,"Frezamento mecânico com máquinas de desbaste frezadora mecânica para preparo do substrato",m²,67.50,6.51,74.01
+05.108.000300.SER,"Escovamento manual do substrato",m²,2.53,4.30,6.83
+05.108.000350.SER,"Limpeza do substrato com aplicação de jato de água quente",m²,6.88,1.69,8.57
+05.108.000380.SER,"Jato de areia seca para limpeza do substrato",m²,50.33,11.80,62.13
+05.108.000400.SER,"Limpeza do substrato com lavagem à base de soluções ácidas em pisos ou paredes",m²,3.35,4.47,7.82
+05.108.000410.SER,"Limpeza do substrato com utilização de solventes voláteis",m²,7.19,3.26,10.45
+05.108.000420.SER,"Limpeza do substrato com jato de ar comprimido",m²,4.64,1.30,5.94
+05.108.000430.SER,"Lixamento elétrico da armadura com escova circular",m,9.15,1.63,10.78
+05.108.000440.SER,"Limpeza do substrato para remoção de óleos e graxas impregnados superficialmente",m²,19.28,3.26,22.54
+05.108.000450.SER,"Definição e demarcação da área de reparo de estruturas, utilizando disco de corte",m,1.10,2.61,3.71
+05.108.000600.SER,"Reparo superficial em estrutura com argamassa cimentícia fluída # 3 a 5 cm",m³,2662.00,519.82,3181.82
+05.108.000620.SER,"Reparo de juntas de movimentação em piso com argamassa base epóxi",m²,5.58,2.68,8.26
+05.108.000640.SER,"Reparo profundo em estrutura com argamassa cimentícia fluída",m³,2727.52,620.89,3348.42
+05.108.000660.SER,"Reparo profundo em estrutura com argamassa seca tipo dry pack isenta de retração",m³,3422.55,1162.99,4585.53
+05.108.000680.SER,"Limpeza do substrato com aplicação de jato de água fria",m²,4.83,1.43,6.26
+05.108.000700.SER,"Reparo estrutural em fissuras por injeção de resina base epóxi em fissuras com e=0.3 a 1 mm",m,93.00,44.62,137.62
+05.108.000720.SER,"Escarificação mecânica com disco de desbaste, corte de concreto até 0.5 cm de profundidade",m²,15.38,6.51,21.89
+05.108.000740.SER,"Escarificação mecânica com rebarbador elétrico, corte de concreto até 3.0 cm de profundidade",m²,13.65,32.57,46.22
+05.108.000760.SER,"Escarificação mecânica com rebarbador elétrico, corte de concreto até 5 cm de profundidade",m²,16.38,39.08,55.46
+05.109.000005.SER,"Corte em concreto de pisos e lajes, com discos diamantados, utilizando cortadora de piso espessura do corte 13 cm",m,32.80,0,32.80
+05.109.000010.SER,"Corte em concreto de pisos e lajes, com discos diamantados, utilizando cortadora de piso espessura do corte 20 cm",m,86.21,0,86.21
+05.109.000015.SER,"Corte em concreto de pisos e lajes, com discos diamantados, utilizando cortadora de piso espessura do corte 50 cm",m,329.38,0,329.38
+05.109.000020.SER,"Corte em concreto para paredes e muros, com disco diamantado espessura do corte até 68 cm",m²,1072.36,0,1072.36
+05.109.000025.SER,"Corte em concreto para estruturas, com fio diamantado",m²,2157.93,0,2157.93
+05.109.000030.SER,"Corte em concreto para passagem de tubulação Ø 15 a 25 mm, com ferramentas manuais",m,0,12.43,12.43
+05.109.000035.SER,"Corte em concreto para passagem de tubulação Ø 32 a 50 mm, com ferramentas manuais",m,0,19.37,19.37
+05.109.000040.SER,"Corte em concreto para passagem de tubulação Ø 65 a 100 mm, com ferramentas manuais",m,0,27.47,27.47
+05.109.000045.SER,"Enchimento de juntas de movimentação com elastômero à base de borracha de poliuretano com seção transversal 2x2 cm",dm³,289.45,6.53,295.98
+05.109.000050.SER,"Enchimento de rasgo em concreto com argamassa mista traço 1:4, para tubulação com Ø 15 mm - 1/2 a 25 mm",m,0.06,3.68,3.74
+05.109.000055.SER,"Enchimento de rasgo em concreto com argamassa mista traço 1:4, para tubulação com Ø 32 mm a 50 mm",m,0.13,5.12,5.26
+05.109.000060.SER,"Enchimento de rasgo em concreto com argamassa mista traço 1:4, para tubulação com Ø 65 mm a 100 mm",m,0.39,7.97,8.36
+05.109.000065.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 3/8 profundidade 15 cm",un,7.92,0,7.92
+05.109.000070.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 3/8 profundidade 5 cm",un,2.76,0,2.76
+05.109.000075.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1/2 profundidade 5 cm",un,3.35,0,3.35
+05.109.000080.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 5/8 profundidade 5 cm",un,3.81,0,3.81
+05.109.000085.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 3/4 profundidade 5 cm",un,4.37,0,4.37
+05.109.000090.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1/2 profundidade 15 cm",un,9.44,0,9.44
+05.109.000095.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 profundidade 5 cm",un,6.56,0,6.56
+05.109.000100.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 1/4 profundidade 5 cm",un,7.80,0,7.80
+05.109.000105.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 1/2 profundidade 5 cm",un,9.84,0,9.84
+05.109.000110.SER,"Furo em concreto com broca de widia, utilizando martele elétrico, Ø 3/8 profundidade 10 cm",un,6.02,0,6.02
+05.109.000115.SER,"Furo em concreto com broca de widia, utilizando martele elétrico, Ø 1/2 profundidade 10 cm",un,7.20,0,7.20
+05.109.000120.SER,"Furo em concreto com broca de widia, utilizando martele elétrico, Ø 5/8 profundidade 10 cm",un,7.46,0,7.46
+05.109.000125.SER,"Furo em concreto com broca de widia, utilizando martele elétrico, Ø 3/4 profundidade 10 cm",un,9.40,0,9.40
+05.109.000130.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 profundidade 10 cm",un,12.79,0,12.79
+05.109.000135.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 1/4 profundidade 10 cm",un,15.97,0,15.97
+05.109.000140.SER,"Furo em concreto com broca de widia, utilizando martele elétrico, Ø 1 1/2 profundidade 10 cm",un,17.97,0,17.97
+05.109.000145.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 5/8 profundidade 15 cm",un,10.44,0,10.44
+05.109.000150.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 3/4 profundidade 15 cm",un,13.83,0,13.83
+05.109.000155.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 profundidade 15 cm",un,19.24,0,19.24
+05.109.000160.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 1/4 profundidade 15 cm",un,24.24,0,24.24
+05.109.000165.SER,"Furo em concreto com broca de widia, utilizando martele elétrico Ø 1 1/2 profundidade 15 cm",un,18.00,0,18.00
+05.109.000170.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 2 a 2 1/4 profundidade 40 cm",un,119.68,0,119.68
+05.109.000175.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 3 a 3 1/4 profundidade 40 cm",un,136.89,0,136.89
+05.109.000180.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 4 a 4 1/4 profundidade 40 cm",un,147.94,0,147.94
+05.109.000185.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 5 a 5 1/4 profundidade 40 cm",un,175.23,0,175.23
+05.109.000190.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 6 a 6 1/4 profundidade 40 cm",un,187.10,0,187.10
+05.109.000195.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 8 a 8 1/4 profundidade 40 cm",un,255.30,0,255.30
+05.109.000200.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 3/8 a 3/4 profundidade 40 cm",un,133.15,0,133.15
+05.109.000205.SER,"Furo em concreto com coroas diamantadas, utilizando perfuratriz elétrica Ø 7/8 a 1 3/4 profundidade 40 cm",un,104.89,0,104.89
+06,"06. Alvenarias, fechamentos e divisórias",m²,0,0.63,0.63
+06.101,"Alvenarias",m²,0,0.63,0.63
+06.101.000005.SER,"Alvenaria estrutural com blocos cerâmicos, 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:0.2:5.4",m²,57.23,20.53,77.75
+06.101.000010.SER,"Alvenaria estrutural com blocos cerâmicos, 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:0.2:5.4",m²,58.51,22.24,80.76
+06.101.000015.SER,"Alvenaria estrutural com blocos cerâmicos, 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa industrializada",m²,120.83,18.01,138.85
+06.101.000020.SER,"Alvenaria estrutural com blocos cerâmicos, 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa industrializada",m²,131.18,19.17,150.34
+06.101.000025.SER,"Alvenaria estrutural com blocos de concreto 14 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.25:3",m²,48.22,23.41,71.63
+06.101.000030.SER,"Alvenaria estrutural com blocos de concreto 19 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.25:3",m²,63.43,23.97,87.40
+06.101.000035.SER,"Alvenaria estrutural com blocos de concreto 14 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 14 cm, juntas com 10 mm, com argamassa industrializada",m²,109.43,20.90,130.32
+06.101.000040.SER,"Alvenaria estrutural com blocos de concreto 19 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 19 cm, juntas com 10 mm, com argamassa industrializada",m²,147.60,20.90,168.49
+06.101.000045.SER,"Alvenaria estrutural com bloco de concreto celular, 20 x 30 x 60 cm, espessura da parede 20 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,118.27,10.80,129.07
+06.101.000050.SER,"Alvenaria estrutural com bloco sílico-calcário, 11.5 x 11.3 x 24 cm, espessura da parede 11.5 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,57.23,26.98,84.21
+06.101.000055.SER,"Alvenaria estrutural com bloco sílico-calcário, 14 x 11.3 x 24 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,55.93,27.52,83.45
+06.101.000060.SER,"Alvenaria estrutural com bloco sílico-calcário, 17.5 x 11.3 x 24 cm, espessura da parede 17.5 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,63.89,28.26,92.15
+06.101.000065.SER,"Alvenaria estrutural com blocos sílico-calcário, 11.5 x 11.3 x 24 cm, espessura da parede 11.5 cm, juntas de 10 mm com argamassa industrializada",m²,130.59,24.55,155.14
+06.101.000070.SER,"Alvenaria estrutural com blocos sílico-calcário, 14 x 11.3 x 24 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa industrializada",m²,153.20,24.55,177.75
+06.101.000075.SER,"Alvenaria estrutural com blocos sílico-calcário, 17.5 x 11.3 x 24 cm, espessura da parede 17.5 cm, juntas de 10 mm com argamassa industrializada",m²,185.69,24.55,210.24
+06.101.000080.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 6 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,28.47,26.08,54.55
+06.101.000085.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,41.46,41.55,83.01
+06.101.000090.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,84.25,73.77,158.02
+06.101.000095.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 29 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,126.99,94.41,221.40
+06.101.000100.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 6 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,27.41,26.32,53.72
+06.101.000105.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,40.18,41.55,81.73
+06.101.000110.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,81.53,73.77,155.30
+06.101.000115.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 29 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,122.84,94.41,217.25
+06.101.000120.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,41.56,41.18,82.74
+06.101.000125.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 6 cm, juntas de 10 mm com argamassa industrializada",m²,100.76,22.77,123.53
+06.101.000130.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa industrializada",m²,155.99,35.95,191.94
+06.101.000135.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa industrializada",m²,326.03,61.94,387.97
+06.101.000140.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 29 cm, juntas de 10 mm com argamassa industrializada",m²,495.72,76.38,572.10
+06.101.000145.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,84.47,72.98,157.45
+06.101.000150.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 29 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,127.32,93.21,220.53
+06.101.000155.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 6 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,29.95,26.32,56.26
+06.101.000160.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,44.19,41.55,85.74
+06.101.000165.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,90.01,73.77,163.77
+06.101.000170.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 29 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,135.76,94.41,230.17
+06.101.000175.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 6 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,28.22,26.32,54.54
+06.101.000180.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,25.11,16.77,41.89
+06.101.000185.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 39 cm furos verticais, espessura da parede 9 cm, juntas de 10 mm, assentado com argamassa mista de cimento, cal e areia traço 1:2:8",m²,27.31,18.77,46.08
+06.101.000190.SER,"Alvenaria de vedação com blocos cerâmicos furados 14 x 19 x 39 cm furos verticais, espessura da parede 14 cm, juntas de 10 mm, assentado com argamassa mista de cimento, cal e areia traço 1:2:8",m²,31.50,20.53,52.02
+06.101.000195.SER,"Alvenaria de vedação com blocos cerâmicos furados 19 x 19 x 39 cm furos verticais, espessura da parede 19 cm, juntas de 10 mm, assentado com argamassa mista de cimento, cal e areia traço 1:2:8",m²,50.42,22.24,72.66
+06.101.000200.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa industrializada",m²,49.55,26.68,76.22
+06.101.000205.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4",m²,50.64,33.07,83.72
+06.101.000210.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa industrializada",m²,154.83,41.11,195.95
+06.101.000215.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 39 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa industrializada",m²,65.53,16.86,82.39
+06.101.000220.SER,"Alvenaria de vedação com blocos cerâmicos furados 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa industrializada",m²,81.68,18.01,99.69
+06.101.000225.SER,"Alvenaria de vedação com blocos cerâmicos furados 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa industrializada",m²,111.78,19.17,130.94
+06.101.000230.SER,"Alvenaria de vedação com blocos cerâmicos canaleta, 9 x 19 x 39 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,32.23,17.50,49.74
+06.101.000235.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,25.95,16.89,42.85
+06.101.000240.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,52.42,33.33,85.74
+06.101.000245.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,25.08,16.89,41.97
+06.101.000250.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m²,50.57,33.33,83.90
+06.101.000255.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,24.67,16.89,41.56
+06.101.000260.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7",m²,49.70,33.33,83.03
+06.101.000265.SER,"Alvenaria de vedação com tijolo cerâmico laminados 5.5 x 11 x 23.5 cm, espessura da parede 11 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,126.38,78.59,204.97
+06.101.000270.SER,"Alvenaria de vedação com tijolo cerâmico laminados 5.5 x 11 x 23.5 cm, espessura da parede 23.5 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:1:6",m²,262.70,110.00,372.70
+06.101.000275.SER,"Alvenaria de vedação com tijolo cerâmico laminados 5.5 x 11 x 23.5 cm, espessura da parede 23.5 cm, juntas de 10 mm com argamassa industrializada",m²,531.53,101.08,632.61
+06.101.000280.SER,"Alvenaria de vedação com tijolo cerâmico laminados 5.5 x 11 x 23.5 cm, espessura da parede 11 cm, juntas de 10 mm com argamassa industrializada",m²,231.96,75.08,307.05
+06.101.000285.SER,"Alvenaria com blocos de concreto 6,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6,5 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0,5:8",m²,27.62,13.84,41.46
+06.101.000290.SER,"Alvenaria com blocos de concreto 11,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11,5 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0,5:8",m²,35.14,19.31,54.44
+06.101.000295.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0,5:8",m²,37.20,20.53,57.73
+06.101.000300.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0,5:8",m²,52.64,21.09,73.72
+06.101.000305.SER,"Alvenaria com blocos de concreto 11,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11,5 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5,5",m²,34.67,19.31,53.97
+06.101.000310.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5,5",m²,36.72,20.53,57.24
+06.101.000315.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5,5",m²,52.05,21.09,73.13
+06.101.000320.SER,"Alvenaria com blocos de concreto 11,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11,5 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4",m²,34.51,19.31,53.81
+06.101.000325.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4",m²,36.56,20.53,57.08
+06.101.000330.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4",m²,51.85,21.09,72.93
+06.101.000335.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0,5:8",m²,31.73,18.77,50.50
+06.101.000340.SER,"Alvenaria com blocos de concreto 6,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6,5 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5,5",m²,27.35,18.28,45.63
+06.101.000345.SER,"Alvenaria com blocos de concreto 6,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6,5 cm, juntas com 10 mm, com argamassa industrializada",m²,56.88,16.86,73.74
+06.101.000350.SER,"Alvenaria com blocos de concreto 11,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11,5 cm, juntas com 10 mm, com argamassa industrializada",m²,85.34,16.86,102.20
+06.101.000355.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa industrializada",m²,88.80,18.01,106.81
+06.101.000360.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa industrializada",m²,115.73,19.17,134.90
+06.101.000365.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa industrializada",m²,71.03,16.86,87.88
+06.101.000370.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5,5",m²,31.36,18.77,50.13
+06.101.000375.SER,"Alvenaria com blocos de concreto 6,5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6,5 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4",m²,27.26,18.28,45.54
+06.101.000380.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, assentados com argamassa mista de cimento, arenoso e areia traço 1:4:4",m²,31.23,18.77,50.01
+06.101.000415.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 10 x 30 x 60 cm, espessura da parede 10 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:9",m²,47.87,10.05,57.93  
+06.101.000420.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 15 x 30 x 60 cm, espessura da parede 15 cm, juntas de 10 mm com argamassa industrializada",m²,77.79,9.24,87.03  
+06.101.000425.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 20 x 30 x 60 cm, espessura da parede 20 cm, juntas de 10 mm com argamassa industrializada",m²,103.66,9.24,112.90  
+06.101.000430.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 7,5 x 30 x 60 cm, espessura da parede 7,5 cm, juntas de 10 mm com argamassa industrializada",m²,33.95,9.24,43.19  
+06.101.000435.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 7,5 x 30 x 60 cm, espessura da parede 7,5 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:9",m²,32.26,9.85,42.11  
+06.101.000440.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 12,5 x 30 x 60 cm, espessura da parede 12,5 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:9",m²,58.55,10.26,68.81  
+06.101.000445.SER,"Alvenaria de vedação com bloco de concreto celular autoclavado, 15 x 30 x 60 cm, espessura da parede 15 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:9",m²,74.40,10.47,84.87  
+06.101.000450.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 20 x 30 x 60 cm, espessura da parede 20 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:9",m²,99.15,10.87,110.02  
+06.101.000455.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 12,5 x 30 x 60 cm, espessura da parede 12,5 cm, juntas de 10 mm com argamassa industrializada",m²,61.37,9.24,70.61  
+06.101.000460.SER,"Alvenaria de vedação com blocos de concreto celular autoclavado, 10 x 30 x 60 cm, espessura da parede 10 cm, juntas de 10 mm com argamassa industrializada",m²,50.13,9.24,59.37  
+06.101.000465.SER,"Elemento vazado de concreto 6 x 29 x 29 cm, espessura da parede 6 cm, juntas de 15 mm com argamassa de cimento e areia traço 1:3",m²,130.54,53.42,183.96  
+06.101.000470.SER,"Elemento vazado de concreto 9 x 29 x 29 cm, espessura da parede 9 cm, juntas de 15 mm com argamassa industrializada",m²,163.37,52.66,216.03  
+06.101.000475.SER,"Elemento vazado de concreto 8 x 40 x 50 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa de cimento e areia traço 1:3",m²,140.40,43.52,183.92  
+06.101.000480.SER,"Elemento vazado de concreto 8 x 45 x 60 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa de cimento e areia traço 1:3",m²,244.48,32.44,276.92  
+06.101.000485.SER,"Elemento vazado de concreto 8 x 50 x 50 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa de cimento e areia traço 1:3",m²,180.48,34.82,215.30  
+06.101.000490.SER,"Elemento vazado de concreto 9 x 29 x 29 cm, espessura da parede 9 cm, juntas de 15 mm com argamassa de cimento e areia traço 1:3",m²,147.63,53.79,201.42  
+06.101.000495.SER,"Elemento vazado de concreto 8 x 50 x 50 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa industrializada",m²,189.19,34.20,223.38  
+06.101.000500.SER,"Elemento vazado de concreto 8 x 40 x 50 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa industrializada",m²,148.71,42.83,191.54  
+06.101.000505.SER,"Elemento vazado de concreto 8 x 45 x 60 cm, espessura da parede 8 cm, juntas de 15 mm com argamassa industrializada",m²,251.46,31.83,283.29  
+06.101.000510.SER,"Elemento vazado de concreto 6 x 29 x 29 cm, espessura da parede 6 cm, juntas de 15 mm com argamassa industrializada",m²,141.23,52.66,193.88  
+06.101.000515.SER,"Alvenaria de vedação com blocos de gesso, 7.5 x 50 x 67 cm, espessura da parede 7.5 cm",m²,80.30,5.12,85.42
+06.101.000520.SER,"Alvenaria de vedação com blocos de gesso, 10 x 50 x 50 cm, espessura da parede 10 cm",m²,153.98,5.92,159.89
+06.101.000525.SER,"Alvenaria de vedação com blocos sílico-calcário 9 x 19 x 39 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,31.43,17.58,49.00
+06.101.000530.SER,"Alvenaria de vedação com blocos sílico-calcário 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,43.25,19.94,63.19
+06.101.000535.SER,"Alvenaria de vedação com blocos sílico-calcário 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8",m²,55.46,20.56,76.03
+06.101.000540.SER,"Alvenaria de vedação com blocos sílico-calcário 9 x 19 x 39 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa industrializada",m²,64.91,16.46,81.37
+06.101.000545.SER,"Alvenaria de vedação com blocos sílico-calcário 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa industrializada",m²,95.66,18.19,113.85
+06.101.000550.SER,"Alvenaria de vedação com blocos sílico-calcário 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa industrializada",m²,126.80,18.19,144.99
+06.101.000555.SER,"Alvenaria estrutural com blocos cerâmicos, 14 x 19 x 39 cm, espessura da parede 14 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:0.2:5.4 - com mão de obra empreitada",m²,79.06,2.51,81.57
+06.101.000560.SER,"Alvenaria estrutural com blocos cerâmicos, 19 x 19 x 39 cm, espessura da parede 19 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:0.2:5.4 - com mão de obra empreitada",m²,101.40,3.07,104.48
+06.101.000565.SER,"Alvenaria estrutural com blocos de concreto 14 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.25:3 - com mão de obra empreitada",m²,84.28,2.51,86.79
+06.101.000570.SER,"Alvenaria estrutural com blocos de concreto 19 x 19 x 39 cm, classe B (4 MPa ≤ resistência < 8 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.25:3 - com mão de obra empreitada",m²,106.32,3.07,109.39
+06.101.000575.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cal hidratada e areia traço 1:4 - com mão de obra empreitada",m²,65.16,0,65.16
+06.101.000580.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:3:7 - com mão de obra empreitada",m²,64.32,0,64.32
+06.101.000585.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, cal e areia traço 1:2:8 - com mão de obra empreitada",m²,66.75,0,66.75
+06.101.000590.SER,"Alvenaria de vedação com tijolos maciços cerâmicos 6 x 9 x 19 cm, espessura da parede 9 cm, juntas de 10 mm com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5 - com mão de obra empreitada",m²,65.10,0,65.10
+06.101.000595.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas 10 mm, assentado com argamassa mista de cimento, arenoso e areia traço 1:3:7 - com mão de obra empreitada",m²,55.17,1.80,56.96
+06.101.000600.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm, assentado com argamassa mista de cimento, cal e areia traço 1:2:8 - com mão de obra empreitada",m²,56.45,1.80,58.25
+06.101.000605.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm, assentado com argamassa mista de cimento, saibro e areia traço 1:0.5:2.5 - com mão de obra empreitada",m²,55.58,1.80,57.38
+06.101.000610.SER,"Alvenaria de vedação com blocos cerâmicos furados 9 x 19 x 19 cm furos horizontais, espessura da parede 9 cm, juntas de 10 mm, assentado com argamassa mista de cal hidratada e areia traço 1:4 - com mão de obra empreitada",m²,55.61,1.68,57.29
+06.101.000615.SER,"Alvenaria de vedação com blocos de concreto, 11.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), espessura da parede 11.5 cm, juntas de 10 mm com argamassa mista de cimento, arenoso e areia traço 1:4:4 - com mão de obra empreitada",m²,64.12,2.45,66.57
+06.101.000620.SER,"Alvenaria com blocos de concreto 11.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11.5 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.5:8 - com mão de obra empreitada",m²,64.75,2.45,67.20
+06.101.000625.SER,"Alvenaria com blocos de concreto 11.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 11.5 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5.5 - com mão de obra empreitada",m²,64.28,2.45,66.73
+06.101.000630.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4 - com mão de obra empreitada",m²,72.85,2.51,75.36
+06.101.000635.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.5:8 - com mão de obra empreitada",m²,71.20,1.39,72.59
+06.101.000640.SER,"Alvenaria com blocos de concreto 14 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 14 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5.5 - com mão de obra empreitada",m²,73.01,2.51,75.52
+06.101.000645.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4 - com mão de obra empreitada",m²,92.09,3.07,95.16
+06.101.000650.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.5:8 - com mão de obra empreitada",m²,92.88,3.07,95.95
+06.101.000655.SER,"Alvenaria com blocos de concreto 19 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 19 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5.5 - com mão de obra empreitada",m²,92.29,3.07,95.36
+06.101.000660.SER,"Alvenaria com blocos de concreto 6.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6.5 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4 - com mão de obra empreitada",m²,55.57,1.42,56.99
+06.101.000665.SER,"Alvenaria com blocos de concreto 6.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6.5 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.5:8 - com mão de obra empreitada",m²,55.93,1.42,57.35
+06.101.000670.SER,"Alvenaria com blocos de concreto 6.5 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 6.5 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5.5 - com mão de obra empreitada",m²,55.66,1.42,57.08
+06.101.000675.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa mista de cimento, arenoso e areia traço 1:4:4 - com mão de obra empreitada",m²,63.50,1.92,65.42
+06.101.000680.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa mista de cimento, cal e areia traço 1:0.5:8 - com mão de obra empreitada",m²,64.00,1.92,65.91
+06.101.000685.SER,"Alvenaria com blocos de concreto 9 x 19 x 39 cm, classe C (resistência ≥ 3 MPa), parede # 9 cm, juntas com 10 mm, com argamassa mista de cimento, saibro e areia traço 1:1:5.5 - com mão de obra empreitada",m²,63.63,1.92,65.54
+06.101.000900.SER,"Parede autoportante de concreto armado com fôrma termoacústica em blocos de EPS 60 x 120 x 23 cm",m²,39.38,12.23,51.61
+06.102,Fechamentos,m²,0,0.63,0.63
+06.102.000005.SER,"Divisória estruturada em perfil de alumínio duplo, com painel em laminado melamínico colméia # 35mm",m²,83.82,0,83.82
+06.102.000010.SER,"Divisória estruturada em perfil de alumínio duplo, com painel em laminado melamínico miolo maciço semi-acústico e incombustível # 35mm",m²,144.79,0,144.79
+06.102.000015.SER,"Divisória estruturada em perfil de aço duplo, com painel em laminado melamínico e miolo maciço semi-acústico e incombustível # 35mm",m²,134.01,0,134.01
+06.102.000020.SER,"Divisória estruturada em perfil de aço duplo, com painel em laminado melamínico miolo colméia # 35mm",m²,63.60,0,63.60
+06.102.000025.SER,"Divisória sanitária de granilite e=3 cm",m²,340.00,0,340.00
+06.102.000030.SER,"Divisória sanitária de mármore e=3 cm assentada com argamassa 1:3",m²,397.93,100.61,498.55
+06.102.000035.SER,"Divisória sanitária de granito e=3 cm assentada com argamassa 1:3",m²,456.68,100.61,557.30
+06.102.000040.SER,"Parede de gesso acartonado simples interna, espessura final 100 mm, pé-direito máximo 3.15 m",m²,107.05,0,107.05
+06.102.000045.SER,"Parede de gesso acartonado dupla interna, espessura final 125 mm, pé-direito máximo 3.75 m",m²,157.48,0,157.48
+06.102.000050.SER,"Parede de gesso acartonado para parede interna em local úmido, espessura final 100 mm, pé-direito máximo 3.15 m",m²,115.14,0,115.14
+06.102.000055.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente seco, espaçamento entre os perfis verticais de 60 cm - pavimento de cobertura",m²,70.11,9.23,79.34
+06.102.000060.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente seco, espaçamento entre os perfis verticais de 40 cm - pavimento intermediário",m²,89.44,9.23,98.66
+06.102.000065.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente seco, espaçamento entre os perfis verticais de 40 cm - pavimento térreo",m²,106.36,9.23,115.59
+06.102.000070.SER,"Steel frame para parede interna, fechamento em gesso acartonado entre ambientes secos e úmidos, espaçamento entre os perfis verticais de 60 cm - pavimento de cobertura",m²,87.09,9.23,96.32
+06.102.000075.SER,"Steel frame para parede interna, fechamento em gesso acartonado entre ambientes secos e úmidos, espaçamento entre os perfis verticais de 40 cm - pavimento intermediário",m²,111.52,9.23,120.75
+06.102.000080.SER,"Steel frame para parede interna, fechamento em gesso acartonado entre ambientes secos e úmidos, espaçamento entre os perfis verticais de 40 cm - pavimento térreo",m²,133.33,9.23,142.56
+06.102.000085.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente úmido, espaçamento entre os perfis verticais de 60 cm - pavimento de cobertura",m²,86.76,9.23,95.98
+06.102.000090.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente úmido, espaçamento entre os perfis verticais de 40 cm - pavimento intermediário",m²,98.20,9.23,107.43
+06.102.000095.SER,"Steel frame para parede interna, fechamento em gesso acartonado para ambiente úmido, espaçamento entre os perfis verticais de 40 cm - pavimento térreo",m²,98.20,9.23,107.43
+06.103,Serviços relacionados,m²,0,0.63,0.63
+06.103.000005.SER,"Preparo de areia para argamassa - areia média - secagem e peneiramento",m³,149.96,31.27,181.23
+06.103.000010.SER,"Preparo de areia para argamassas-areia fina - secagem e peneiramento",m³,191.74,31.27,223.00
+06.103.000015.SER,"Argamassa de cal hidratada e areia peneirada traço 1:2",m³,337.32,133.45,470.77
+06.103.000020.SER,"Argamassa de cal hidratada e areia peneirada traço 1:3",m³,271.44,133.45,404.89
+06.103.000025.SER,"Argamassa de cal hidratada e areia peneirada traço 1:4.5, com betoneira",m³,228.11,95.75,323.86
+06.103.000030.SER,"Argamassa de cal hidratada e areia traço 1:2",m³,349.56,104.22,453.78
+06.103.000035.SER,"Argamassa de cal hidratada e areia traço 1:3",m³,283.68,104.22,387.90
+06.103.000040.SER,"Argamassa de cal hidratada e areia traço 1:4",m³,250.74,104.22,354.96
+"06.103.000045.SER","Argamassa de cal hidratada e areia traço 1:4.5",m³,239.94,104.22,344.16
+"06.103.000050.SER","Argamassa de cal hidratada e areia traço 1:6",m³,218.34,104.22,322.56
+"06.103.000055.SER","Argamassa de cal hidratada e areia traço 1:4.5, com betoneira",m³,240.36,66.52,306.87
+"06.103.000060.SER","Argamassa de cimento branco e pó de mármore traço 1:3",m³,608.29,104.22,712.51
+"06.103.000065.SER","Argamassa de cimento e areia peneirada traço 1:2",m³,438.64,156.04,594.68
+"06.103.000070.SER","Argamassa de cimento e areia peneirada traço 1:3",m³,378.36,159.51,537.86
+"06.103.000075.SER","Argamassa de cimento e areia peneirada traço 1:4",m³,319.07,159.51,478.57
+"06.103.000080.SER","Argamassa de cimento e areia peneirada traço 1:1.5, com aditivo impermeabilizante",m³,696.69,152.94,849.63
+"06.103.000085.SER","Argamassa de cimento e areia peneirada traço 1:4, com aditivo impermeabilizante",m³,538.07,159.51,697.57
+"06.103.000090.SER","Argamassa de cimento e areia traço 1:2, com aditivo impermeabilizante",m³,667.79,130.27,798.06
+"06.103.000095.SER","Argamassa de cimento e areia traço 1:3, com aditivo impermeabilizante",m³,609.60,130.27,739.88
+"06.103.000100.SER","Argamassa de cimento e areia traço 1:4, com aditivo impermeabilizante",m³,550.31,130.27,680.59
+"06.103.000105.SER","Argamassa de cimento e areia traço 1:5, com aditivo impermeabilizante",m³,514.54,130.27,644.82
+"06.103.000110.SER","Argamassa de cimento e areia traço 1:1",m³,541.86,130.27,672.13
+"06.103.000115.SER","Argamassa de cimento e areia traço 1:1.5",m³,486.69,130.27,616.96
+"06.103.000120.SER","Argamassa de cimento e areia traço 1:2",m³,448.79,130.27,579.06
+"06.103.000125.SER","Argamassa de cimento e areia traço 1:2.5",m³,421.59,130.27,551.87
+"06.103.000130.SER","Argamassa de cimento e areia traço 1:3",m³,390.60,130.27,520.88
+"06.103.000135.SER","Argamassa de cimento e areia traço 1:4",m³,331.31,130.27,461.59
+"06.103.000140.SER","Argamassa de cimento e areia traço 1:5",m³,295.54,130.27,425.82
+"06.103.000145.SER","Argamassa de cimento e areia traço 1:6",m³,271.53,130.27,401.81
+"06.103.000150.SER","Argamassa de cimento e areia traço 1:7",m³,254.38,130.27,384.66
+"06.103.000155.SER","Argamassa de cimento e pedrisco traço 1:4",m³,306.99,104.22,411.21
+"06.103.000160.SER","Argamassa de cimento e saibro traço 1:8",m³,146.98,130.27,277.25
+06.103.000165.SER,"Argamassa de cimento, areia fina peneirada e aditivo aglutinante traço 1:8",m³,273.00,159.51,432.50
+06.103.000170.SER,"Argamassa de cimento, areia média peneirada e aditivo aglutinante traço 1:8",m³,233.94,159.51,393.45
+06.103.000175.SER,"Argamassa mista de cal hidratada e areia traço 1:3, com adição de 100 kg de cimento",m³,309.14,121.62,430.76
+06.103.000180.SER,"Argamassa mista de cal hidratada e areia traço 1:4, com adição de 100 kg de cimento",m³,278.93,121.62,400.55
+06.103.000185.SER,"Argamassa mista de cal hidratada e areia traço 1:4, com adição de 130 kg de cimento",m³,287.36,119.02,406.38
+06.103.000190.SER,"Argamassa mista de cal hidratada e areia traço 1:4, com adição de 150 kg de cimento",m³,292.90,117.25,410.15
+06.103.000195.SER,"Argamassa mista de cimento, arenoso e areia traço 1:2:4",m³,288.68,130.27,418.96
+06.103.000200.SER,"Argamassa mista de cimento, arenoso e areia traço 1:2:6",m³,269.69,130.27,399.97
+06.103.000205.SER,"Argamassa mista de cimento, arenoso e areia traço 1:2,5:3,5",m³,275.87,130.27,406.15
+06.103.000210.SER,"Argamassa mista de cimento, arenoso e areia traço 1:3:3",m³,264.16,130.27,394.43
+06.103.000215.SER,"Argamassa mista de cimento, arenoso e areia traço 1:3:5",m³,251.07,130.27,381.34
+06.103.000220.SER,"Argamassa mista de cimento, arenoso e areia traço 1:3:7",m³,246.62,130.27,376.90
+06.103.000225.SER,"Argamassa mista de cimento, arenoso e areia traço 1:3,5:2,5",m³,252.44,130.27,382.71
+06.103.000230.SER,"Argamassa mista de cimento, arenoso e areia traço 1:4:2",m³,240.41,130.27,370.69
+06.103.000235.SER,"Argamassa mista de cimento, arenoso e areia traço 1:4:4",m³,232.98,130.27,363.25
+06.103.000240.SER,"Argamassa mista de cimento, arenoso e areia traço 1:4:6",m³,231.32,130.27,361.59
+06.103.000245.SER,"Argamassa mista de cimento, arenoso e areia traço 1:4:8",m³,228.77,130.27,359.04
+06.103.000250.SER,"Argamassa mista de cimento, arenoso e areia traço 1:5:3",m³,214.89,130.27,345.16
+06.103.000255.SER,"Argamassa mista de cimento, arenoso e areia traço 1:5:5",m³,216.51,130.27,346.78
+06.103.000260.SER,"Argamassa mista de cimento, arenoso e areia traço 1:5:7",m³,215.83,130.27,346.11
+06.103.000265.SER,"Argamassa mista de cimento, arenoso e areia traço 1:6:2",m³,197.05,130.27,327.32
+06.103.000270.SER,"Argamassa mista de cimento, arenoso e areia traço 1:6:4",m³,201.70,130.27,331.97
+06.103.000275.SER,"Argamassa mista de cimento, arenoso e areia traço 1:6:6",m³,203.37,130.27,333.64
+06.103.000280.SER,"Argamassa mista de cimento, arenoso e areia traço 1:7:3",m³,187.01,130.27,317.29
+06.103.000285.SER,"Argamassa mista de cimento, arenoso e areia traço 1:7:5",m³,190.90,130.27,321.17
+06.103.000290.SER,"Argamassa mista de cimento, arenoso e areia traço 1:8:4",m³,178.44,130.27,308.71
+06.103.000295.SER,"Argamassa mista de cimento, cal e areia peneirada traço 1:1:6",m³,325.17,159.51,484.67
+06.103.000300.SER,"Argamassa mista de cimento, cal e areia peneirada traço 1:2:8",m³,327.68,159.51,487.18
+06.103.000305.SER,"Argamassa mista de cimento, cal e areia traço 1:0.2:5.4",m³,299.34,130.27,429.62
+06.103.000310.SER,"Argamassa mista de cimento, cal e areia traço 1:0.25:3",m³,423.54,130.27,553.82
+06.103.000315.SER,"Argamassa mista de cimento, cal e areia traço 1:0.5:5",m³,334.96,130.27,465.24
+06.103.000320.SER,"Argamassa mista de cimento, cal e areia traço 1:0.5:8",m³,266.48,130.27,396.76
+06.103.000325.SER,"Argamassa mista de cimento, cal e areia traço 1:1:4",m³,429.59,130.27,559.87
+06.103.000330.SER,"Argamassa mista de cimento, cal e areia traço 1:1:6",m³,337.41,130.27,467.69
+06.103.000335.SER,"Argamassa mista de cimento, cal e areia traço 1:1.2:4.2",m³,434.81,130.27,565.09
+06.103.000340.SER,"Argamassa mista de cimento, cal e areia traço 1:2:6",m³,402.75,130.27,533.03
+06.103.000345.SER,"Argamassa mista de cimento, cal e areia traço 1:2:8",m³,339.92,130.27,470.20
+06.103.000350.SER,"Argamassa mista de cimento, cal e areia traço 1:2:9",m³,319.32,130.27,449.60
+06.103.000355.SER,"Argamassa mista de cimento, cal e areia traço 1:2:11",m³,289.45,130.27,419.73
+06.103.000360.SER,"Argamassa mista de cimento, cal e areia traço 1:3:10",m³,342.26,130.27,472.54
+06.103.000365.SER,"Argamassa mista de cimento, cal e areia traço 1:2:11, com betoneira",m³,289.87,82.15,372.02
+06.103.000370.SER,"Argamassa mista de cimento, cal e areia peneirada traço 1:3:9",m³,350.82,159.51,510.32
+06.103.000375.SER,"Argamassa mista de cimento, saibro e areia traço 1:0.5:2.5",m³,276.57,130.27,406.84
+06.103.000380.SER,"Argamassa mista de cimento, saibro e areia traço 1:1:5.5",m³,241.45,130.27,371.72
+06.103.000385.SER,"Argamassa mista de cimento, saibro e areia traço 1:2:2",m³,244.87,130.27,375.14
+06.103.000390.SER,"Argamassa mista de cimento, saibro e areia traço 1:3:2",m³,230.61,130.27,360.88
+06.103.000395.SER,"Argamassa mista de cimento, saibro e areia traço 1:3:3",m³,203.03,130.27,333.30
+06.103.000400.SER,"Argamassa mista de cimento, saibro e areia traço 1:4:5",m³,229.67,130.27,359.94
+06.103.000405.SER,"Argamassa mista de cimento, saibro e areia traço 1:4:6",m³,231.73,130.27,362.00
+06.103.000410.SER,"Argamassa mista de cimento, saibro e areia traço 1:5:5",m³,215.36,130.27,345.63
+06.103.000415.SER,"Argamassa mista de gesso, cal hidratada e areia peneirada traço 0.2:1:3",m³,319.70,159.51,479.20
+06.103.000420.SER,"Encunhamento de alvenaria com tijolo maciço cerâmico, 6 x 9 x 19 cm, espessura da parede 6 cm, assentados com argamassa de cimento e areia 1:3",m,2.81,3.50,6.30
+06.103.000425.SER,"Encunhamento de alvenaria com tijolo maciço cerâmico, 6 x 9 x 19 cm, espessura da parede 19 cm, assentados com argamassa de cimento e areia 1:3",m,5.62,5.63,11.25
+06.103.000430.SER,"Execução de rasgo em alvenaria para passagem de tubulação Ø 15 mm - 1/2 a 25 mm - 1",m,0,4.84,4.84
+06.103.000435.SER,"Execução de rasgo em alvenaria para passagem de tubulação Ø 32 mm - 1 ¼ a 50 mm - 2",m,0,7.59,7.59
+06.103.000440.SER,"Execução de rasgo em alvenaria para passagem de tubulação Ø 65 mm - 2 ½ a 100 mm - 4",m,0,10.99,10.99
+06.103.000445.SER,"Enchimento de rasgo em concreto com argamassa mista traço 1:4, com adição de 150 kg de cimento com Ø 15 mm a 25 mm",m,0.18,3.75,3.93
+06.103.000450.SER,"Enchimento de rasgo em alvenaria com argamassa mista de cal hidratada e areia traço 1:4 com adição de 150 kg de cimento, para tubulação Ø 32 mm - 1 1/4 a 50 mm - 2",m,0.73,5.42,6.15
+06.103.000455.SER,"Enchimento de rasgo em alvenaria com argamassa mista de cal hidratada e areia traço 1:4 com adição de 150 kg de cimento, para tubulação Ø 65 mm - 2 1/2 a 100 mm - 4",m,2.93,9.01,11.94
+06.103.000460.SER,"Entelamento corretivo de superfície com trinca por retração ou dilatação, revestida com argamassa de cal hidratada e areia traço 1:3, largura da tela = 15 cm",m,3.75,10.30,14.05
+06.103.000465.SER,"Entelamento preventivo de superfície sujeita a trinca, largura da tela adesiva 25 cm",m,3.33,0.79,4.12
+06.103.000470.SER,"Tela soldada para prevenção de trincas em alvenaria/estrutura, largura 6 cm",un,2.71,2.94,5.65
+06.103.000475.SER,"Tela soldada para prevenção de trincas em alvenaria/estrutura, largura 7.5 cm",un,2.90,2.95,5.85
+06.103.000480.SER,"Tela soldada para prevenção de trincas em alvenaria/estrutura, largura 10.5 cm",un,3.31,2.97,6.28
+06.103.000485.SER,"Tela soldada para prevenção de trincas em alvenaria/estrutura, largura 12 cm",un,3.34,2.98,6.32
+06.103.000490.SER,"Tela soldada para prevenção de trincas em alvenaria/estrutura, largura 17.5 cm",un,4.45,3.03,7.48
+06.103.000495.SER,"Verga reta moldada no local com forma de madeira considerando 5 reaproveitamentos, concreto C20 S50 armado",m³,1224.77,740.59,1965.36
+06.103.000500.SER,"Verga em arco moldada no local com forma de madeira considerando 5 reaproveitamentos, concreto C20 S50 armado",m³,1540.67,833.00,2373.67
+06.103.000505.SER,"Verga /cinta em bloco de concreto canaleta 11.5 x 19 x 39 cm",m,12.56,9.97,22.52
+06.103.000510.SER,"Verga /cinta em bloco de concreto canaleta 14 x 19 x 39 cm",m,13.26,12.85,26.12
+06.103.000515.SER,"Verga /cinta em bloco de concreto canaleta 19 x 19 x 39 cm",m,20.05,12.85,32.91
+09,"Coberturas",m²,0,0.63,0.63
+09.101,"Calhas, rufos e condutores",m²,0,0.63,0.63
+09.101.000005.SER,"Calha de chapa de cobre nº 24 desenvolvimento 25 cm",m,188.13,34.65,222.78
+09.101.000010.SER,"Calha de chapa de cobre nº 24 desenvolvimento 28 cm",m,210.16,35.81,245.97
+09.101.000015.SER,"Calha de chapa de cobre nº 24 desenvolvimento 33 cm",m,246.86,36.96,283.82
+09.101.000020.SER,"Calha de chapa de cobre nº 24 desenvolvimento 40 cm",m,299.73,37.54,337.27
+09.101.000025.SER,"Calha de chapa de cobre nº 24 desenvolvimento 50 cm",m,373.16,38.70,411.85
+09.101.000030.SER,"Calha de chapa de cobre nº 26 desenvolvimento 25 cm",m,106.77,34.65,141.42
+09.101.000035.SER,"Calha de chapa de cobre nº 26 desenvolvimento 28 cm",m,123.89,35.81,159.70
+09.101.000040.SER,"Calha de chapa de cobre nº 26 desenvolvimento 33 cm",m,157.03,36.96,194.00
+09.101.000045.SER,"Calha de chapa de cobre nº 26 desenvolvimento 40 cm",m,193.84,37.54,231.39
+09.101.000050.SER,"Calha de chapa de cobre nº 26 desenvolvimento 50 cm",m,210.47,38.70,249.17
+09.101.000055.SER,"Rufo de chapa de cobre nº 24 desenvolvimento 25 cm",m,184.36,17.33,201.69
+09.101.000060.SER,"Rufo de chapa de cobre nº 24 desenvolvimento 28 cm",m,206.39,17.33,223.72
+09.101.000065.SER,"Rufo de chapa de cobre nº 24 desenvolvimento 33 cm",m,243.09,17.33,260.42
+09.101.000070.SER,"Rufo de chapa de cobre nº 26 desenvolvimento 25 cm",m,79.07,17.33,96.40
+09.101.000075.SER,"Rufo de chapa de cobre nº 26 desenvolvimento 28 cm",m,90.48,17.33,107.80
+09.101.000080.SER,"Rufo de chapa de cobre nº 26 desenvolvimento 33 cm",m,153.26,17.33,170.59
+09.101.000200.SER,"Calha de chapa de aço galvanizado nº 24 desenvolvimento 25 cm",m,22.49,28.88,51.37
+09.101.000205.SER,"Calha de chapa de aço galvanizado nº 24 desenvolvimento 28 cm",m,26.94,30.32,57.27
+09.101.000210.SER,"Calha de chapa de aço galvanizado nº 24 desenvolvimento 33 cm",m,30.81,31.77,62.57
+09.101.000215.SER,"Calha de chapa de aço galvanizado nº 24 desenvolvimento 40 cm",m,36.19,34.65,70.85
+09.101.000220.SER,"Calha de chapa de aço galvanizado nº 24 desenvolvimento 50 cm",m,43.74,37.54,81.28
+09.101.000225.SER,"Calha de chapa de aço galvanizado nº 26 desenvolvimento 25 cm",m,20.63,28.88,49.51
+09.101.000230.SER,"Calha de chapa de aço galvanizado nº 26 desenvolvimento 28 cm",m,23.14,30.32,53.47
+09.101.000235.SER,"Calha de chapa de aço galvanizado nº 26 desenvolvimento 33 cm",m,25.14,31.77,56.91
+09.101.000240.SER,"Calha de chapa de aço galvanizado nº 26 desenvolvimento 40 cm",m,31.38,34.65,66.04
+09.101.000245.SER,"Calha de chapa de aço galvanizado nº 26 desenvolvimento 50 cm",m,37.73,37.54,75.27
+09.101.000250.SER,"Condutor de chapa de aço galvanizado nº 24 Ø 100 mm - 4",m,23.59,23.10,46.69
+09.101.000255.SER,"Condutor de chapa de aço galvanizado nº 26 Ø 100 mm - 4",m,17.96,23.10,41.07
+09.101.000260.SER,"Rufo de chapa de aço galvanizado nº 24 desenvolvimento 25 cm",m,18.80,14.44,33.24
+09.101.000265.SER,"Rufo de chapa de aço galvanizado nº 24 desenvolvimento 28 cm",m,23.22,14.44,37.66
+09.101.000270.SER,"Rufo de chapa de aço galvanizado nº 24 desenvolvimento 33 cm",m,27.04,14.44,41.48
+09.101.000275.SER,"Rufo de chapa de aço galvanizado nº 26 desenvolvimento 25 cm",m,15.48,14.44,29.92
+09.101.000280.SER,"Rufo de chapa de aço galvanizado nº 26 desenvolvimento 28 cm",m,17.78,14.44,32.22
+09.101.000285.SER,"Rufo de chapa de aço galvanizado nº 26 desenvolvimento 33 cm",m,20.64,14.44,35.08
+09.101.000300.SER,"Rufo de fibrocimento direito ou esquerdo para telha estrutural com largura útil 490 mm",m,65.62,1.44,67.06
+09.101.000305.SER,"Rufo de fibrocimento direito ou esquerdo para telha perfil ondulado com largura útil 500 mm",m,56.06,2.02,58.08
+09.101.000310.SER,"Rufo de fibrocimento direito ou esquerdo para telha perfil ondulado e=6 ou 8 mm",m,35.46,2.31,37.77
+09.101.000400.SER,"Calha beiral PVC semicircular, Ø 125 mm incluíndo emenda, esquadro, bocal, terminal, suporte e vedação, não incluído condutor",m,76.52,14.44,90.95
+09.101.000405.SER,"Condutor para calha PVC, circular Ø 88 mm, incluíndo conexões e braçadeiras",m,61.40,6.35,67.75
+09.101.000410.SER,"Calha PVC moldura 89 x 132 mm, incluíndo emenda, esquadro, bocal, terminal, suporte e vedação, não incluído condutor",m,134.69,14.44,149.13
+09.101.000415.SER,"Condutor para calha PVC retangular 65 x 110 mm, incluindo conexões e braçadeiras",m,67.22,6.35,73.57
+09.102,Domos / iluminação zenital,m²,0,0.63,0.63
+09.102.000005.SER,"Domo de acrílico com ou sem ventilação,1.25 m x 1.25 m",m²,631.30,28.88,660.18
+09.102.000010.SER,"Domo de fibra de vidro, com ou sem ventilação, 1 m x 1 m",m²,473.00,28.88,501.88
+09.102.000015.SER,"Domo modular de fibra de vidro",m²,780.03,14.44,794.47
+09.103,Estruturas,m²,0,0.63,0.63
+09.103.000005.SER,"Estrutura de aço para cobertura em arco, espaçamento entre arcos 4 m, vão 15 m",m²,147.44,0,147.44
+09.103.000007.SER,"Estrutura de aço para cobertura em arco, espaçamento entre arcos 5 m, vão 20 m",m²,156.56,0,156.56
+09.103.000009.SER,"Estrutura de aço para cobertura em arco, espaçamento entre arcos 6 m, vão 25 m",m²,167.20,0,167.20
+09.103.000011.SER,"Estrutura de aço para cobertura em arco, espaçamento entre arcos 6 m, vão 30 m",m²,173.28,0,173.28
+09.103.000013.SER,"Estrutura de aço para cobertura em shed, espaçamento entre tesouras 7 m, vão 15 m",m²,212.80,0,212.80
+09.103.000015.SER,"Estrutura de aço para cobertura em shed, espaçamento entre tesouras 10 m, vão 20 m",m²,228.00,0,228.00
+09.103.000017.SER,"Estrutura de aço para cobertura em shed, espaçamento entre tesouras 10 m, vão 25 m",m²,243.20,0,243.20
+09.103.000019.SER,"Estrutura de aço para cobertura em shed, espaçamento entre tesouras 12 m, vão 30 m",m²,258.40,0,258.40
+09.103.000021.SER,"Estrutura de aço para cobertura duas águas com lanternim, espaçamento entre tesouras 4 m, vão 15 m",m²,212.80,0,212.80
+09.103.000023.SER,"Estrutura de aço para cobertura duas águas com lanternim, espaçamento entre tesouras 5 m, vão 20 m",m²,228.00,0,228.00
+09.103.000025.SER,"Estrutura de aço para cobertura duas águas com lanternim, espaçamento entre tesouras 5 m, vão 25 m",m²,243.20,0,243.20
+09.103.000027.SER,"Estrutura de aço para cobertura duas águas com lanternim, espaçamento entre tesouras 5 m, vão 30 m",m²,273.60,0,273.60
+09.103.000029.SER,"Estrutura de aço para cobertura duas águas sem lanternim, espaçamento entre tesouras 4 m, vão 15 m",m²,159.60,0,159.60
+09.103.000031.SER,"Estrutura de aço para cobertura duas águas sem lanternim, espaçamento entre tesouras 5 m, vão 20 m",m²,168.72,0,168.72
+09.103.000033.SER,"Estrutura de aço para cobertura duas águas sem lanternim, espaçamento entre tesouras 5 m, vão 25 m",m²,193.04,0,193.04
+09.103.000035.SER,"Estrutura de aço para cobertura duas águas sem lanternim, espaçamento entre tesouras 5 m, vão 30 m",m²,200.64,0,200.64
+09.103.000037.SER,"Estrutura de alumínio em arco, espaçamento entre arcos de 3 a 6 m, vão de 20 m",m²,57.43,79.26,136.68
+09.103.000039.SER,"Estrutura de alumínio em arco, espaçamento entre arcos de 3 a 6 m, vão de 30 m",m²,72.63,79.26,151.88
+09.103.000041.SER,"Estrutura de alumínio em arco, espaçamento entre arcos de 3 a 6 m, vão de 40 m",m²,87.83,79.26,167.09
+09.103.000043.SER,"Estrutura de alumínio em duas águas, espaçamento entre tesouras de 3 a 6 m, vão de 20 m",m²,64.18,79.26,143.44
+09.103.000045.SER,"Estrutura de alumínio em duas águas, espaçamento entre tesouras de 3 a 6 m, vão de 25 m",m²,74.32,79.26,153.57
+09.103.000047.SER,"Estrutura de alumínio em duas águas, espaçamento entre tesouras de 3 a 6 m, vão de 30 m",m²,84.45,79.26,163.71
+09.103.000049.SER,"Estrutura de alumínio em duas águas, espaçamento entre tesouras de 3 a 6 m, vão de 40 m",m²,101.34,79.26,180.60
+09.103.000051.SER,"Estrutura de madeira para telha cerâmica ou de concreto, vão de 3 a 7 m",m²,118.61,36.10,154.71
+09.103.000053.SER,"Estrutura de madeira para telha cerâmica ou de concreto, vão de 7 a 10 m",m²,159.91,66.71,226.62
+09.103.000055.SER,"Estrutura de madeira para telha cerâmica ou de concreto, vão de 10 a 13 m",m²,201.31,101.94,303.25
+09.103.000057.SER,"Estrutura de madeira para telha cerâmica ou de concreto, ancorada em laje ou parede",m²,82.16,34.65,116.82
+09.103.000059.SER,"Estrutura de madeira para telha estrutural de fibrocimento, ancorada em laje ou parede",m²,32.38,7.96,40.34
+09.103.000061.SER,"Estrutura de madeira para telha ondulada de fibrocimento, alumínio ou plástica, vão de 10 m",m²,122.97,51.12,174.08
+09.103.000063.SER,"Estrutura de madeira para telha ondulada de fibrocimento, alumínio ou plástica, vão de 15 m",m²,143.06,57.18,200.24
+09.103.000065.SER,"Estrutura de madeira para telha ondulada de fibrocimento, alumínio ou plástica, vão de 20 m",m²,164.21,69.02,233.23
+09.103.000067.SER,"Estrutura de madeira para telha ondulada de fibrocimento, alumínio ou plástica, ancorada em laje ou parede",m²,39.94,25.99,65.93
+09.104.000005.SER,"Emboçamento da última fiada de telha cerâmica com argamassa de cimento, cal e areia 1:2:9",m,0.65,8.92,9.57
+09.104.000010.SER,"Cumeeira para telha cerâmica emboçada com argamassa de cimento, cal e areia 1:2:9",m,9.56,14.70,24.26
+09.104.000015.SER,"Emboçamento de cumeeira para telha de concreto colorida com argamassa de cimento, cal e areia 1:2:9",m,23.76,14.70,38.46
+09.105,Telhas,m²,0,0.63,0.63
+09.105.000005.SER,"Cobertura com telha cerâmica tipo francesa, inclinação 35%",m²,45.05,5.16,50.21
+09.105.000010.SER,"Cobertura com telha cerâmica tipo paulista com argamassa de cimento, cal e areia 1:2:9, inclinação 35%",m²,80.73,50.22,130.95
+09.105.000015.SER,"Cobertura com telha cerâmica tipo plan, inclinação 35%",m²,67.20,10.48,77.68
+09.105.000020.SER,"Cobertura com telha cerâmica tipo telhão colonial, com argamassa de cimento, cal e areia 1:2:9, inclinação 35%",m²,57.69,32.15,89.84
+09.105.000050.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil ondulado # 0.4 mm",m²,29.26,8.66,37.92
+09.105.000055.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil trapezoidal # 0.5 mm",m²,34.78,8.66,43.44
+09.105.000060.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil trapezoidal # 0.6 mm",m²,40.30,8.66,48.97
+09.105.000065.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil ondulado # 0.7 mm",m²,45.98,8.66,54.64
+09.105.000070.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil trapezoidal # 0.8 mm",m²,53.95,8.66,62.62
+09.105.000075.SER,"Cobertura com telha de alumínio envernizada ou pintada, perfil trapezoidal # 1 mm",m²,64.39,8.66,73.05
+09.105.000080.SER,"Cobertura com telha termoacústica de alumínio perfil trapezoidal # 30 mm, altura 70 mm",m²,128.87,6.35,135.22
+09.105.000085.SER,"Cumeeira de alumínio termoacústica, perfil trapezoidal",m,47.59,3.47,51.06
+09.105.000100.SER,"Cobertura com telha de concreto 30 x 32 cm, 10.4 un/m², 49 kg/m², inclinação acima de 30%",m²,26.05,18.35,44.40
+09.105.000200.SER,"Cumeeira articulada de fibrocimento para telha perfil com onda largura útil 500 mm",m,155.18,3.47,158.65
+09.105.000205.SER,"Cumeeira articulada de fibrocimento para telha perfil com onda largura útil 450 mm e=4mm",m,118.19,3.47,121.65
+09.105.000210.SER,"Cumeeira articulada de fibrocimento para telha estrutural com largura útil 900 mm",m,149.42,2.89,152.31
+09.105.000215.SER,"Cumeeira articulada de fibrocimento para telha perfil ondulado e=6 ou 8 mm",m,85.20,3.47,88.66
+09.105.000220.SER,"Cumeeira normal de fibrocimento para telha estrutural largura útil 440 mm",m,43.23,3.47,46.70
+09.105.000225.SER,"Cumeeira normal de fibrocimento para telha estrutural largura útil 490 mm",m,52.22,4.33,56.56
+09.105.000230.SER,"Cumeeira normal de fibrocimento para telha estrutural com largura útil 900 mm",m,98.01,2.89,100.90
+09.105.000235.SER,"Cumeeira normal de fibrocimento para telha perfil ondulado e=6 ou 8 mm",m,45.07,3.47,48.53
+09.105.000240.SER,"Fechamento lateral com telha de fibrocimento, perfil ondulado, espessura 6 mm, altura 510 mm, largura útil 1050 mm",m²,24.74,8.09,32.83
+09.105.000245.SER,"Tampão de fibrocimento para telha estrutural largura útil 440 mm",m,42.31,4.33,46.64
+09.105.000250.SER,"Tampão e rufo de fibrocimento para telha estrutural, largura útil 900 mm",m,40.62,3.47,44.09
+09.105.000255.SER,"Fixação de telha estrutural de fibrocimento, largura útil 900 mm, fixada nas extremidades da cobertura",m,276.72,17.33,294.05
+09.105.000260.SER,"Cumeeira tipo shed de fibrocimento direta ou esquerda para telha perfil ondulado e=6 ou 8 mm",m,33.46,3.47,36.92
+09.105.000265.SER,"Cobertura com telha de fibrocimento, perfil ondulado, # 4 mm, altura 24 mm, inclinação 27%",m²,42.81,4.04,46.85
+09.105.000270.SER,"Cobertura com telha de fibrocimento, uma água, perfil ondulado, # 6 mm, altura 51 mm, largura útil 1.050 mm, inclinação 27%",m²,25.78,6.35,32.13
+09.105.000275.SER,"Cobertura com telha de fibrocimento uma água, perfil ondulado, # 6 mm, altura 125 mm, largura útil 1.020 mm, inclinação 27%",m²,42.29,10.90,53.18
+09.105.000280.SER,"Cobertura com telha de fibrocimento, uma água, perfil ondulado, # 8 mm, altura 111 mm, largura útil 500 mm, inclinação 18%",m²,85.36,12.57,97.93
+09.105.000285.SER,"Cobertura com telha de fibrocimento em arco, perfil ondulado, # 6 mm, altura 510 mm, largura útil 1.050 mm, inclinação 27%",m²,27.24,6.93,34.17
+09.105.000290.SER,"Cobertura com telha de fibrocimento estrutural, uma água, perfil trapezoidal, # 8 mm, altura 180 mm, largura útil 440 mm, inclinação 3%",m²,66.18,13.18,79.37
+09.105.000295.SER,"Cobertura com telha de fibrocimento estrutural, uma água, com recobrimento longitudinal, perfil trapezoidal, # 8 mm, altura 250 mm, largura útil 908 mm",m²,50.89,16.48,67.37
+09.105.000300.SER,"Cobertura com telha de fibrocimento estrutural, uma água, perfil trapezoidal, # 8 mm, altura 181 mm, largura útil 490 mm, inclinação 3%",m²,65.98,11.54,77.51
+09.105.000305.SER,"Cobertura com telha de fibrocimento estrutural, uma água, sem recobrimento longitudinal, perfil trapezoidal, # 8 mm, altura 250 mm, largura útil 908 mm",m²,49.50,16.48,65.98
+09.105.000310.SER,"Cantoneira de fibrocimento para telha perfil ondulado # 6 ou 8 mm",m,25.73,8.66,34.39
+09.105.000315.SER,"Cobertura com telha termoacústica de aço galvanizado perfil trapezoidal 25/1020 mm",m²,128.87,6.35,135.22
+10.10,"Impermeabilização",m²,0,0.63,0.63
+10.101,"Alicerce",m²,0,0.63,0.63
+10.101.000005.SER,"Impermeabilização de alicerce com tinta betuminosa em parede de 1 1/2 tijolo", m, 10.39, 5.21, 15.60
+10.101.000010.SER,"Impermeabilização de alvenaria de embasamento com argamassa de cimento e areia traço 1:3, com aditivo impermeabilizante # 2 cm", m², 8.89, 24.26, 33.16
+10.101.000015.SER,"Impermeabilização de superfície sujeita à umidade de terra aplicando impermeabilizante estrutural com emulsão adesiva", m², 5.49, 6.80, 12.28
+10.101.000020.SER,"Impermeabilização de baldrame com cimento modificado com polímero - 2 demãos", m², 9.51, 22.56, 32.07
+10.102,"Cobertura", m², 0, 0.63, 0.63
+10.102.000005.SER,"Impermeabilização de calha, viga-calha e jardineira com impermeabilizante estrutural e proteção mecânica", m², 42.32, 9.51, 51.83
+10.102.000010.SER,"Impermeabilização de calha de concreto com 6 demãos de emulsão acrílica", m², 44.71, 23.75, 68.46
+10.102.000015.SER,"Impermeabilização de cobertura não sujeita a fissurações e a trânsito à base de emulsão acrílica estruturada com véu de poliéster", m², 55.40, 14.44, 69.84
+10.102.000020.SER,"Impermeabilização de cobertura não sujeita a fissurações e a trânsito à base de emulsão acrílica estruturada com véu de poliéster - com mão de obra empreitada", m², 81.48, 0, 81.48
+10.102.000025.SER,"Impermeabilização de cobertura não sujeita a fissurações e a trânsito à base de emulsão asfáltica estruturada com véu de poliéster e acabamento com pintura refletiva", m², 70.23, 14.44, 84.67
+10.102.000030.SER,"Impermeabilização de cobertura não sujeita a fissurações e a trânsito à base de emulsão asfáltica estruturada com véu de poliéster e acabamento com pintura refletiva - com mão de obra empreitada", m², 96.31, 0, 96.31
+10.102.000035.SER,"Impermeabilização de cobertura à base de elastômero sintético e manta butílica", m², 145.07, 27.47, 172.53
+10.102.000040.SER,"Impermeabilização de cobertura à base de elastômero sintético, calandrado e pré-vulcanizado e manta butílica - com mão de obra empreitada", m², 188.35, 0, 188.35
+10.102.000045.SER,"Impermeabilização de cobertura com asfalto oxidado e véu de poliéster", m², 78.36, 50.90, 129.26
+10.102.000050.SER,"Impermeabilização de cobertura utilizando manta asfáltica com armadura de filme de polietileno", m², 38.33, 43.92, 82.26
+10.102.000055.SER,"Impermeabilização de cobertura utilizando manta asfáltica com armadura de filme de polietileno - com mão de obra empreitada", m², 81.61, 0, 81.61
+10.102.000060.SER,"Impermeabilização de cobertura plana utilizando manta asfáltica polímérica", m², 37.04, 12.57, 49.61
+10.102.000065.SER,"Pintura hidrofugante a base de silicone sobre telha, com 2 demãos", m², 10.71, 8.70, 19.41
+10.103,"Geotêxtil", m², 0, 0.63, 0.63
+10.103.000005.SER,"Geotêxtil para proteção contra puncionamento, abrasão, distribuição de esforço sobre geomembrana manta aplicada sobre o solo", m², 5.26, 0.26, 5.52
+10.103.000010.SER,"Geotêxtil como camada de berço e/ou amortecimento para proteção a esforço contundente em mantas impermeabilizantes", m², 5.51, 0.13, 5.64
+10.103.000015.SER,"Geotêxtil como camada de deslizamento e separação, aplicado entre a manta/membrana e a proteção mecânica", m², 5.51, 0.13, 5.64
+10.104.000005.SER,"Impermeabilização com manta asfáltica modificada com polímeros aluminizada", m², 51.44, 11.27, 62.70
+10.104.000010.SER,"Impermeabilização com manta asfáltica à base de asfalto modificado com polímeros, estruturada com armadura não tecida de filamentos de poliéster", m², 44.07, 11.27, 55.33
+10.104.000015.SER,"Pintura com verniz de alto desempenho protetor contra pichações", m², 9.36, 7.64, 17.00
+10.104.000020.SER,"Pintura com impermeabilizante acrílico flexível com 4 demãos", m², 81.17, 20.50, 101.66
+10.104.000025.SER,"Pintura com hidrorepelente incolor à base de resina de silicone, sobre tijolo aparente", m², 8.22, 7.64, 15.86
+10.104.000030.SER,"Chapisco rolado com mistura de cimento e areia traço 1:3, com adição de adesivo sintético de alto desempenho", m², 4.49, 6.43, 10.92
+10.104.000035.SER,"Impermeabilização com argamassa polimérica impermeabilizante", m², 20.43, 8.95, 29.38
+10.104.000040.SER,"Pintura com emulsão asfáltica elastomérica em 3 demãos", m², 45.06, 19.02, 64.08
+10.104.000045.SER,"Pintura impermeabilizante elástica à base de resina acrílica, 2 demãos", m², 11.38, 7.64, 19.03
+10.104.000050.SER,"Argamassa de cimento e areia traço 1:3 com aditivo impermeabilizante", m², 618.44, 130.27, 748.71
+10.104.000055.SER,"Pintura asfáltica para impermeabilização em 2 demãos", m², 18.03, 8.38, 26.41
+10.104.000065.SER,"Impermeabilização de laje, sem proteção mecânica, com manta asfáltica à base de polímeros plastoméricos PL, revestida com grânulos minerais, esp. da manta 3 mm", m², 35.75, 11.27, 47.02
+10.104.000070.SER,"Impermeabilização com manta asfáltica antiraíz para lajes sob jardins", m², 52.21, 11.27, 63.48
+10.104.000075.SER,"Impermeabilização de parede sujeita a umidade de solo com aditivo hidrófugo e tinta asfáltica", m², 35.15, 37.09, 72.24
+10.104.000080.SER,"Impermeabilização de piso sujeito à umidade de terra com aditivo hidrófugo", m², 13.51, 31.88, 45.39
+10.104.000085.SER,"Impermeabilização de piso com três demãos de emulsão asfáltica", m², 21.69, 5.21, 26.90
+10.104.000090.SER,"Impermeabilização de superfície sujeita à infiltração por lençol freático pressão negativa aplicando argamassa com aditivo impermeabilizante de pega rápida", m², 14.15, 12.77, 26.92
+10.104.000095.SER,"Proteção mecânica de superfície sujeita a pouco trânsito com arg. de cimento e areia traço 1:7 # 3 cm", m², 11.82, 18.35, 30.16
+10.104.000100.SER,"Preparo de superfície interna de reservatório para impermeabilização, aplicando uma camada de argamassa preparada com adesivo", m², 13.21, 8.95, 22.16
+10.104.000105.SER,"Regularização de superfície para impermeabilização, com arg. de cimento e areia traço 1:3 # 2 cm", m², 5.02, 13.53, 18.55
+10.104.000110.SER,"Impermeabilização de piscina ou reservatório elevado, sujeitos à fissuração através de aplicação direta de impermeabilizante estrutural e membrana elástica", m², 23.56, 3.96, 27.53

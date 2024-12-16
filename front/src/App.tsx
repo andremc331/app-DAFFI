@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import StyledComponents from './styled';
+import { debounce } from 'lodash';
+import DAFFI from "../src/images/DAFFI logo.jpg"
 
 const {
   TotalWrapper,
@@ -16,7 +18,17 @@ const {
   Input,
   InputWrapper,
   Button,
-  Container
+  Container,
+  ScrollableItemList,
+  StyledNumber,
+  ItemNome,
+  ModalOverlay,
+  ModalContent,
+  ModalButton,
+  ImageContainer
+  // ModalHeader,
+  // ModalBody,
+  // ModalFooter,
 } = StyledComponents;
 
 const App: React.FC = () => {
@@ -24,10 +36,14 @@ const App: React.FC = () => {
   const [itens, setItens] = useState<any[]>([]);
   const [orcamento, setOrcamento] = useState<any[]>([]);
   const [erro, setErro] = useState<string>('');
+  const [modalItem, setModalItem] = useState<any | null>(null);
+  const [quantidade, setQuantidade] = useState<string>('');
 
   const buscarItens = async () => {
     try {
       const res = await axios.get(`http://localhost:3001/api/itens?termo=${termo}`);
+      const itensOrdenados = res.data.sort((a: any, b: any) => a.nome.localeCompare(b.nome)); // Ordena os itens por nome
+      setItens(itensOrdenados);
       setItens(res.data);
       setErro('');
     } catch (err) {
@@ -36,35 +52,72 @@ const App: React.FC = () => {
     }
   };
 
+
+  const buscarItensDebounced = debounce((termo: string) => {
+    buscarItens();
+  }, 500); // Espera 500ms após a última digitação para realizar a busca
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTermo(e.target.value);
+    buscarItensDebounced(e.target.value); // Chama a função de busca com debounce
+  };
+
+  const formatarPreco = (valor: number) => {
+    return valor.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+  };
+
+
+  const abrirModal = (item: any) => {
+    setModalItem(item);
+    setQuantidade('');
+  };
+
+  const fecharModal = () => {
+    setModalItem(null);
+    setQuantidade('');
+  };
+
   const adicionarAoOrcamento = (item: any, quantidade: number) => {
     if (isNaN(quantidade) || quantidade <= 0) {
       alert('Quantidade inválida!');
       return;
     }
 
+    const materialTotal = item.material * quantidade;
+    const maoDeObraTotal = item.maoDeObra * quantidade;
+    const total = materialTotal + maoDeObraTotal;
+
     const itemOrcamento = {
       ...item,
       quantidade,
-      materialTotal: item.material * quantidade,  // Calcula total de material
-      maoDeObraTotal: item.maoDeObra * quantidade,  // Calcula total de mão de obra
-      total: item.total * quantidade,  // Calcula total geral (material + mão de obra)
+      materialTotal,
+      maoDeObraTotal,
+      total,  // Armazenando o total calculado
     };
 
     setOrcamento([...orcamento, itemOrcamento]);
+    fecharModal();
   };
 
   return (
     <Container>
+      <ImageContainer>
+        <img src={DAFFI} alt="Logo DAFFI" />
+      </ImageContainer>
+
       <Header>Consulta de Preços - Tabela PINI</Header>
 
       <InputWrapper>
         <Input
           type="text"
           value={termo}
-          onChange={(e) => setTermo(e.target.value)}
+          onChange={handleInputChange}
           placeholder="Pesquisar por item"
         />
-        <Button onClick={buscarItens}>Buscar</Button>
+        <Button onClick={() => buscarItens()}>Pesquisar</Button>
       </InputWrapper>
 
       {erro && <ErrorMessage>{erro}</ErrorMessage>}
@@ -74,45 +127,71 @@ const App: React.FC = () => {
         {itens.length === 0 ? (
           <p>Nenhum item encontrado.</p>
         ) : (
-          <ItemList>
+          <ScrollableItemList>
             {itens.map((item) => (
               <Item key={item.id}>
                 <ItemDetails>
-                  <div>{item.nome}</div>
-                  <Price>Material: R$ {(Number(item.material) || 0).toFixed(2)}</Price>
-                  <Price>Mão de Obra: R$ {(Number(item.maoDeObra) || 0).toFixed(2)}</Price>
-                  <Price>Total: R$ {(Number(item.total) || 0).toFixed(2)}</Price>
+                  <ItemNome>{item.nome}</ItemNome>
                 </ItemDetails>
-                <Button
-                  onClick={() => {
-                    const quantidade = prompt('Digite a quantidade');
-                    if (quantidade) adicionarAoOrcamento(item, parseFloat(quantidade));
-                  }}
-                >
-                  Adicionar ao Orçamento
-                </Button>
+                <Button onClick={() => abrirModal(item)}>Ver Detalhes</Button>
               </Item>
             ))}
-          </ItemList>
+          </ScrollableItemList>
         )}
       </div>
+
+      {modalItem && (
+        <ModalOverlay>
+          <ModalContent>
+            <ModalButton onClick={fecharModal}>X</ModalButton>
+            <h3>Adicionar ao Orçamento</h3>
+            <ItemNome>Item: {modalItem.nome}</ItemNome>
+            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              Unidade:
+              <span style={{ fontSize: modalItem.unidade === 'm²' ? '1.3em' : '1em', marginLeft: '3px' }}>
+                {modalItem.unidade}
+              </span>
+            </p>
+            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              Material: {formatarPreco(Number(modalItem.material) || 0)}
+            </p>
+            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              Mão de Obra: {formatarPreco(Number(modalItem.maoDeObra) || 0)}
+            </p>
+            <StyledNumber style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              TOTAL: {formatarPreco(Number(modalItem.total) || 0)}
+            </StyledNumber>
+            <Input
+              type="number"
+              value={quantidade}
+              onChange={(e) => setQuantidade(e.target.value)}
+              placeholder="Digite a quantidade"
+              style={{ marginBottom: '10px', marginTop: '5px' }}
+            />
+            <Button onClick={() => adicionarAoOrcamento(modalItem, parseFloat(quantidade))}>Adicionar</Button>
+          </ModalContent>
+        </ModalOverlay>
+      )}
 
       <OrcamentoWrapper>
         <h2>Orçamento</h2>
         <OrcamentoList>
           {orcamento.map((item, index) => (
             <OrcamentoItem key={index}>
-              <div>{item.nome} - {item.quantidade} x Material: R$ {(Number(item.material) || 0).toFixed(2)} + Mão de Obra: R$ {(Number(item.maoDeObra) || 0).toFixed(2)}</div>
-              <div>R$ {(Number(item.total) || 0).toFixed(2)}</div>
+              <div>
+                {item.nome} - {item.quantidade} x Material: {formatarPreco(Number(item.material) || 0)} + Mão de
+                Obra: {formatarPreco(Number(item.maoDeObra) || 0)}
+              </div>
+              <div>{formatarPreco(Number(item.total) || 0)}</div>
             </OrcamentoItem>
           ))}
         </OrcamentoList>
         <TotalWrapper>
-          Total: R$ {orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0).toFixed(2)}
+            Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}               
         </TotalWrapper>
       </OrcamentoWrapper>
     </Container>
   );
-}
+};
 
 export default App;

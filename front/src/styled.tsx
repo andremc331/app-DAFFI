@@ -6,6 +6,30 @@ const Container = styled.div`
   font-family: Arial, sans-serif;
 `;
 
+const ImageContainer = styled.div`
+  padding: 10px;
+
+  img {
+    max-width: 10%;  // Faz a imagem ocupar no máximo 100% do tamanho do container
+    height: auto;     // Mantém a proporção da imagem
+    display: block;   // Garante que a imagem não tenha espaçamento extra embaixo
+  }
+
+  // Media Query para dispositivos móveis
+  @media (max-width: 768px) {
+    img {
+      max-width: 30%;  // Ajusta a imagem para ser um pouco menor em telas menores
+    }
+  }
+  
+  // Media Query para telas grandes (por exemplo, tablets ou desktops)
+  @media (min-width: 765px) {
+    img {
+      max-width: 10%;  // A imagem ocupará até 20% do tamanho do container em telas maiores
+    }
+  }
+`;
+
 const Header = styled.h1`
   color: #333;
   text-align: center;
@@ -27,14 +51,14 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #d1cc36;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #949828;
   }
 `;
 
@@ -46,6 +70,37 @@ const ErrorMessage = styled.p`
 const ItemList = styled.ul`
   list-style-type: none;
   padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 10px; /* Adiciona espaçamento interno */
+`;
+
+// Adicione estilos para o comportamento do scroll
+const ScrollbarStyles = `
+  ::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Cor da barra de rolagem */
+    border-radius: 5px; /* Bordas arredondadas */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa; /* Cor ao passar o mouse */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f9f9f9; /* Cor do trilho da barra de rolagem */
+  }
+`;
+
+// Aplique estilos personalizados na barra de rolagem
+const ScrollableItemList = styled(ItemList)`
+  max-height: 300px; /* Controle da altura máxima */
+  overflow-y: auto; /* Rolagem apenas aqui */
+  ${ScrollbarStyles}
 `;
 
 const Item = styled.li`
@@ -66,9 +121,21 @@ const ItemDetails = styled.div`
 `;
 
 const Price = styled.span`
-  font-weight: bold;
+  font-size: 13px;
   color: #333;
   margin-top: 5px;
+`;
+
+const ItemNome = styled.span`
+  font-family: ui-sans-serif;
+  font-size: 18px;
+  color: #020101;
+`;
+
+const StyledNumber = styled.span`
+  font-weight: bold;
+  font-size: 17px;
+  color: red;
 `;
 
 const OrcamentoWrapper = styled.div`
@@ -91,10 +158,58 @@ const OrcamentoItem = styled.li`
 `;
 
 const TotalWrapper = styled.div`
+  color: red;
   font-weight: bold;
   font-size: 20px;
   text-align: right;
   padding-top: 10px;
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparência do fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModalContent = styled.div`
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const InputQuantidade = styled.input`
+  width: 80%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
+
+const ModalButton = styled.button`
+  padding: 10px 20px;
+  background-color: #ff4d4d; /* Cor vermelha para o botão de fechar */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10; /* Garante que o botão fique sobre o conteúdo */
+  
+  &:hover {
+    background-color: #e60000; /* Cor mais escura ao passar o mouse */
+  }
 `;
 
 const StyledComponents = {
@@ -111,7 +226,15 @@ const StyledComponents = {
   Input,
   InputWrapper,
   Button,
-  Container
+  Container,
+  ScrollableItemList,
+  StyledNumber,
+  ItemNome,
+  ModalButton,
+  ModalContent,
+  ModalOverlay,
+  InputQuantidade,
+  ImageContainer
 };
 
 export default StyledComponents;
