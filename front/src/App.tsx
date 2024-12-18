@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import StyledComponents from './styled';
 import { debounce } from 'lodash';
 import DAFFI from "../src/images/DAFFI logo.jpg"
+import { useNavigate } from 'react-router-dom';
 
 const {
   TotalWrapper,
@@ -38,6 +39,17 @@ const App: React.FC = () => {
   const [erro, setErro] = useState<string>('');
   const [modalItem, setModalItem] = useState<any | null>(null);
   const [quantidade, setQuantidade] = useState<string>('');
+  const [authToken, setAuthToken] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setAuthToken(token);
+    } else {
+      navigate('/login');  // Redireciona para a página de login se não houver token
+    }
+  }, [navigate]);
 
   const BASE_URL = 'http://192.168.15.116:3001';
 
@@ -62,6 +74,29 @@ const App: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTermo(e.target.value);
     buscarItensDebounced(e.target.value); // Chama a função de busca com debounce
+  };
+
+  const salvarOrcamento = async () => {
+    if (!orcamento.length) {
+      alert('Não há itens no orçamento para salvar!');
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        `${BASE_URL}/api/orcamentos`,
+        { orcamento },
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+      alert('Orçamento salvo com sucesso!');
+    } catch (err) {
+      setErro('Erro ao salvar orçamento');
+      console.error('Erro ao salvar orçamento', err);
+    }
   };
 
   const formatarPreco = (valor: number) => {
@@ -191,6 +226,7 @@ const App: React.FC = () => {
         </OrcamentoList>
         <TotalWrapper>
           Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}
+          <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
         </TotalWrapper>
       </OrcamentoWrapper>
     </Container>
