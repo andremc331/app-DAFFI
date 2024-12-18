@@ -39,9 +39,11 @@ const App: React.FC = () => {
   const [modalItem, setModalItem] = useState<any | null>(null);
   const [quantidade, setQuantidade] = useState<string>('');
 
+  const BASE_URL = 'http://192.168.15.116:3001';
+
   const buscarItens = async () => {
     try {
-      const res = await axios.get(`http://localhost:3001/api/itens?termo=${termo}`);
+      const res = await axios.get(`${BASE_URL}/api/itens?termo=${termo}`);
       const itensOrdenados = res.data.sort((a: any, b: any) => a.nome.localeCompare(b.nome)); // Ordena os itens por nome
       setItens(itensOrdenados);
       setItens(res.data);
@@ -104,11 +106,12 @@ const App: React.FC = () => {
 
   return (
     <Container>
-      <ImageContainer>
-        <img src={DAFFI} alt="Logo DAFFI" />
-      </ImageContainer>
-
-      <Header>Consulta de Preços - Tabela PINI</Header>
+      
+      <Header>
+        <ImageContainer>
+          <img src={DAFFI} alt="Logo DAFFI" />
+        </ImageContainer>
+        Consulta de Preços - Tabela PINI</Header>
 
       <InputWrapper>
         <Input
@@ -131,7 +134,7 @@ const App: React.FC = () => {
             {itens.map((item) => (
               <Item key={item.id}>
                 <ItemDetails>
-                  <ItemNome>{item.nome}</ItemNome>
+                  <ItemNome> {item.nome}</ItemNome>
                 </ItemDetails>
                 <Button onClick={() => abrirModal(item)}>Ver Detalhes</Button>
               </Item>
@@ -187,7 +190,7 @@ const App: React.FC = () => {
           ))}
         </OrcamentoList>
         <TotalWrapper>
-            Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}               
+          Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}
         </TotalWrapper>
       </OrcamentoWrapper>
     </Container>

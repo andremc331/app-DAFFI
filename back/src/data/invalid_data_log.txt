@@ -1338,3 +1338,4 @@ Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em centr
 Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
 Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
 Dados inválidos: {"codigo":"04.102.000045.SER","nome":"Concreto dosado em central C30 S100 adicionado de 0","unidade":"6 Kg/m³ de fibras sintéticas","material":"m³","maoDeObra":471.87,"total":471.87}
+Dados inválidos: {"codigo":13.103,"nome":"Tubos e conexões em CPVC","unidade":null,"material":null,"maoDeObra":null,"total":null}

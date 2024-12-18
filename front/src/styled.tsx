@@ -7,10 +7,13 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  position: absolute;  // A imagem ficará fixa no canto esquerdo
+  left: 10px;          // Ajuste da margem do lado esquerdo
+  top: 0;              // Alinha a imagem ao topo
   padding: 10px;
 
   img {
-    max-width: 10%;  // Faz a imagem ocupar no máximo 100% do tamanho do container
+    max-width: 70%;  // Faz a imagem ocupar no máximo 100% do tamanho do container
     height: auto;     // Mantém a proporção da imagem
     display: block;   // Garante que a imagem não tenha espaçamento extra embaixo
   }
@@ -25,12 +28,13 @@ const ImageContainer = styled.div`
   // Media Query para telas grandes (por exemplo, tablets ou desktops)
   @media (min-width: 765px) {
     img {
-      max-width: 10%;  // A imagem ocupará até 20% do tamanho do container em telas maiores
+      max-width: 20%;  // A imagem ocupará até 20% do tamanho do container em telas maiores
     }
   }
 `;
 
 const Header = styled.h1`
+  margin-top: 50px;
   color: #333;
   text-align: center;
 `;
