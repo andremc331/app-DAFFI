@@ -52,5 +52,6 @@ COPY --from=backend-build /app/dist /app/dist
 # Expor a porta que o back-end vai rodar
 EXPOSE 3001
 
+WORKDIR /app/back  # Mudar para o diretório correto do back-end
 # Definir o comando para rodar o servidor back-end
 CMD ["npm", "start"]
