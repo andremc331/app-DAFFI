@@ -13,6 +13,8 @@ RUN npm install
 # Copiar o restante dos arquivos do front-end
 COPY front/ ./ 
 
+RUN chmod +x ./node_modules/.bin/react-scripts
+
 # Construir o projeto React
 RUN npm run build
 
