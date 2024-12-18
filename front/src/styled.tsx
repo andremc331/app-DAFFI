@@ -21,7 +21,7 @@ const ImageContainer = styled.div`
   // Media Query para dispositivos móveis
   @media (max-width: 768px) {
     img {
-      max-width: 30%;  // Ajusta a imagem para ser um pouco menor em telas menores
+      max-width: 15%;  // Ajusta a imagem para ser um pouco menor em telas menores
     }
   }
   

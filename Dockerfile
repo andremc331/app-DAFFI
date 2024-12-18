@@ -27,8 +27,8 @@ WORKDIR /app
 # Copiar os arquivos do package.json e package-lock.json do back-end
 COPY back/package*.json ./ 
 
-# Instalar as dependências do back-end
-RUN npm install
+# Instalar dependências do back-end
+RUN npm install --production
 
 # Copiar o restante dos arquivos do back-end
 COPY back/ ./ 
@@ -47,8 +47,8 @@ WORKDIR /app
 
 # Copiar o código compilado do front-end e back-end
 COPY --from=frontend-build /app/build /app/build
-COPY --from=backend-build /app/dist /app/dist
-
+# Copiar as dependências instaladas no back-end
+COPY --from=backend-build /app/node_modules /app/node_modules
 # Expor a porta que o back-end vai rodar
 EXPOSE 3001
 
