@@ -53,4 +53,4 @@ COPY --from=backend-build /app/dist /app/dist
 EXPOSE 3001
 
 # Definir o comando para rodar o servidor back-end
-CMD ["node", "dist/index.js"]
+CMD ["npm", "start"]
