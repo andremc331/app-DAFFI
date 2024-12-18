@@ -3100,21 +3100,21 @@ codigo,nome,unidade,material,maoDeObra,total
 16.115.000203.SER,"Conjunto condulete PVC tipo C Ø 3/4, com 1 tomada e tampa",un,18.50,8.66,27.16
 16.115.000204.SER,"Conjunto condulete PVC tipo C Ø 3/4, com 2 tomadas e tampa",un,20.78,8.66,29.44
 16.117,"Conexões e acessórios em aço",m²,0,0,0
-16.117.000030.SER,"Bucha com arruela em zamak para eletroduto Ø 15 mm 1/2"",un,0.48,0.29,0.77
-16.117.000031.SER,"Bucha com arruela em zamak para eletroduto Ø 20 mm 3/4"",un,0.70,0.29,0.99
-16.117.000032.SER,"Bucha com arruela em zamak para eletroduto Ø 25 mm 1"",un,0.87,0.29,1.16
-16.117.000033.SER,"Bucha com arruela em zamak para eletroduto Ø 32 mm 1 1/4"",un,1.17,0.87,2.04
-16.117.000034.SER,"Bucha com arruela em zamak para eletroduto Ø 40 mm 1 1/2"",un,1.50,1.16,2.66
-16.117.000035.SER,"Bucha com arruela em zamak para eletroduto Ø 50 mm 2"",un,2.13,1.73,3.86
-16.117.000036.SER,"Bucha com arruela em zamak para eletroduto Ø 65 mm 2 1/2"",un,3.30,3.47,6.77
-16.117.000037.SER,"Bucha com arruela em zamak para eletroduto Ø 80 mm 3"",un,4.25,5.20,9.45
-16.117.000038.SER,"Bucha com arruela em zamak para eletroduto Ø 100 4"",un,8.21,7.22,15.43
-16.117.000180.SER,"Curva de aço galvanizado para eletroduto Ø 15 mm 1/2"",un,2.78,11.55,14.33
-16.117.000181.SER,"Curva de aço galvanizado para eletroduto Ø 20 mm 3/4"",un,3.16,4.04,7.20
-16.117.000182.SER,"Curva de aço galvanizado para eletroduto Ø 25 mm 1"",un,4.57,4.04,8.61
-16.117.000183.SER,"Curva de aço galvanizado para eletroduto Ø 32 mm 1 1/4"",un,9.41,5.78,15.19
-16.117.000184.SER,"Curva de aço galvanizado para eletroduto Ø 40 mm 1 1/2"",un,13.63,6.06,19.69
-16.117.000185.SER,"Curva de aço galvanizado para eletroduto Ø 50 mm 2"",un,21.66,6.06,27.72
+16.117.000030.SER,"Bucha com arruela em zamak para eletroduto Ø 15 mm 1/2",un,0.48,0.29,0.77
+16.117.000031.SER,"Bucha com arruela em zamak para eletroduto Ø 20 mm 3/4",un,0.70,0.29,0.99
+16.117.000032.SER,"Bucha com arruela em zamak para eletroduto Ø 25 mm 1",un,0.87,0.29,1.16
+16.117.000033.SER,"Bucha com arruela em zamak para eletroduto Ø 32 mm 1 1/4",un,1.17,0.87,2.04
+16.117.000034.SER,"Bucha com arruela em zamak para eletroduto Ø 40 mm 1 1/2",un,1.50,1.16,2.66
+16.117.000035.SER,"Bucha com arruela em zamak para eletroduto Ø 50 mm 2",un,2.13,1.73,3.86
+16.117.000036.SER,"Bucha com arruela em zamak para eletroduto Ø 65 mm 2 1/2",un,3.30,3.47,6.77
+16.117.000037.SER,"Bucha com arruela em zamak para eletroduto Ø 80 mm 3",un,4.25,5.20,9.45
+16.117.000038.SER,"Bucha com arruela em zamak para eletroduto Ø 100 4",un,8.21,7.22,15.43
+16.117.000180.SER,"Curva de aço galvanizado para eletroduto Ø 15 mm 1/2",un,2.78,11.55,14.33
+16.117.000181.SER,"Curva de aço galvanizado para eletroduto Ø 20 mm 3/4",un,3.16,4.04,7.20
+16.117.000182.SER,"Curva de aço galvanizado para eletroduto Ø 25 mm 1",un,4.57,4.04,8.61
+16.117.000183.SER,"Curva de aço galvanizado para eletroduto Ø 32 mm 1 1/4",un,9.41,5.78,15.19
+16.117.000184.SER,"Curva de aço galvanizado para eletroduto Ø 40 mm 1 1/2",un,13.63,6.06,19.69
+16.117.000185.SER,"Curva de aço galvanizado para eletroduto Ø 50 mm 2",un,21.66,6.06,27.72
 16.117.000186.SER,"Curva de aço galvanizado para eletroduto Ø 65 mm 2 1/2",un,46.49,4.04,50.53
 16.117.000187.SER,"Curva de aço galvanizado para eletroduto Ø 80 mm 3",un,61.76,4.04,65.80
 16.117.000208.SER,"Curva de aço galvanizado para eletroduto Ø 100 mm 4",un,56.73,8.09,64.82
@@ -3385,25 +3385,25 @@ codigo,nome,unidade,material,maoDeObra,total
 17.105.000010.SER,"Tomada para telefone para pino jack 1/4",un,11.35,8.37,19.72
 17.105.000011.SER,"Tomada para telefone quatro polos, padrão Telebras",un,15.31,10.69,26.00
 17.105.000012.SER,"Tomada para telefone quatro polos, padrão Telebras para duto de piso",un,15.31,10.69,26.00
-17.105.000013.SER,"Ponto de telefone - tubulação seca - Ø 3/4""",un,80.62,144.39,225.01
+17.105.000013.SER,"Ponto de telefone - tubulação seca - Ø 3/4",un,80.62,144.39,225.01
 17.106,"Segurança",m²,0,0,0
 17.106.000050.SER,"Sirene eletromecânica, alcance 2000 m",un,530.66,17.62,548.28
 17.106.000060.SER,"Sirene eletromecânica, alcance 5000 m",un,7959.90,17.62,7977.52
 17.106.000100.SER,"Sirene eletrônica, alcance 2000 m",un,544.14,17.62,561.76
 17.106.000110.SER,"Sirene eletrônica, alcance 3000 m",un,1222.78,17.62,1240.40
 17.106.000150.SER,"Suporte metálico de teto com caixa de proteção para câmera de CFTV",un,13.66,23.10,36.76
-17.106.000160.SER,"Suporte metálico para TV / DVD, 14"" a 21""",un,65.65,7.22,72.87
+17.106.000160.SER,"Suporte metálico para TV / DVD, 14 a 21",un,65.65,7.22,72.87
 18,"Sistemas de proteção contra descargas atmosféricas",m²,0,0,0
 18.101,"Aterramento - hastes e cordoalhas",m²,0,0,0
 18.101.000010.SER,"Conjunto de hastes de cobre para aterramento de para-raios",un,635.88,187.71,823.59
 18.101.000015.SER,"Cordoalha de cobre nu 35 mm² e isoladores para para-raios",m,19.72,14.44,34.15
-18.101.000020.SER,"Proteção da cordoalha do para-raios com tubo PVC Ø 50 mm - 2"", comprimento 3 m",un,46.10,43.32,89.42
+18.101.000020.SER,"Proteção da cordoalha do para-raios com tubo PVC Ø 50 mm - 2, comprimento 3 m",un,46.10,43.32,89.42
 18.101.000021.SER,"Cordoalha de cobre nu 50 mm² e isoladores para para-raios",m,29.73,14.44,44.16
 18.101.000022.SER,"Cordoalha de cobre nu 70 mm² e isoladores para para-raios",m,33.41,20.22,53.62
 18.101.000023.SER,"Cordoalha de cobre nu 95 mm² nu e isoladores para para-raios",m,44.95,20.22,65.16
 18.103,"Captores",m²,0,0,0
 18.103.000015.SER,"Captor de latão cromado tipo franklin",un,87.93,43.32,131.25
-18.104.000010.SER,"Mastro simples de ferro galvanizado para para-raios, altura de 3 m, Ø 40 mm - 1 1/2"" ou 50 mm - 2""",un,367.45,231.03,598.48
+18.104.000010.SER,"Mastro simples de ferro galvanizado para para-raios, altura de 3 m, Ø 40 mm - 1 1/2 ou 50 mm - 2",un,367.45,231.03,598.48
 18.105,"Sinalizadores",m²,0,0,0
 18.105.000005.SER,"Aparelho sinalizador de obstáculos com célula fotoelétrica, simples",un,67.60,43.32,110.92
 19,"Ar condicionado, ventilação e exaustão",m²,0,0,0

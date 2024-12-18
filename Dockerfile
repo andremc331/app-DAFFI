@@ -28,7 +28,7 @@ WORKDIR /app
 COPY back/package*.json ./ 
 
 # Instalar dependências do back-end
-RUN npm install --production
+RUN npm install
 
 # Copiar o restante dos arquivos do back-end
 COPY back/ ./ 
