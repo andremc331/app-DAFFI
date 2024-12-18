@@ -22,7 +22,7 @@ RUN npm run build
 FROM node:18 as backend-build
 
 # Definir o diretório de trabalho para o back-end
-WORKDIR /app
+WORKDIR /app/back
 
 # Copiar os arquivos do package.json e package-lock.json do back-end
 COPY back/package*.json ./ 
