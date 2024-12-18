@@ -3080,15 +3080,15 @@ codigo,nome,unidade,material,maoDeObra,total
 16.115.000117.SER,"Condulete em liga de alumínio fundido tipo X Ø 3 1/2",un,356.52,20.22,376.74
 16.115.000118.SER,"Condulete em liga de alumínio fundido tipo X Ø 4",un,565.15,20.22,585.37
 16.115,Caixas de PVC,m²,0,0,0
-16.115.000150.SER,"Caixa de ligação PVC para eletroduto flexível", retangular 4 x 2"",un,2.48,4.33,6.81
-16.115.000151.SER,"Caixa de ligação PVC para eletroduto flexível", quadrada 4 x 4"",un,6.50,4.33,10.83
-16.115.000152.SER,"Caixa de ligação PVC para eletroduto flexível", octogonal com fundo móvel 4 x 4"",un,7.48,4.33,11.81
-16.115.000153.SER,"Caixa de ligação PVC para eletroduto flexível", octogonal com fundo fixo 4 x 4"",un,7.48,4.33,11.81
-16.115.000154.SER,"Caixa de ligação PVC para eletroduto flexível", octogonal com anel deslizante 3 x 3"",un,6.78,4.33,11.11
-16.115.000155.SER,"Caixa de ligação PVC rígido para eletroduto roscável", retangular 4 x 2"",un,2.24,4.33,6.57
-16.115.000156.SER,"Caixa de ligação PVC rígido para eletroduto roscável", quadrada 4 x 4"",un,3.21,4.33,7.54
-16.115.000160.SER,"Caixa de embutir em PVC para paredes de gesso acartonado", 4 x 2"",un,6.23,9.53,15.76
-16.115.000161.SER,"Caixa de embutir em PVC para paredes de gesso acartonado", 4 x 4"",un,7.80,9.53,17.33
+16.115.000150.SER,"Caixa de ligação PVC para eletroduto flexível, retangular 4 x 2",un,2.48,4.33,6.81
+16.115.000151.SER,"Caixa de ligação PVC para eletroduto flexível, quadrada 4 x 4",un,6.50,4.33,10.83
+16.115.000152.SER,"Caixa de ligação PVC para eletroduto flexível, octogonal com fundo móvel 4 x 4",un,7.48,4.33,11.81
+16.115.000153.SER,"Caixa de ligação PVC para eletroduto flexível, octogonal com fundo fixo 4 x 4",un,7.48,4.33,11.81
+16.115.000154.SER,"Caixa de ligação PVC para eletroduto flexível, octogonal com anel deslizante 3 x 3",un,6.78,4.33,11.11
+16.115.000155.SER,"Caixa de ligação PVC rígido para eletroduto roscável, retangular 4 x 2",un,2.24,4.33,6.57
+16.115.000156.SER,"Caixa de ligação PVC rígido para eletroduto roscável, quadrada 4 x 4",un,3.21,4.33,7.54
+16.115.000160.SER,"Caixa de embutir em PVC para paredes de gesso acartonado, 4 x 2",un,6.23,9.53,15.76
+16.115.000161.SER,"Caixa de embutir em PVC para paredes de gesso acartonado, 4 x 4",un,7.80,9.53,17.33
 16.115.000170.SER,"Caixa de sobrepor em PVC para instalação elétrica, até 4 divisões modulares, dimensões externas 128 x 125 x 62 mm",un,18.77,14.44,33.21
 16.115.000171.SER,"Caixa de sobrepor em PVC para instalação elétrica, até 2 divisões modulares sendo uma para tomada redonda, dimensões externas 128 x 125 x 62 mm",un,15.99,14.44,30.43
 16.115.000180.SER,"Caixa elétrica para canaleta em PVC para instalação aparente, dimensões 110 x 56 x 36.5 mm",un,4.58,10.11,14.69
@@ -3552,7 +3552,7 @@ codigo,nome,unidade,material,maoDeObra,total
 19.105.001508.SER,"Tubo de cobre com isolamento térmico - Ø 1 5/8",m,73.87,6.06,79.93
 19.105.001520.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1/4 até 1/2",un,4.46,3.17,7.63
 19.105.001522.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 5/8 até 7/8",un,7.80,4.44,12.24
-19.105.001524.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1 1/8"" até 1 5/8",un,14.49,5.23,19.72
+19.105.001524.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1 1/8 até 1 5/8",un,14.49,5.23,19.72
 19.105.001600.SER,"Gás refrigerante R410",kg,90.06,7.22,97.28
 19.105.001601.SER,"Gás refrigerante R407",kg,90.06,7.22,97.28
 19.105.001602.SER,"Gás refrigerante R22",kg,65.03,7.22,72.25
@@ -3682,7 +3682,7 @@ codigo,nome,unidade,material,maoDeObra,total
 21.105.000020.SER,"Forro de lâminas PVC 600 x 20 cm, # 10 mm em painéis lineares encaixados entre si e fixados em estrutura de madeira",m²,41.23,21.66,62.89
 21.105.000030.SER,"Forro de lâminas PVC 600 x 10 cm, # 8 mm em painéis lineares encaixados entre si e fixados em estrutura de madeira, com mão de obra empreitada",m²,72.09,0,72.09
 21.105.000040.SER,"Forro de lâminas PVC 600 x 20 cm, # 10 mm em painéis lineares encaixados entre si e fixados em estrutura de madeira, com mão de obra empreitada",m²,71.84,0,71.84
-22,"22. Pisos",m²,0,0,0
+22,"Pisos",m²,0,0,0
 22.103,"Alta resistência",m²,0,0,0
 22.103.000010.SER,"Piso industrial monolítico de alta resistência mecânica, fundido sobre base nivelada, acabamento desempenado # 8 mm",m²,19.67,14.44,34.11
 22.103.000015.SER,"Piso industrial monolítico de alta resistência mecânica, fundido sobre base nivelada, acabamento desempenado # 12 mm",m²,29.51,17.33,46.83
@@ -3896,7 +3896,7 @@ codigo,nome,unidade,material,maoDeObra,total
 23.107.000110.SER,"Mosaico vidroso assentado com argamassa pré-fabricada de cimento colante, inclusive rejuntamento",m²,300.32,43.32,343.64
 23.109,"Vinílicos",m²,0,0,0
 23.109.000100.SER,"Forração vinílica para revestimento interno, fixada com cola à base de PVA",m²,99.22,2.06,101.28
-24,"24. Pinturas",m²,0,0,0
+24,"Pinturas",m²,0,0,0
 24.101,"Esquadrias de madeira",m²,0,0,0
 24.101.000050.SER,"Pintura com tinta anti-flama em esquadria de madeira com três demãos",m²,35.00,20.32,55.32
 24.101.000060.SER,"Emassamento de esquadria de madeira com massa corrida com duas demãos, para pintura a óleo ou esmalte",m²,5.50,9.46,14.95
