@@ -3423,17 +3423,17 @@ codigo,nome,unidade,material,maoDeObra,total
 19.104.000062.SER,"Duto em chapa de aço galvanizada # 22, com isolamento térmico espessura 50 mm",m²,91.09,139.77,230.87
 19.104.000063.SER,"Duto em chapa de aço galvanizada # 20, com isolamento térmico espessura 50 mm",m²,100.10,160.57,260.67
 19.104.000064.SER,"Duto em chapa de aço galvanizada # 18, com isolamento térmico espessura 50 mm",m²,118.03,200.71,318.73
-19.104.000080.SER,"Duto flexível de alumínio, com isolamento térmico de lã de vidro espessura 50 mm - Ø 5""",m,22.06,11.55,33.61
-19.104.000081.SER,"Duto flexível de alumínio, com isolamento térmico de lã de vidro espessura 50 mm - Ø 14""",m,62.83,13.00,75.83
-19.104.000082.SER,"Duto flexível de alumínio - Ø 5""",m,8.48,11.55,20.04
-19.104.000083.SER,"Duto flexível de alumínio - Ø 14""",m,28.74,13.00,41.73
+19.104.000080.SER,"Duto flexível de alumínio, com isolamento térmico de lã de vidro espessura 50 mm - Ø 5",m,22.06,11.55,33.61
+19.104.000081.SER,"Duto flexível de alumínio, com isolamento térmico de lã de vidro espessura 50 mm - Ø 14",m,62.83,13.00,75.83
+19.104.000082.SER,"Duto flexível de alumínio - Ø 5",m,8.48,11.55,20.04
+19.104.000083.SER,"Duto flexível de alumínio - Ø 14",m,28.74,13.00,41.73
 19.104.000110.SER,"Damper de lâminas opostas em aço galvanizado, com buchas de nylon 300 x 150 mm",un,110.00,60.65,170.65
 19.104.000111.SER,"Damper de lâminas opostas em aço galvanizado, com buchas de nylon 500 x 300 mm",un,171.67,60.65,232.32
 19.104.000112.SER,"Damper de lâminas opostas em aço galvanizado, com buchas de nylon 700 x 400 mm",un,295.20,72.20,367.40
 19.104.000113.SER,"Damper de lâminas opostas em aço galvanizado, com buchas de nylon, 1000 x 400 mm",un,364.22,91.11,455.33
-19.104.000200.SER,"Difusor direcional 1 via em alumínio anodizado, com registro e caixa plenum, 9"" x 9""",un,126.56,72.20,198.76
-19.104.000201.SER,"Difusor direcional 2 vias em alumínio anodizado, com registro, sem caixa plenum, 18"" x 6""",un,128.19,92.70,220.89
-19.104.000202.SER,"Difusor direcional 4 vias em alumínio anodizado, com registro e caixa plenum, 15"" x 9""",un,119.83,111.76,231.59
+19.104.000200.SER,"Difusor direcional 1 via em alumínio anodizado, com registro e caixa plenum, 9 x 9",un,126.56,72.20,198.76
+19.104.000201.SER,"Difusor direcional 2 vias em alumínio anodizado, com registro, sem caixa plenum, 18 x 6",un,128.19,92.70,220.89
+19.104.000202.SER,"Difusor direcional 4 vias em alumínio anodizado, com registro e caixa plenum, 15 x 9",un,119.83,111.76,231.59
 19.104.000300.SER,"Veneziana para retorno de ar com lâminas fixas e registro, 60 x 40 cm",un,229.85,101.08,330.93
 19.104.000301.SER,"Veneziana para retorno de ar com lâminas fixas e registro, 70 x 30 cm",un,246.15,101.08,347.23
 19.104.000302.SER,"Veneziana para retorno de ar com lâminas fixas e registro, 70 x 40 cm",un,283.02,101.08,384.10
@@ -3541,22 +3541,22 @@ codigo,nome,unidade,material,maoDeObra,total
 19.104.001308.SER,"Grelha para insuflação de ar com dupla deflexão e registro, 140 x 30 cm",un,336.22,153.06,489.28
 19.104.001309.SER,"Grelha para insuflação de ar com dupla deflexão e registro, 140 x 40 cm",un,396.26,153.06,549.32
 19.105,"Rede frigorígena",m²,0,0,0
-19.105.001500.SER,"Tubo de cobre com isolamento térmico - Ø 1/4""",m,14.40,2.89,17.29
-19.105.001501.SER,"Tubo de cobre com isolamento térmico Ø 3/8""",m,17.36,3.47,20.82
-19.105.001502.SER,"Tubo de cobre com isolamento térmico - Ø 1/2""",m,20.77,4.01,24.78
-19.105.001503.SER,"Tubo de cobre com isolamento térmico Ø 5/8""",m,25.72,4.33,30.05
-19.105.001504.SER,"Tubo de cobre com isolamento térmico Ø 3/4""",m,30.93,4.45,35.38
-19.105.001505.SER,"Tubo de cobre com isolamento térmico - Ø 7/8""",m,39.47,4.77,44.23
-19.105.001506.SER,"Tubo de cobre com isolamento térmico Ø 1 1/8""",m,50.19,5.08,55.28
-19.105.001507.SER,"Tubo de cobre com isolamento térmico - Ø 1 3/8""",m,61.73,5.72,67.45
-19.105.001508.SER,"Tubo de cobre com isolamento térmico - Ø 1 5/8""",m,73.87,6.06,79.93
-19.105.001520.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1/4"" até 1/2""",un,4.46,3.17,7.63
-19.105.001522.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 5/8"" até 7/8""",un,7.80,4.44,12.24
-19.105.001524.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1 1/8"" até 1 5/8""",un,14.49,5.23,19.72
+19.105.001500.SER,"Tubo de cobre com isolamento térmico - Ø 1/4",m,14.40,2.89,17.29
+19.105.001501.SER,"Tubo de cobre com isolamento térmico Ø 3/8",m,17.36,3.47,20.82
+19.105.001502.SER,"Tubo de cobre com isolamento térmico - Ø 1/2",m,20.77,4.01,24.78
+19.105.001503.SER,"Tubo de cobre com isolamento térmico Ø 5/8",m,25.72,4.33,30.05
+19.105.001504.SER,"Tubo de cobre com isolamento térmico Ø 3/4",m,30.93,4.45,35.38
+19.105.001505.SER,"Tubo de cobre com isolamento térmico - Ø 7/8",m,39.47,4.77,44.23
+19.105.001506.SER,"Tubo de cobre com isolamento térmico Ø 1 1/8",m,50.19,5.08,55.28
+19.105.001507.SER,"Tubo de cobre com isolamento térmico - Ø 1 3/8",m,61.73,5.72,67.45
+19.105.001508.SER,"Tubo de cobre com isolamento térmico - Ø 1 5/8",m,73.87,6.06,79.93
+19.105.001520.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1/4 até 1/2",un,4.46,3.17,7.63
+19.105.001522.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 5/8 até 7/8",un,7.80,4.44,12.24
+19.105.001524.SER,"Emenda de tubos e conexões de cobre por processo de solda - Ø 1 1/8"" até 1 5/8",un,14.49,5.23,19.72
 19.105.001600.SER,"Gás refrigerante R410",kg,90.06,7.22,97.28
 19.105.001601.SER,"Gás refrigerante R407",kg,90.06,7.22,97.28
 19.105.001602.SER,"Gás refrigerante R22",kg,65.03,7.22,72.25
-20,"20. Revestimentos de superfícies",m²,0,0,0
+20,"Revestimentos de superfícies",m²,0,0,0
 20.101,"Chapisco",m²,0,0,0
 20.101.000010.SER,"Chapisco para parede interna ou externa com argamassa de cimento e areia traço 1:3",m²,1.95,3.54,5.49
 20.101.000011.SER,"Chapisco para parede interna ou externa com argamassa de cimento e pedrisco traço 1:4",m²,2.15,6.51,8.65
@@ -3717,7 +3717,7 @@ codigo,nome,unidade,material,maoDeObra,total
 22.115.000010.SER,"Piso em concreto armado para pátio industrial, C25 S50 # 12 cm, sobre lastro de brita graduada # 10 cm, capacidade para cargas de até 4 t/m²",m²,101.40,22.19,123.59
 22.115.000015.SER,"Piso em concreto armado para pátio industrial, C25 S50 # 14 cm sobre lastro de brita graduada # 10 cm, capacidade para cargas de até 6 t/m²",m²,112.79,22.35,135.14
 22.115.000020.SER,"Piso em concreto armado C30 S50 # 14 cm, sobre lastro de brita # 10 cm",m²,120.31,22.19,142.50
-22.115.000025.SER,"Piso em concreto C15 S5- controle tipo ""C"", # 12 cm, sobre lastro de brita # 5 cm, armado com tela de aço CA-60",m²,70.65,30.10,100.75
+22.115.000025.SER,"Piso em concreto C15 S5- controle tipo C, # 12 cm, sobre lastro de brita # 5 cm, armado com tela de aço CA-60",m²,70.65,30.10,100.75
 22.115.000035.SER,"Passeio em concreto C15 S50, formando quadrados ripados de 1,2 x 1,2 m, # 7 cm",m²,32.60,34.63,67.23
 22.115.000040.SER,"Piso rústico em concreto preparado na obra C15 S50, formando quadrados ripados de 1,50 x 1,50 m, # 7 cm",m²,31.09,34.63,65.72
 22.115.000045.SER,"Passeio em concreto C15 S50, formando quadrados ripados de 0,5 x 0,5 m, # 8 cm, juntas de 5 cm que poderão ser preenchidas com grama",m²,33.15,55.75,88.90
@@ -4020,17 +4020,17 @@ codigo,nome,unidade,material,maoDeObra,total
 26.119.000120.SER,"Tanque de louça com coluna",un,621.99,86.64,708.62
 26.119.000140.SER,"Tanque em polipropileno 15 litros dimensões 49 x 43 x 28 cm",un,49.48,86.64,136.11
 26.119.000160.SER,"Tanque em polipropileno 24 litros dimensões 58 x 52 x 32 cm",un,76.96,86.64,163.59
-26.120,"Torneiras"m²,0,0,0
+26.120,"Torneiras",m²,0,0,0
 26.120.000100.SER,"Torneira de pressão metálica para pia",un,264.35,40.43,304.78
 26.120.000120.SER,"Torneira de pressão metálica para uso geral",un,76.29,40.43,116.72
-27,"Vidros"m²,0,0,0
-27.101,"Liso"m²,0,0,0
+27,"Vidros",m²,0,0,0
+27.101,"Liso",m²,0,0,0
 27.101.000050.SER,"Vidro cristal liso # 4 mm colocado em caixilho com massa",m²,132.84,0,132.84
 27.101.000060.SER,"Vidro cristal liso # 5 mm colocado em caixilho com massa",m²,165.06,0,165.06
 27.101.000070.SER,"Vidro cristal liso # 6 mm colocado em caixilho com massa",m²,189.52,0,189.52
-27.102,"Fantasia"m²,0,0,0
+27.102,"Fantasia",m²,0,0,0
 27.102.000100.SER,"Vidro fantasia # 4 mm colocado em caixilho com massa",m²,113.98,0,113.98
-27.103,"Temperado"m²,0,0,0
+27.103,"Temperado",m²,0,0,0
 27.103.000100.SER,"Vidro temperado incolor # 6 mm colocado em caixilho com gaxeta de neoprene",m²,236.56,0,236.56
 27.103.000120.SER,"Vidro temperado incolor # 8 mm colocado em caixilho com gaxeta de neoprene",m²,259.96,0,259.96
 27.103.000140.SER,"Vidro temperado incolor # 10 mm colocado em caixilho com gaxeta de neoprene",m²,298.28,0,298.28
@@ -4052,7 +4052,7 @@ codigo,nome,unidade,material,maoDeObra,total
 27.103.000460.SER,"Porta de vidro temperado # 10 mm, duas folhas, com bandeira, com ferragem e mola hidráulica - vão 1800 x 2900 mm",cj,3171.45,0,3171.45
 27.103.000480.SER,"Porta de vidro temperado # 10 mm, duas folhas móveis, com bandeira e duas folhas laterais fixas, com ferragem e mola hidráulica - vão 3600 x 2900 mm",cj,4770.65,0,4770.65
 27.103.000500.SER,"Porta de vidro temperado # 10 mm, duas folhas móveis, três bandeiras, dois contraventos e duas folhas laterais fixas, com ferragem e mola hidráulica - vão 3600 x 3500 mm",cj,5724.78,0,5724.78
-27.104,"Laminado"m²,0,0,0
+27.104,"Laminado",m²,0,0,0
 27.104.000100.SER,"Vidro cristal laminado # 6 mm colocado em caixilho com gaxeta de neoprene",m²,294.95,0,294.95
 27.104.000130.SER,"Vidro cristal laminado # 8 mm colocado em caixilho com gaxeta de neoprene",m²,326.61,0,326.61
 27.104.000160.SER,"Vidro cristal laminado # 10 mm colocado em caixilho com gaxeta de neoprene",m²,393.28,0,393.28
