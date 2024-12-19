@@ -146,8 +146,9 @@ const App: React.FC = () => {
         <ImageContainer>
           <img src={DAFFI} alt="Logo DAFFI" />
         </ImageContainer>
-        Consulta de Preços - Tabela PINI</Header>
-
+        Consulta de Preços - Tabela PINI
+        </Header>
+      
       <InputWrapper>
         <Input
           type="text"
