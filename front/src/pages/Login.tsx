@@ -1,3 +1,5 @@
+//login.tsx
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import StyledComponents from '../styled';
@@ -12,6 +14,7 @@ const LoginCadastro: React.FC = () => {
   const [erro, setErro] = useState('');
   const [isCadastro, setIsCadastro] = useState(false); // Alternar entre login e cadastro
   const [isLoading, setIsLoading] = useState(false); // Indicador de carregamento
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Para controlar se o usuário está logado
   const navigate = useNavigate();
 
   const BASE_URL = 'http://192.168.15.116:3001';
@@ -38,7 +41,7 @@ const LoginCadastro: React.FC = () => {
       const res = await axios.post(`${BASE_URL}${endpoint}`, payload);
 
       localStorage.setItem('token', res.data.token); // Salva o token (melhor usar cookies seguros)
-      navigate('/orcamentos');
+      setIsLoggedIn(true); // Usuário está logado
     } catch (err: any) {
       const errorMessage =
         err.response?.data?.message || 'Erro ao realizar a operação';
@@ -80,6 +83,14 @@ const LoginCadastro: React.FC = () => {
           ? 'Já tem uma conta? Faça login'
           : 'Não tem conta? Cadastre-se'}
       </Button>
+
+      {/* Exibir os botões de navegação após o login */}
+      {isLoggedIn && (
+        <div>
+          <Button onClick={() => navigate('/orcamentos')}>Ir para Orçamentos</Button>
+          <Button onClick={() => navigate('/gerar-contrato')}>Gerar Contrato</Button>
+        </div>
+      )}
     </Container>
   );
 };

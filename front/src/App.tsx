@@ -1,3 +1,5 @@
+//app.tsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import StyledComponents from './styled';
@@ -36,6 +38,7 @@ const App: React.FC = () => {
   const [termo, setTermo] = useState('');
   const [itens, setItens] = useState<any[]>([]);
   const [orcamento, setOrcamento] = useState<any[]>([]);
+  const [orcamentosSalvos, setOrcamentosSalvos] = useState<any[]>([]);  // Adiciona o estado para armazenar os orçamentos salvos
   const [erro, setErro] = useState<string>('');
   const [modalItem, setModalItem] = useState<any | null>(null);
   const [quantidade, setQuantidade] = useState<string>('');
@@ -50,6 +53,27 @@ const App: React.FC = () => {
       navigate('/login');  // Redireciona para a página de login se não houver token
     }
   }, [navigate]);
+
+  useEffect(() => {
+    // Função para buscar orçamentos salvos
+    const fetchOrcamentosSalvos = async () => {
+      try {
+        const res = await axios.get('http://192.168.15.116:3001/api/orcamentos', {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+        setOrcamentosSalvos(res.data);
+      } catch (err) {
+        setErro('Erro ao buscar orçamentos salvos');
+        console.error('Erro ao buscar orçamentos salvos', err);
+      }
+    };
+
+    if (authToken) {
+      fetchOrcamentosSalvos();
+    }
+  }, [authToken]);
 
   const BASE_URL = 'http://192.168.15.116:3001';
 
@@ -84,7 +108,7 @@ const App: React.FC = () => {
 
     try {
       const res = await axios.post(
-        `${BASE_URL}/api/orcamentos`,
+        `${BASE_URL}/api/orcamento`,
         { orcamento },
         {
           headers: {
@@ -93,9 +117,15 @@ const App: React.FC = () => {
         }
       );
       alert('Orçamento salvo com sucesso!');
+      setOrcamento([]);  // Limpar o orçamento atual após salvar
+      // Recarregar os orçamentos salvos
+      const resOrcamentos = await axios.get('http://192.168.15.116:3001/api/orcamentos', {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
+      setOrcamentosSalvos(resOrcamentos.data);
     } catch (err) {
-      setErro('Erro ao salvar orçamento');
-      console.error('Erro ao salvar orçamento', err);
+      setErro('Erro ao buscar orçamento');
+      console.error('Erro ao buscar orçamento', err);
     }
   };
 
@@ -141,14 +171,14 @@ const App: React.FC = () => {
 
   return (
     <Container>
-      
+
       <Header>
         <ImageContainer>
           <img src={DAFFI} alt="Logo DAFFI" />
         </ImageContainer>
         Consulta de Preços - Tabela PINI
-        </Header>
-      
+      </Header>
+
       <InputWrapper>
         <Input
           type="text"
@@ -230,6 +260,25 @@ const App: React.FC = () => {
           <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
         </TotalWrapper>
       </OrcamentoWrapper>
+
+      <OrcamentoWrapper>
+        <h2>Orçamentos Salvos</h2>
+        {orcamentosSalvos.length === 0 ? (
+          <p>Não há orçamentos salvos.</p>
+        ) : (
+          <OrcamentoList>
+            {orcamentosSalvos.map((orcamento, index) => (
+              <OrcamentoItem key={index}>
+                <div>{`Orçamento #${orcamento.id}`}</div>
+                <div>Total: {formatarPreco(orcamento.total)}</div> {/* Aqui chama a função formatarPreco */}
+              </OrcamentoItem>
+            ))}
+          </OrcamentoList>
+        )}
+      </OrcamentoWrapper>
+
+      <Button onClick={() => navigate('/gerar-contrato')}>Gerar Contrato</Button>
+
     </Container>
   );
 };
