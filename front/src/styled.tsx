@@ -66,6 +66,19 @@ const Button = styled.button`
   }
 `;
 
+const ExcluirButton = styled.button`
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #b40808;
+  }
+`;
+
 const ErrorMessage = styled.p`
   color: red;
   text-align: center;
@@ -216,6 +229,60 @@ const ModalButton = styled.button`
   }
 `;
 
+const DetalhesWrapper = styled.div`
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: #eaf4fe;
+        transform: scale(1.02);
+      }
+
+      span {
+        font-size: 0.95rem;
+        color: #555555;
+
+        &:first-child {
+          font-weight: bold;
+          color: #333333;
+        }
+      }
+    }
+  }
+`;
+
 const StyledComponents = {
   TotalWrapper,
   OrcamentoItem,
@@ -238,7 +305,9 @@ const StyledComponents = {
   ModalContent,
   ModalOverlay,
   InputQuantidade,
-  ImageContainer
+  ImageContainer,
+  DetalhesWrapper,
+  ExcluirButton
 };
 
 export default StyledComponents;

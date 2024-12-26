@@ -53,26 +53,29 @@ interface OrcamentoRequestBody {
   orcamento: OrcamentoItemType[];
 }
 
-// Rota para salvar um orçamento
 router.post('/', authenticate, async (req: express.Request, res: express.Response) => {
-  const { orcamento }: OrcamentoRequestBody = req.body;  // Array de itens no orçamento
+  const { orcamento, nome }: { orcamento: OrcamentoItemType[]; nome: string } = req.body;  // Inclui o nome no corpo da requisição
   const userId = req.user.id;  // Obtém o userId do token JWT
+
+  if (!nome.trim()) {
+    return res.status(400).json({ message: 'O nome do orçamento é obrigatório!' });
+  }
 
   try {
     // Calcula o total geral do orçamento
     const totalGeral = orcamento.reduce((total, item) => total + item.total, 0);
 
-    // Cria o orçamento com o total geral
+    // Cria o orçamento com o nome e o total geral
     const novoOrcamento = await Orcamento.create({
+      nome,
       total: totalGeral,
       userId,
     });
 
-    // Assegura que a tipagem de novoOrcamento é reconhecida corretamente  
     // Associa os itens do orçamento
     for (const item of orcamento) {
       await OrcamentoItem.create({
-        orcamentoId: novoOrcamento.id,  // 'id' será reconhecido corretamente
+        orcamentoId: novoOrcamento.id,
         itemId: item.id,
         quantidade: item.quantidade,
         material: item.materialTotal,
@@ -118,5 +121,26 @@ router.get('/:id', authenticate, async (req: express.Request, res: express.Respo
   }
 });
 
+
+// Rota para excluir um orçamento
+router.delete('/:id', authenticate, async (req: express.Request, res: express.Response) => {
+    const { id } = req.params;  // Obtém o ID do orçamento a ser excluído
+    const userId = req.user.id;  // Obtém o userId do token JWT
+  
+    try {
+      // Verifica se o orçamento existe e se pertence ao usuário
+      const orcamento = await Orcamento.findOne({ where: { id, userId } });
+      if (!orcamento) {
+        return res.status(404).json({ message: 'Orçamento não encontrado ou não autorizado a excluí-lo' });
+      }
+  
+      // Exclui o orçamento
+      await Orcamento.destroy({ where: { id } });
+      res.status(200).json({ message: 'Orçamento excluído com sucesso' });
+    } catch (err) {
+      console.error('Erro ao excluir orçamento:', err);
+      res.status(500).json({ message: 'Erro ao excluir orçamento' });
+    }
+  });
 // Exportando o roteador para ser utilizado no app principal
 export default router;

@@ -12,10 +12,10 @@ const {
   OrcamentoItem,
   OrcamentoList,
   OrcamentoWrapper,
-  Price,
+  // Price,
   Item,
   ItemDetails,
-  ItemList,
+  // ItemList,
   ErrorMessage,
   Header,
   Input,
@@ -28,17 +28,31 @@ const {
   ModalOverlay,
   ModalContent,
   ModalButton,
-  ImageContainer
-  // ModalHeader,
-  // ModalBody,
-  // ModalFooter,
+  ImageContainer,
+  DetalhesWrapper,
+  ExcluirButton
 } = StyledComponents;
+
+interface Orcamento {
+  id: number;
+  nome: string;
+  total: number;
+  userId: number;
+  itens?: Array<{
+    nome: string;
+    quantidade: number;
+    materialCorrigido: number;
+    maoDeObraCorrigida: number;
+  }>;
+}
 
 const App: React.FC = () => {
   const [termo, setTermo] = useState('');
   const [itens, setItens] = useState<any[]>([]);
   const [orcamento, setOrcamento] = useState<any[]>([]);
-  const [orcamentosSalvos, setOrcamentosSalvos] = useState<any[]>([]);  // Adiciona o estado para armazenar os orçamentos salvos
+  const [orcamentosSalvos, setOrcamentosSalvos] = useState<Orcamento[]>([]);
+  const [orcamentoDetalhado, setOrcamentoDetalhado] = useState<Orcamento | null>(null);
+  const [orcamentoNome, setOrcamentoNome] = useState('');
   const [erro, setErro] = useState<string>('');
   const [modalItem, setModalItem] = useState<any | null>(null);
   const [quantidade, setQuantidade] = useState<string>('');
@@ -58,7 +72,7 @@ const App: React.FC = () => {
     // Função para buscar orçamentos salvos
     const fetchOrcamentosSalvos = async () => {
       try {
-        const res = await axios.get('http://192.168.15.116:3001/api/orcamentos', {
+        const res = await axios.get(`${BASE_URL}/api/orcamentos`, {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
@@ -74,6 +88,12 @@ const App: React.FC = () => {
       fetchOrcamentosSalvos();
     }
   }, [authToken]);
+
+  useEffect(() => {
+    if (modalItem) {
+      console.log('Modal atualizado:', modalItem);
+    }
+  }, [modalItem]);
 
   const BASE_URL = 'http://192.168.15.116:3001';
 
@@ -106,26 +126,55 @@ const App: React.FC = () => {
       return;
     }
 
+    if (!orcamentoNome.trim()) {
+      alert('Por favor, forneça um nome para o orçamento!');
+      return;
+    }
+
+    const novoOrcamento = {
+      nome: orcamentoNome,  // Incluindo o nome
+      orcamento,  // Itens do orçamento
+    };
+
     try {
       const res = await axios.post(
         `${BASE_URL}/api/orcamento`,
-        { orcamento },
+        novoOrcamento,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
         }
       );
+
       alert('Orçamento salvo com sucesso!');
       setOrcamento([]);  // Limpar o orçamento atual após salvar
-      // Recarregar os orçamentos salvos
-      const resOrcamentos = await axios.get('http://192.168.15.116:3001/api/orcamentos', {
+      setOrcamentoNome('');  // Limpar o nome do orçamento após salvar
+
+      const resOrcamentos = await axios.get(`${BASE_URL}/api/orcamentos`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setOrcamentosSalvos(resOrcamentos.data);
     } catch (err) {
-      setErro('Erro ao buscar orçamento');
-      console.error('Erro ao buscar orçamento', err);
+      setErro('Erro ao salvar orçamento');
+      console.error('Erro ao salvar orçamento', err);
+    }
+  };
+
+  const excluirOrcamento = async (orcamentoId: number) => {
+    try {
+      await axios.delete(`${BASE_URL}/api/orcamentos/${orcamentoId}`, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      });
+
+      // Atualizar a lista de orçamentos salvos após a exclusão
+      setOrcamentosSalvos(orcamentosSalvos.filter(orcamento => orcamento.id !== orcamentoId));
+      alert('Orçamento excluído com sucesso!');
+    } catch (err) {
+      setErro('Erro ao excluir orçamento');
+      console.error('Erro ao excluir orçamento', err);
     }
   };
 
@@ -136,9 +185,29 @@ const App: React.FC = () => {
     });
   };
 
+  const mostrarDetalhesOrcamento = (orcamento: Orcamento) => {
+    if (!orcamento.itens || orcamento.itens.length === 0) {
+      console.warn("Este orçamento não contém itens detalhados:", orcamento);
+    }
+    setOrcamentoDetalhado(orcamentoDetalhado?.id === orcamento.id ? null : orcamento);
+  };
+
 
   const abrirModal = (item: any) => {
-    setModalItem(item);
+    const indiceInflacao = 1.4003; // Inflação acumulada de 40,03%
+  
+    // Calculando os valores corrigidos pela inflação
+    const materialCorrigido = (item.material || 0) * indiceInflacao;
+    const maoDeObraCorrigida = (item.maoDeObra || 0) * indiceInflacao;
+  
+    // Adicionando os valores corrigidos ao item
+    const itemComValoresCorrigidos = {
+      ...item,
+      materialCorrigido,
+      maoDeObraCorrigida,
+    };
+  
+    setModalItem(itemComValoresCorrigidos);
     setQuantidade('');
   };
 
@@ -153,16 +222,24 @@ const App: React.FC = () => {
       return;
     }
 
-    const materialTotal = item.material * quantidade;
-    const maoDeObraTotal = item.maoDeObra * quantidade;
+    const indiceInflacao = 1.4003; // Inflação acumulada de 40,03%
+
+    // Valores corrigidos pela inflação
+    const materialCorrigido = (item.material || 0) * indiceInflacao;
+    const maoDeObraCorrigida = (item.maoDeObra || 0) * indiceInflacao;
+
+    const materialTotal = materialCorrigido * quantidade;
+    const maoDeObraTotal = maoDeObraCorrigida * quantidade;
     const total = materialTotal + maoDeObraTotal;
 
     const itemOrcamento = {
       ...item,
       quantidade,
+      materialCorrigido,
+      maoDeObraCorrigida,
       materialTotal,
       maoDeObraTotal,
-      total,  // Armazenando o total calculado
+      total, // Armazenando o total calculado
     };
 
     setOrcamento([...orcamento, itemOrcamento]);
@@ -222,13 +299,16 @@ const App: React.FC = () => {
               </span>
             </p>
             <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              Material: {formatarPreco(Number(modalItem.material) || 0)}
+              Material (Corrigido): {formatarPreco(Number(modalItem?.materialCorrigido || 0))}
             </p>
             <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              Mão de Obra: {formatarPreco(Number(modalItem.maoDeObra) || 0)}
+              Mão de Obra (Corrigida): {formatarPreco(Number(modalItem?.maoDeObraCorrigida || 0))}
             </p>
             <StyledNumber style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              TOTAL: {formatarPreco(Number(modalItem.total) || 0)}
+              TOTAL (Corrigido):{' '}
+              {formatarPreco(
+                (Number(modalItem.materialCorrigido) || 0) + (Number(modalItem.maoDeObraCorrigida) || 0)
+              )}
             </StyledNumber>
             <Input
               type="number"
@@ -248,34 +328,49 @@ const App: React.FC = () => {
           {orcamento.map((item, index) => (
             <OrcamentoItem key={index}>
               <div>
-                {item.nome} - {item.quantidade} x Material: {formatarPreco(Number(item.material) || 0)} + Mão de
-                Obra: {formatarPreco(Number(item.maoDeObra) || 0)}
+                {item.nome} - {item.quantidade} x Material (Corrigido): {formatarPreco(Number(item.materialCorrigido) || 0)} +
+                Mão de Obra (Corrigido): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
               </div>
-              <div>{formatarPreco(Number(item.total) || 0)}</div>
+              <div>Total: {formatarPreco(Number(item.total) || 0)}</div>
             </OrcamentoItem>
           ))}
         </OrcamentoList>
         <TotalWrapper>
           Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}
           <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
+          <Input
+            type="text"
+            value={orcamentoNome}
+            onChange={(e) => setOrcamentoNome(e.target.value)}
+            placeholder="Nome do Orçamento"
+          />
         </TotalWrapper>
       </OrcamentoWrapper>
 
-      <OrcamentoWrapper>
-        <h2>Orçamentos Salvos</h2>
-        {orcamentosSalvos.length === 0 ? (
-          <p>Não há orçamentos salvos.</p>
-        ) : (
-          <OrcamentoList>
-            {orcamentosSalvos.map((orcamento, index) => (
-              <OrcamentoItem key={index}>
-                <div>{`Orçamento #${orcamento.id}`}</div>
-                <div>Total: {formatarPreco(orcamento.total)}</div> {/* Aqui chama a função formatarPreco */}
-              </OrcamentoItem>
-            ))}
-          </OrcamentoList>
-        )}
-      </OrcamentoWrapper>
+      <OrcamentoList>
+        {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (
+          <OrcamentoItem key={orcamento.id || index}>
+            <div>{orcamento.nome}</div>
+            <div>Total: {formatarPreco(orcamento.total)}</div>
+            <Button onClick={() => mostrarDetalhesOrcamento(orcamento)}>
+              {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
+            </Button>
+            <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
+            {orcamentoDetalhado?.id === orcamento.id && (
+              <DetalhesWrapper>
+                <h3>Itens do Orçamento</h3>
+                <ul>
+                  {orcamento.itens?.map((item, idx) => (
+                    <li key={idx}>
+                      <span>{item.nome}</span> - <span>{item.quantidade} x {formatarPreco(item.materialCorrigido + item.maoDeObraCorrigida)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DetalhesWrapper>
+            )}
+          </OrcamentoItem>
+        ))}
+      </OrcamentoList>
 
       <Button onClick={() => navigate('/gerar-contrato')}>Gerar Contrato</Button>
 

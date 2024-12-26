@@ -34,7 +34,7 @@ Orcamento.init(
       primaryKey: true,
     },
     nome: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: true,
       },
     total: {
