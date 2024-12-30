@@ -8,14 +8,18 @@ const Container = styled.div`
   width: 100%;
   box-sizing: border-box;
   overflow-x: auto;
+  font-family: sans-serif;
+  font-size: medium;
 
   /* Tornar o layout responsivo */
   @media (max-width: 768px) {
     padding: 15px; /* Menos padding em telas menores */
+    font-size: small;
   }
 
   @media (max-width: 480px) {
     padding: 10px; /* Menos padding em telas muito pequenas */
+    font-size: small;
   }
 `;
 
@@ -24,7 +28,7 @@ const ImageContainer = styled.div`
   left: 10px;
   top: 0;
   padding: 10px;
-  margin-left: 125px;
+  margin-left: 110px;
 
   img {
     max-width: 20%;
@@ -40,7 +44,7 @@ const ImageContainer = styled.div`
 
   @media (max-width: 480px) {
     img {
-      max-width: 15%;
+      max-width: 20%;
     }
   }
 `;
@@ -51,11 +55,11 @@ const Header = styled.h1`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: medium;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: x-large;
   }
 `;
 
@@ -133,12 +137,14 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #d1cc36;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
   &:hover {
     background-color: #949828;
@@ -146,6 +152,11 @@ const Button = styled.button`
 
   @media (max-width: 768px) {
     width: 100%; /* Botão ocupa a largura total */
+  }
+
+  @media (max-width: 480px) {
+    width: 50%; /* Largura total em telas pequenas */
+    margin-right: 0;
   }
 `;
 
@@ -159,6 +170,8 @@ const ExcluirButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
   &:hover {
     background-color: #b40808;
@@ -166,6 +179,11 @@ const ExcluirButton = styled.button`
 
   @media (max-width: 768px) {
     width: 100%; /* Botão ocupa a largura total */
+  }
+
+  @media (max-width: 480px) {
+    width: 50%; /* Largura total em telas pequenas */
+    margin-right: 0;
   }
 `;
 
@@ -282,12 +300,23 @@ const OrcamentoItem = styled.li`
   border-bottom: 1px solid #ddd;
 `;
 
-const TotalWrapper = styled.div`
+const TotalWrapper = styled.div` 
   color: red;
   font-weight: bold;
   font-size: 20px;
   text-align: right;
-  padding-top: 10px;
+
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente */
+  justify-content: flex-end; /* Alinha os itens à direita */
+
+  span {
+    margin-right: 16px; /* Adiciona espaçamento entre o Total e o botão */
+  }
+
+  button {
+    margin-right: 8px; /* Espaçamento entre o botão e o campo de entrada */
+  }
 `;
 
 const ModalOverlay = styled.div`

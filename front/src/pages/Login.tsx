@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import StyledComponents from '../styled';
+import StyledComponents from '../styled/styled';
 import { useNavigate } from 'react-router-dom';
 
 const { Input, Button, ErrorMessage, Container } = StyledComponents;

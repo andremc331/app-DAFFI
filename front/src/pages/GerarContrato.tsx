@@ -42,6 +42,7 @@ const SidebarItem = styled.div`
   padding: 10px;
   transition: background-color 0.2s;
 
+
   &:hover {
     background-color: #34495e;
     border-radius: 5px;
@@ -53,7 +54,7 @@ const ImageContainer = styled.div`
   left: 10px;
   top: 0;
   padding: 10px;
-  margin-left: 125px;
+  margin-left: 115px;
 
   img {
     max-width: 20%;
@@ -69,7 +70,7 @@ const ImageContainer = styled.div`
 
   @media (max-width: 480px) {
     img {
-      max-width: 15%;
+      max-width: 20%;
     }
   }
 `;
@@ -78,9 +79,10 @@ const Header = styled.h1`
   margin-top: 50px;
   color: #333;
   text-align: center;
+  font-size: medium;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: medium;
   }
 
   @media (max-width: 480px) {
@@ -98,6 +100,18 @@ const Content = styled.div`
 const MainWrapper = styled.div`
   display: flex;
   flex: 1;
+  font-family: sans-serif;
+  font-size: medium;
+
+  @media (max-width: 768px) {
+    padding: 15px; /* Menos padding em telas menores */
+    font-size: small;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; /* Menos padding em telas muito pequenas */
+    font-size: small;
+  }
 `;
 
 const Input = styled.input`
@@ -349,11 +363,10 @@ const navigate = useNavigate();
         <ImageContainer>
           <img src={DAFFI} alt="Logo DAFFI" />
         </ImageContainer>
-        Consulta de Preços - Tabela PINI
-      </Header>
-    <FormWrapper>
-      <h2>Gerar Contrato</h2>
+        Gerar Contrato
+      </Header>      
 
+    <FormWrapper>
       {/* <Input
         type="text"
         name="contratada"

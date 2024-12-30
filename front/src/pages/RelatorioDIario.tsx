@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as XLSX from 'xlsx';
+import LogoutButton from '../components/LogoutButton';
+import { useNavigate } from 'react-router-dom';
+import DAFFI from "../images/DAFFI logo.jpg"
+
 
 const RelatorioDiario: React.FC = () => {
   const [data, setData] = useState('');
   const [clima, setClima] = useState('');
   const [atividades, setAtividades] = useState('');
   const [observacoes, setObservacoes] = useState('');
+  const navigate = useNavigate();
 
   const handleSave = () => {
     // Estrutura do relatório baseada no modelo fornecido
@@ -45,9 +50,27 @@ const RelatorioDiario: React.FC = () => {
     setObservacoes('');
   };
 
+  const isClear = true;
+
   return (
     <Container>
-      <Header>Relatório Diário de Obra</Header>
+    <MainWrapper> 
+        {/* Barra Lateral */}
+        <Sidebar>
+          <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
+          <SidebarItem>      <LogoutButton />
+          </SidebarItem>
+        </Sidebar>
+         {/* Conteúdo Principal */}
+         <Content>
+          <Header>
+        <ImageContainer>
+          <img src={DAFFI} alt="Logo DAFFI" />
+        </ImageContainer>
+        Relatório Diário de Obra
+      </Header>
       <Form>
         <Field>
           <Label>Data:</Label>
@@ -84,11 +107,11 @@ const RelatorioDiario: React.FC = () => {
         </Field>
         <ButtonWrapper>
           <Button onClick={handleSave}>Salvar</Button>
-          <Button onClick={handleClear} clear>
-            Limpar
-          </Button>
-        </ButtonWrapper>
+          <Button onClick={handleClear} $clear={isClear}>Limpar</Button>
+          </ButtonWrapper>
       </Form>
+      </Content>
+    </MainWrapper>
     </Container>
   );
 };
@@ -100,13 +123,18 @@ const Container = styled.div`
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-`;
+  font-family: sans-serif;
+  font-size: medium;
 
-const Header = styled.h1`
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8em;
-  color: #333;
+  @media (max-width: 768px) {
+    padding: 15px; /* Menos padding em telas menores */
+    font-size: small;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; /* Menos padding em telas muito pequenas */
+    font-size: small;
+  }
 `;
 
 const Form = styled.div`
@@ -146,8 +174,8 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Button = styled.button<{ clear?: boolean }>`
-  background-color: ${(props) => (props.clear ? '#e74c3c' : '#3498db')};
+const Button = styled.button<{ $clear?: boolean }>`
+  background-color: ${(props) => (props.$clear ? '#e74c3c' : '#3498db')};
   color: white;
   padding: 10px 20px;
   border: none;
@@ -156,8 +184,99 @@ const Button = styled.button<{ clear?: boolean }>`
   font-size: 1em;
 
   &:hover {
-    background-color: ${(props) => (props.clear ? '#c0392b' : '#2980b9')};
+    background-color: ${(props) => (props.$clear ? '#c0392b' : '#2980b9')};
   }
+`;
+
+const Sidebar = styled.div`
+  width: 80px; /* Largura inicial da barra lateral */
+  height: 100vh; /* Faz a barra ocupar toda a altura da tela */
+  background-color: #000000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: auto;
+  position: fixed; /* Fixa a barra na lateral */
+  top: 0; /* Garante que comece do topo */
+  left: 0; /* Garante que esteja à esquerda */
+  transition: width 0.3s ease; /* Animação para expandir suavemente */
+  
+  
+  &:hover {
+    width: 110px; /* Largura ao passar o mouse */
+  }
+`;
+
+const SidebarItem = styled.div`
+  margin: 10px 0;
+  cursor: pointer;
+  white-space: nowrap; /* Evita quebra de texto */
+  overflow: hidden; /* Oculta texto excedente */
+  text-overflow: ellipsis; /* Mostra "..." para texto cortado */
+  padding: 10px;
+  transition: background-color 0.2s;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+  &:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding: 10px;
+  margin-left: 115px;
+
+  img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 20%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    img {
+      max-width: 20%;
+    }
+  }
+`;
+
+const Header = styled.h1`
+  margin-top: 50px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const Content = styled.div`
+  flex: 1;
+  padding: 20px;
+  margin-left: 90px; /* Adiciona espaço para o conteúdo ao lado da barra lateral */
+  overflow-y: auto;
+`;
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 export default RelatorioDiario;
