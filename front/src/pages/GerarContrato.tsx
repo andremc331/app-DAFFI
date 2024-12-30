@@ -3,13 +3,101 @@ import styled from 'styled-components';
 import { jsPDF } from 'jspdf';
 import { logoBase64 } from '../base64/logoBase64';
 import { logoBase64versao2 } from '../base64/logoBase64versao2';
-
+import { useNavigate } from 'react-router-dom';
+import DAFFI from "../images/DAFFI logo.jpg"
+import LogoutButton from '../components/LogoutButton';
 // Definição de estilos para o formulário e exibição do contrato
 // Estilos do componente
 const FormWrapper = styled.div`
   padding: 20px;
   max-width: 800px;
   margin: auto;
+`;
+
+const Sidebar = styled.div`
+  width: 80px; /* Largura inicial da barra lateral */
+  height: 100vh; /* Faz a barra ocupar toda a altura da tela */
+  background-color: #000000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: auto;
+  position: fixed; /* Fixa a barra na lateral */
+  top: 0; /* Garante que comece do topo */
+  left: 0; /* Garante que esteja à esquerda */
+  transition: width 0.3s ease; /* Animação para expandir suavemente */
+  
+  &:hover {
+    width: 110px; /* Largura ao passar o mouse */
+  }
+`;
+
+const SidebarItem = styled.div`
+  margin: 10px 0;
+  cursor: pointer;
+  white-space: nowrap; /* Evita quebra de texto */
+  overflow: hidden; /* Oculta texto excedente */
+  text-overflow: ellipsis; /* Mostra "..." para texto cortado */
+  padding: 10px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding: 10px;
+  margin-left: 125px;
+
+  img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 20%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    img {
+      max-width: 15%;
+    }
+  }
+`;
+
+const Header = styled.h1`
+  margin-top: 50px;
+  color: #333;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const Content = styled.div`
+  flex: 1;
+  padding: 20px;
+  margin-left: 90px; /* Adiciona espaço para o conteúdo ao lado da barra lateral */
+  overflow-y: auto;
+`;
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 const Input = styled.input`
@@ -27,6 +115,9 @@ const Button = styled.button`
   margin-right: 10px;
 `;
 
+const NavegarButton = styled.button`
+`;
+
 const ContractWrapper = styled.pre`
   margin-top: 20px;
   padding: 20px;
@@ -36,7 +127,8 @@ const ContractWrapper = styled.pre`
   font-family: 'Courier New', Courier, monospace;
 `;
 
-const GerarContrato = () => {
+const GerarContrato: React.FC = () => {
+const navigate = useNavigate();
   const [empresaInfo, setEmpresaInfo] = useState({
     contratada: '',
     cnpjContratada: '',
@@ -69,24 +161,23 @@ const GerarContrato = () => {
     }));
   };
 
-  const formatarPreco = (valor: number) => {
-    return valor.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-  };
+  // const formatarPreco = (valor: number) => {
+  //   return valor.toLocaleString('pt-BR', {
+  //     style: 'currency',
+  //     currency: 'BRL',
+  //   });
+  // };
   
   const handleGenerateContract = () => {
     const contrato = `
 
     Na condição de CONTRATADA a empresa Alan Alves dos Santos Me estabelecida a rua Giovanni
-    Castagneto, 144 – Villa Branca, Jacareí – SP, inscrita no CNPJ 18 158 765/000-10 com inscrição municipal de
-    número 62667 neste ato representado por Alan Alves dos Santos CPF 307 901 418 92 RG 34 500 304 – 4
-    com endereço supracitado.
-    Na condição de CONTRATANTE, a pessoa jurídica Sr(a) ${empresaInfo.contratada}, portador 
-    do CNPJ ${empresaInfo.cnpjContratada} sediado na ${empresaInfo.enderecoContratada},
-    representado pelo Sr(a). ${empresaInfo.responsavelContratada}, brasileiro, portador do RG
-    nº ${empresaInfo.rgRepresentante}, inscrito no CPF sob o nº ${empresaInfo.cpfRepresentante}.
+    Castagneto, 144 – Villa Branca, Jacareí – SP, inscrita no CNPJ 18 158 765/000-10 com inscrição 
+    municipal de número 62667 neste ato representado por Alan Alves dos Santos CPF 307 901 418 92 
+    RG 34 500 304 – 4 com endereço supracitado.
+    Na condição de CONTRATANTE, a pessoa jurídica Sr(a) ${empresaInfo.contratante}, portador do CNPJ ${empresaInfo.cnpjContratante} sediado na ${empresaInfo.enderecoContratante},
+    representado pelo Sr(a). ${empresaInfo.responsavelContratante}, brasileiro, portador do RG nº ${empresaInfo.rgRepresentante}, inscrito 
+    no CPF sob o nº ${empresaInfo.cpfRepresentante}.
 
     1 – Objeto do contrato.
       ● Prestação de Serviço, com fornecimento de Mão de Obra e materiais, para os serviços mencionados
@@ -196,7 +287,7 @@ const GerarContrato = () => {
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
     const marginLeft = 14;
-    const pageWidth = 250; // Largura disponível para texto
+    const pageWidth = 195; // Largura disponível para texto
     const lineHeight = 5.5; // Altura de cada linha
     const pageHeight = 287; // Altura útil da página
     let currentHeight = 51; // Posição inicial do texto na primeira página
@@ -242,6 +333,24 @@ const GerarContrato = () => {
   };
 
   return (
+    <>
+    <MainWrapper> 
+        {/* Barra Lateral */}
+        <Sidebar>
+          <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
+          <SidebarItem>      <LogoutButton />
+          </SidebarItem>
+        </Sidebar>
+         {/* Conteúdo Principal */}
+         <Content>
+         <Header>
+        <ImageContainer>
+          <img src={DAFFI} alt="Logo DAFFI" />
+        </ImageContainer>
+        Consulta de Preços - Tabela PINI
+      </Header>
     <FormWrapper>
       <h2>Gerar Contrato</h2>
 
@@ -381,7 +490,14 @@ const GerarContrato = () => {
           <h3>Pré-visualização do Contrato</h3>
           {contratoGerado}
         </ContractWrapper>
-    </FormWrapper>
+
+        <NavegarButton onClick={() => navigate('/orcamentos')}>Orçamentos</NavegarButton>
+        
+        <LogoutButton/>
+    </FormWrapper>    
+    </Content>
+    </MainWrapper>
+    </>
   );
 };
 

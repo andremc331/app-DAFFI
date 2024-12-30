@@ -83,7 +83,7 @@ router.post('/', authenticate, async (req: express.Request, res: express.Respons
         total: item.total,
       });
     }
-
+    
     res.status(201).json({ message: 'Orçamento salvo com sucesso!', orcamentoId: novoOrcamento.id });
   } catch (err) {
     console.error('Erro ao salvar orçamento:', err);
@@ -121,6 +121,30 @@ router.get('/:id', authenticate, async (req: express.Request, res: express.Respo
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const orcamentoId = parseInt(req.params.id);
+
+  try {
+    // Busca o orçamento e os itens associados
+    const orcamentoDetalhado = await Orcamento.findOne({
+      where: { id: orcamentoId },
+      include: [{
+        model: OrcamentoItem,
+        as: 'itens'  // Defina o alias conforme o seu modelo
+      }]
+    });
+
+    if (!orcamentoDetalhado) {
+      return res.status(404).json({ message: 'Orçamento não encontrado!' });
+    }
+
+    // Retorna o orçamento detalhado com os itens
+    res.json(orcamentoDetalhado);
+  } catch (err) {
+    console.error('Erro ao recuperar o orçamento:', err);
+    res.status(500).json({ message: 'Erro ao recuperar o orçamento' });
+  }
+});
 
 // Rota para excluir um orçamento
 router.delete('/:id', authenticate, async (req: express.Request, res: express.Response) => {

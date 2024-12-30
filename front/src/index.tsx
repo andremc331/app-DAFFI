@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';  // Importando 
 import App from './App';
 import LoginCadastro from './pages/Login';  // Importando a página única de login e cadastro
 import GerarContrato from './pages/GerarContrato';
+import RelatorioDiario from './pages/RelatorioDIario';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<LoginCadastro />} /> {/* Página única de Login/Cadastro */}
         <Route path="/orcamentos" element={<App />} /> {/* Página de Orçamentos */}
         <Route path="/gerar-contrato" element={<GerarContrato />} />
+        <Route path="/relatorios" element={<RelatorioDiario />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -4,31 +4,43 @@ import styled from "styled-components";
 const Container = styled.div`
   padding: 20px;
   font-family: Arial, sans-serif;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+
+  /* Tornar o layout responsivo */
+  @media (max-width: 768px) {
+    padding: 15px; /* Menos padding em telas menores */
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; /* Menos padding em telas muito pequenas */
+  }
 `;
 
 const ImageContainer = styled.div`
-  position: absolute;  // A imagem ficará fixa no canto esquerdo
-  left: 10px;          // Ajuste da margem do lado esquerdo
-  top: 0;              // Alinha a imagem ao topo
+  position: absolute;
+  left: 10px;
+  top: 0;
   padding: 10px;
+  margin-left: 125px;
 
   img {
-    max-width: 70%;  // Faz a imagem ocupar no máximo 100% do tamanho do container
-    height: auto;     // Mantém a proporção da imagem
-    display: block;   // Garante que a imagem não tenha espaçamento extra embaixo
+    max-width: 20%;
+    height: auto;
+    display: block;
   }
 
-  // Media Query para dispositivos móveis
   @media (max-width: 768px) {
     img {
-      max-width: 15%;  // Ajusta a imagem para ser um pouco menor em telas menores
+      max-width: 20%;
     }
   }
-  
-  // Media Query para telas grandes (por exemplo, tablets ou desktops)
-  @media (min-width: 765px) {
+
+  @media (max-width: 480px) {
     img {
-      max-width: 20%;  // A imagem ocupará até 20% do tamanho do container em telas maiores
+      max-width: 15%;
     }
   }
 `;
@@ -37,12 +49,70 @@ const Header = styled.h1`
   margin-top: 50px;
   color: #333;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const Sidebar = styled.div`
+  width: 80px; /* Largura inicial da barra lateral */
+  height: 100vh; /* Faz a barra ocupar toda a altura da tela */
+  background-color: #000000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: auto;
+  position: fixed; /* Fixa a barra na lateral */
+  top: 0; /* Garante que comece do topo */
+  left: 0; /* Garante que esteja à esquerda */
+  transition: width 0.3s ease; /* Animação para expandir suavemente */
+  
+  &:hover {
+    width: 110px; /* Largura ao passar o mouse */
+  }
+`;
+
+const SidebarItem = styled.div`
+  margin: 10px 0;
+  cursor: pointer;
+  white-space: nowrap; /* Evita quebra de texto */
+  overflow: hidden; /* Oculta texto excedente */
+  text-overflow: ellipsis; /* Mostra "..." para texto cortado */
+  padding: 10px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+`;
+
+const Content = styled.div`
+  flex: 1;
+  padding: 20px;
+  margin-left: 90px; /* Adiciona espaço para o conteúdo ao lado da barra lateral */
+  overflow-y: auto;
+`;
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 const InputWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled.input`
@@ -51,6 +121,15 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; /* Largura total em telas pequenas */
+    margin-right: 0;
+  }
 `;
 
 const Button = styled.button`
@@ -64,10 +143,17 @@ const Button = styled.button`
   &:hover {
     background-color: #949828;
   }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão ocupa a largura total */
+  }
+`;
+
+const NavegarButton = styled.button`
 `;
 
 const ExcluirButton = styled.button`
-  padding: 10px 20px;
+  padding: 5px 5px;
   background-color: #ff0000;
   color: white;
   border: none;
@@ -77,11 +163,19 @@ const ExcluirButton = styled.button`
   &:hover {
     background-color: #b40808;
   }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão ocupa a largura total */
+  }
 `;
 
 const ErrorMessage = styled.p`
   color: red;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ItemList = styled.ul`
@@ -90,33 +184,35 @@ const ItemList = styled.ul`
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
-  padding: 10px; /* Adiciona espaçamento interno */
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    padding: 5px; /* Menos padding em telas menores */
+  }
 `;
 
-// Adicione estilos para o comportamento do scroll
 const ScrollbarStyles = `
   ::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #ccc; /* Cor da barra de rolagem */
-    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #ccc;
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa; /* Cor ao passar o mouse */
+    background-color: #aaa;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #f9f9f9; /* Cor do trilho da barra de rolagem */
+    background-color: #f9f9f9;
   }
 `;
 
-// Aplique estilos personalizados na barra de rolagem
 const ScrollableItemList = styled(ItemList)`
-  max-height: 300px; /* Controle da altura máxima */
-  overflow-y: auto; /* Rolagem apenas aqui */
+  max-height: 300px;
+  overflow-y: auto;
   ${ScrollbarStyles}
 `;
 
@@ -129,6 +225,10 @@ const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
 `;
 
 const ItemDetails = styled.div`
@@ -157,6 +257,10 @@ const StyledNumber = styled.span`
 
 const OrcamentoWrapper = styled.div`
   margin-top: 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 const OrcamentoList = styled.ul`
@@ -165,6 +269,10 @@ const OrcamentoList = styled.ul`
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const OrcamentoItem = styled.li`
@@ -188,7 +296,7 @@ const ModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparência do fundo */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,6 +310,11 @@ const ModalContent = styled.div`
   width: 400px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 15px;
+  }
 `;
 
 const InputQuantidade = styled.input`
@@ -214,7 +327,7 @@ const InputQuantidade = styled.input`
 
 const ModalButton = styled.button`
   padding: 10px 20px;
-  background-color: #ff4d4d; /* Cor vermelha para o botão de fechar */
+  background-color: #ff4d4d;
   color: white;
   border: none;
   border-radius: 5px;
@@ -222,10 +335,15 @@ const ModalButton = styled.button`
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 10; /* Garante que o botão fique sobre o conteúdo */
-  
+  z-index: 10;
+
   &:hover {
-    background-color: #e60000; /* Cor mais escura ao passar o mouse */
+    background-color: #e60000;
+  }
+
+  @media (max-width: 768px) {
+    top: 5px;
+    left: 5px;
   }
 `;
 
@@ -263,7 +381,6 @@ const DetalhesWrapper = styled.div`
       background-color: #f5f5f5;
       border: 1px solid #e0e0e0;
       border-radius: 5px;
-      transition: background-color 0.2s ease, transform 0.2s ease;
 
       &:hover {
         background-color: #eaf4fe;
@@ -279,6 +396,17 @@ const DetalhesWrapper = styled.div`
           color: #333333;
         }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    h3 {
+      font-size: 1rem;
+    }
+
+    ul {
+      padding: 5px;
     }
   }
 `;
@@ -304,10 +432,16 @@ const StyledComponents = {
   ModalButton,
   ModalContent,
   ModalOverlay,
-  InputQuantidade,
+  ExcluirButton,
+  ScrollbarStyles,
   ImageContainer,
   DetalhesWrapper,
-  ExcluirButton
+  InputQuantidade,
+  NavegarButton,
+  Sidebar,
+  SidebarItem,
+  MainWrapper,
+  Content
 };
 
 export default StyledComponents;

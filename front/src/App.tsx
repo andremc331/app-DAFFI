@@ -6,6 +6,7 @@ import StyledComponents from './styled';
 import { debounce } from 'lodash';
 import DAFFI from "../src/images/DAFFI logo.jpg"
 import { useNavigate } from 'react-router-dom';
+import LogoutButton from './components/LogoutButton';
 
 const {
   TotalWrapper,
@@ -30,12 +31,20 @@ const {
   ModalButton,
   ImageContainer,
   DetalhesWrapper,
-  ExcluirButton
+  ExcluirButton,
+  NavegarButton,
+  Sidebar,
+  SidebarItem,
+  MainWrapper,
+  Content
 } = StyledComponents;
 
 interface Orcamento {
   id: number;
   nome: string;
+  quantidade: number;
+  materialCorrigido: number;
+  maoDeObraCorrigida: number;
   total: number;
   userId: number;
   itens?: Array<{
@@ -69,7 +78,6 @@ const App: React.FC = () => {
   }, [navigate]);
 
   useEffect(() => {
-    // Função para buscar orçamentos salvos
     const fetchOrcamentosSalvos = async () => {
       try {
         const res = await axios.get(`${BASE_URL}/api/orcamentos`, {
@@ -77,6 +85,7 @@ const App: React.FC = () => {
             Authorization: `Bearer ${authToken}`,
           },
         });
+        console.log("Orçamentos retornados:", res.data);
         setOrcamentosSalvos(res.data);
       } catch (err) {
         setErro('Erro ao buscar orçamentos salvos');
@@ -132,10 +141,10 @@ const App: React.FC = () => {
     }
 
     const novoOrcamento = {
-      nome: orcamentoNome,  // Incluindo o nome
-      orcamento,  // Itens do orçamento
+      nome: orcamentoNome,
+      orcamento: orcamento,  // Itens do orçamento
     };
-
+    
     try {
       const res = await axios.post(
         `${BASE_URL}/api/orcamento`,
@@ -146,11 +155,11 @@ const App: React.FC = () => {
           },
         }
       );
-
+    
       alert('Orçamento salvo com sucesso!');
       setOrcamento([]);  // Limpar o orçamento atual após salvar
       setOrcamentoNome('');  // Limpar o nome do orçamento após salvar
-
+    
       const resOrcamentos = await axios.get(`${BASE_URL}/api/orcamentos`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
@@ -186,27 +195,32 @@ const App: React.FC = () => {
   };
 
   const mostrarDetalhesOrcamento = (orcamento: Orcamento) => {
-    if (!orcamento.itens || orcamento.itens.length === 0) {
+    const orcamentoComItens = {
+      ...orcamento,
+      itens: orcamento.itens || [], // Garantir que itens seja um array, mesmo vazio
+    };
+  
+    if (orcamentoComItens.itens.length === 0) {
       console.warn("Este orçamento não contém itens detalhados:", orcamento);
     }
-    setOrcamentoDetalhado(orcamentoDetalhado?.id === orcamento.id ? null : orcamento);
+  
+    setOrcamentoDetalhado(orcamentoComItens);
   };
-
 
   const abrirModal = (item: any) => {
     const indiceInflacao = 1.4003; // Inflação acumulada de 40,03%
-  
+
     // Calculando os valores corrigidos pela inflação
     const materialCorrigido = (item.material || 0) * indiceInflacao;
     const maoDeObraCorrigida = (item.maoDeObra || 0) * indiceInflacao;
-  
+
     // Adicionando os valores corrigidos ao item
     const itemComValoresCorrigidos = {
       ...item,
       materialCorrigido,
       maoDeObraCorrigida,
     };
-  
+
     setModalItem(itemComValoresCorrigidos);
     setQuantidade('');
   };
@@ -248,15 +262,24 @@ const App: React.FC = () => {
 
   return (
     <Container>
-
-      <Header>
+      <MainWrapper> 
+        {/* Barra Lateral */}
+        <Sidebar>
+          <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
+          <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
+          <SidebarItem>      <LogoutButton />
+          </SidebarItem>
+        </Sidebar>
+         {/* Conteúdo Principal */}
+         <Content>
+          <Header>
         <ImageContainer>
           <img src={DAFFI} alt="Logo DAFFI" />
         </ImageContainer>
         Consulta de Preços - Tabela PINI
       </Header>
-
-      <InputWrapper>
+          <InputWrapper>
         <Input
           type="text"
           value={termo}
@@ -337,13 +360,13 @@ const App: React.FC = () => {
         </OrcamentoList>
         <TotalWrapper>
           Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}
-          <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
-          <Input
+          <Button onClick={salvarOrcamento}>Salvar Orçamento</Button><Input
             type="text"
             value={orcamentoNome}
             onChange={(e) => setOrcamentoNome(e.target.value)}
             placeholder="Nome do Orçamento"
           />
+
         </TotalWrapper>
       </OrcamentoWrapper>
 
@@ -355,25 +378,31 @@ const App: React.FC = () => {
             <Button onClick={() => mostrarDetalhesOrcamento(orcamento)}>
               {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
             </Button>
-            <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
             {orcamentoDetalhado?.id === orcamento.id && (
               <DetalhesWrapper>
                 <h3>Itens do Orçamento</h3>
                 <ul>
-                  {orcamento.itens?.map((item, idx) => (
-                    <li key={idx}>
-                      <span>{item.nome}</span> - <span>{item.quantidade} x {formatarPreco(item.materialCorrigido + item.maoDeObraCorrigida)}</span>
-                    </li>
-                  ))}
+                  {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
+                    orcamentoDetalhado.itens.map((item, idx) => (
+                      <li key={idx}>
+                        <span>{item.nome}</span> -
+                        <span>{item.quantidade} x {formatarPreco(item.materialCorrigido + item.maoDeObraCorrigida)}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <p>Este orçamento não contém itens detalhados.</p>
+                  )}
                 </ul>
               </DetalhesWrapper>
             )}
+            <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
           </OrcamentoItem>
         ))}
       </OrcamentoList>
 
-      <Button onClick={() => navigate('/gerar-contrato')}>Gerar Contrato</Button>
-
+      <NavegarButton onClick={() => navigate('/gerar-contrato')}>Contratos</NavegarButton>
+        </Content>
+      </MainWrapper>
     </Container>
   );
 };
