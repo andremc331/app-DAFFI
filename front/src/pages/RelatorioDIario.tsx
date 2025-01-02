@@ -1,48 +1,70 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import * as XLSX from 'xlsx';
+import axios from 'axios';
 import LogoutButton from '../components/LogoutButton';
 import { useNavigate } from 'react-router-dom';
-import DAFFI from "../images/DAFFI logo.jpg"
-
+import DAFFI from "../images/DAFFI logo.jpg";
 
 const RelatorioDiario: React.FC = () => {
   const [data, setData] = useState('');
   const [clima, setClima] = useState('');
   const [atividades, setAtividades] = useState('');
+  const [maoDeObra, setMaoDeObra] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [responsavelTecnico, setResponsavelTecnico] = useState('');
+  const [obra, setObra] = useState('');
+
   const [observacoes, setObservacoes] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Indicador de carregamento
   const navigate = useNavigate();
 
-  const handleSave = () => {
-    // Estrutura do relatório baseada no modelo fornecido
-    const worksheetData = [
-      ["DIÁRIO DE OBRA", "", ""],
-      ["DATA:", data, ""],
-      ["CLIMA:", clima, ""],
-      ["ATIVIDADES REALIZADAS:", atividades, ""],
-      ["OBSERVAÇÕES:", observacoes, ""],
-    ];
-
-    // Criar a planilha
-    const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
-
-    // Ajustar largura das colunas
-    worksheet['!cols'] = [
-      { wch: 20 }, // Primeira coluna
-      { wch: 50 }, // Segunda coluna
-      { wch: 30 }, // Terceira coluna
-    ];
-
-    // Criar o arquivo Excel
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Relatório Diário');
-
-    // Salvar o arquivo
-    XLSX.writeFile(workbook, `Relatorio_Diario_${data || 'sem_data'}.xlsx`);
-
-    alert('Relatório salvo como Excel!');
+  const handleSave = async () => {
+    setIsLoading(true); // Ativar carregamento
+    try {
+      const payload = {
+        data,
+        clima,
+        atividades,
+        observacoes,
+        mao_de_obra: {
+          Pedreiro: 3,
+          "Ajudante Geral": 2,
+        },
+        obra,
+        responsavel_tecnico: responsavelTecnico,
+        endereco,
+      };
+  
+      // Fazer a requisição ao backend para gerar o PDF
+      const response = await axios.post('http://localhost:3001/gerar-pdf', payload, {
+        responseType: 'blob', // Para lidar com arquivos binários
+      });
+  
+      // Verifica se a resposta foi bem-sucedida
+      if (response.status === 200) {
+        // Criar um link para o download do arquivo
+        const blob = new Blob([response.data], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+  
+        // Baixar o arquivo
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `Relatorio_Diario_${data || 'sem_data'}.pdf`;
+        link.click();
+  
+        alert('Relatório salvo como PDF!');
+      } else {
+        console.error('Erro inesperado:', response);
+        alert('Erro ao salvar o relatório. Tente novamente.');
+      }
+    } catch (error) {
+      console.error('Erro ao salvar o relatório:', error);
+      alert('Erro ao salvar o relatório. Tente novamente.');
+    } finally {
+      setIsLoading(false); // Desativar carregamento
+    }
   };
-
+  
   const handleClear = () => {
     setData('');
     setClima('');
@@ -50,72 +72,112 @@ const RelatorioDiario: React.FC = () => {
     setObservacoes('');
   };
 
-  const isClear = true;
-
   return (
     <Container>
-    <MainWrapper> 
+      <MainWrapper>
         {/* Barra Lateral */}
         <Sidebar>
           <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
           <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
           <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
-          <SidebarItem>      <LogoutButton />
-          </SidebarItem>
+          <SidebarItem><LogoutButton /></SidebarItem>
         </Sidebar>
-         {/* Conteúdo Principal */}
-         <Content>
+  
+        {/* Conteúdo Principal */}
+        <Content>
           <Header>
-        <ImageContainer>
-          <img src={DAFFI} alt="Logo DAFFI" />
-        </ImageContainer>
-        Relatório Diário de Obra
-      </Header>
-      <Form>
-        <Field>
-          <Label>Data:</Label>
-          <Input
-            type="date"
-            value={data}
-            onChange={(e) => setData(e.target.value)}
-          />
-        </Field>
-        <Field>
-          <Label>Clima:</Label>
-          <Input
-            type="text"
-            value={clima}
-            onChange={(e) => setClima(e.target.value)}
-            placeholder="Ex.: Ensolarado, Nublado, Chuvoso"
-          />
-        </Field>
-        <Field>
-          <Label>Atividades Realizadas:</Label>
-          <Textarea
-            value={atividades}
-            onChange={(e) => setAtividades(e.target.value)}
-            placeholder="Descreva as atividades realizadas no dia"
-          />
-        </Field>
-        <Field>
-          <Label>Observações:</Label>
-          <Textarea
-            value={observacoes}
-            onChange={(e) => setObservacoes(e.target.value)}
-            placeholder="Adicione quaisquer observações importantes"
-          />
-        </Field>
-        <ButtonWrapper>
-          <Button onClick={handleSave}>Salvar</Button>
-          <Button onClick={handleClear} $clear={isClear}>Limpar</Button>
-          </ButtonWrapper>
-      </Form>
-      </Content>
-    </MainWrapper>
+            <ImageContainer>
+              <img src={DAFFI} alt="Logo DAFFI" />
+            </ImageContainer>
+            Relatório Diário de Obra
+          </Header>
+          <Form>
+            <Field>
+              <Label>Obra:</Label>
+              <Input
+                type="text"
+                value={obra}
+                onChange={(e) => setObra(e.target.value)}
+                placeholder="Nome da obra"
+              />
+            </Field>
+            <Field>
+              <Label>Responsável Técnico:</Label>
+              <Input
+                type="text"
+                value={responsavelTecnico}
+                onChange={(e) => setResponsavelTecnico(e.target.value)}
+                placeholder="Nome do responsável técnico"
+              />
+            </Field>
+            <Field>
+              <Label>Endereço:</Label>
+              <Input
+                type="text"
+                value={endereco}
+                onChange={(e) => setEndereco(e.target.value)}
+                placeholder="Endereço da obra"
+              />
+            </Field>
+            <Field>
+              <Label>Data:</Label>
+              <Input
+                type="date"
+                value={data}
+                onChange={(e) => setData(e.target.value)}
+              />
+            </Field>
+            <Field>
+              <Label>Clima:</Label>
+              <Input
+                type="text"
+                value={clima}
+                onChange={(e) => setClima(e.target.value)}
+                placeholder="Ex.: Ensolarado, Nublado, Chuvoso"
+              />
+            </Field>
+            <Field>
+              <Label>Mão de Obra:</Label>
+              {/* Aqui você pode adicionar múltiplos campos para funções e quantidades */}
+              <Input
+                type="text"
+                value={maoDeObra}
+                onChange={(e) => setMaoDeObra(e.target.value)}
+                placeholder="Ex.: Pedreiro: 3, Servente: 2"
+              />
+            </Field>
+            <Field>
+              <Label>Atividades Realizadas:</Label>
+              <Textarea
+                value={atividades}
+                onChange={(e) => setAtividades(e.target.value)}
+                placeholder="Descreva as atividades realizadas no dia"
+              />
+            </Field>
+            <Field>
+              <Label>Observações:</Label>
+              <Textarea
+                value={observacoes}
+                onChange={(e) => setObservacoes(e.target.value)}
+                placeholder="Adicione quaisquer observações importantes"
+              />
+            </Field>
+            <ButtonWrapper>
+              <Button onClick={handleSave} disabled={isLoading}>
+                {isLoading ? 'Gerando PDF...' : 'Salvar'}
+              </Button>
+              <Button onClick={handleClear} $clear>
+                Limpar
+              </Button>
+            </ButtonWrapper>
+          </Form>
+        </Content>
+      </MainWrapper>
     </Container>
   );
 };
 
+// Estilizações...
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;

@@ -79,10 +79,10 @@ const Header = styled.h1`
   margin-top: 50px;
   color: #333;
   text-align: center;
-  font-size: medium;
+  font-size: 30px;
 
   @media (max-width: 768px) {
-    font-size: medium;
+    font-size: 1.7rem;
   }
 
   @media (max-width: 480px) {
@@ -502,11 +502,7 @@ const navigate = useNavigate();
       <ContractWrapper>
           <h3>Pré-visualização do Contrato</h3>
           {contratoGerado}
-        </ContractWrapper>
-
-        <NavegarButton onClick={() => navigate('/orcamentos')}>Orçamentos</NavegarButton>
-        
-        <LogoutButton/>
+        </ContractWrapper>        
     </FormWrapper>    
     </Content>
     </MainWrapper>

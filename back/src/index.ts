@@ -5,7 +5,8 @@ import userRoutes from './routes/userRoutes';
 import itemRoutes from './routes/itemRoutes';
 import { importarCSV } from './scripts/ImportarCSV'; // Importe a função de importação do CSV
 import orcamentoRoutes from './routes/orcamentoRoutes';
-import { Orcamento } from './models/orcamentoModel';
+import { spawn } from 'child_process';
+import pdfRoutes from './routes/pdfRoutes';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use('/api/orcamentos', orcamentoRoutes);
 app.use('/api/orcamento', orcamentoRoutes);  // Rota para orçamentos
 app.use('/users', userRoutes);  // Rota para usuários
 app.use('/api/itens', itemRoutes);  // Rota para itens
+app.use('/gerar-pdf', pdfRoutes);
 
 // Inicialização do banco de dados
 sequelize

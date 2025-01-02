@@ -399,8 +399,6 @@ const Orcamentos: React.FC = () => {
           </OrcamentoItem>
         ))}
       </OrcamentoList>
-
-      <NavegarButton onClick={() => navigate('/gerar-contrato')}>Contratos</NavegarButton>
         </Content>
       </MainWrapper>
     </Container>
