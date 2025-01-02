@@ -1,9 +1,9 @@
-//orcamentoModel
+//orcamentoModel.ts
 
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/database'; // Importe seu sequelize
+import sequelize from '../config/database';  // Importe o sequelize corretamente
+import { OrcamentoItem } from './orcamentoitemModel';  // A importação do OrcamentoItem
 
-// Definindo os tipos para o Orcamento
 export interface OrcamentoAttributes {
   id: number;
   nome: string;
@@ -11,14 +11,12 @@ export interface OrcamentoAttributes {
   userId: number;
 }
 
-// Definindo os tipos para criação de Orcamento
 export interface OrcamentoCreationAttributes {
   total: number;
   nome: string;
   userId: number;
 }
 
-// Definindo o modelo Orcamento
 export class Orcamento extends Model<OrcamentoAttributes, OrcamentoCreationAttributes> implements OrcamentoAttributes {
   public id!: number;
   public nome!: string;
@@ -34,9 +32,9 @@ Orcamento.init(
       primaryKey: true,
     },
     nome: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     total: {
       type: DataTypes.FLOAT,
       allowNull: false,
@@ -45,8 +43,8 @@ Orcamento.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'users',  // Nome da tabela de usuários no banco de dados
-        key: 'id',       // Chave primária na tabela de usuários
+        model: 'users',  // Nome correto da tabela de usuários no banco de dados
+        key: 'id',       // Chave primária da tabela de usuários
       },
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
@@ -55,6 +53,6 @@ Orcamento.init(
   {
     sequelize,
     modelName: 'Orcamento',
-    tableName: 'orcamentos',  // Corrigido para o nome correto da tabela
+    tableName: 'orcamentos',  // Nome correto da tabela
   }
 );

@@ -8,6 +8,8 @@ import orcamentoRoutes from './routes/orcamentoRoutes';
 import { spawn } from 'child_process';
 import pdfRoutes from './routes/pdfRoutes';
 
+import './models';  // Aqui você chama o arquivo que importa e inicializa os modelos
+
 const app = express();
 
 // Configuração do CORS para permitir acessos conforme necessário
@@ -26,19 +28,25 @@ app.use('/api/itens', itemRoutes);  // Rota para itens
 app.use('/gerar-pdf', pdfRoutes);
 
 // Inicialização do banco de dados
-sequelize
-  .sync({ alter: true }) // Sincroniza os modelos, incluindo Orcamento
+sequelize.authenticate()
   .then(() => {
-    console.log('Banco de dados conectado e sincronizado!');
-    
-    // Chama a função para importar os dados do CSV após a sincronização
-    return importarCSV();
-  })
-  .then(() => {
-    console.log('Importação do CSV concluída com sucesso!');
+    console.log('Conexão com o banco de dados realizada com sucesso!');
   })
   .catch((err) => {
-    console.error('Erro ao conectar/sincronizar o banco de dados ou importar o CSV:', err);
+    console.error('Erro ao conectar com o banco de dados:', err);
+  });
+
+// Sincroniza os modelos e inicia o servidor
+sequelize.sync({ alter: true })
+  .then(() => {
+    console.log('Banco de dados sincronizado');
+    return importarCSV(); // Chama a função de importação do CSV após a sincronização
+  })
+  .then(() => {
+    console.log('Importação do CSV concluída!');
+  })
+  .catch((err) => {
+    console.error('Erro ao sincronizar banco de dados ou importar CSV', err);
   });
 
 // Iniciando o servidor na porta 3001

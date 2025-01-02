@@ -75,7 +75,7 @@ router.post('/', authenticate, async (req: express.Request, res: express.Respons
     // Associa os itens do orçamento
     for (const item of orcamento) {
       await OrcamentoItem.create({
-        orcamentoId: novoOrcamento.id,
+        orcamento_id: novoOrcamento.id,
         itemId: item.id,
         quantidade: item.quantidade,
         material: item.materialTotal,
@@ -105,44 +105,28 @@ router.get('/', authenticate, async (req: express.Request, res: express.Response
 });
 
 // Rota para obter um orçamento específico
-router.get('/:id', authenticate, async (req: express.Request, res: express.Response) => {
+router.get('/:id', async (req: express.Request, res: express.Response) => {
   const { id } = req.params;
-  const userId = req.user.id;  // Obtém o userId do token JWT
 
   try {
-    const orcamento = await Orcamento.findOne({ where: { id, userId } });
+    const orcamento = await Orcamento.findOne({
+      where: { id },
+      include: [
+        {
+          model: OrcamentoItem,
+          as: 'itens',
+        }
+      ]
+    });
+
     if (!orcamento) {
       return res.status(404).json({ message: 'Orçamento não encontrado' });
     }
-    res.json(orcamento);
+
+    res.status(200).json(orcamento);
   } catch (err) {
-    console.error('Erro ao obter orçamento:', err);
-    res.status(500).json({ message: 'Erro ao obter orçamento' });
-  }
-});
-
-router.get('/:id', async (req, res) => {
-  const orcamentoId = parseInt(req.params.id);
-
-  try {
-    // Busca o orçamento e os itens associados
-    const orcamentoDetalhado = await Orcamento.findOne({
-      where: { id: orcamentoId },
-      include: [{
-        model: OrcamentoItem,
-        as: 'itens'  // Defina o alias conforme o seu modelo
-      }]
-    });
-
-    if (!orcamentoDetalhado) {
-      return res.status(404).json({ message: 'Orçamento não encontrado!' });
-    }
-
-    // Retorna o orçamento detalhado com os itens
-    res.json(orcamentoDetalhado);
-  } catch (err) {
-    console.error('Erro ao recuperar o orçamento:', err);
-    res.status(500).json({ message: 'Erro ao recuperar o orçamento' });
+    console.error('Erro ao buscar orçamento:', err);
+    res.status(500).json({ message: 'Erro ao buscar orçamento' });
   }
 });
 

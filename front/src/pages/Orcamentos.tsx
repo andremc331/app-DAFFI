@@ -48,10 +48,13 @@ interface Orcamento {
   total: number;
   userId: number;
   itens?: Array<{
+    id: number;
     nome: string;
     quantidade: number;
     materialCorrigido: number;
     maoDeObraCorrigida: number;
+    total: number;
+    userId: number;
   }>;
 }
 
@@ -111,7 +114,6 @@ const Orcamentos: React.FC = () => {
       const res = await axios.get(`${BASE_URL}/api/itens?termo=${termo}`);
       const itensOrdenados = res.data.sort((a: any, b: any) => a.nome.localeCompare(b.nome)); // Ordena os itens por nome
       setItens(itensOrdenados);
-      setItens(res.data);
       setErro('');
     } catch (err) {
       setErro('Erro ao buscar itens');
@@ -140,11 +142,23 @@ const Orcamentos: React.FC = () => {
       return;
     }
 
+    // Incluindo corretamente a chave 'itens'
     const novoOrcamento = {
       nome: orcamentoNome,
       orcamento: orcamento,  // Itens do orçamento
+      itens: orcamento.map(item => ({
+        id: item.id,
+        nome: item.nome,
+        quantidade: item.quantidade,
+        materialCorrigido: item.materialCorrigido,
+        maoDeObraCorrigida: item.maoDeObraCorrigida,
+        materialTotal: item.materialTotal,
+        maoDeObraTotal: item.maoDeObraTotal,
+        total: item.total,
+        orcamento_id: item.orcamento_id
+      })),
     };
-    
+
     try {
       const res = await axios.post(
         `${BASE_URL}/api/orcamento`,
@@ -155,11 +169,11 @@ const Orcamentos: React.FC = () => {
           },
         }
       );
-    
+
       alert('Orçamento salvo com sucesso!');
       setOrcamento([]);  // Limpar o orçamento atual após salvar
       setOrcamentoNome('');  // Limpar o nome do orçamento após salvar
-    
+
       const resOrcamentos = await axios.get(`${BASE_URL}/api/orcamentos`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
@@ -194,17 +208,25 @@ const Orcamentos: React.FC = () => {
     });
   };
 
-  const mostrarDetalhesOrcamento = (orcamento: Orcamento) => {
-    const orcamentoComItens = {
-      ...orcamento,
-      itens: orcamento.itens || [], // Garantir que itens seja um array, mesmo vazio
-    };
-  
-    if (orcamentoComItens.itens.length === 0) {
-      console.warn("Este orçamento não contém itens detalhados:", orcamento);
+  const mostrarDetalhesOrcamento = async (orcamento: Orcamento) => {
+    if (orcamentoDetalhado?.id === orcamento.id) {
+      // Esconder detalhes se já estiverem sendo exibidos
+      setOrcamentoDetalhado(null);
+      return;
     }
-  
-    setOrcamentoDetalhado(orcamentoComItens);
+
+    try {
+      const response = await fetch(`${BASE_URL}/api/orcamentos/${orcamento.id}`);
+      const dados = await response.json();
+
+      if (response.ok) {
+        setOrcamentoDetalhado(dados);
+      } else {
+        console.error('Erro ao buscar detalhes do orçamento:', dados.message);
+      }
+    } catch (error) {
+      console.error('Erro ao buscar detalhes do orçamento:', error);
+    }
   };
 
   const abrirModal = (item: any) => {
@@ -230,24 +252,45 @@ const Orcamentos: React.FC = () => {
     setQuantidade('');
   };
 
-  const adicionarAoOrcamento = (item: any, quantidade: number) => {
+  const buscarNomeItem = async (itemId: number) => {
+    try {
+      const response = await fetch(`${BASE_URL}/api/items/${itemId}`);
+      if (response.ok) {
+        const item = await response.json();
+        return item.nome;
+      } else {
+        console.error('Erro ao buscar o nome do item');
+        return null;
+      }
+    } catch (error) {
+      console.error('Erro ao buscar o nome do item:', error);
+      return null;
+    }
+  };
+
+  const adicionarAoOrcamento = async (item: any, quantidade: number) => {
     if (isNaN(quantidade) || quantidade <= 0) {
       alert('Quantidade inválida!');
       return;
     }
-
+  
     const indiceInflacao = 1.4003; // Inflação acumulada de 40,03%
+    
+    const nomeItem = await buscarNomeItem(item.id); // Você pode ter uma função de busca aqui, ou trazer o nome junto do item
 
     // Valores corrigidos pela inflação
     const materialCorrigido = (item.material || 0) * indiceInflacao;
     const maoDeObraCorrigida = (item.maoDeObra || 0) * indiceInflacao;
-
+  
     const materialTotal = materialCorrigido * quantidade;
     const maoDeObraTotal = maoDeObraCorrigida * quantidade;
     const total = materialTotal + maoDeObraTotal;
 
+    const nome = nomeItem || "Nome não disponível"; // Se o nome não existir, use o valor padrão
+
     const itemOrcamento = {
       ...item,
+      nome, // Inclui o nome do item
       quantidade,
       materialCorrigido,
       maoDeObraCorrigida,
@@ -255,14 +298,14 @@ const Orcamentos: React.FC = () => {
       maoDeObraTotal,
       total, // Armazenando o total calculado
     };
-
+  
     setOrcamento([...orcamento, itemOrcamento]);
     fecharModal();
   };
 
   return (
     <Container>
-      <MainWrapper> 
+      <MainWrapper>
         {/* Barra Lateral */}
         <Sidebar>
           <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
@@ -271,134 +314,151 @@ const Orcamentos: React.FC = () => {
           <SidebarItem>      <LogoutButton />
           </SidebarItem>
         </Sidebar>
-         {/* Conteúdo Principal */}
-         <Content>
+        {/* Conteúdo Principal */}
+        <Content>
           <Header>
-        <ImageContainer>
-          <img src={DAFFI} alt="Logo DAFFI" />
-        </ImageContainer>
-        Consulta de Preços - Tabela PINI
-      </Header>
+            <ImageContainer>
+              <img src={DAFFI} alt="Logo DAFFI" />
+            </ImageContainer>
+            Consulta de Preços - Tabela PINI
+          </Header>
           <InputWrapper>
-        <Input
-          type="text"
-          value={termo}
-          onChange={handleInputChange}
-          placeholder="Pesquisar por item"
-        />
-        <Button onClick={() => buscarItens()}>Pesquisar</Button>
-      </InputWrapper>
-
-      {erro && <ErrorMessage>{erro}</ErrorMessage>}
-
-      <div>
-        <h2>Resultados da Pesquisa</h2>
-        {itens.length === 0 ? (
-          <p>Nenhum item encontrado.</p>
-        ) : (
-          <ScrollableItemList>
-            {itens.map((item) => (
-              <Item key={item.id}>
-                <ItemDetails>
-                  <ItemNome> {item.nome}</ItemNome>
-                </ItemDetails>
-                <Button onClick={() => abrirModal(item)}>Ver Detalhes</Button>
-              </Item>
-            ))}
-          </ScrollableItemList>
-        )}
-      </div>
-
-      {modalItem && (
-        <ModalOverlay>
-          <ModalContent>
-            <ModalButton onClick={fecharModal}>X</ModalButton>
-            <h3>Adicionar ao Orçamento</h3>
-            <ItemNome>Item: {modalItem.nome}</ItemNome>
-            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              Unidade:
-              <span style={{ fontSize: modalItem.unidade === 'm²' ? '1.3em' : '1em', marginLeft: '3px' }}>
-                {modalItem.unidade}
-              </span>
-            </p>
-            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              Material (Corrigido): {formatarPreco(Number(modalItem?.materialCorrigido || 0))}
-            </p>
-            <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              Mão de Obra (Corrigida): {formatarPreco(Number(modalItem?.maoDeObraCorrigida || 0))}
-            </p>
-            <StyledNumber style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              TOTAL (Corrigido):{' '}
-              {formatarPreco(
-                (Number(modalItem.materialCorrigido) || 0) + (Number(modalItem.maoDeObraCorrigida) || 0)
-              )}
-            </StyledNumber>
             <Input
-              type="number"
-              value={quantidade}
-              onChange={(e) => setQuantidade(e.target.value)}
-              placeholder="Digite a quantidade"
-              style={{ marginBottom: '10px', marginTop: '5px' }}
+              type="text"
+              value={termo}
+              onChange={handleInputChange}
+              placeholder="Pesquisar por item"
             />
-            <Button onClick={() => adicionarAoOrcamento(modalItem, parseFloat(quantidade))}>Adicionar</Button>
-          </ModalContent>
-        </ModalOverlay>
-      )}
+            <Button onClick={() => buscarItens()}>Pesquisar</Button>
+          </InputWrapper>
 
-      <OrcamentoWrapper>
-        <h2>Orçamento</h2>
-        <OrcamentoList>
-          {orcamento.map((item, index) => (
-            <OrcamentoItem key={index}>
-              <div>
-                {item.nome} - {item.quantidade} x Material (Corrigido): {formatarPreco(Number(item.materialCorrigido) || 0)} +
-                Mão de Obra (Corrigido): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
-              </div>
-              <div>Total: {formatarPreco(Number(item.total) || 0)}</div>
-            </OrcamentoItem>
-          ))}
-        </OrcamentoList>
-        <TotalWrapper>
-  <span>Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}</span>
-  <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
-  <Input
-    type="text"
-    value={orcamentoNome}
-    onChange={(e) => setOrcamentoNome(e.target.value)}
-    placeholder="Nome do Orçamento"
-  />
-</TotalWrapper>
-      </OrcamentoWrapper>
+          {erro && <ErrorMessage>{erro}</ErrorMessage>}
 
-      <OrcamentoList>
-        {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (
-          <OrcamentoItem key={orcamento.id || index}>
-            <div>{orcamento.nome}</div>
-            <div>Total: {formatarPreco(orcamento.total)}</div>
-            <Button onClick={() => mostrarDetalhesOrcamento(orcamento)}>
-              {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
-            </Button>
-            {orcamentoDetalhado?.id === orcamento.id && (
-              <DetalhesWrapper>
-                <h3>Itens do Orçamento</h3>
-                <ul>
-                  {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
-                    orcamentoDetalhado.itens.map((item, idx) => (
-                      <li key={idx}>
-                        <span>{item.nome}</span> -
-                        <span>{item.quantidade} x {formatarPreco(item.materialCorrigido + item.maoDeObraCorrigida)}</span>
-                      </li>
-                    ))
-                  ) : (
-                    <p>Este orçamento não contém itens detalhados.</p>
-                  )}
-                </ul>
-              </DetalhesWrapper>
+          <div>
+            <h2>Resultados da Pesquisa</h2>
+            {itens.length === 0 ? (
+              <p>Nenhum item encontrado.</p>
+            ) : (
+              <ScrollableItemList>
+                {itens.map((item) => (
+                  <Item key={item.id}>
+                    <ItemDetails>
+                      <ItemNome> {item.nome}</ItemNome>
+                    </ItemDetails>
+                    <Button onClick={() => abrirModal(item)}>Ver Detalhes</Button>
+                  </Item>
+                ))}
+              </ScrollableItemList>
             )}
-            <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
-          </OrcamentoItem>
-        ))}
-      </OrcamentoList>
+          </div>
+
+          {modalItem && (
+            <ModalOverlay>
+              <ModalContent>
+                <ModalButton onClick={fecharModal}>X</ModalButton>
+                <h3>Adicionar ao Orçamento</h3>
+                <ItemNome>Item: {modalItem.nome}</ItemNome>
+                <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  Unidade:
+                  <span style={{ fontSize: modalItem.unidade === 'm²' ? '1.3em' : '1em', marginLeft: '3px' }}>
+                    {modalItem.unidade}
+                  </span>
+                </p>
+                <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  Material (Corrigido): {formatarPreco(Number(modalItem?.materialCorrigido || 0))}
+                </p>
+                <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  Mão de Obra (Corrigida): {formatarPreco(Number(modalItem?.maoDeObraCorrigida || 0))}
+                </p>
+                <StyledNumber style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  TOTAL (Corrigido):{' '}
+                  {formatarPreco(
+                    (Number(modalItem.materialCorrigido) || 0) + (Number(modalItem.maoDeObraCorrigida) || 0)
+                  )}
+                </StyledNumber>
+                <Input
+                  type="number"
+                  value={quantidade}
+                  onChange={(e) => setQuantidade(e.target.value)}
+                  placeholder="Digite a quantidade"
+                  style={{ marginBottom: '10px', marginTop: '5px' }}
+                />
+                <Button onClick={() => adicionarAoOrcamento(modalItem, parseFloat(quantidade))}>Adicionar</Button>
+              </ModalContent>
+            </ModalOverlay>
+          )}
+
+          <OrcamentoWrapper>
+            <h2>Orçamento</h2>
+            <OrcamentoList>
+              {orcamento.map((item, index) => (
+                <OrcamentoItem key={index}>
+                  <div>
+                    {item.nome} - {item.quantidade} x Material (Corrigido): {formatarPreco(Number(item.materialCorrigido) || 0)} +
+                    Mão de Obra (Corrigido): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
+                  </div>
+                  <div>Total: {formatarPreco(Number(item.total) || 0)}</div>
+                </OrcamentoItem>
+              ))}
+            </OrcamentoList>
+            <TotalWrapper>
+              <span>Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}</span>
+              <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
+              <Input
+                type="text"
+                value={orcamentoNome}
+                onChange={(e) => setOrcamentoNome(e.target.value)}
+                placeholder="Nome do Orçamento"
+              />
+            </TotalWrapper>
+          </OrcamentoWrapper>
+
+          <OrcamentoList>
+            {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (
+              <OrcamentoItem key={orcamento.id || index}>
+                <div>{orcamento.nome}</div>
+                <div>Total: {formatarPreco(orcamento.total)}</div>
+                <Button onClick={() => mostrarDetalhesOrcamento(orcamento)}>
+                  {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
+                </Button>
+                {orcamentoDetalhado?.id === orcamento.id && (
+                  <DetalhesWrapper>
+                    <h3>Itens do Orçamento</h3>
+                    {(() => {
+                      console.log(orcamentoDetalhado); // Log corretamente inserido
+                      return null; // Retorna `null` porque não queremos renderizar nada no lugar
+                    })()}
+                    <ul>
+                      {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
+                        orcamentoDetalhado.itens.map((item: any, idx) => {
+                          const materialCorrigido = parseFloat(item.material || "0");
+                          const maoDeObraCorrigida = parseFloat(item.maoDeObra || "0");
+                          const totalCorrigido = materialCorrigido + maoDeObraCorrigida;
+
+                          console.log(`Item ${idx + 1}:`, item); // Log detalhado para depuração
+
+                          return (
+                            <li key={idx}>
+                              Nome: <span>{item.nome || "Nome não disponível"}</span>
+                              <span>
+                                Quantidade: {item.quantidade}; 
+                                Material: {item.material}; 
+                                Mão de Obra: {item.maoDeObra};
+                                Total: {formatarPreco(totalCorrigido)}
+                              </span>
+                            </li>
+                          );
+                        })
+                      ) : (
+                        <p>Este orçamento não contém itens detalhados.</p>
+                      )}
+                    </ul>
+                  </DetalhesWrapper>
+                )}
+                <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
+              </OrcamentoItem>
+            ))}
+          </OrcamentoList>
         </Content>
       </MainWrapper>
     </Container>

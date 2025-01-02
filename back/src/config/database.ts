@@ -1,4 +1,6 @@
 import { Sequelize } from 'sequelize';
+import { Orcamento } from '../models/orcamentoModel';
+import { OrcamentoItem } from '../models/orcamentoitemModel';
 
 // Criação da instância do Sequelize para se conectar ao PostgreSQL
 const sequelize = new Sequelize({

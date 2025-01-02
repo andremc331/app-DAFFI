@@ -378,7 +378,7 @@ const ModalButton = styled.button`
 
 const DetalhesWrapper = styled.div`
   margin-top: 15px;
-  padding: 15px;
+  padding: 45px;
   background-color: #ffffff;
   border: 1px solid #d3d3d3;
   border-radius: 8px;
