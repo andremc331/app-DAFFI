@@ -163,6 +163,32 @@ const Button = styled.button`
 const NavegarButton = styled.button`
 `;
 
+const VerDetalhesButton = styled.button`
+  padding: 5px 5px;
+  background-color: #d1cc36;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  width: 70px; /* Tamanho fixo do botão */
+  height: 50px; /* Tamanho fixo da altura */
+
+  &:hover {
+    background-color: #949828;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão ocupa a largura total */
+  }
+
+  @media (max-width: 480px) {
+    width: 50%; /* Largura total em telas pequenas */
+    margin-right: 0;
+  }
+`;
+
 const ExcluirButton = styled.button`
   padding: 5px 5px;
   background-color: #ff0000;
@@ -172,6 +198,8 @@ const ExcluirButton = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   margin-top: 5px;
+  width: 50px; /* Tamanho fixo do botão */
+  height: 50px; /* Tamanho fixo da altura */
 
   &:hover {
     background-color: #b40808;
@@ -295,6 +323,7 @@ const OrcamentoList = styled.ul`
 
 const OrcamentoItem = styled.li`
   padding: 10px 0;
+  height: auto;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
@@ -377,39 +406,46 @@ const ModalButton = styled.button`
 `;
 
 const DetalhesWrapper = styled.div`
-  margin-top: 15px;
-  padding: 45px;
+  margin-top: 20px;  /* Espaçamento superior */
+  padding: 30px;     /* Aumentar o padding para mais espaço interno */
   background-color: #ffffff;
   border: 1px solid #d3d3d3;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição mais suave */
+  width: 100%; /* Certificar que o wrapper ocupe toda a largura possível */
+  max-width: 1200px; /* Limitar a largura máxima para não ficar muito largo */
+  margin-left: auto; /* Centralizar horizontalmente */
+  margin-right: auto; /* Centralizar horizontalmente */
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efeito de sombra mais forte no hover */
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #333333;
+    text-align: center; /* Centralizar o título */
   }
 
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     li {
-      margin-bottom: 10px;
-      padding: 10px;
+      margin-bottom: 15px; /* Aumentar o espaçamento entre os itens */
+      padding: 15px;       /* Aumentar o padding para mais espaçamento interno */
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
       border: 1px solid #e0e0e0;
       border-radius: 5px;
+      transition: background-color 0.2s ease, transform 0.2s ease; /* Transição suave */
 
       &:hover {
         background-color: #eaf4fe;
@@ -417,7 +453,7 @@ const DetalhesWrapper = styled.div`
       }
 
       span {
-        font-size: 0.95rem;
+        font-size: 1rem;  /* Aumentar o tamanho da fonte */
         color: #555555;
 
         &:first-child {
@@ -429,13 +465,13 @@ const DetalhesWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 10px;
+    padding: 20px;  /* Menos padding em telas menores */
     h3 {
-      font-size: 1rem;
+      font-size: 1.2rem; /* Ajustar o tamanho do título */
     }
 
     ul {
-      padding: 5px;
+      padding: 10px;  /* Ajustar o padding da lista */
     }
   }
 `;
@@ -470,7 +506,8 @@ const StyledComponents = {
   Sidebar,
   SidebarItem,
   MainWrapper,
-  Content
+  Content,
+  VerDetalhesButton
 };
 
 export default StyledComponents;

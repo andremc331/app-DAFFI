@@ -5,6 +5,10 @@ import sequelize from '../config/database';
 import { Orcamento } from './orcamentoModel'; 
 
 const OrcamentoItem = sequelize.define('OrcamentoItem', {
+  nome: {
+    type: DataTypes.STRING,
+    allowNull: true, // Adicione o campo nome
+  },
   quantidade: {
     type: DataTypes.INTEGER,
     allowNull: false,

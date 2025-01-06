@@ -24,4 +24,23 @@ app.get('/', async (req, res) => {
   }
 });
 
+// Rota para buscar um item específico pelo ID
+app.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Busca o item pelo ID
+    const item = await Item.findByPk(id); // Usando `findByPk` para encontrar pelo ID primário
+
+    if (!item) {
+      return res.status(404).json({ message: 'Item não encontrado' });
+    }
+
+    // Retorna apenas o nome do item
+    res.json({ nome: item.nome });
+  } catch (err) {
+    console.error('Erro ao buscar item:', err);
+    res.status(500).json({ message: 'Erro ao buscar item' });
+  }
+});
+
 export default app;

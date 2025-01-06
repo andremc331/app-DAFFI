@@ -42,6 +42,7 @@ const authenticate = (req: express.Request, res: express.Response, next: express
 
 // Definindo tipos para os parâmetros 'orcamento' e 'item'
 interface OrcamentoItemType {
+  nome: string,
   id: number;
   quantidade: number;
   materialTotal: number;
@@ -72,11 +73,12 @@ router.post('/', authenticate, async (req: express.Request, res: express.Respons
       userId,
     });
 
-    // Associa os itens do orçamento
+    // Associa os itens do orçamento, incluindo o nome do item
     for (const item of orcamento) {
       await OrcamentoItem.create({
         orcamento_id: novoOrcamento.id,
         itemId: item.id,
+        nome: item.nome,  // Inclui o nome do item na associação
         quantidade: item.quantidade,
         material: item.materialTotal,
         maoDeObra: item.maoDeObraTotal,
@@ -115,6 +117,7 @@ router.get('/:id', async (req: express.Request, res: express.Response) => {
         {
           model: OrcamentoItem,
           as: 'itens',
+          attributes: ['id', 'nome', 'quantidade', 'material', 'maoDeObra', 'total'],  // Garantir que o campo nome esteja incluído
         }
       ]
     });

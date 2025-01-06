@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import StyledComponents from '../styled/styled';
+import StyledComponents from '../styled/Orcamentostyled';
 import { debounce } from 'lodash';
 import DAFFI from "../images/DAFFI logo.jpg"
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +33,7 @@ const {
   DetalhesWrapper,
   ExcluirButton,
   NavegarButton,
+  VerDetalhesButton,
   Sidebar,
   SidebarItem,
   MainWrapper,
@@ -88,7 +89,6 @@ const Orcamentos: React.FC = () => {
             Authorization: `Bearer ${authToken}`,
           },
         });
-        console.log("Orçamentos retornados:", res.data);
         setOrcamentosSalvos(res.data);
       } catch (err) {
         setErro('Erro ao buscar orçamentos salvos');
@@ -144,11 +144,11 @@ const Orcamentos: React.FC = () => {
 
     // Incluindo corretamente a chave 'itens'
     const novoOrcamento = {
-      nome: orcamentoNome,
+      nome: orcamentoNome,  // nome do orçamento
       orcamento: orcamento,  // Itens do orçamento
       itens: orcamento.map(item => ({
         id: item.id,
-        nome: item.nome,
+        nome: item.nome || 'Nome não disponível',  // Garantir que nome tenha um valor
         quantidade: item.quantidade,
         materialCorrigido: item.materialCorrigido,
         maoDeObraCorrigida: item.maoDeObraCorrigida,
@@ -156,7 +156,7 @@ const Orcamentos: React.FC = () => {
         maoDeObraTotal: item.maoDeObraTotal,
         total: item.total,
         orcamento_id: item.orcamento_id
-      })),
+      }))
     };
 
     try {
@@ -210,19 +210,25 @@ const Orcamentos: React.FC = () => {
 
   const mostrarDetalhesOrcamento = async (orcamento: Orcamento) => {
     if (orcamentoDetalhado?.id === orcamento.id) {
-      // Esconder detalhes se já estiverem sendo exibidos
       setOrcamentoDetalhado(null);
       return;
     }
 
     try {
       const response = await fetch(`${BASE_URL}/api/orcamentos/${orcamento.id}`);
-      const dados = await response.json();
 
-      if (response.ok) {
+      let dados;
+      try {
+        dados = await response.json();
+      } catch (error) {
+        console.error('Erro ao processar resposta JSON:', error);
+        return;
+      }
+
+      if (response.ok && dados && dados.id && dados.itens) {
         setOrcamentoDetalhado(dados);
       } else {
-        console.error('Erro ao buscar detalhes do orçamento:', dados.message);
+        console.error(`Erro ao buscar detalhes do orçamento: ${response.status} - ${dados?.message || 'Sem mensagem de erro'}`);
       }
     } catch (error) {
       console.error('Erro ao buscar detalhes do orçamento:', error);
@@ -254,12 +260,13 @@ const Orcamentos: React.FC = () => {
 
   const buscarNomeItem = async (itemId: number) => {
     try {
-      const response = await fetch(`${BASE_URL}/api/items/${itemId}`);
+      const response = await fetch(`${BASE_URL}/api/itens/${itemId}`);
       if (response.ok) {
         const item = await response.json();
+        console.log('Nome do item encontrado:', item);  // Adicione esse log para verificar a resposta
         return item.nome;
       } else {
-        console.error('Erro ao buscar o nome do item');
+        console.error('Erro ao buscar o nome do item. Status:', response.status);
         return null;
       }
     } catch (error) {
@@ -273,20 +280,18 @@ const Orcamentos: React.FC = () => {
       alert('Quantidade inválida!');
       return;
     }
-  
+
     const indiceInflacao = 1.4003; // Inflação acumulada de 40,03%
-    
-    const nomeItem = await buscarNomeItem(item.id); // Você pode ter uma função de busca aqui, ou trazer o nome junto do item
+
+    const nome = await buscarNomeItem(item.id) || 'Nome não disponível';
 
     // Valores corrigidos pela inflação
     const materialCorrigido = (item.material || 0) * indiceInflacao;
     const maoDeObraCorrigida = (item.maoDeObra || 0) * indiceInflacao;
-  
+
     const materialTotal = materialCorrigido * quantidade;
     const maoDeObraTotal = maoDeObraCorrigida * quantidade;
     const total = materialTotal + maoDeObraTotal;
-
-    const nome = nomeItem || "Nome não disponível"; // Se o nome não existir, use o valor padrão
 
     const itemOrcamento = {
       ...item,
@@ -298,7 +303,7 @@ const Orcamentos: React.FC = () => {
       maoDeObraTotal,
       total, // Armazenando o total calculado
     };
-  
+
     setOrcamento([...orcamento, itemOrcamento]);
     fecharModal();
   };
@@ -418,16 +423,12 @@ const Orcamentos: React.FC = () => {
               <OrcamentoItem key={orcamento.id || index}>
                 <div>{orcamento.nome}</div>
                 <div>Total: {formatarPreco(orcamento.total)}</div>
-                <Button onClick={() => mostrarDetalhesOrcamento(orcamento)}>
+                <VerDetalhesButton onClick={() => mostrarDetalhesOrcamento(orcamento)}>
                   {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
-                </Button>
+                </VerDetalhesButton>
                 {orcamentoDetalhado?.id === orcamento.id && (
                   <DetalhesWrapper>
                     <h3>Itens do Orçamento</h3>
-                    {(() => {
-                      console.log(orcamentoDetalhado); // Log corretamente inserido
-                      return null; // Retorna `null` porque não queremos renderizar nada no lugar
-                    })()}
                     <ul>
                       {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
                         orcamentoDetalhado.itens.map((item: any, idx) => {
@@ -435,17 +436,14 @@ const Orcamentos: React.FC = () => {
                           const maoDeObraCorrigida = parseFloat(item.maoDeObra || "0");
                           const totalCorrigido = materialCorrigido + maoDeObraCorrigida;
 
-                          console.log(`Item ${idx + 1}:`, item); // Log detalhado para depuração
-
                           return (
                             <li key={idx}>
-                              Nome: <span>{item.nome || "Nome não disponível"}</span>
-                              <span>
-                                Quantidade: {item.quantidade}; 
-                                Material: {item.material}; 
-                                Mão de Obra: {item.maoDeObra};
-                                Total: {formatarPreco(totalCorrigido)}
-                              </span>
+                              <div>Nome: <span>{item.nome || "Nome não disponível"}</span></div>
+                              <div>Quantidade: {item.quantidade};</div>
+                              <div>Material: {formatarPreco(materialCorrigido)};</div>
+                              <div>Mão de Obra: {formatarPreco(maoDeObraCorrigida)};</div>
+                              <div>Total: {formatarPreco(totalCorrigido)}</div>
+                              
                             </li>
                           );
                         })

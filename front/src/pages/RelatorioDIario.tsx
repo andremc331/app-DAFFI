@@ -35,8 +35,10 @@ const RelatorioDiario: React.FC = () => {
         endereco,
       };
   
+      const BASE_URL = 'http://192.168.15.116:3001';
+
       // Fazer a requisição ao backend para gerar o PDF
-      const response = await axios.post('http://localhost:3001/gerar-pdf', payload, {
+      const response = await axios.post(`${BASE_URL}/gerar-pdf`, payload, {
         responseType: 'blob', // Para lidar com arquivos binários
       });
   
