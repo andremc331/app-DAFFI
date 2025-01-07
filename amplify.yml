@@ -13,6 +13,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - cd frontend  # Navega até o diretório frontend
         - nvm install 20
         - nvm use 20
         - npm install -g npm@latest
