@@ -22,7 +22,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: ./build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
+    baseDirectory: ./front/build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
     files:
       - '**/*'  # Inclui todos os arquivos do diretório de build
   cache:
