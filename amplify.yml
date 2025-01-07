@@ -1,15 +1,4 @@
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - nvm install 20
-        - nvm use 20
-        - npm install -g npm@latest
-        - npm install
-    build:
-      commands:
-        - npm run build
 backend:
   phases:
     preBuild:
@@ -20,10 +9,21 @@ backend:
         - export DB_NAME=daffi  # Nome do banco de dados
         - export DB_PORT=5432  # Porta do banco de dados
         - npx ts-node src/index.ts  # Comando para rodar seu servidor/backend
-artifacts:
-  baseDirectory: ./build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
-  files:
-    - '**/*'  # Inclui todos os arquivos do diretório de build
-cache:
-  paths:
-    - node_modules/**/*  # Cache para os módulos do Node.js
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 20
+        - nvm use 20
+        - npm install -g npm@latest
+        - npm install
+        build:
+          commands:
+            - npm run build
+  artifacts:
+    baseDirectory: ./build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
+    files:
+      - '**/*'  # Inclui todos os arquivos do diretório de build
+  cache:
+    paths:
+      - node_modules/**/*  # Cache para os módulos do Node.js
