@@ -5,12 +5,15 @@ import { OrcamentoItem } from '../models/orcamentoitemModel';
 // Criação da instância do Sequelize para se conectar ao PostgreSQL
 const sequelize = new Sequelize({
   dialect: 'postgres',
-  host: 'localhost', // Host onde o banco de dados está rodando
-  port: 5432,        // Porta padrão do PostgreSQL
-  username: 'postgres', // Nome de usuário do banco de dados
-  password: '123',   // Senha do banco de dados
-  database: 'daffi',   // Nome do banco de dados
-  logging: false,          // Desabilitar logs (opcional)
+  host: 'daffi.cdyucqc0y8kr.sa-east-1.rds.amazonaws.com',
+  port: 5432,
+  username: 'postgres',
+  password: 'Andre01*',
+  database: 'daffi',
+  logging: false,
+  dialectOptions: {
+    connectTimeout: 10000,  // tempo limite de 10 segundos para conectar
+  },
 });
 
 // Testar a conexão
