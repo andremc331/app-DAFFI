@@ -17,9 +17,9 @@ frontend:
         - nvm use 20
         - npm install -g npm@latest
         - npm install
-        build:
-          commands:
-            - npm run build
+    build:  # Corrigido a indentação
+      commands:
+        - npm run build
   artifacts:
     baseDirectory: ./build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
     files:
