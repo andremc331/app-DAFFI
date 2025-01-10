@@ -2,7 +2,7 @@
 FROM node:18
 
 # Definir o diretório de trabalho dentro do container
-WORKDIR /app
+WORKDIR /back
 
 # Copiar os arquivos de dependências (package.json e package-lock.json)
 COPY back/package*.json ./
@@ -11,7 +11,7 @@ COPY back/package*.json ./
 RUN npm install
 
 # Compilar o código TypeScript
-RUN tsc
+RUN npm run build
 
 # Copiar todo o código da aplicação para dentro do container
 COPY back/ ./
