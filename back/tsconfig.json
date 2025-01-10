@@ -1,24 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2020",                     // Compilação para ES2020
-    "module": "commonjs",                   // Módulos CommonJS
-    "lib": [
-      "es2020",
-      "dom",
-      "dom.iterable",                       // Se necessário
-      "webworker"                           // Se precisar usar web workers
-    ],
-    "jsx": "react-jsx",                     // JSX do React
-    "moduleResolution": "node",             // Resolução de módulos do Node.js
-    "esModuleInterop": true,                // Interoperabilidade entre módulos ES e CommonJS
-    "strict": true,                         // Verificações estritas
-    "skipLibCheck": true,                   // Ignorar verificação de tipos nas bibliotecas
-    "allowJs": true,                        // Permite arquivos JavaScript
-    "checkJs": true,                        // Habilita verificação de erros nos arquivos JavaScript
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "outDir": "./dist",                     // Pasta de saída
-    "rootDir": "./src"                      // Pasta de origem
-  }
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
