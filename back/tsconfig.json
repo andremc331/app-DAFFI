@@ -18,16 +18,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "outDir": "./src",                     // Pasta de saída
-    "rootDir": "./dist"                      // Pasta de origem
-  },
-  "include": [
-    "src/**/*.ts",                          // Incluir arquivos TypeScript
-    "src/**/*.js"                           // Incluir arquivos JavaScript, se necessário
-  ],
-  "exclude": [
-    "node_modules",                         // Excluir node_modules
-    "package-lock.json",
-    ".env"
-  ]
+    "outDir": "./dist",                     // Pasta de saída
+    "rootDir": "./src"                      // Pasta de origem
+  }
 }
