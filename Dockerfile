@@ -1,23 +1,20 @@
-# Usar a imagem base oficial do Node.js
+# Usar uma imagem base do Node.js
 FROM node:18
 
-# Definir o diretório de trabalho dentro do container
-WORKDIR /back
+# Definir o diretório de trabalho no container
+WORKDIR /app
 
-# Copiar os arquivos de dependências (package.json e package-lock.json)
-COPY back/package*.json ./
+# Copiar os arquivos do projeto para o diretório de trabalho
+COPY . .
 
-# Instalar as dependências da aplicação
+# Instalar dependências
 RUN npm install
 
 # Compilar o código TypeScript
 RUN npm run build
 
-# Copiar todo o código da aplicação para dentro do container
-COPY back/ ./
-
-# Expor a porta que o backend está configurado para ouvir
+# Expor a porta que o app vai rodar
 EXPOSE 3001
 
-# Comando para iniciar a aplicação
+# Rodar o app
 CMD ["npm", "start"]
