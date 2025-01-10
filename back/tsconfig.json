@@ -18,8 +18,8 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "outDir": "./dist",                     // Pasta de saída
-    "rootDir": "./src"                      // Pasta de origem
+    "outDir": "./src",                     // Pasta de saída
+    "rootDir": "./dist"                      // Pasta de origem
   },
   "include": [
     "src/**/*.ts",                          // Incluir arquivos TypeScript
