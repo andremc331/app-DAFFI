@@ -37,7 +37,8 @@ const {
   Sidebar,
   SidebarItem,
   MainWrapper,
-  Content
+  Content,
+  LixeiraButton
 } = StyledComponents;
 
 interface Orcamento {
@@ -48,6 +49,7 @@ interface Orcamento {
   maoDeObraCorrigida: number;
   total: number;
   userId: number;
+  data: Date;
   itens?: Array<{
     id: number;
     nome: string;
@@ -185,6 +187,12 @@ const Orcamentos: React.FC = () => {
   };
 
   const excluirOrcamento = async (orcamentoId: number) => {
+    const confirmar = window.confirm('Tem certeza de que deseja excluir este orçamento?');
+
+    if (!confirmar) {
+      return; // Cancela a exclusão se o usuário clicar em "Cancelar"
+    }
+
     try {
       await axios.delete(`${BASE_URL}/api/orcamentos/${orcamentoId}`, {
         headers: {
@@ -308,6 +316,12 @@ const Orcamentos: React.FC = () => {
     fecharModal();
   };
 
+  // Função para excluir um item do orçamento
+  const excluirItem = (index: number) => {
+    const novosItens = orcamento.filter((item, i) => i !== index);
+    setOrcamento(novosItens); // Atualiza o estado com os itens restantes
+  };
+
   return (
     <Container>
       <MainWrapper>
@@ -403,6 +417,7 @@ const Orcamentos: React.FC = () => {
                     Mão de Obra (Corrigido): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
                   </div>
                   <div>Total: {formatarPreco(Number(item.total) || 0)}</div>
+                  <LixeiraButton onClick={() => excluirItem(index)}>🗑</LixeiraButton>
                 </OrcamentoItem>
               ))}
             </OrcamentoList>
@@ -418,32 +433,42 @@ const Orcamentos: React.FC = () => {
             </TotalWrapper>
           </OrcamentoWrapper>
 
+          <h2>Orçamentos Salvos</h2>
           <OrcamentoList>
             {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (
               <OrcamentoItem key={orcamento.id || index}>
-                <div>{orcamento.nome}</div>
-                <div>Total: {formatarPreco(orcamento.total)}</div>
+                <h4>{orcamento.nome}</h4>
+                <div>
+                  <span style={{ marginLeft: '10px', color: '#000000' }}>
+                    {new Intl.DateTimeFormat('pt-BR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: '2-digit',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    }).format(new Date(orcamento.data))}
+                  </span>
+                </div>
+                <span>Total: {formatarPreco(orcamento.total)}</span>
                 <VerDetalhesButton onClick={() => mostrarDetalhesOrcamento(orcamento)}>
                   {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
-                </VerDetalhesButton>
-                {orcamentoDetalhado?.id === orcamento.id && (
+                  
+                  {orcamentoDetalhado?.id === orcamento.id && (
                   <DetalhesWrapper>
-                    <h3>Itens do Orçamento</h3>
                     <ul>
                       {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
-                        orcamentoDetalhado.itens.map((item: any, idx) => {
+                        orcamentoDetalhado.itens.map((item: any, idx: number) => {
                           const materialCorrigido = parseFloat(item.material || "0");
                           const maoDeObraCorrigida = parseFloat(item.maoDeObra || "0");
                           const totalCorrigido = materialCorrigido + maoDeObraCorrigida;
 
                           return (
                             <li key={idx}>
-                              <div>Nome: <span>{item.nome || "Nome não disponível"}</span></div>
+                              <div>Item: <span>{item.nome || "Nome não disponível"}</span></div>
                               <div>Quantidade: {item.quantidade};</div>
                               <div>Material: {formatarPreco(materialCorrigido)};</div>
                               <div>Mão de Obra: {formatarPreco(maoDeObraCorrigida)};</div>
                               <div>Total: {formatarPreco(totalCorrigido)}</div>
-                              
                             </li>
                           );
                         })
@@ -453,6 +478,8 @@ const Orcamentos: React.FC = () => {
                     </ul>
                   </DetalhesWrapper>
                 )}
+                </VerDetalhesButton>
+               
                 <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
               </OrcamentoItem>
             ))}

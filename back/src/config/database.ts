@@ -19,7 +19,6 @@ const sequelize = new Sequelize({
 // Testar a conexão
 sequelize.authenticate()
   .then(() => {
-    console.log('Conexão com o banco de dados realizada com sucesso!');
   })
   .catch((err) => {
     console.error('Erro ao conectar com o banco de dados:', err);

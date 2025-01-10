@@ -9,12 +9,14 @@ export interface OrcamentoAttributes {
   nome: string;
   total: number;
   userId: number;
+  data: Date;
 }
 
 export interface OrcamentoCreationAttributes {
   total: number;
   nome: string;
   userId: number;
+  data: Date;
 }
 
 export class Orcamento extends Model<OrcamentoAttributes, OrcamentoCreationAttributes> implements OrcamentoAttributes {
@@ -22,6 +24,7 @@ export class Orcamento extends Model<OrcamentoAttributes, OrcamentoCreationAttri
   public nome!: string;
   public total!: number;
   public userId!: number;
+  public data!: Date;
 }
 
 Orcamento.init(
@@ -49,10 +52,16 @@ Orcamento.init(
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
     },
+    data: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
     modelName: 'Orcamento',
     tableName: 'orcamentos',  // Nome correto da tabela
+    timestamps: true,  // Habilita campos automáticos createdAt e updatedAt
   }
 );

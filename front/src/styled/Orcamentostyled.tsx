@@ -28,7 +28,8 @@ const ImageContainer = styled.div`
   left: 10px;
   top: 0;
   padding: 10px;
-  margin-left: 110px;
+  margin-left: 100px;
+  z-index: -1; /* Coloca a imagem atrás de outros elementos */
 
   img {
     max-width: 20%;
@@ -39,12 +40,14 @@ const ImageContainer = styled.div`
   @media (max-width: 768px) {
     img {
       max-width: 20%;
+      margin-left: -50px;
     }
   }
 
   @media (max-width: 480px) {
     img {
       max-width: 20%;
+      margin-left: -50px;
     }
   }
 `;
@@ -80,6 +83,14 @@ const Sidebar = styled.div`
   &:hover {
     width: 110px; /* Largura ao passar o mouse */
   }
+
+  @media (max-width: 768px) {
+    width: 60px;
+}
+
+  @media (max-width: 480px) {
+    width: 40px;
+  }
 `;
 
 const SidebarItem = styled.div`
@@ -102,6 +113,14 @@ const Content = styled.div`
   padding: 20px;
   margin-left: 90px; /* Adiciona espaço para o conteúdo ao lado da barra lateral */
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    margin-left: 60px;
+}
+
+  @media (max-width: 480px) {
+    margin-left: 40px;
+  }
 `;
 
 const MainWrapper = styled.div`
@@ -164,7 +183,7 @@ const NavegarButton = styled.button`
 `;
 
 const VerDetalhesButton = styled.button`
-  padding: 5px 5px;
+  padding: 15px 15px;
   background-color: #d1cc36;
   color: white;
   border: none;
@@ -172,8 +191,9 @@ const VerDetalhesButton = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   margin-top: 5px;
-  width: 70px; /* Tamanho fixo do botão */
+  width: 80px; /* Tamanho fixo do botão */
   height: 50px; /* Tamanho fixo da altura */
+
 
   &:hover {
     background-color: #949828;
@@ -200,6 +220,32 @@ const ExcluirButton = styled.button`
   margin-top: 5px;
   width: 50px; /* Tamanho fixo do botão */
   height: 50px; /* Tamanho fixo da altura */
+
+  &:hover {
+    background-color: #b40808;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão ocupa a largura total */
+  }
+
+  @media (max-width: 480px) {
+    width: 50%; /* Largura total em telas pequenas */
+    margin-right: 0;
+  }
+`;
+
+const LixeiraButton = styled.button`
+  padding: 5px 5px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  width: 30px; /* Tamanho fixo do botão */
+  height: 30px; /* Tamanho fixo da altura */
 
   &:hover {
     background-color: #b40808;
@@ -281,35 +327,55 @@ const ItemDetails = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 10px;
+
+  @media (max-width: 768px) {
+    margin-right: 5px;
+  }
 `;
 
 const Price = styled.span`
   font-size: 13px;
   color: #333;
   margin-top: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 11px; /* Reduz tamanho da fonte em telas menores */
+  }
 `;
 
 const ItemNome = styled.span`
   font-family: ui-sans-serif;
   font-size: 18px;
   color: #020101;
+
+  @media (max-width: 768px) {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+  }
 `;
 
 const StyledNumber = styled.span`
   font-weight: bold;
   font-size: 17px;
   color: red;
+
+  @media (max-width: 768px) {
+    font-size: 15px; /* Reduz tamanho da fonte em telas menores */
+  }
 `;
 
 const OrcamentoWrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 70px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 `;
 
 const OrcamentoList = styled.ul`
+  margin-bottom: 100px;
+  margin-top: 20px;
+  text-align: center;
   list-style-type: none;
   padding: 0;
   background-color: #f9f9f9;
@@ -317,19 +383,30 @@ const OrcamentoList = styled.ul`
   border-radius: 5px;
 
   @media (max-width: 768px) {
-    padding: 10px;
+    padding: 10px; /* Reduz o espaçamento interno */
   }
 `;
 
 const OrcamentoItem = styled.li`
-  padding: 10px 0;
-  height: auto;
   display: flex;
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+  padding: 10px 0; /* Adicionado padding para melhorar a aparência */
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  align-items: center; /* Centraliza verticalmente os elementos */
+  border-bottom: 1px solid #ddd;  
+
+  div {
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente */
+    font-size: 14px; /* Ajuste padrão */
+
+    @media (max-width: 768px) {
+      font-size: 12px; /* Reduz o tamanho do texto em telas menores */
+    }
+  }
 `;
 
-const TotalWrapper = styled.div` 
+const TotalWrapper = styled.div`
   color: red;
   font-weight: bold;
   font-size: 20px;
@@ -345,6 +422,15 @@ const TotalWrapper = styled.div`
 
   button {
     margin-right: 8px; /* Espaçamento entre o botão e o campo de entrada */
+
+    @media (max-width: 768px) {
+      font-size: 12px; /* Reduz tamanho da fonte do botão */
+      padding: 5px; /* Ajusta o padding do botão */
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px; /* Reduz tamanho da fonte para Total */
   }
 `;
 
@@ -406,29 +492,31 @@ const ModalButton = styled.button`
 `;
 
 const DetalhesWrapper = styled.div`
-  margin-top: 20px;  /* Espaçamento superior */
-  padding: 30px;     /* Aumentar o padding para mais espaço interno */
+  margin-top: 20px;
+  padding: 65px;
   background-color: #ffffff;
   border: 1px solid #d3d3d3;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição mais suave */
-  width: 100%; /* Certificar que o wrapper ocupe toda a largura possível */
-  max-width: 1200px; /* Limitar a largura máxima para não ficar muito largo */
-  margin-left: auto; /* Centralizar horizontalmente */
-  margin-right: auto; /* Centralizar horizontalmente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: -1000px;
+  position: absolute;
+  color: #000000;
 
   &:hover {
-    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efeito de sombra mais forte no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-right: 500px;
   }
 
   h3 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #333333;
-    text-align: center; /* Centralizar o título */
+    color: #000000;
+    text-align: center;
   }
 
   ul {
@@ -437,15 +525,15 @@ const DetalhesWrapper = styled.div`
     margin: 0;
 
     li {
-      margin-bottom: 15px; /* Aumentar o espaçamento entre os itens */
-      padding: 15px;       /* Aumentar o padding para mais espaçamento interno */
+      margin-bottom: 15px;
+      padding: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #f9f9f9;
       border: 1px solid #e0e0e0;
       border-radius: 5px;
-      transition: background-color 0.2s ease, transform 0.2s ease; /* Transição suave */
+      transition: background-color 0.2s ease, transform 0.2s ease;
 
       &:hover {
         background-color: #eaf4fe;
@@ -453,7 +541,7 @@ const DetalhesWrapper = styled.div`
       }
 
       span {
-        font-size: 1rem;  /* Aumentar o tamanho da fonte */
+        font-size: 1rem;
         color: #555555;
 
         &:first-child {
@@ -465,16 +553,51 @@ const DetalhesWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 20px;  /* Menos padding em telas menores */
+    padding: 20px;
     h3 {
-      font-size: 1.2rem; /* Ajustar o tamanho do título */
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     ul {
-      padding: 10px;  /* Ajustar o padding da lista */
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    li {
+      padding: 10px;
+      font-size: 0.9rem;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding: 5px;
+    }
+
+    li {
+      padding: 8px;
+      font-size: 0.8rem;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 `;
+
 
 const StyledComponents = {
   TotalWrapper,
@@ -507,7 +630,8 @@ const StyledComponents = {
   SidebarItem,
   MainWrapper,
   Content,
-  VerDetalhesButton
+  VerDetalhesButton,
+  LixeiraButton,
 };
 
 export default StyledComponents;

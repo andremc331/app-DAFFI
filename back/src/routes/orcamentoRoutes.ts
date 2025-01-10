@@ -4,6 +4,7 @@ import express from 'express';
 import jwt from 'jsonwebtoken';  // Importa o pacote jwt
 import { Orcamento } from '../models/orcamentoModel';
 import { OrcamentoItem } from '../models/orcamentoitemModel';
+import { DATEONLY } from 'sequelize';
 
 // Definindo o tipo de dados do usuário no token
 interface User {
@@ -48,6 +49,7 @@ interface OrcamentoItemType {
   materialTotal: number;
   maoDeObraTotal: number;
   total: number;
+  data: Date;
 }
 
 interface OrcamentoRequestBody {
@@ -55,7 +57,7 @@ interface OrcamentoRequestBody {
 }
 
 router.post('/', authenticate, async (req: express.Request, res: express.Response) => {
-  const { orcamento, nome }: { orcamento: OrcamentoItemType[]; nome: string } = req.body;  // Inclui o nome no corpo da requisição
+  const { orcamento, nome, data }: { orcamento: OrcamentoItemType[]; nome: string; data: Date } = req.body;  // Inclui o nome no corpo da requisição
   const userId = req.user.id;  // Obtém o userId do token JWT
 
   if (!nome.trim()) {
@@ -71,6 +73,7 @@ router.post('/', authenticate, async (req: express.Request, res: express.Respons
       nome,
       total: totalGeral,
       userId,
+      data,
     });
 
     // Associa os itens do orçamento, incluindo o nome do item
@@ -83,6 +86,7 @@ router.post('/', authenticate, async (req: express.Request, res: express.Respons
         material: item.materialTotal,
         maoDeObra: item.maoDeObraTotal,
         total: item.total,
+        data: item.data,
       });
     }
     
@@ -117,7 +121,7 @@ router.get('/:id', async (req: express.Request, res: express.Response) => {
         {
           model: OrcamentoItem,
           as: 'itens',
-          attributes: ['id', 'nome', 'quantidade', 'material', 'maoDeObra', 'total'],  // Garantir que o campo nome esteja incluído
+          attributes: ['id', 'nome', 'quantidade', 'material', 'maoDeObra', 'total',],  // Garantir que o campo nome esteja incluído
         }
       ]
     });
