@@ -10,6 +10,9 @@ COPY back/package*.json ./
 # Instalar as dependências da aplicação
 RUN npm install
 
+# Compilar o código TypeScript
+RUN npm run build
+
 # Copiar todo o código da aplicação para dentro do container
 COPY back/ ./
 
