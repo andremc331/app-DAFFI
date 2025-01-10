@@ -4,7 +4,9 @@ FROM node:16
 WORKDIR /app
 
 # Copiar arquivos do package.json e instalar dependências
-COPY package.*json package-lock*.json ./
+COPY ./package.*json ./package-lock*.json ./
+
+# Instalar as dependências
 RUN npm install
 
 # Copiar o restante dos arquivos do projeto
