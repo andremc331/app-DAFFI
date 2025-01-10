@@ -10,15 +10,6 @@ COPY package*.json ./
 # Instale as dependências
 RUN npm install
 
-# Copie todos os arquivos TypeScript, incluindo o tsconfig.json
-COPY tsconfig.json ./
-
-# Copie os arquivos fontes (pasta src)
-COPY src ./src
-
-# Copie o arquivo .env, se necessário
-COPY .env ./
-
 # Exponha a porta da aplicação (ajuste para sua aplicação)
 EXPOSE 3001
 
