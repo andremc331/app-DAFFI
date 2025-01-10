@@ -4,8 +4,7 @@
     "module": "commonjs",
     "lib": [
       "es2020",
-      "dom",
-      "webworker"
+      "dom"
     ],
     "jsx": "react-jsx",
     "moduleResolution": "node",
