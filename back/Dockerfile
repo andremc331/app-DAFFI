@@ -1,20 +1,17 @@
-# Use a imagem base do Node.js
 FROM node:16
 
-# Crie e defina o diretório de trabalho no container
+# Definir o diretório de trabalho
 WORKDIR /app
 
-# Copie o package.json e o package-lock.json
-COPY package*.json ./
-
-# Instale as dependências
+# Copiar arquivos do package.json e instalar dependências
+COPY package.json package-lock.json ./
 RUN npm install
 
-# Compile o código TypeScript
-RUN npm run build
+# Copiar o restante dos arquivos do projeto
+COPY . .
 
-# Exponha a porta da aplicação (ajuste para sua aplicação)
-EXPOSE 3001
+# Instalar o ts-node globalmente
+RUN npm install ts-node --save-dev
 
-# Comando para rodar a aplicação
-CMD ["npm", "start"]
+# Rodar o código TypeScript diretamente usando ts-node
+CMD ["npx", "ts-node", "index.ts"]
