@@ -7,6 +7,9 @@ WORKDIR /app
 # Copiar os arquivos de dependências (package.json e package-lock.json)
 COPY back/package*.json ./
 
+# Compilar o código TypeScript
+RUN npm run build
+
 # Instalar as dependências da aplicação
 RUN npm install
 
