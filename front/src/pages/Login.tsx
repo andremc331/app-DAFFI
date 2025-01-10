@@ -17,7 +17,7 @@ const LoginCadastro: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Para controlar se o usuário está logado
   const navigate = useNavigate();
 
-  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://192.168.15.116:3001';
+  const BASE_URL = 'http://192.168.15.116:3001';
 
   const handleSubmit = async () => {
     setErro('');
