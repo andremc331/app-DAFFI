@@ -20,7 +20,7 @@ COPY src ./src
 COPY .env ./
 
 # Compile o código TypeScript
-RUN npm run build --verbose
+RUN npm run build -- --noEmit
 
 # Exponha a porta da aplicação (ajuste para sua aplicação)
 EXPOSE 3001
