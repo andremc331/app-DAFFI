@@ -18,6 +18,8 @@ const RelatorioDiario: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false); // Indicador de carregamento
   const navigate = useNavigate();
 
+
+  // campos, atualiza e salva o relatório
   const handleSave = async () => {
     setIsLoading(true); // Ativar carregamento
     try {
@@ -35,7 +37,7 @@ const RelatorioDiario: React.FC = () => {
         endereco,
       };
   
-      const BASE_URL = 'http://192.168.15.116:3001';
+      const BASE_URL = process.env.REACT_APP_API_URL;
 
       // Fazer a requisição ao backend para gerar o PDF
       const response = await axios.post(`${BASE_URL}/gerar-pdf`, payload, {
@@ -67,6 +69,7 @@ const RelatorioDiario: React.FC = () => {
     }
   };
   
+  // limpa os campos
   const handleClear = () => {
     setData('');
     setClima('');
@@ -77,6 +80,7 @@ const RelatorioDiario: React.FC = () => {
   return (
     <Container>
       <MainWrapper>
+
         {/* Barra Lateral */}
         <Sidebar>
           <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
@@ -87,12 +91,15 @@ const RelatorioDiario: React.FC = () => {
   
         {/* Conteúdo Principal */}
         <Content>
+
           <Header>
             <ImageContainer>
               <img src={DAFFI} alt="Logo DAFFI" />
             </ImageContainer>
             Relatório Diário de Obra
           </Header>
+
+        {/* campos e botões*/}
           <Form>
             <Field>
               <Label>Obra:</Label>
@@ -103,6 +110,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Nome da obra"
               />
             </Field>
+
             <Field>
               <Label>Responsável Técnico:</Label>
               <Input
@@ -112,6 +120,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Nome do responsável técnico"
               />
             </Field>
+
             <Field>
               <Label>Endereço:</Label>
               <Input
@@ -121,6 +130,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Endereço da obra"
               />
             </Field>
+
             <Field>
               <Label>Data:</Label>
               <Input
@@ -129,6 +139,7 @@ const RelatorioDiario: React.FC = () => {
                 onChange={(e) => setData(e.target.value)}
               />
             </Field>
+
             <Field>
               <Label>Clima:</Label>
               <Input
@@ -138,6 +149,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Ex.: Ensolarado, Nublado, Chuvoso"
               />
             </Field>
+
             <Field>
               <Label>Mão de Obra:</Label>
               {/* Aqui você pode adicionar múltiplos campos para funções e quantidades */}
@@ -148,6 +160,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Ex.: Pedreiro: 3, Servente: 2"
               />
             </Field>
+
             <Field>
               <Label>Atividades Realizadas:</Label>
               <Textarea
@@ -156,6 +169,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Descreva as atividades realizadas no dia"
               />
             </Field>
+
             <Field>
               <Label>Observações:</Label>
               <Textarea
@@ -164,6 +178,7 @@ const RelatorioDiario: React.FC = () => {
                 placeholder="Adicione quaisquer observações importantes"
               />
             </Field>
+
             <ButtonWrapper>
               <Button onClick={handleSave} disabled={isLoading}>
                 {isLoading ? 'Gerando PDF...' : 'Salvar'}
@@ -172,6 +187,7 @@ const RelatorioDiario: React.FC = () => {
                 Limpar
               </Button>
             </ButtonWrapper>
+
           </Form>
         </Content>
       </MainWrapper>

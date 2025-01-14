@@ -74,6 +74,7 @@ const Orcamentos: React.FC = () => {
   const [authToken, setAuthToken] = useState<string | null>(null);
   const navigate = useNavigate();
 
+  //login
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -83,6 +84,7 @@ const Orcamentos: React.FC = () => {
     }
   }, [navigate]);
 
+  //buscar orcamentos salvos
   useEffect(() => {
     const fetchOrcamentosSalvos = async () => {
       try {
@@ -103,13 +105,14 @@ const Orcamentos: React.FC = () => {
     }
   }, [authToken]);
 
+  //atualizar modal
   useEffect(() => {
     if (modalItem) {
       console.log('Modal atualizado:', modalItem);
     }
   }, [modalItem]);
 
-  const BASE_URL = 'http://192.168.15.116:3001';
+  const BASE_URL = process.env.REACT_APP_API_URL;
 
   const buscarItens = async () => {
     try {
@@ -122,7 +125,6 @@ const Orcamentos: React.FC = () => {
       console.error('Erro ao buscar itens', err);
     }
   };
-
 
   const buscarItensDebounced = debounce((termo: string) => {
     buscarItens();
@@ -335,12 +337,14 @@ const Orcamentos: React.FC = () => {
         </Sidebar>
         {/* Conteúdo Principal */}
         <Content>
+        {/* logo daffi dentro do cabeçalho */}
           <Header>
             <ImageContainer>
               <img src={DAFFI} alt="Logo DAFFI" />
             </ImageContainer>
             Consulta de Preços - Tabela PINI
           </Header>
+        {/* barra de pesquisa */}
           <InputWrapper>
             <Input
               type="text"
@@ -353,6 +357,8 @@ const Orcamentos: React.FC = () => {
 
           {erro && <ErrorMessage>{erro}</ErrorMessage>}
 
+
+        {/* abre o modal*/}
           <div>
             <h2>Resultados da Pesquisa</h2>
             {itens.length === 0 ? (
@@ -370,7 +376,8 @@ const Orcamentos: React.FC = () => {
               </ScrollableItemList>
             )}
           </div>
-
+          
+        {/* conteúdo do modal*/}
           {modalItem && (
             <ModalOverlay>
               <ModalContent>
@@ -407,6 +414,7 @@ const Orcamentos: React.FC = () => {
             </ModalOverlay>
           )}
 
+        {/* "carrinho de compras do orçamento" */}
           <OrcamentoWrapper>
             <h2>Orçamento</h2>
             <OrcamentoList>
@@ -432,7 +440,8 @@ const Orcamentos: React.FC = () => {
               />
             </TotalWrapper>
           </OrcamentoWrapper>
-
+          
+        {/* orçamentos salvos */}
           <h2>Orçamentos Salvos</h2>
           <OrcamentoList>
             {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (

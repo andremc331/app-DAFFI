@@ -76,7 +76,7 @@ export const importarCSV = async () => {
       }
     }
 
-    console.log('Dados importados para o banco!');
+    // console.log('Dados importados para o banco!');
   } catch (err) {
     if (err instanceof Error) {
       console.error('Erro ao ler ou processar o arquivo CSV:', err.message);

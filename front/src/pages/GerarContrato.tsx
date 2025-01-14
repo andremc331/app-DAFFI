@@ -143,6 +143,9 @@ const ContractWrapper = styled.pre`
 
 const GerarContrato: React.FC = () => {
 const navigate = useNavigate();
+const [contratoGerado, setContratoGerado] = useState('');
+
+// campos
   const [empresaInfo, setEmpresaInfo] = useState({
     contratada: '',
     cnpjContratada: '',
@@ -165,8 +168,7 @@ const navigate = useNavigate();
     prazoExecucao: 0,
   });
 
-  const [contratoGerado, setContratoGerado] = useState('');
-
+// atualiza
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEmpresaInfo((prevState) => ({
@@ -182,6 +184,8 @@ const navigate = useNavigate();
   //   });
   // };
   
+
+  // texto do contrato 
   const handleGenerateContract = () => {
     const contrato = `
 
@@ -298,6 +302,7 @@ const navigate = useNavigate();
     setContratoGerado(contrato);
   };
 
+  // função que estiliza
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
     const marginLeft = 14;
@@ -359,6 +364,7 @@ const navigate = useNavigate();
         </Sidebar>
          {/* Conteúdo Principal */}
          <Content>
+
          <Header>
         <ImageContainer>
           <img src={DAFFI} alt="Logo DAFFI" />
@@ -367,6 +373,7 @@ const navigate = useNavigate();
       </Header>      
 
     <FormWrapper>
+      {/* info contratada, não utilizando*/ }
       {/* <Input
         type="text"
         name="contratada"
@@ -404,7 +411,7 @@ const navigate = useNavigate();
       /> */}
 
 
-
+  {/* info contratante*/}
       <Input
         type="text"
         name="contratante"
@@ -412,6 +419,7 @@ const navigate = useNavigate();
         value={empresaInfo.contratante}
         onChange={handleChange}
       />
+
       <Input
         type="text"
         name="cnpjContratante"
@@ -419,6 +427,7 @@ const navigate = useNavigate();
         value={empresaInfo.cnpjContratante}
         onChange={handleChange}
       />
+
       <Input
         type="text"
         name="enderecoContratante"
@@ -426,6 +435,7 @@ const navigate = useNavigate();
         value={empresaInfo.enderecoContratante}
         onChange={handleChange}
       />
+
       <Input
         type="text"
         name="responsavelContratante"
@@ -433,6 +443,7 @@ const navigate = useNavigate();
         value={empresaInfo.responsavelContratante}
         onChange={handleChange}
       />
+
       <Input
         type="text"
         name="rgRepresentante"
@@ -440,6 +451,7 @@ const navigate = useNavigate();
         value={empresaInfo.rgRepresentante}
         onChange={handleChange}
       />
+
       <Input
         type="text"
         name="cpfRepresentante"
@@ -448,8 +460,7 @@ const navigate = useNavigate();
         onChange={handleChange}
       />
 
-
-
+    {/* valores e dias*/}
       <Input
         type="number"
         name="valorTotal"
@@ -457,6 +468,7 @@ const navigate = useNavigate();
         value={empresaInfo.valorTotal}
         onChange={handleChange}
       />
+
       <Input
         type="number"
         name="valorEntrada"
@@ -464,6 +476,7 @@ const navigate = useNavigate();
         value={empresaInfo.valorEntrada}
         onChange={handleChange}
       />
+
       <Input
         type="number"
         name="valorSaldoRestante"
@@ -471,6 +484,7 @@ const navigate = useNavigate();
         value={empresaInfo.valorSaldoRestante}
         onChange={handleChange}
       />
+
       <Input
         type="number"
         name="valorParcelas"
@@ -478,9 +492,6 @@ const navigate = useNavigate();
         value={empresaInfo.valorParcelas}
         onChange={handleChange}
       />
-
-
-
       
       <Input
         type="date"
@@ -489,6 +500,7 @@ const navigate = useNavigate();
         value={empresaInfo.previsaoInicio}
         onChange={handleChange}
       />
+
       <Input
         type="number"
         name="prazoExecucao"
@@ -499,10 +511,12 @@ const navigate = useNavigate();
 
       <Button onClick={handleGenerateContract}>Gerar Contrato</Button>
       <Button onClick={handleDownloadPDF}>Baixar PDF</Button>
+
       <ContractWrapper>
           <h3>Pré-visualização do Contrato</h3>
           {contratoGerado}
-        </ContractWrapper>        
+        </ContractWrapper>    
+
     </FormWrapper>    
     </Content>
     </MainWrapper>
