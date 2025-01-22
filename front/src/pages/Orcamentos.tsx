@@ -7,6 +7,7 @@ import { debounce } from 'lodash';
 import DAFFI from "../images/DAFFI logo.jpg"
 import { useNavigate } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
+import CustomModal from '../components/CustomModal'; // Importando o CustomModal
 
 const {
   TotalWrapper,
@@ -38,7 +39,9 @@ const {
   SidebarItem,
   MainWrapper,
   Content,
-  LixeiraButton
+  LixeiraButton,
+  ButtonSecundario,
+  ModalActions
 } = StyledComponents;
 
 interface Orcamento {
@@ -49,6 +52,7 @@ interface Orcamento {
   maoDeObraCorrigida: number;
   total: number;
   userId: number;
+  unidade: number
   data: Date;
   itens?: Array<{
     id: number;
@@ -58,6 +62,7 @@ interface Orcamento {
     maoDeObraCorrigida: number;
     total: number;
     userId: number;
+    unidade: number
   }>;
 }
 
@@ -66,12 +71,18 @@ const Orcamentos: React.FC = () => {
   const [itens, setItens] = useState<any[]>([]);
   const [orcamento, setOrcamento] = useState<any[]>([]);
   const [orcamentosSalvos, setOrcamentosSalvos] = useState<Orcamento[]>([]);
-  const [orcamentoDetalhado, setOrcamentoDetalhado] = useState<Orcamento | null>(null);
+  const [orcamentoDetalhado, setOrcamentoDetalhado] = useState<Orcamento | null>(null); 
   const [orcamentoNome, setOrcamentoNome] = useState('');
-  const [erro, setErro] = useState<string>('');
-  const [modalItem, setModalItem] = useState<any | null>(null);
-  const [quantidade, setQuantidade] = useState<string>('');
-  const [authToken, setAuthToken] = useState<string | null>(null);
+  const [erro, setErro] = useState<string>(''); // erro
+  const [quantidade, setQuantidade] = useState<string>(''); 
+  const [authToken, setAuthToken] = useState<string | null>(null); // token
+  const [modalItem, setModalItem] = useState<any | null>(null); // modal
+  const [modalAberto, setModalAberto] = useState(false);  // modal
+  const [modalSucessoAberto, setModalSucessoAberto] = useState(false);  // modal
+  const [modalExclusaoAberto, setModalExclusaoAberto] = useState(false);  // modal
+  const [mensagemExclusao, setMensagemExclusao] = useState('');  // modal
+  const [modalConfirmacaoAberto, setModalConfirmacaoAberto] = useState(false); // modal
+  const [orcamentoIdParaExcluir, setOrcamentoIdParaExcluir] = useState<number | null>(null);
   const navigate = useNavigate();
 
   //login
@@ -112,7 +123,7 @@ const Orcamentos: React.FC = () => {
     }
   }, [modalItem]);
 
-  const BASE_URL = process.env.REACT_APP_API_URL;
+  const BASE_URL = process.env.REACT_APP_API_URL || 'http://192.168.15.116:3001';
 
   const buscarItens = async () => {
     try {
@@ -174,9 +185,10 @@ const Orcamentos: React.FC = () => {
         }
       );
 
-      alert('Orçamento salvo com sucesso!');
       setOrcamento([]);  // Limpar o orçamento atual após salvar
       setOrcamentoNome('');  // Limpar o nome do orçamento após salvar
+      setModalAberto(false); // Fecha o modal de confirmação
+      setModalSucessoAberto(true); // Abre o modal de sucesso
 
       const resOrcamentos = await axios.get(`${BASE_URL}/api/orcamentos`, {
         headers: { Authorization: `Bearer ${authToken}` },
@@ -189,11 +201,7 @@ const Orcamentos: React.FC = () => {
   };
 
   const excluirOrcamento = async (orcamentoId: number) => {
-    const confirmar = window.confirm('Tem certeza de que deseja excluir este orçamento?');
-
-    if (!confirmar) {
-      return; // Cancela a exclusão se o usuário clicar em "Cancelar"
-    }
+    if (orcamentoIdParaExcluir === null) return;
 
     try {
       await axios.delete(`${BASE_URL}/api/orcamentos/${orcamentoId}`, {
@@ -204,10 +212,16 @@ const Orcamentos: React.FC = () => {
 
       // Atualizar a lista de orçamentos salvos após a exclusão
       setOrcamentosSalvos(orcamentosSalvos.filter(orcamento => orcamento.id !== orcamentoId));
-      alert('Orçamento excluído com sucesso!');
+
+      // Exibir o modal de sucesso
+      setMensagemExclusao('Orçamento excluído com sucesso!');
+      setModalExclusaoAberto(true);
     } catch (err) {
       setErro('Erro ao excluir orçamento');
       console.error('Erro ao excluir orçamento', err);
+    } finally {
+      setModalConfirmacaoAberto(false);
+      setOrcamentoIdParaExcluir(null);
     }
   };
 
@@ -327,6 +341,7 @@ const Orcamentos: React.FC = () => {
   return (
     <Container>
       <MainWrapper>
+
         {/* Barra Lateral */}
         <Sidebar>
           <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
@@ -335,16 +350,18 @@ const Orcamentos: React.FC = () => {
           <SidebarItem>      <LogoutButton />
           </SidebarItem>
         </Sidebar>
-        {/* Conteúdo Principal */}
+
         <Content>
-        {/* logo daffi dentro do cabeçalho */}
+
+          {/* logo daffi dentro do cabeçalho */}
           <Header>
             <ImageContainer>
               <img src={DAFFI} alt="Logo DAFFI" />
             </ImageContainer>
             Consulta de Preços - Tabela PINI
           </Header>
-        {/* barra de pesquisa */}
+
+          {/* barra de pesquisa */}
           <InputWrapper>
             <Input
               type="text"
@@ -358,7 +375,7 @@ const Orcamentos: React.FC = () => {
           {erro && <ErrorMessage>{erro}</ErrorMessage>}
 
 
-        {/* abre o modal*/}
+          {/* abre o modal*/}
           <div>
             <h2>Resultados da Pesquisa</h2>
             {itens.length === 0 ? (
@@ -376,11 +393,10 @@ const Orcamentos: React.FC = () => {
               </ScrollableItemList>
             )}
           </div>
-          
-        {/* conteúdo do modal*/}
+
           {modalItem && (
-            <ModalOverlay>
-              <ModalContent>
+            <ModalOverlay onClick={fecharModal}>
+              <ModalContent onClick={(e) => e.stopPropagation()}>
                 <ModalButton onClick={fecharModal}>X</ModalButton>
                 <h3>Adicionar ao Orçamento</h3>
                 <ItemNome>Item: {modalItem.nome}</ItemNome>
@@ -414,7 +430,7 @@ const Orcamentos: React.FC = () => {
             </ModalOverlay>
           )}
 
-        {/* "carrinho de compras do orçamento" */}
+          {/* "carrinho de compras do orçamento" */}
           <OrcamentoWrapper>
             <h2>Orçamento</h2>
             <OrcamentoList>
@@ -422,7 +438,7 @@ const Orcamentos: React.FC = () => {
                 <OrcamentoItem key={index}>
                   <div>
                     {item.nome} - {item.quantidade} x Material (Corrigido): {formatarPreco(Number(item.materialCorrigido) || 0)} +
-                    Mão de Obra (Corrigido): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
+                    Mão de Obra (Corrigida): {formatarPreco(Number(item.maoDeObraCorrigida) || 0)}
                   </div>
                   <div>Total: {formatarPreco(Number(item.total) || 0)}</div>
                   <LixeiraButton onClick={() => excluirItem(index)}>🗑</LixeiraButton>
@@ -431,7 +447,7 @@ const Orcamentos: React.FC = () => {
             </OrcamentoList>
             <TotalWrapper>
               <span>Total: {formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}</span>
-              <Button onClick={salvarOrcamento}>Salvar Orçamento</Button>
+              <Button onClick={() => setModalAberto(true)}>Salvar Orçamento</Button>
               <Input
                 type="text"
                 value={orcamentoNome}
@@ -440,8 +456,39 @@ const Orcamentos: React.FC = () => {
               />
             </TotalWrapper>
           </OrcamentoWrapper>
-          
-        {/* orçamentos salvos */}
+
+          {/* Modal de Confirmação de salvar */}
+          {modalAberto && (
+            <ModalOverlay>
+              <ModalContent>
+                <ModalButton onClick={() => setModalAberto(false)}>X</ModalButton>
+                <h3>Confirmar Salvamento</h3>
+                <p>Deseja salvar o orçamento <strong>{orcamentoNome || 'sem nome'}</strong>?</p>
+                <p>
+                  Total: <strong>{formatarPreco(orcamento.reduce((total, item) => total + (Number(item.total) || 0), 0))}</strong>
+                </p>
+                <ModalActions>
+                  <Button onClick={salvarOrcamento}>Confirmar</Button>
+                  <ButtonSecundario onClick={() => setModalAberto(false)}>Cancelar</ButtonSecundario>
+                </ModalActions>
+              </ModalContent>
+            </ModalOverlay>
+          )}
+
+          {/* Modal de Sucesso salvo*/}
+          {modalSucessoAberto && (
+            <ModalOverlay>
+              <ModalContent>
+                <h3>Orçamento Salvo!</h3>
+                <p>O orçamento foi salvo com sucesso.</p>
+                <ModalActions>
+                  <Button onClick={() => setModalSucessoAberto(false)}>Fechar</Button>
+                </ModalActions>
+              </ModalContent>
+            </ModalOverlay>
+          )}
+
+          {/* orçamentos salvos */}
           <h2>Orçamentos Salvos</h2>
           <OrcamentoList>
             {orcamentosSalvos.map((orcamento: Orcamento, index: number) => (
@@ -461,39 +508,87 @@ const Orcamentos: React.FC = () => {
                 <span>Total: {formatarPreco(orcamento.total)}</span>
                 <VerDetalhesButton onClick={() => mostrarDetalhesOrcamento(orcamento)}>
                   {orcamentoDetalhado?.id === orcamento.id ? "Esconder Detalhes" : "Ver Detalhes"}
-                  
-                  {orcamentoDetalhado?.id === orcamento.id && (
-                  <DetalhesWrapper>
-                    <ul>
-                      {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
-                        orcamentoDetalhado.itens.map((item: any, idx: number) => {
-                          const materialCorrigido = parseFloat(item.material || "0");
-                          const maoDeObraCorrigida = parseFloat(item.maoDeObra || "0");
-                          const totalCorrigido = materialCorrigido + maoDeObraCorrigida;
 
-                          return (
-                            <li key={idx}>
-                              <div>Item: <span>{item.nome || "Nome não disponível"}</span></div>
-                              <div>Quantidade: {item.quantidade};</div>
-                              <div>Material: {formatarPreco(materialCorrigido)};</div>
-                              <div>Mão de Obra: {formatarPreco(maoDeObraCorrigida)};</div>
-                              <div>Total: {formatarPreco(totalCorrigido)}</div>
-                            </li>
-                          );
-                        })
-                      ) : (
-                        <p>Este orçamento não contém itens detalhados.</p>
-                      )}
-                    </ul>
-                  </DetalhesWrapper>
-                )}
+                  {orcamentoDetalhado?.id === orcamento.id && (
+                    <DetalhesWrapper>
+                      <ul>
+                        {orcamentoDetalhado.itens && orcamentoDetalhado.itens.length > 0 ? (
+                          orcamentoDetalhado.itens.map((item: any, idx: number) => {
+                            const materialCorrigido = parseFloat(item.material || "0");
+                            const maoDeObraCorrigida = parseFloat(item.maoDeObra || "0");
+                            const totalCorrigido = materialCorrigido + maoDeObraCorrigida;
+
+                            return (
+                              <li key={idx}>
+                                <div>Item: <span>{item.nome || "Nome não disponível"}</span></div>
+                                <div>Quantidade: {item.quantidade};</div>
+                                <div>{item.unidade}</div>
+                                <div>Material: {formatarPreco(materialCorrigido)};</div>
+                                <div>Mão de Obra: {formatarPreco(maoDeObraCorrigida)};</div>
+                                <div>Total: {formatarPreco(totalCorrigido)}</div>
+                              </li>
+                            );
+                          })
+                        ) : (
+                          <p>Este orçamento não contém itens detalhados.</p>
+                        )}
+                      </ul>
+                    </DetalhesWrapper>
+                  )}
                 </VerDetalhesButton>
-               
-                <ExcluirButton onClick={() => excluirOrcamento(orcamento.id)}>Excluir</ExcluirButton>
+
+                <ExcluirButton
+                  onClick={() => {
+                    setOrcamentoIdParaExcluir(orcamento.id); // Define o ID do orçamento a ser excluído
+                    setModalConfirmacaoAberto(true); // Abre o modal de confirmação
+                  }}
+                >
+                  Excluir
+                </ExcluirButton>
+
+                {/* confirmar exclusão*/}
+                {modalConfirmacaoAberto && (
+                  <ModalOverlay>
+                    <ModalContent>
+                      <h3>Confirmar Exclusão</h3>
+                      <p>Tem certeza de que deseja excluir este orçamento?</p>
+                      <ModalActions>
+                        {/* Botão para confirmar a exclusão */}
+                        <ExcluirButton
+                          onClick={() => {
+                            if (orcamentoIdParaExcluir !== null) {
+                              excluirOrcamento(orcamentoIdParaExcluir); // Passa o ID do orçamento
+                            }
+                          }}
+                        >
+                          Confirmar
+                        </ExcluirButton>
+                        {/* Botão para cancelar a exclusão */}
+                        <ButtonSecundario onClick={() => setModalConfirmacaoAberto(false)}>
+                          Cancelar
+                        </ButtonSecundario>
+                      </ModalActions>
+                    </ModalContent>
+                  </ModalOverlay>
+                )}
+
+                {/* Modal de sucesso de exclusão */}
+                {modalExclusaoAberto && (
+                  <ModalOverlay>
+                    <ModalContent>
+                      <h3>Exclusão Bem-Sucedida</h3>
+                      <p>{mensagemExclusao}</p>
+                      <Button onClick={() => setModalExclusaoAberto(false)}>Fechar</Button>
+                    </ModalContent>
+                  </ModalOverlay>
+                )}
+
               </OrcamentoItem>
             ))}
           </OrcamentoList>
+
         </Content>
+
       </MainWrapper>
     </Container>
   );

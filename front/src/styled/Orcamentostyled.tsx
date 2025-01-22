@@ -598,6 +598,23 @@ const DetalhesWrapper = styled.div`
   }
 `;
 
+const ModalActions = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+`;
+
+const ButtonSecundario = styled.button`
+  background-color: #ccc;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #bbb;
+  }
+`;
 
 const StyledComponents = {
   TotalWrapper,
@@ -632,6 +649,8 @@ const StyledComponents = {
   Content,
   VerDetalhesButton,
   LixeiraButton,
+  ModalActions,
+  ButtonSecundario
 };
 
 export default StyledComponents;

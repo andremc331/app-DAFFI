@@ -142,10 +142,10 @@ const ContractWrapper = styled.pre`
 `;
 
 const GerarContrato: React.FC = () => {
-const navigate = useNavigate();
-const [contratoGerado, setContratoGerado] = useState('');
+  const navigate = useNavigate();
+  const [contratoGerado, setContratoGerado] = useState('');
 
-// campos
+  // campos
   const [empresaInfo, setEmpresaInfo] = useState({
     contratada: '',
     cnpjContratada: '',
@@ -154,11 +154,11 @@ const [contratoGerado, setContratoGerado] = useState('');
     responsavelContratada: '',
 
     contratante: '',
-    cnpjContratante: '',
+    cnpjContratante: 0,
     enderecoContratante: '',
     responsavelContratante: '',
-    rgRepresentante: '',
-    cpfRepresentante: '',
+    rgRepresentante: 0,
+    cpfRepresentante: 0,
 
     valorTotal: 0,
     valorEntrada: 0,
@@ -166,9 +166,13 @@ const [contratoGerado, setContratoGerado] = useState('');
     valorParcelas: 0,
     previsaoInicio: '',
     prazoExecucao: 0,
+
+    dia: '',
+    mes: '',
+    ano: '',
   });
 
-// atualiza
+  // atualiza
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEmpresaInfo((prevState) => ({
@@ -183,7 +187,7 @@ const [contratoGerado, setContratoGerado] = useState('');
   //     currency: 'BRL',
   //   });
   // };
-  
+
 
   // texto do contrato 
   const handleGenerateContract = () => {
@@ -297,7 +301,7 @@ const [contratoGerado, setContratoGerado] = useState('');
       RG:
 
     
-      Jacareí, 17 de Dezembro de 2024
+      Jacareí, ${empresaInfo.dia} de ${empresaInfo.mes} de ${empresaInfo.ano}
     `;
     setContratoGerado(contrato);
   };
@@ -312,7 +316,7 @@ const [contratoGerado, setContratoGerado] = useState('');
     let currentHeight = 51; // Posição inicial do texto na primeira página
     const adjustedMarginLeft = marginLeft + 4.5; // Ajuste o valor conforme necessário
 
-  
+
     // Adiciona o logotipo
     doc.addImage(logoBase64, 'PNG', 20, 10, 32, 32);
     doc.addImage(logoBase64versao2, 'PNG', 60, 10, 125, 29); // Coordenadas x=50, y=10 (à direita da primeira)
@@ -323,13 +327,13 @@ const [contratoGerado, setContratoGerado] = useState('');
     // Configura fonte para o corpo do contrato
     doc.setFont('Calibri', 'normal');
     doc.setFontSize(12);
-  
-    // Define o texto com substituição de bullet points
-  const contratoGeradoComBullets = contratoGerado.replace(/●/g, '-'); // Substitui o bullet por um traço "-"
 
-  // Divide o texto em linhas para encaixar na largura
-  const lines = doc.splitTextToSize(contratoGeradoComBullets, pageWidth);
-  
+    // Define o texto com substituição de bullet points
+    const contratoGeradoComBullets = contratoGerado.replace(/●/g, '-'); // Substitui o bullet por um traço "-"
+
+    // Divide o texto em linhas para encaixar na largura
+    const lines = doc.splitTextToSize(contratoGeradoComBullets, pageWidth);
+
     lines.forEach((line: string | string[]) => {
       if (currentHeight + lineHeight > pageHeight) {
         doc.addPage(); // Adiciona nova página se ultrapassar altura
@@ -338,7 +342,7 @@ const [contratoGerado, setContratoGerado] = useState('');
       doc.text(line, marginLeft, currentHeight);
       currentHeight += lineHeight;
     });
-  
+
     // Adiciona número de páginas no rodapé
     // const totalPages = doc.getNumberOfPages(); // Corrigido aqui
     // for (let i = 1; i <= totalPages; i++) {
@@ -346,14 +350,14 @@ const [contratoGerado, setContratoGerado] = useState('');
     //   doc.setFontSize(10);
     //   doc.text(`Página ${i} de ${totalPages}`, marginLeft, pageHeight - 10);
     // }
-  
+
     // Salva o arquivo
     doc.save('contrato.pdf');
   };
 
   return (
     <>
-    <MainWrapper> 
+      <MainWrapper>
         {/* Barra Lateral */}
         <Sidebar>
           <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
@@ -362,19 +366,19 @@ const [contratoGerado, setContratoGerado] = useState('');
           <SidebarItem>      <LogoutButton />
           </SidebarItem>
         </Sidebar>
-         {/* Conteúdo Principal */}
-         <Content>
+        {/* Conteúdo Principal */}
+        <Content>
 
-         <Header>
-        <ImageContainer>
-          <img src={DAFFI} alt="Logo DAFFI" />
-        </ImageContainer>
-        Gerar Contrato
-      </Header>      
+          <Header>
+            <ImageContainer>
+              <img src={DAFFI} alt="Logo DAFFI" />
+            </ImageContainer>
+            Gerar Contrato
+          </Header>
 
-    <FormWrapper>
-      {/* info contratada, não utilizando*/ }
-      {/* <Input
+          <FormWrapper>
+            {/* info contratada, não utilizando*/}
+            {/* <Input
         type="text"
         name="contratada"
         placeholder="Nome da Contratada"
@@ -411,115 +415,142 @@ const [contratoGerado, setContratoGerado] = useState('');
       /> */}
 
 
-  {/* info contratante*/}
-      <Input
-        type="text"
-        name="contratante"
-        placeholder="Nome da Contratante"
-        value={empresaInfo.contratante}
-        onChange={handleChange}
-      />
+            {/* info contratante*/}
+            Nome da Empresa
+            <Input
+              type="text"
+              name="contratante"
+              placeholder="Nome da Contratante"
+              value={empresaInfo.contratante}
+              onChange={handleChange}
+            />
+            CNPJ da Empresa
+            <Input
+              type="number"
+              name="cnpjContratante"
+              placeholder="CNPJ da Contratante"
+              value={empresaInfo.cnpjContratante}
+              onChange={handleChange}
+            />
+            Endereço da Empresa
+            <Input
+              type="text"
+              name="enderecoContratante"
+              placeholder="Endereço da Contratante"
+              value={empresaInfo.enderecoContratante}
+              onChange={handleChange}
+            />
+            Nome do Representante
+            <Input
+              type="text"
+              name="responsavelContratante"
+              placeholder="Responsável pela Contratante"
+              value={empresaInfo.responsavelContratante}
+              onChange={handleChange}
+            />
+            RG do Representante
+            <Input
+              type="number"
+              name="rgRepresentante"
+              placeholder="RG do Representante"
+              value={empresaInfo.rgRepresentante}
+              onChange={handleChange}
+            />
+            CPF do Representante
+            <Input
+              type="number"
+              name="cpfRepresentante"
+              placeholder="CPF do Representante"
+              value={empresaInfo.cpfRepresentante}
+              onChange={handleChange}
+            />
+            Valor Total do Contrato 
+            {/* valores e dias*/}
+            <Input
+              type="number"
+              name="valorTotal"
+              placeholder="Valor Total do Contrato"
+              value={empresaInfo.valorTotal}
+              onChange={handleChange}
+            />
+            Valor de Entrada
+            <Input
+              type="number"
+              name="valorEntrada"
+              placeholder="Valor de Entrada"
+              value={empresaInfo.valorEntrada}
+              onChange={handleChange}
+            />
+            Valor do Saldo Restante
+            <Input
+              type="number"
+              name="valorSaldoRestante"
+              placeholder="Valor do Saldo Restante"
+              value={empresaInfo.valorSaldoRestante}
+              onChange={handleChange}
+            />
+            Valor das Parcelas
+            <Input
+              type="number"
+              name="valorParcelas"
+              placeholder="Valor das Parcelas"
+              value={empresaInfo.valorParcelas}
+              onChange={handleChange}
+            />
+            Previsão de Início da Obra
+            <Input
+              type="date"
+              name="previsaoInicio"
+              placeholder="Previsão de Início"
+              value={empresaInfo.previsaoInicio}
+              onChange={handleChange}
+            />
+            Prazo de Execução
+            <Input
+              type="number"
+              name="prazoExecucao"
+              placeholder="Prazo de Execução (em dias)"
+              value={empresaInfo.prazoExecucao}
+              onChange={handleChange}
+            />
 
-      <Input
-        type="text"
-        name="cnpjContratante"
-        placeholder="CNPJ da Contratante"
-        value={empresaInfo.cnpjContratante}
-        onChange={handleChange}
-      />
+            Data do Contrato
+            <Input
+              type="number"
+              name="dia"
+              placeholder="Dia"
+              value={empresaInfo.dia}
+              onChange={handleChange}
+            />
 
-      <Input
-        type="text"
-        name="enderecoContratante"
-        placeholder="Endereço da Contratante"
-        value={empresaInfo.enderecoContratante}
-        onChange={handleChange}
-      />
+            <Input
+              type="number"
+              name="mes"
+              placeholder="Mês"
+              value={empresaInfo.mes}
+              onChange={handleChange}
+            />
 
-      <Input
-        type="text"
-        name="responsavelContratante"
-        placeholder="Responsável pela Contratante"
-        value={empresaInfo.responsavelContratante}
-        onChange={handleChange}
-      />
+            <Input
+              type="number"
+              name="ano"
+              placeholder="Ano"
+              value={empresaInfo.ano}
+              onChange={handleChange}
+            />
 
-      <Input
-        type="text"
-        name="rgRepresentante"
-        placeholder="RG do Representante"
-        value={empresaInfo.rgRepresentante}
-        onChange={handleChange}
-      />
 
-      <Input
-        type="text"
-        name="cpfRepresentante"
-        placeholder="CPF do Representante"
-        value={empresaInfo.cpfRepresentante}
-        onChange={handleChange}
-      />
+            <Button onClick={handleGenerateContract}>Gerar Contrato</Button>
+            <Button onClick={handleDownloadPDF}>Baixar PDF</Button>
 
-    {/* valores e dias*/}
-      <Input
-        type="number"
-        name="valorTotal"
-        placeholder="Valor Total do Contrato"
-        value={empresaInfo.valorTotal}
-        onChange={handleChange}
-      />
+            <ContractWrapper>
+              <h3>Pré-visualização do Contrato</h3>
+              {contratoGerado}
+            </ContractWrapper>
 
-      <Input
-        type="number"
-        name="valorEntrada"
-        placeholder="Valor de Entrada"
-        value={empresaInfo.valorEntrada}
-        onChange={handleChange}
-      />
-
-      <Input
-        type="number"
-        name="valorSaldoRestante"
-        placeholder="Valor do Saldo Restante"
-        value={empresaInfo.valorSaldoRestante}
-        onChange={handleChange}
-      />
-
-      <Input
-        type="number"
-        name="valorParcelas"
-        placeholder="Valor das Parcelas"
-        value={empresaInfo.valorParcelas}
-        onChange={handleChange}
-      />
-      
-      <Input
-        type="date"
-        name="previsaoInicio"
-        placeholder="Previsão de Início"
-        value={empresaInfo.previsaoInicio}
-        onChange={handleChange}
-      />
-
-      <Input
-        type="number"
-        name="prazoExecucao"
-        placeholder="Prazo de Execução (em dias)"
-        value={empresaInfo.prazoExecucao}
-        onChange={handleChange}
-      />
-
-      <Button onClick={handleGenerateContract}>Gerar Contrato</Button>
-      <Button onClick={handleDownloadPDF}>Baixar PDF</Button>
-
-      <ContractWrapper>
-          <h3>Pré-visualização do Contrato</h3>
-          {contratoGerado}
-        </ContractWrapper>    
-
-    </FormWrapper>    
-    </Content>
-    </MainWrapper>
+          </FormWrapper>
+        </Content>
+      </MainWrapper>
     </>
   );
 };
