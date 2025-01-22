@@ -11,8 +11,8 @@ const App: React.FC = () => {
   return (
     <BrowserRouter> {/* Envolvendo a aplicação com o BrowserRouter para usar o roteamento */}
       <Routes> {/* Definindo as rotas da aplicação */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginCadastro />} /> {/* Página única de Login/Cadastro */}
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<LoginCadastro />} /> {/* Página única de Login/Cadastro */}
         <Route path="/orcamentos" element={<Orcamentos />} /> {/* Página de Orçamentos */}
         <Route path="/gerar-contrato" element={<GerarContrato />} />
         <Route path="/relatorios" element={<RelatorioDiario />} />
