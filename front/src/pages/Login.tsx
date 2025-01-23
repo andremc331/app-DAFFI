@@ -17,7 +17,7 @@ const LoginCadastro: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Para controlar se o usuário está logado
   const navigate = useNavigate();
 
-  const BASE_URL = process.env.REACT_APP_API_URL;
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   // define campos obrigatórios e manda o post para salvar o usuário 
   const handleSubmit = async () => {
