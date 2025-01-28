@@ -71,10 +71,10 @@ const Orcamentos: React.FC = () => {
   const [itens, setItens] = useState<any[]>([]);
   const [orcamento, setOrcamento] = useState<any[]>([]);
   const [orcamentosSalvos, setOrcamentosSalvos] = useState<Orcamento[]>([]);
-  const [orcamentoDetalhado, setOrcamentoDetalhado] = useState<Orcamento | null>(null); 
+  const [orcamentoDetalhado, setOrcamentoDetalhado] = useState<Orcamento | null>(null);
   const [orcamentoNome, setOrcamentoNome] = useState('');
   const [erro, setErro] = useState<string>(''); // erro
-  const [quantidade, setQuantidade] = useState<string>(''); 
+  const [quantidade, setQuantidade] = useState<string>('');
   const [authToken, setAuthToken] = useState<string | null>(null); // token
   const [modalItem, setModalItem] = useState<any | null>(null); // modal
   const [modalAberto, setModalAberto] = useState(false);  // modal
@@ -83,6 +83,7 @@ const Orcamentos: React.FC = () => {
   const [mensagemExclusao, setMensagemExclusao] = useState('');  // modal
   const [modalConfirmacaoAberto, setModalConfirmacaoAberto] = useState(false); // modal
   const [orcamentoIdParaExcluir, setOrcamentoIdParaExcluir] = useState<number | null>(null);
+  const [pesquisaFeita, setPesquisaFeita] = useState(false);
   const navigate = useNavigate();
 
   //login
@@ -130,6 +131,7 @@ const Orcamentos: React.FC = () => {
       const res = await axios.get(`${BASE_URL}/api/itens?termo=${termo}`);
       const itensOrdenados = res.data.sort((a: any, b: any) => a.nome.localeCompare(b.nome)); // Ordena os itens por nome
       setItens(itensOrdenados);
+      setPesquisaFeita(true);
       setErro('');
     } catch (err) {
       setErro('Erro ao buscar itens');
@@ -139,7 +141,7 @@ const Orcamentos: React.FC = () => {
 
   const buscarItensDebounced = debounce((termo: string) => {
     buscarItens();
-  }, 500); // Espera 500ms após a última digitação para realizar a busca
+  }, 300); // Espera 500ms após a última digitação para realizar a busca
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTermo(e.target.value);
@@ -378,7 +380,7 @@ const Orcamentos: React.FC = () => {
           {/* abre o modal*/}
           <div>
             <h2>Resultados da Pesquisa</h2>
-            {itens.length === 0 ? (
+            {pesquisaFeita && itens.length === 0 ? (
               <p>Nenhum item encontrado.</p>
             ) : (
               <ScrollableItemList>
@@ -394,6 +396,7 @@ const Orcamentos: React.FC = () => {
             )}
           </div>
 
+          {/* modal para escolher a medida dos itens*/}
           {modalItem && (
             <ModalOverlay onClick={fecharModal}>
               <ModalContent onClick={(e) => e.stopPropagation()}>
