@@ -10,8 +10,8 @@ COPY package*.json ./
 # Instalar a versão mais recente do npm (como no Amplify)
 RUN npm install -g npm@latest
 
-# Instalar as dependências do projeto sem cache
-RUN npm install --no-cache
+# Instalar as dependências do projeto
+RUN npm install
 
 # Copiar o restante dos arquivos do projeto
 COPY . .
