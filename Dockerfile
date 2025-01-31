@@ -22,5 +22,11 @@ RUN npm install --no-cache
 # Copiar o restante dos arquivos do projeto
 COPY --chown=app:app . ./
 
+# Construir o projeto (se necessário)
+RUN npm run build
+
+# Instalar o serve globalmente (se não estiver no package.json)
+RUN npm install -g serve
+
 # Definir o comando de execução
-CMD ["npx", "serve", "-s", "build", "3000"]
+CMD ["serve", "-s", "build", "-l", "3000"]
