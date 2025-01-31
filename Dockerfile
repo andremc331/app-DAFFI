@@ -7,22 +7,19 @@ RUN useradd -m app
 # Definir o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiar os arquivos package.json e package-lock.json para o diretório de trabalho
-COPY package*.json package-lock*.json ./
+# Copiar todos os arquivos do projeto para dentro do container
+COPY --chown=app:app . ./
 
 # Ajustar permissões para garantir que o usuário 'app' tenha controle sobre os arquivos
 RUN chown -R app /app
 
-# Alternar para o usuário 'app' antes de instalar as dependências
+# Alternar para o usuário 'app'
 USER app
 
 # Instalar as dependências do projeto
 RUN npm install --no-cache
 
-# Copiar o restante dos arquivos do projeto
-COPY --chown=app:app . ./
-
-# Construir o projeto (se necessário)
+# Construir o projeto
 RUN npm run build
 
 # Instalar o serve globalmente (se não estiver no package.json)
