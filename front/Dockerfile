@@ -14,7 +14,7 @@ RUN npm install --no-cache
 COPY . .
 
 # Build do projeto
-RUN npm run build
+RUN npm run build --omit=dev
 
 # Expor a porta onde a aplicação estará rodando
 EXPOSE 3000
