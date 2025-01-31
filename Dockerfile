@@ -2,7 +2,7 @@
 FROM node:20
 
 # Criar e definir o diretório de trabalho
-WORKDIR /app
+WORKDIR /front
 
 # Copiar o arquivo package.json e package-lock.json (para instalar as dependências)
 COPY package*.json ./
@@ -26,4 +26,4 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 # Cache para os módulos do Node.js (como no Amplify)
-VOLUME /app/node_modules/.cache
+VOLUME /front/node_modules/.cache
