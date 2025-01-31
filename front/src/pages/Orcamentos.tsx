@@ -7,7 +7,6 @@ import { debounce } from 'lodash';
 import DAFFI from "../images/DAFFI logo.jpg"
 import { useNavigate } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
-import CustomModal from '../components/CustomModal'; // Importando o CustomModal
 
 const {
   TotalWrapper,
