@@ -1,2 +1,0 @@
-Erro ao salvar item: {"codigo":2.101,"nome":"Canteiro de obras","unidade":"m","material":0,"maoDeObra":0,"total":0} - relação "Items" não existe
-Erro ao salvar item: {"codigo":2.101,"nome":"Canteiro de obras","unidade":"m","material":0,"maoDeObra":0,"total":0} - relação "Items" não existe
