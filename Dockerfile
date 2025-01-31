@@ -23,4 +23,4 @@ RUN npm install --no-cache
 COPY --chown=app:app . ./
 
 # Definir o comando de execução
-CMD ["npx", "serve", "-s", "build", 3000]
+CMD ["npx", "serve", "-s", "build", "3000"]
