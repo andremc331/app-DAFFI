@@ -33,7 +33,6 @@ const {
   ImageContainer,
   DetalhesWrapper,
   ExcluirButton,
-  NavegarButton,
   VerDetalhesButton,
   Sidebar,
   SidebarItem,
@@ -86,6 +85,8 @@ const Orcamentos: React.FC = () => {
   const [pesquisaFeita, setPesquisaFeita] = useState(false);
   const navigate = useNavigate();
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   //login
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -115,7 +116,7 @@ const Orcamentos: React.FC = () => {
     if (authToken) {
       fetchOrcamentosSalvos();
     }
-  }, [authToken]);
+  }, [authToken, BASE_URL]);
 
   //atualizar modal
   useEffect(() => {
@@ -124,7 +125,6 @@ const Orcamentos: React.FC = () => {
     }
   }, [modalItem]);
 
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const buscarItens = async () => {
     try {
@@ -177,7 +177,7 @@ const Orcamentos: React.FC = () => {
     };
 
     try {
-      const res = await axios.post(
+      await axios.post(
         `${BASE_URL}/api/orcamento`,
         novoOrcamento,
         {

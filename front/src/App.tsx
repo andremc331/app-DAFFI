@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';  // Importando os componentes do react-router-dom
 import LoginCadastro from './pages/Login';  // Importando a página única de login e cadastro
 import GerarContrato from './pages/GerarContrato';

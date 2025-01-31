@@ -129,9 +129,6 @@ const Button = styled.button`
   margin-right: 10px;
 `;
 
-const NavegarButton = styled.button`
-`;
-
 const ContractWrapper = styled.pre`
   margin-top: 20px;
   padding: 20px;
