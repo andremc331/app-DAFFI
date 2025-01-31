@@ -8,7 +8,7 @@ RUN useradd -m app
 WORKDIR /app
 
 # Copiar os arquivos package.json e package-lock.json para o diretório de trabalho
-COPY package.json package-lock.json ./
+COPY package*.json package-lock*.json ./
 
 # Ajustar permissões para garantir que o usuário 'app' tenha controle sobre os arquivos
 RUN chown -R app /app
@@ -17,7 +17,7 @@ RUN chown -R app /app
 USER app
 
 # Instalar as dependências do projeto
-RUN npm install
+RUN npm install --no-cache
 
 # Copiar o restante dos arquivos do projeto
 COPY --chown=app:app . ./
