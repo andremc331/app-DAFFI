@@ -17,7 +17,7 @@ RUN npm install
 COPY . .
 
 # Criar um diretório de build específico (como no Amplify) para armazenar a build
-RUN npm run build --omit=dev
+RUN npm run build
 
 # Expor a porta onde a aplicação estará rodando
 EXPOSE 3000
