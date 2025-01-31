@@ -1,0 +1,32 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - cd back
+        - npm install
+        - export DB_HOST=daffi.cdyucqc0y8kr.sa-east-1.rds.amazonaws.com  # Substitua com o host real
+        - export DB_USER=postgres  # Nome de usuário do RDS
+        - export DB_PASSWORD=Andre01*  # Senha do RDS
+        - export DB_NAME=daffi  # Nome do banco de dados
+        - export DB_PORT=5432  # Porta do banco de dados
+        - npx ts-node src/index.ts  # Comando para rodar seu servidor/backend
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd front  # Navega até o diretório frontend
+        - nvm install 20
+        - nvm use 20
+        - npm install -g npm@latest
+        - npm install
+    build:  # Corrigido a indentação
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: ./front/build  # Caminho para o diretório de saída do build (ajustado para um caminho relativo)
+    files:
+      - '**/*'  # Inclui todos os arquivos do diretório de build
+  cache:
+    paths:
+      - node_modules/**/*  # Cache para os módulos do Node.js
