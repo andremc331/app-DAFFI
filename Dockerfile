@@ -1,29 +1,26 @@
-# Usar a imagem base do Node.js versão 20, igual ao do Amplify
+# Definir a imagem base
 FROM node:20
 
-# Criar e definir o diretório de trabalho
-WORKDIR /front
+# Criar um novo usuário chamado 'app'
+RUN useradd -m app
 
-# Copiar o arquivo package.json e package-lock.json (para instalar as dependências)
-COPY package*.json ./
+# Definir o diretório de trabalho dentro do container
+WORKDIR /app
 
-# Instalar a versão mais recente do npm (como no Amplify)
-RUN npm install -g npm@latest
+# Copiar os arquivos package.json e package-lock.json para o diretório de trabalho
+COPY package.json package-lock.json ./
+
+# Ajustar permissões para garantir que o usuário 'app' tenha controle sobre os arquivos
+RUN chown -R app /app
+
+# Alternar para o usuário 'app' antes de instalar as dependências
+USER app
 
 # Instalar as dependências do projeto
 RUN npm install
 
 # Copiar o restante dos arquivos do projeto
-COPY . .
+COPY --chown=app:app . ./
 
-# Criar um diretório de build específico (como no Amplify) para armazenar a build
-RUN npm run build
-
-# Expor a porta onde a aplicação estará rodando
-EXPOSE 3000
-
-# Comando para iniciar a aplicação
+# Definir o comando de execução
 CMD ["npm", "start"]
-
-# Cache para os módulos do Node.js (como no Amplify)
-VOLUME /front/node_modules/.cache
