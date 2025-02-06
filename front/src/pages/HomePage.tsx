@@ -346,7 +346,7 @@ const HomePage: React.FC = () => {
     <HomePageContainer>
       
       <Header>
-        <a href="/home" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <Logo src={DAFFI} alt="DAFFI Construções" style={{ cursor: "pointer" }} />
           <span style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "1.2rem", cursor: "pointer", color: "black", marginTop: "20px" }}>
             DAFFI Construções

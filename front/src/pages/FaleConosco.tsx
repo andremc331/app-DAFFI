@@ -123,7 +123,7 @@ const FaleConosco: React.FC = () => {
     return (
         <div>
             <Header>
-  <a href="/home" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+  <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
     <Logo src={DAFFI} alt="DAFFI Construções" style={{ cursor: "pointer" }} />
     <span style={{ marginLeft: "10px", fontWeight: "bold", fontSize: "1.2rem", cursor: "pointer", color: "black" }}>
       DAFFI Construções
