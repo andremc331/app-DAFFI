@@ -120,12 +120,13 @@ const TextArea = styled.textarea`
 `;
 
 const Section4 = styled.section`
-  background-color: #ffffff;
-  padding: 30px;
-  color: black;
+  margin: 0px -30px;
+  background-color: #f9f9f9;
+  padding: 120px;
 
   @media (max-width: 768px) {
-    padding: 20px 10px;
+    padding: 40px 10px;
+    margin: 0px -10px;
   }
 `;
 

@@ -15,6 +15,7 @@ import fundacaoImg from "../images/fundacao.jpg";
 import telhadoImg from "../images/telhado.jpg"
 import DAFFI from "../images/logo.jpg"
 import Contato from "../components/Contato";
+import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importa o ícone do Instagram
 
 
 const HomePageContainer = styled.div`
@@ -320,14 +321,45 @@ const Quote2 = styled.blockquote`
 
 const Footer = styled.footer`
   margin-top: 40px;
+  padding: 15px 30px;
   font-size: 0.9rem;
   color: #777;
   background-color: #f4f4f4;
-  padding: 20px;
+  margin: -30px -30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0px;
 
   @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 10px;
     font-size: 0.8rem;
+    gap: 0px; /* Reduz o espaço entre as colunas em telas menores */
+  }
+`;
+
+
+const FooterColumn = styled.div`
+  flex: 1;
+  padding: 0 10px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+`;
+
+const MapContainer = styled.div`
+  margin-top: 10px;
+  iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
   }
 `;
 
@@ -345,7 +377,7 @@ const Footer = styled.footer`
 const HomePage: React.FC = () => {
   return (
     <HomePageContainer>
-      
+
       <Header>
         <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <Logo src={DAFFI} alt="DAFFI Construções" style={{ cursor: "pointer" }} />
@@ -369,8 +401,8 @@ const HomePage: React.FC = () => {
         <Slogan2>*</Slogan2>
         <Slogan>Confira nossos serviços</Slogan>
         <Description>
-          Nosso conjunto abrangente de serviços profissionais atende a uma clientela <br/>
-          diversificada, que vai desde proprietários de residências até incorporadores <br/> comerciais.
+          Nosso conjunto abrangente de serviços profissionais atende a uma clientela <br />
+          diversificada, que vai desde proprietários de residências até incorporadores <br /> comerciais.
         </Description>
 
         <CarouselContainer>
@@ -464,13 +496,85 @@ const HomePage: React.FC = () => {
       </Section3>
 
 
-<Contato></Contato>
+      <Contato></Contato>
 
       <Footer>
-        <p>© 2025 DAFFI Construções. Todos os direitos reservados.</p>
-        <p>Av. Pensilvânia 235, Jd. Florida, Jacareí – SP, 12321-050</p>
-        <p>CNPJ: 18.158.765/0001-10</p>
-        <p>Acompanhe as obras pelo Instagram!</p>
+        <FooterColumn style={{ textAlign: "center" }}>
+          <h2>Acompanhe as obras nas redes sociais!</h2>
+
+          {/* Instagram */}
+          <p>
+            <a
+              href="https://www.instagram.com/daffi.construcoes"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "8px",
+                textDecoration: "none",
+                color: "#E4405F",
+                fontWeight: "bold"
+              }}
+            >
+              <FaInstagram size={20} color="#E4405F" /> {/* Ícone do Instagram */}
+              @daffi.construcoes
+            </a>
+          </p>
+
+          {/* Facebook */}
+          <p>
+            <a
+              href="https://www.facebook.com/dafficonstrutora"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "8px",
+                textDecoration: "none",
+                color: "#1877F2",
+                fontWeight: "bold"
+              }}
+            >
+              <FaFacebook size={20} color="#1877F2" /> {/* Ícone do Facebook */}
+              Daffi Construções
+            </a>
+          </p>
+
+          <h3>Atendemos Vale do Paraíba e Região. Solicite um orçamento sem compromisso!</h3>
+          <p>© 2025 DAFFI Construções. Todos os direitos reservados.</p>
+          <p>CNPJ: 18.158.765/0001-10</p>
+        </FooterColumn>
+
+        <FooterColumn>
+          <h1>Faça-nos uma Visita!</h1>
+          <p>Av. Pensilvânia 235</p>
+          <p> Jd. Florida, Jacareí – SP</p>
+          <p>12321-050</p>
+          <p>Horas <br /> segunda-feira⸺sexta-feira <br /> 8h-17h</p>
+          <p>Telefone <br /> (12) 98208-1414</p>
+        </FooterColumn>
+
+        <FooterColumn>
+          <MapContainer>
+            <iframe
+              title="Mapa da localização da Daffi Construções"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.3411553774063!2d-45.98367752503065!3d-23.303377752164348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdcc9fc63a39cb%3A0x457374d0a6a69dda!2sAv.%20Pensilv%C3%A2nia%2C%20235%20-%20Jardim%20Florida%2C%20Jacare%C3%AD%20-%20SP%2C%2012321-050!5e0!3m2!1spt-BR!2sbr!4v1738932519265!5m2!1spt-BR!2sbr"
+              width="400"
+              height="300"
+              style={{ border: "0" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            ></iframe>
+
+          </MapContainer>
+        </FooterColumn>
+
+
       </Footer>
 
     </HomePageContainer>
