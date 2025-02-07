@@ -14,6 +14,7 @@ import salaImg from "../images/sala.jpg";
 import fundacaoImg from "../images/fundacao.jpg";
 import telhadoImg from "../images/telhado.jpg"
 import DAFFI from "../images/logo.jpg"
+import Contato from "../components/Contato";
 
 
 const HomePageContainer = styled.div`
@@ -147,15 +148,15 @@ const Section3 = styled.section`
   }
 `;
 
-const Section4 = styled.section`
-  background-color: #ffffff;
-  padding: 30px;
-  color: white;
+// const Section4 = styled.section`
+//   background-color: #ffffff;
+//   padding: 30px;
+//   color: white;
 
-  @media (max-width: 768px) {
-    padding: 20px 10px;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 20px 10px;
+//   }
+// `;
 
 const Slogan = styled.h1`
   font-size: 2.5rem;
@@ -275,47 +276,47 @@ const Quote2 = styled.blockquote`
   }
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
+// const Form = styled.form`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 10px;
+//   margin: 20px 0;
 
-  @media (max-width: 768px) {
-    gap: 8px;
-  }
-`;
+//   @media (max-width: 768px) {
+//     gap: 8px;
+//   }
+// `;
 
-const Input = styled.input`
-  padding: 12px;
-  width: 100%;
-  max-width: 400px;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 20px;
+// const Input = styled.input`
+//   padding: 12px;
+//   width: 100%;
+//   max-width: 400px;
+//   border: 2px solid black;
+//   border-radius: 5px;
+//   font-size: 1rem;
+//   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 10px;
+//     font-size: 0.9rem;
+//   }
+// `;
 
-const TextArea = styled.textarea`
-  padding: 12px;
-  width: 100%;
-  max-width: 400px;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 20px;
+// const TextArea = styled.textarea`
+//   padding: 12px;
+//   width: 100%;
+//   max-width: 400px;
+//   border: 2px solid black;
+//   border-radius: 5px;
+//   font-size: 1rem;
+//   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 10px;
+//     font-size: 0.9rem;
+//   }
+// `;
 
 const Footer = styled.footer`
   margin-top: 40px;
@@ -330,16 +331,16 @@ const Footer = styled.footer`
   }
 `;
 
-const Titulo = styled.p`
-  color: black;
-  text-align: left;
-  margin-bottom: 8px;
-  font-weight: bold;
+// const Titulo = styled.p`
+//   color: black;
+//   text-align: left;
+//   margin-bottom: 8px;
+//   font-weight: bold;
 
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 0.9rem;
+//   }
+// `;
 
 const HomePage: React.FC = () => {
   return (
@@ -463,21 +464,7 @@ const HomePage: React.FC = () => {
       </Section3>
 
 
-      <Section4>
-        <Slogan>Envie sua proposta!</Slogan>
-        <Form action="https://formspree.io/f/xqaelprn" method="POST">
-        <Titulo>Nome</Titulo>
-          <Input type="text" placeholder="Nome (obrigatório)" required />
-
-          <Titulo>E-mail</Titulo>
-          <Input type="email" placeholder="E-mail (obrigatório)" required />
-
-          <Titulo>Mensagem</Titulo>
-          <TextArea placeholder="Mensagem" rows={4} required />
-
-          <Button3 type="submit">Fale Conosco</Button3>
-        </Form>
-      </Section4>
+<Contato></Contato>
 
       <Footer>
         <p>© 2025 DAFFI Construções. Todos os direitos reservados.</p>

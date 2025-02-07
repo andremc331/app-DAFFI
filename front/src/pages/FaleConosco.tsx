@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import DAFFI from "../images/DAFFI logo.jpg"
+import Contato from "../components/Contato";
 
 
-const Slogan = styled.h1`
-  font-size: 2rem;
-  color: #000000;
-  margin: 20px 0;
-`;
+// const Slogan = styled.h1`
+//   font-size: 2rem;
+//   color: #000000;
+//   margin: 20px 0;
+// `;
 
 // const Section = styled.section`
 //   margin: 40px 0;
@@ -19,20 +20,20 @@ const Slogan = styled.h1`
 //   margin: 10px 0 30px;
 // `;
 
-const Input = styled.input`
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-`;
+// const Input = styled.input`
+//   padding: 10px;
+//   width: 300px;
+//   border: 1px solid #ddd;
+//   border-radius: 5px;
+// `;
 
-const TextArea = styled.textarea`
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  resize: vertical;
-`;
+// const TextArea = styled.textarea`
+//   padding: 10px;
+//   width: 300px;
+//   border: 1px solid #ddd;
+//   border-radius: 5px;
+//   resize: vertical;
+// `;
 
 const Footer = styled.footer`
   margin-top: 40px;
@@ -42,13 +43,13 @@ const Footer = styled.footer`
   padding: 20px;
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-`;
+// const Form = styled.form`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 10px;
+//   margin: 20px 0;
+// `;
 
 const Button = styled.a`
   padding: 10px 20px;
@@ -81,43 +82,43 @@ const Contact = styled.div`
   color: #333;
 `;
 
-const Section4 = styled.section`
-  background-color: #ffffff;
-  padding: 30px;
-  color: white;
+// const Section4 = styled.section`
+//   background-color: #ffffff;
+//   padding: 30px;
+//   color: white;
 
-  @media (max-width: 768px) {
-    padding: 20px 10px;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 20px 10px;
+//   }
+// `;
 
-const Titulo = styled.p`
-  color: black;
-  text-align: left;
-  margin-bottom: 8px;
-  font-weight: bold;
+// const Titulo = styled.p`
+//   color: black;
+//   text-align: left;
+//   margin-bottom: 8px;
+//   font-weight: bold;
 
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 0.9rem;
+//   }
+// `;
 
-const Button3 = styled.a`
-  padding: 16px 18px;
-  background-color: #000000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: #000000;
-  }
+// const Button3 = styled.a`
+//   padding: 16px 18px;
+//   background-color: #000000;
+//   color: #fff;
+//   text-decoration: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   &:hover {
+//     background-color: #000000;
+//   }
 
-  @media (max-width: 768px) {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 10px 15px;
+//     font-size: 0.9rem;
+//   }
+// `;
 
 const FaleConosco: React.FC = () => {
     return (
@@ -133,21 +134,7 @@ const FaleConosco: React.FC = () => {
   <Button href="/sobre">Sobre</Button>
 </Header>
 
-<Section4>
-        <Slogan>Envie sua proposta!</Slogan>
-        <Form action="https://formspree.io/f/xqaelprn" method="POST">
-        <Titulo>Nome</Titulo>
-          <Input type="text" placeholder="Nome (obrigatório)" required />
-
-          <Titulo>E-mail</Titulo>
-          <Input type="email" placeholder="E-mail (obrigatório)" required />
-
-          <Titulo>Mensagem</Titulo>
-          <TextArea placeholder="Mensagem" rows={4} required />
-
-          <Button3 type="submit">Fale Conosco</Button3>
-        </Form>
-      </Section4>
+<Contato></Contato>
 
       <Footer>
         <p>© 2025 DAFFI Construções. Todos os direitos reservados.</p>
