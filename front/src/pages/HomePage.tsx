@@ -266,6 +266,41 @@ const CarouselContainer = styled.div`
   @media (max-width: 768px) {
     margin-bottom: 30px;
   }
+
+  .carousel .control-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Posiciona os botões absolutamente dentro do carrossel */
+    top: 50%; /* Alinha ao centro vertical */
+    transform: translateY(-50%); /* Ajusta o posicionamento para o centro exato */
+    z-index: 2; /* Garante que os botões fiquem acima das imagens */
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .carousel .control-prev.control-arrow {
+    left: 10px; /* Posiciona o botão "anterior" à esquerda */
+  }
+
+  .carousel .control-next.control-arrow {
+    right: 10px; /* Posiciona o botão "próximo" à direita */
+  }
+
+  .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #fff;
+  }
+
+  .carousel .control-next.control-arrow:before {
+    border-left: 8px solid #fff;
+  }
 `;
 
 const RegularizationSection = styled.div`
