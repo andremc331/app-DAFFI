@@ -69,12 +69,16 @@ const LoginCadastro: React.FC = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
       />
+        <p style={{ fontSize: '12px', color: 'gray' }}>teste@gmail.com </p>
+
       <Input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Senha"
       />
+        <p style={{ fontSize: '12px', color: 'gray' }}>123456</p>
+
       {erro && <ErrorMessage>{erro}</ErrorMessage>}
       <Button onClick={handleSubmit} disabled={isLoading}>
         {isLoading ? 'Carregando...' : isCadastro ? 'Cadastrar' : 'Login'}
@@ -87,7 +91,6 @@ const LoginCadastro: React.FC = () => {
 
       <Button2 onClick={() => navigate('/')}>Voltar para Home</Button2>
       
-
       {/* Exibir os botões de navegação após o login */}
       {isLoggedIn && (
         <div>
