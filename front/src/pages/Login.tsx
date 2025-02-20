@@ -5,7 +5,7 @@ import axios from 'axios';
 import StyledComponents from '../styled/Orcamentostyled';
 import { useNavigate } from 'react-router-dom';
 
-const { Input, Button, ErrorMessage, Container } = StyledComponents;
+const { Input, Button, Button2, ErrorMessage, Container } = StyledComponents;
 
 const LoginCadastro: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -84,6 +84,8 @@ const LoginCadastro: React.FC = () => {
           ? 'Já tem uma conta? Faça login'
           : 'Não tem conta? Cadastre-se'}
       </Button>
+
+      <Button2 onClick={() => navigate('/')}>Voltar para Home</Button2>
       
 
       {/* Exibir os botões de navegação após o login */}

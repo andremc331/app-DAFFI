@@ -15,7 +15,7 @@ import fundacaoImg from "../images/fundacao.jpg";
 import telhadoImg from "../images/telhado.jpg"
 import DAFFI from "../images/logo.jpg"
 import Contato from "../components/Contato";
-import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importa o ícone do Instagram
+import { FaFacebook, FaInstagram, FaLock } from "react-icons/fa"; // Importa o ícone do Instagram
 
 
 const HomePageContainer = styled.div`
@@ -114,6 +114,32 @@ const Button3 = styled.a`
   @media (max-width: 768px) {
     padding: 10px 15px;
     font-size: 0.9rem;
+  }
+`;
+
+const Button4 = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Espaço entre ícone e texto */
+  padding: 8px 10px;
+  background-color: #f9f9f9;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: 30px; /* Ajusta a posição do botão */
+  top: 50px; /* Ajusta a altura */
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  @media (max-width: 768px) {
+    padding: 8px 13px;
+    font-size: 0.9rem;
+    right: 10px;
+    top: 10px;
   }
 `;
 
@@ -387,6 +413,8 @@ const HomePage: React.FC = () => {
         </a>
         <Contact>Email: comercial@dafficonstrucoes.online</Contact>
         <Button2 href="/sobre">Sobre</Button2>
+        <Button4 href="/login"> <FaLock style={{ marginRight: "5px", fontSize: "1.4rem" }} />
+        </Button4>
       </Header>
 
       <Section>

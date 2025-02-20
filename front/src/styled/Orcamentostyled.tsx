@@ -179,6 +179,31 @@ const Button = styled.button`
   }
 `;
 
+const Button2 = styled.button`
+  padding: 10px 10px;
+  background-color: #d1cc36;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-left: 50px;
+
+  &:hover {
+    background-color: #949828;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão ocupa a largura total */
+  }
+
+  @media (max-width: 480px) {
+    width: 50%; /* Largura total em telas pequenas */
+    margin-right: 0;
+  }
+`;
+
 const NavegarButton = styled.button`
 `;
 
@@ -630,6 +655,7 @@ const StyledComponents = {
   Input,
   InputWrapper,
   Button,
+  Button2,
   Container,
   ScrollableItemList,
   StyledNumber,
