@@ -201,7 +201,7 @@ const FaleConosco: React.FC = () => {
             DAFFI Construções
           </span>
         </a>
-        <Contact>Email: comercial@dafficonstrucoes.online</Contact>
+        <Contact>Email: comercial@dafficonstrucoes.com</Contact>
         <Button href="/sobre">Sobre</Button>
       </Header>
 

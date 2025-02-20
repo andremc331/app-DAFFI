@@ -446,7 +446,7 @@ const HomePage: React.FC = () => {
             DAFFI Construções
           </span>
         </a>
-        <Contact>Email: comercial@dafficonstrucoes.online</Contact>
+        <Contact>Email: comercial@dafficonstrucoes.com</Contact>
         <Button2 href="/sobre">Sobre</Button2>
         <Button4 href="/login"> <FaLock style={{ marginRight: "5px", fontSize: "1.4rem" }} />
         </Button4>

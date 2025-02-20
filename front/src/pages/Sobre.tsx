@@ -175,7 +175,7 @@ const Sobre: React.FC = () => {
             DAFFI Construções
           </span>
         </a>
-        <Contact>Email: comercial@dafficonstrucoes.online</Contact>
+        <Contact>Email: comercial@dafficonstrucoes.com</Contact>
         <Button2 href="/sobre">Sobre</Button2>
       </Header>
 
