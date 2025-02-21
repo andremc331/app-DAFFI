@@ -3,6 +3,7 @@ import axios from 'axios';
 import StyledComponents from '../styled/Orcamentostyled';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext'; // Importando o hook do contexto de autenticação
+import LoadingScreen from '../components/LoadingScreen'; // Importando a tela de carregamento
 
 const { Input, Button, Button2, ErrorMessage, Container } = StyledComponents;
 
@@ -43,7 +44,7 @@ const LoginCadastro: React.FC = () => {
       localStorage.setItem('token', res.data.token); // Salva o token (melhor usar cookies seguros)
       login(); // Chama o login após o sucesso da autenticação
 
-      // Redireciona para a página inicial ou outra página desejada após login
+      // Redireciona para a página de orçamentos após o login
       navigate('/orcamentos');
     } catch (err: any) {
       const errorMessage =
@@ -53,6 +54,10 @@ const LoginCadastro: React.FC = () => {
       setIsLoading(false);
     }
   };
+
+  if (isLoading) {
+    return <LoadingScreen />; // Mostra a tela de carregamento enquanto o login está sendo processado
+  }
 
   return (
     <Container>
@@ -92,9 +97,6 @@ const LoginCadastro: React.FC = () => {
       </Button>
 
       <Button2 onClick={() => navigate('/')}>Voltar para Home</Button2>
-      
-      {/* Exibir os botões de navegação após o login */}
-      {/* Esses botões só aparecem se o usuário estiver logado */}
     </Container>
   );
 };
