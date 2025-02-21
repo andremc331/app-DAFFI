@@ -7,21 +7,27 @@ import Orcamentos from './pages/Orcamentos';
 import HomePage from './pages/HomePage';
 import Sobre from './pages/Sobre';
 import FaleConosco from './pages/FaleConosco';
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './contexts/AuthContext';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter> {/* Envolvendo a aplicação com o BrowserRouter para usar o roteamento */}
-      <Routes> {/* Definindo as rotas da aplicação */}
-      <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginCadastro />} /> {/* Página única de Login/Cadastro */}
-        <Route path="/orcamentos" element={<Orcamentos />} /> {/* Página de Orçamentos */}
-        <Route path="/gerar-contrato" element={<GerarContrato />} />
-        <Route path="/relatorios" element={<RelatorioDiario />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/faleconosco" element={<FaleConosco />} />
-      </Routes>
-    </BrowserRouter>
-    );
+    <AuthProvider> {/* Envolvendo toda a aplicação com o AuthProvider */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginCadastro />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/faleconosco" element={<FaleConosco />} />
+          
+          {/* Rotas protegidas */}
+          <Route path="/orcamentos" element={<ProtectedRoute element={<Orcamentos />} />} />
+          <Route path="/gerar-contrato" element={<ProtectedRoute element={<GerarContrato />} />} />
+          <Route path="/relatorios" element={<ProtectedRoute element={<RelatorioDiario />} />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 };
 
 export default App;
