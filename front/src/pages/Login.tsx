@@ -44,7 +44,7 @@ const LoginCadastro: React.FC = () => {
       login(); // Chama o login após o sucesso da autenticação
 
       // Redireciona para a página inicial ou outra página desejada após login
-      navigate('/');
+      navigate('/orcamentos');
     } catch (err: any) {
       const errorMessage =
         err.response?.data?.message || 'Erro ao realizar a operação';
