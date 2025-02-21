@@ -1,10 +1,8 @@
-//login.tsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import StyledComponents from '../styled/Orcamentostyled';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext'; // Importando o hook do contexto de autenticação
 
 const { Input, Button, Button2, ErrorMessage, Container } = StyledComponents;
 
@@ -15,7 +13,6 @@ const LoginCadastro: React.FC = () => {
   const [erro, setErro] = useState('');
   const [isCadastro, setIsCadastro] = useState(false); // Alternar entre login e cadastro
   const [isLoading, setIsLoading] = useState(false); // Indicador de carregamento
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Para controlar se o usuário está logado
   const navigate = useNavigate();
 
   const { login } = useAuth(); // Obtendo a função de login do contexto de autenticação
@@ -74,7 +71,7 @@ const LoginCadastro: React.FC = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
       />
-        <p style={{ fontSize: '12px', color: 'gray' }}>teste@gmail.com </p>
+      <p style={{ fontSize: '12px', color: 'gray' }}>teste@gmail.com </p>
 
       <Input
         type="password"
@@ -82,7 +79,7 @@ const LoginCadastro: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Senha"
       />
-        <p style={{ fontSize: '12px', color: 'gray' }}>123456</p>
+      <p style={{ fontSize: '12px', color: 'gray' }}>123456</p>
 
       {erro && <ErrorMessage>{erro}</ErrorMessage>}
       <Button onClick={handleSubmit} disabled={isLoading}>
@@ -97,12 +94,7 @@ const LoginCadastro: React.FC = () => {
       <Button2 onClick={() => navigate('/')}>Voltar para Home</Button2>
       
       {/* Exibir os botões de navegação após o login */}
-      {isLoggedIn && (
-        <div>
-          <Button onClick={() => navigate('/orcamentos')}>Ir para Orçamentos</Button>
-          <Button onClick={() => navigate('/gerar-contrato')}>Gerar Contrato</Button>
-        </div>
-      )}
+      {/* Esses botões só aparecem se o usuário estiver logado */}
     </Container>
   );
 };
