@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import StyledComponents from '../styled/Orcamentostyled';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const { Input, Button, Button2, ErrorMessage, Container } = StyledComponents;
 
@@ -17,6 +18,7 @@ const LoginCadastro: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Para controlar se o usuário está logado
   const navigate = useNavigate();
 
+  const { login } = useAuth(); // Obtendo a função de login do contexto de autenticação
   const BASE_URL = process.env.REACT_APP_BASE_URL || '192.168.15.116:3001';
 
   // define campos obrigatórios e manda o post para salvar o usuário 
@@ -42,7 +44,10 @@ const LoginCadastro: React.FC = () => {
       const res = await axios.post(`${BASE_URL}${endpoint}`, payload);
 
       localStorage.setItem('token', res.data.token); // Salva o token (melhor usar cookies seguros)
-      setIsLoggedIn(true); // Usuário está logado
+      login(); // Chama o login após o sucesso da autenticação
+
+      // Redireciona para a página inicial ou outra página desejada após login
+      navigate('/');
     } catch (err: any) {
       const errorMessage =
         err.response?.data?.message || 'Erro ao realizar a operação';
