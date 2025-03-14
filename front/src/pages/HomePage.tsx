@@ -13,6 +13,7 @@ import predialImg from "../images/predial.jpg";
 import salaImg from "../images/sala.jpg";
 import fundacaoImg from "../images/fundacao.jpg";
 import telhadoImg from "../images/telhado.jpg"
+import bompratoImg from "../images/bom-prato.jpg"
 import DAFFI from "../images/logo.jpg"
 import Contato from "../components/Contato";
 import { FaFacebook, FaInstagram, FaLock } from "react-icons/fa"; // Importa o ícone do Instagram
@@ -470,6 +471,12 @@ const HomePage: React.FC = () => {
 
         <CarouselContainer>
           <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+          <div>
+              <ImageContainer>
+                <Image src={bompratoImg} alt="Bom Prato" />
+                <Caption>Bom Prato</Caption>
+              </ImageContainer>
+            </div>
             <div>
               <ImageContainer>
                 <Image src={galpaoImg} alt="Galpão Treliçado" />

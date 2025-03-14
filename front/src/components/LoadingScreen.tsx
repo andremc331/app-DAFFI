@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from "../images/logo.jpg"; // Logo da sua empresa
 import styled, { keyframes } from 'styled-components';
+import { useNavigate } from 'react-router-dom'; // Importe o useNavigate para redirecionar
 
 const LoadingScreen: React.FC = () => {
+  const navigate = useNavigate(); // Hook para redirecionar
+
+  useEffect(() => {
+    // Define um tempo de 3 segundos (3000ms) para exibir a tela de carregamento
+    const timer = setTimeout(() => {
+      navigate('/login'); // Redireciona para a tela de login após 3 segundos
+    }, 3000);
+
+    // Limpa o timer ao desmontar o componente
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   return (
     <LoadingContainer>
       <Logo src={logo} alt="Logo da Empresa" />
@@ -14,7 +27,7 @@ const LoadingScreen: React.FC = () => {
 
 export default LoadingScreen;
 
-// Definindo as animações com keyframes
+// Definições das animações e estilos (mantidos iguais)
 const logoFadeIn = keyframes`
   0% {
     opacity: 0;
@@ -60,15 +73,15 @@ const LoadingContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #f0f0f0, #ffffff); /* Gradiente suave */
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
   flex-direction: column;
   text-align: center;
   opacity: 0.9;
-  animation: ${fadeIn} 1s ease-out; /* Animação suave para o fundo */
+  animation: ${fadeIn} 1s ease-out;
 `;
 
 const Logo = styled.img`
-  width: 120px; /* Ajuste o tamanho da logo conforme necessário */
+  width: 120px;
   height: auto;
   margin-bottom: 30px;
   animation: ${logoFadeIn} 1s ease-out;
@@ -85,7 +98,7 @@ const LoadingMessage = styled.h3`
 
 const Spinner = styled.div`
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #3498db; /* Cor de destaque */
+  border-top: 4px solid #3498db;
   border-radius: 50%;
   width: 40px;
   height: 40px;
