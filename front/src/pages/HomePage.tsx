@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import galpaoImg from "../images/galpao.jpg";
-import concretoImg from "../images/concreto.jpg";
-import estruturaImg from "../images/estrutura.jpg"
+// import concretoImg from "../images/concreto.jpg";
+// import estruturaImg from "../images/estrutura.jpg"
 import quadraImg from "../images/quadra.jpg";
 import pavimentoImg from "../images/pavimento.jpg";
 import piscinaImg from "../images/piscina.jpg";
@@ -474,7 +474,7 @@ const HomePage: React.FC = () => {
           <div>
               <ImageContainer>
                 <Image src={bompratoImg} alt="Bom Prato" />
-                <Caption>Bom Prato</Caption>
+                <Caption>Construção do Bom Prato Canindé</Caption>
               </ImageContainer>
             </div>
             <div>
