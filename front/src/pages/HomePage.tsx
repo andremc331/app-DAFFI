@@ -483,18 +483,18 @@ const HomePage: React.FC = () => {
                 <Caption>Galpão Treliçado</Caption>
               </ImageContainer>
             </div>
-            <div>
+            {/* <div>
               <ImageContainer>
                 <Image src={concretoImg} alt="30m³ de concreto usinado" />
                 <Caption>30m³ de concreto usinado</Caption>
               </ImageContainer>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <ImageContainer>
                 <Image src={estruturaImg} alt="Estrura para revestimento de paredes" />
                 <Caption>Estrura para revestimento de paredes</Caption>
               </ImageContainer>
-            </div>
+            </div> */}
             <div>
               <ImageContainer>
                 <Image src={quadraImg} alt="Reforma de quadra poliesportiva" />
