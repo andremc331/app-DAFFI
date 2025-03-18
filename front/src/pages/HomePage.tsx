@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import galpaoImg from "../images/galpao.jpg";
 // import concretoImg from "../images/concreto.jpg";
 // import estruturaImg from "../images/estrutura.jpg"
+import marsImg from "../images/mars.png";
 import quadraImg from "../images/quadra.jpg";
 import pavimentoImg from "../images/pavimento.jpg";
 import piscinaImg from "../images/piscina.jpg";
@@ -481,6 +482,12 @@ const HomePage: React.FC = () => {
               <ImageContainer>
                 <Image src={galpaoImg} alt="Galpão Treliçado" />
                 <Caption>Galpão Treliçado</Caption>
+              </ImageContainer>
+            </div>
+            <div>
+              <ImageContainer>
+                <Image src={marsImg} alt="Mars" />
+                <Caption>Manutenção Industrial</Caption>
               </ImageContainer>
             </div>
             {/* <div>
