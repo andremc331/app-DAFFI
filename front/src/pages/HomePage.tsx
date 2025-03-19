@@ -8,7 +8,7 @@ import galpaoImg from "../images/galpao.jpg";
 import marsImg from "../images/mars.png";
 import quadraImg from "../images/quadra.jpg";
 import pavimentoImg from "../images/pavimento.jpg";
-import piscinaImg from "../images/piscina.jpg";
+// import piscinaImg from "../images/piscina.jpg";
 import farmaciaImg from "../images/farmacia.jpg";
 import predialImg from "../images/predial.jpg";
 import salaImg from "../images/sala.jpg";
@@ -514,12 +514,12 @@ const HomePage: React.FC = () => {
                 <Caption>Pavimentação com paralelepípedo sextavado</Caption>
               </ImageContainer>
             </div>
-            <div>
+            {/* <div>
               <ImageContainer>
                 <Image src={piscinaImg} alt="Instalação de piscina" />
                 <Caption>Instalação de piscina</Caption>
               </ImageContainer>
-            </div>
+            </div> */}
             <div>
               <ImageContainer>
                 <Image src={farmaciaImg} alt="Reforma de Farmacia de Alto Custo" />
