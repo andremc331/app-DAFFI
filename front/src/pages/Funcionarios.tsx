@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import LogoutButton from "../components/LogoutButton";
 
 const funcionariosLista = [
     "Antônio", "Denis", "Erivaldo", "Jorge", "Marcelo", "Rafael", "Pereira", "José"
@@ -172,6 +173,8 @@ const Funcionarios = () => {
                 </div>
             ))}
             <button onClick={gerarPDF} className="mt-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">Gerar Relatório PDF</button>
+        
+        <div><LogoutButton></LogoutButton></div>
         </div>
     );
 };
