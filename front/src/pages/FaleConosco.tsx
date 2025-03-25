@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DAFFI from "../images/DAFFI logo.jpg"
+import DAFFI from "../images/logo.jpg"
 import Contato from "../components/Contato";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
