@@ -349,6 +349,7 @@ const Orcamentos: React.FC = () => {
           <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
           <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
           <SidebarItem onClick={() => navigate('/funcionarios')}>Funcionários</SidebarItem>
+          <SidebarItem onClick={() => navigate('/dashboard')}>Dashboard</SidebarItem>
           <SidebarItem>      <LogoutButton />
           </SidebarItem>
         </Sidebar>
