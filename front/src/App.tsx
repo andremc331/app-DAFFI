@@ -10,6 +10,7 @@ import FaleConosco from './pages/FaleConosco';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import Funcionarios from './pages/Funcionarios';
+import Dashboard from './pages/Dashboard';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <Route path="/gerar-contrato" element={<ProtectedRoute element={<GerarContrato />} />} />
           <Route path="/relatorios" element={<ProtectedRoute element={<RelatorioDiario />} />} />
           <Route path="/funcionarios" element=/*{<ProtectedRoute element=*/{<Funcionarios/>}/*/>}*//>
+          <Route path="/dashboard" element=/*{<ProtectedRoute element=*/{<Dashboard/>}/*/>}*//>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
