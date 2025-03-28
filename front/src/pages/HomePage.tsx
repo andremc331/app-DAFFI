@@ -508,12 +508,12 @@ const HomePage: React.FC = () => {
                 <Caption>Reforma de quadra poliesportiva</Caption>
               </ImageContainer>
             </div>
-            <div>
+            {/* <div>
               <ImageContainer>
                 <Image src={pavimentoImg} alt="Pavimentação com paralelepípedo sextavado" />
                 <Caption>Pavimentação com paralelepípedo sextavado</Caption>
               </ImageContainer>
-            </div>
+            </div> */}
             {/* <div>
               <ImageContainer>
                 <Image src={piscinaImg} alt="Instalação de piscina" />

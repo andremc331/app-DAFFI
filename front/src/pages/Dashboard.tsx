@@ -161,6 +161,7 @@ const Dashboard = () => {
                 </BarChart>
             </ResponsiveContainer>
 
+            {/* Funcionários X Dias Trabalhados*/}
             <h3>⏳ Dias Trabalhados por Funcionário</h3>
             {dados.diasTrabalhados && Array.isArray(dados.diasTrabalhados) && dados.diasTrabalhados.length > 0 ? (
                 dados.diasTrabalhados.map((dia: any, index: number) => (
