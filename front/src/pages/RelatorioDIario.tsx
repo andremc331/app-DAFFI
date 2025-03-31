@@ -272,42 +272,42 @@ const Button = styled.button<{ $clear?: boolean }>`
   }
 `;
 
-const Sidebar = styled.div`
-  width: 80px; /* Largura inicial da barra lateral */
-  height: 100vh; /* Faz a barra ocupar toda a altura da tela */
-  background-color: #000000;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  overflow: auto;
-  position: fixed; /* Fixa a barra na lateral */
-  top: 0; /* Garante que comece do topo */
-  left: 0; /* Garante que esteja à esquerda */
-  transition: width 0.3s ease; /* Animação para expandir suavemente */
+// const Sidebar = styled.div`
+//   width: 80px; /* Largura inicial da barra lateral */
+//   height: 100vh; /* Faz a barra ocupar toda a altura da tela */
+//   background-color: #000000;
+//   color: white;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 10px;
+//   overflow: auto;
+//   position: fixed; /* Fixa a barra na lateral */
+//   top: 0; /* Garante que comece do topo */
+//   left: 0; /* Garante que esteja à esquerda */
+//   transition: width 0.3s ease; /* Animação para expandir suavemente */
   
   
-  &:hover {
-    width: 110px; /* Largura ao passar o mouse */
-  }
-`;
+//   &:hover {
+//     width: 110px; /* Largura ao passar o mouse */
+//   }
+// `;
 
-const SidebarItem = styled.div`
-  margin: 10px 0;
-  cursor: pointer;
-  white-space: nowrap; /* Evita quebra de texto */
-  overflow: hidden; /* Oculta texto excedente */
-  text-overflow: ellipsis; /* Mostra "..." para texto cortado */
-  padding: 10px;
-  transition: background-color 0.2s;
-  font-family: Arial, Helvetica, sans-serif;
+// const SidebarItem = styled.div`
+//   margin: 10px 0;
+//   cursor: pointer;
+//   white-space: nowrap; /* Evita quebra de texto */
+//   overflow: hidden; /* Oculta texto excedente */
+//   text-overflow: ellipsis; /* Mostra "..." para texto cortado */
+//   padding: 10px;
+//   transition: background-color 0.2s;
+//   font-family: Arial, Helvetica, sans-serif;
 
 
-  &:hover {
-    background-color: #34495e;
-    border-radius: 5px;
-  }
-`;
+//   &:hover {
+//     background-color: #34495e;
+//     border-radius: 5px;
+//   }
+// `;
 
 const ImageContainer = styled.div`
   position: absolute;

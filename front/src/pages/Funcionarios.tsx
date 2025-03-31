@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import DAFFI from "../images/DAFFI logo.jpg"
 
 const funcionariosLista = [
-    "Antônio", "Denis", "Erivaldo", "Jorge", "Marcelo", "Rafael", "Pereira", "José"
+    "Antônio", "Denis", "Erivaldo", "Jorge Linces", "Marcelo", "Rafael", "Pereira", "José", "Jorge auxiliar"
 ];
 
 const diasDaSemana = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"];
@@ -45,12 +45,22 @@ const Funcionarios = () => {
 
     useEffect(() => {
         const dadosSalvos = localStorage.getItem("registroPresenca");
-        const semanaAnteriores: RegistroDia[][] = dadosSalvos ? JSON.parse(dadosSalvos) : [];
-
+        let semanaAnteriores: RegistroDia[][] = [];
+    
+        try {
+            semanaAnteriores = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+            if (!Array.isArray(semanaAnteriores)) {
+                semanaAnteriores = [];
+            }
+        } catch (error) {
+            console.error("Erro ao carregar dados do localStorage:", error);
+            semanaAnteriores = [];
+        }
+    
         const semanaAtual = getDatasDaSemana();
         const primeiraDataAtual = semanaAtual[0].dataFormatada;
-        const semanaJaExiste = semanaAnteriores.some(semana => semana[0]?.dataFormatada === primeiraDataAtual);
-
+        const semanaJaExiste = semanaAnteriores.some(semana => Array.isArray(semana) && semana[0]?.dataFormatada === primeiraDataAtual);
+    
         if (!semanaJaExiste) {
             const novaSemana = semanaAtual.map(({ dia, dataFormatada }) => ({
                 dia,
@@ -175,35 +185,45 @@ const Funcionarios = () => {
                     </StyledComponents.Header>
 
                     <div className="p-4">
-                        {registro.length > 0 && registro.map((semana, semanaIndex) => (
-                            <div key={semanaIndex} className="mb-4 p-4 border rounded-lg shadow">
-                                <h2 className="text-xl font-semibold">Semana {semanaIndex + 1}</h2>
-                                <button onClick={() => excluirSemana(semanaIndex)} className="bg-red-500 text-white p-2 rounded ml-4">Excluir Semana</button>
-                                {semana.map((dia, diaIndex) => (
-                                    <div key={diaIndex} className="mt-4">
-                                        <h3 className="text-xl font-medium">{dia.dia} - {dia.dataFormatada}</h3>
-                                        <button onClick={() => editarData(semanaIndex, diaIndex)} className="ml-4 bg-yellow-500 text-white p-2 rounded">Editar Data</button>
-                                        <div className="grid grid-cols-2 gap-2 mt-2">
-                                            {funcionariosLista.map((funcionario) => (
-                                                <label key={funcionario} className="flex items-center space-x-2">
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={dia.presencas[funcionario] || false}
-                                                        onChange={() => togglePresenca(semanaIndex, diaIndex, funcionario)}
-                                                        className="w-5 h-5"
-                                                    />
-                                                    <span>{funcionario}</span>
-                                                </label>
-                                            ))}
-                                        </div>
+            {Array.isArray(registro) && registro.length > 0 ? (
+                registro.map((semana, semanaIndex) => (
+                    Array.isArray(semana) ? (
+                        <div key={semanaIndex} className="mb-4 p-4 border rounded-lg shadow">
+                            <h2 className="text-xl font-semibold">Semana {semanaIndex + 1}</h2>
+                            <button onClick={() => excluirSemana(semanaIndex)} className="bg-red-500 text-white p-2 rounded ml-4">
+                                Excluir Semana
+                            </button>
+                            {semana.map((dia, diaIndex) => (
+                                <div key={diaIndex} className="mt-4">
+                                    <h3 className="text-xl font-medium">{dia.dia} - {dia.dataFormatada}</h3>
+                                    <button onClick={() => editarData(semanaIndex, diaIndex)} className="ml-4 bg-yellow-500 text-white p-2 rounded">
+                                        Editar Data
+                                    </button>
+                                    <div className="grid grid-cols-2 gap-2 mt-2">
+                                        {funcionariosLista.map((funcionario) => (
+                                            <label key={funcionario} className="flex items-center space-x-2">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={dia.presencas?.[funcionario] || false}
+                                                    onChange={() => togglePresenca(semanaIndex, diaIndex, funcionario)}
+                                                    className="w-5 h-5"
+                                                />
+                                                <span>{funcionario}</span>
+                                            </label>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
-                        ))}
-                        <button onClick={gerarPDF} className="mt-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">Gerar Relatório PDF</button>
-
-                        <div><LogoutButton></LogoutButton></div>
-                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : null
+                ))
+            ) : (
+                <p>Nenhum registro encontrado.</p>
+            )}
+            <button onClick={gerarPDF} className="mt-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">
+                Gerar Relatório PDF
+            </button>
+        </div>
 
                 </StyledComponents.Content>
             </StyledComponents.MainWrapper>

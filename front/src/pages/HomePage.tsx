@@ -7,7 +7,7 @@ import galpaoImg from "../images/galpao.jpg";
 // import estruturaImg from "../images/estrutura.jpg"
 import marsImg from "../images/mars.png";
 import quadraImg from "../images/quadra.jpg";
-import pavimentoImg from "../images/pavimento.jpg";
+// import pavimentoImg from "../images/pavimento.jpg";
 // import piscinaImg from "../images/piscina.jpg";
 import farmaciaImg from "../images/farmacia.jpg";
 import predialImg from "../images/predial.jpg";
