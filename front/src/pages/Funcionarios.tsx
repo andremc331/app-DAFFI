@@ -46,7 +46,7 @@ const Funcionarios = () => {
     useEffect(() => {
         const dadosSalvos = localStorage.getItem("registroPresenca");
         let semanaAnteriores: RegistroDia[][] = [];
-    
+
         try {
             semanaAnteriores = dadosSalvos ? JSON.parse(dadosSalvos) : [];
             if (!Array.isArray(semanaAnteriores)) {
@@ -56,11 +56,11 @@ const Funcionarios = () => {
             console.error("Erro ao carregar dados do localStorage:", error);
             semanaAnteriores = [];
         }
-    
+
         const semanaAtual = getDatasDaSemana();
         const primeiraDataAtual = semanaAtual[0].dataFormatada;
         const semanaJaExiste = semanaAnteriores.some(semana => Array.isArray(semana) && semana[0]?.dataFormatada === primeiraDataAtual);
-    
+
         if (!semanaJaExiste) {
             const novaSemana = semanaAtual.map(({ dia, dataFormatada }) => ({
                 dia,
@@ -124,38 +124,36 @@ const Funcionarios = () => {
         }
     };
 
-    const gerarPDF = () => {
+    const gerarPDF = (semana: RegistroDia[], numeroSemana: number) => {
         const doc = new jsPDF();
-        doc.text("Relatório Semanal de Presença", 14, 10);
+        doc.text(`Relatório Semanal de Presença - Semana ${numeroSemana + 1}`, 14, 10);
         let startY = 20;
-
-        registro.forEach((semana) => {
-            semana.forEach((dia) => {
-                const dados = funcionariosLista.map((funcionario) => [
-                    funcionario,
-                    dia.presencas[funcionario] ? "Presente" : "Ausente"
-                ]);
-
-                autoTable(doc, {
-                    head: [[`${dia.dia} - ${dia.dataFormatada}`, "Status"]],
-                    body: dados,
-                    startY: startY,
-                    didParseCell: (data) => {
-                        if (data.section === "body" && data.column.index === 1) {
-                            const status = data.cell.text[0];
-                            if (status === "Ausente") {
-                                data.cell.styles.textColor = [255, 0, 0]; // Texto vermelho
-                            }
+    
+        semana.forEach((dia) => {
+            const dados = funcionariosLista.map((funcionario) => [
+                funcionario,
+                dia.presencas[funcionario] ? "Presente" : "Ausente"
+            ]);
+    
+            autoTable(doc, {
+                head: [[`${dia.dia} - ${dia.dataFormatada}`, "Status"]],
+                body: dados,
+                startY: startY,
+                didParseCell: (data) => {
+                    if (data.section === "body" && data.column.index === 1) {
+                        const status = data.cell.text[0];
+                        if (status === "Ausente") {
+                            data.cell.styles.textColor = [255, 0, 0]; // Texto vermelho
                         }
-                    },
-                });
-
-                const lastY = (doc as any).lastAutoTable.finalY;
-                startY = lastY + 10;
+                    }
+                },
             });
+    
+            const lastY = (doc as any).lastAutoTable.finalY;
+            startY = lastY + 10;
         });
-
-        doc.save("Relatório_Semanal.pdf");
+    
+        doc.save(`Relatorio_Semanal_Semana_${numeroSemana + 1}.pdf`);
     };
 
     return (
@@ -185,45 +183,48 @@ const Funcionarios = () => {
                     </StyledComponents.Header>
 
                     <div className="p-4">
-            {Array.isArray(registro) && registro.length > 0 ? (
-                registro.map((semana, semanaIndex) => (
-                    Array.isArray(semana) ? (
-                        <div key={semanaIndex} className="mb-4 p-4 border rounded-lg shadow">
-                            <h2 className="text-xl font-semibold">Semana {semanaIndex + 1}</h2>
-                            <button onClick={() => excluirSemana(semanaIndex)} className="bg-red-500 text-white p-2 rounded ml-4">
-                                Excluir Semana
-                            </button>
-                            {semana.map((dia, diaIndex) => (
-                                <div key={diaIndex} className="mt-4">
-                                    <h3 className="text-xl font-medium">{dia.dia} - {dia.dataFormatada}</h3>
-                                    <button onClick={() => editarData(semanaIndex, diaIndex)} className="ml-4 bg-yellow-500 text-white p-2 rounded">
-                                        Editar Data
-                                    </button>
-                                    <div className="grid grid-cols-2 gap-2 mt-2">
-                                        {funcionariosLista.map((funcionario) => (
-                                            <label key={funcionario} className="flex items-center space-x-2">
-                                                <input
-                                                    type="checkbox"
-                                                    checked={dia.presencas?.[funcionario] || false}
-                                                    onChange={() => togglePresenca(semanaIndex, diaIndex, funcionario)}
-                                                    className="w-5 h-5"
-                                                />
-                                                <span>{funcionario}</span>
-                                            </label>
+                        {Array.isArray(registro) && registro.length > 0 ? (
+                            registro.map((semana, semanaIndex) => (
+                                Array.isArray(semana) ? (
+                                    <div key={semanaIndex} className="mb-4 p-4 border rounded-lg shadow">
+                                        <h2 className="text-xl font-semibold">Semana {semanaIndex + 1}</h2>
+                                        <button onClick={() => excluirSemana(semanaIndex)} className="bg-red-500 text-white p-2 rounded ml-4">
+                                            Excluir Semana
+                                        </button>
+                                        {semana.map((dia, diaIndex) => (
+                                            <div key={diaIndex} className="mt-4">
+                                                <h3 className="text-xl font-medium">{dia.dia} - {dia.dataFormatada}</h3>
+                                                <button onClick={() => editarData(semanaIndex, diaIndex)} className="ml-4 bg-yellow-500 text-white p-2 rounded">
+                                                    Editar Data
+                                                </button>
+                                                <div className="grid grid-cols-2 gap-2 mt-2">
+                                                    {funcionariosLista.map((funcionario) => (
+                                                        <label key={funcionario} className="flex items-center space-x-2">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={dia.presencas?.[funcionario] || false}
+                                                                onChange={() => togglePresenca(semanaIndex, diaIndex, funcionario)}
+                                                                className="w-5 h-5"
+                                                            />
+                                                            <span>{funcionario}</span>
+                                                        </label>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
+                                        <button 
+                    onClick={() => gerarPDF(semana, semanaIndex)} 
+                    className="mt-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700"
+                >
+                    Gerar Relatório PDF
+                </button>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
-                    ) : null
-                ))
-            ) : (
-                <p>Nenhum registro encontrado.</p>
-            )}
-            <button onClick={gerarPDF} className="mt-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">
-                Gerar Relatório PDF
-            </button>
-        </div>
+                                ) : null
+                            ))
+                        ) : (
+                            <p>Nenhum registro encontrado.</p>
+                        )}
+                    </div>
 
                 </StyledComponents.Content>
             </StyledComponents.MainWrapper>
