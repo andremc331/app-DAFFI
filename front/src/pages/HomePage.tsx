@@ -437,6 +437,24 @@ const MapContainer = styled.div`
 //   }
 // `;
 
+const obras = [
+  {
+    id: 1,
+    nome: "Construção do Bom Prato Canindé",
+    localizacao: "São Paulo - SP",
+    descricao: "Obra de construção do restaurante popular Bom Prato.",
+    imagens: ["/images/bomprato1.jpg", "/images/bomprato2.jpg", "/images/bomprato3.jpg"],
+  },
+  {
+    id: 2,
+    nome: "Galpão Treliçado",
+    localizacao: "Campinas - SP",
+    descricao: "Projeto estrutural de um galpão com treliças metálicas.",
+    imagens: ["/images/galpao1.jpg", "/images/galpao2.jpg"],
+  },
+  // Outras obras...
+];
+
 const HomePage: React.FC = () => {
   return (
     <HomePageContainer>
