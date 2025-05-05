@@ -4,7 +4,7 @@ import { jsPDF } from 'jspdf';
 import { logoBase64 } from '../base64/logoBase64';
 import { logoBase64versao2 } from '../base64/logoBase64versao2';
 import { useNavigate } from 'react-router-dom';
-import DAFFI from "../images/DAFFI logo.jpg"
+import DAFFI from "../images/DAFFI png.png"
 import LogoutButton from '../components/LogoutButton';
 import StyledComponents from '../styled/GlobalStyles';
 // Definição de estilos para o formulário e exibição do contrato

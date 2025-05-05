@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import StyledComponents from '../styled/Orcamentostyled';
 import { debounce } from 'lodash';
-import DAFFI from "../images/DAFFI logo.jpg"
+import DAFFI from "../images/DAFFI png.png"
 import { useNavigate } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
 

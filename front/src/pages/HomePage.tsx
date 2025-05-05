@@ -15,7 +15,7 @@ import salaImg from "../images/sala.jpg";
 import fundacaoImg from "../images/fundacao.jpg";
 import telhadoImg from "../images/telhado.jpg"
 import bompratoImg from "../images/bom-prato.jpg"
-import DAFFI from "../images/logo.jpg"
+import DAFFI from "../images/DAFFI png.png"
 import Contato from "../components/Contato";
 import { FaFacebook, FaInstagram, FaLock } from "react-icons/fa"; // Importa o ícone do Instagram
 

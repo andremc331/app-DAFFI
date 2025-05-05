@@ -4,7 +4,7 @@ import autoTable from "jspdf-autotable";
 import LogoutButton from "../components/LogoutButton";
 import StyledComponents from "../styled/GlobalStyles";
 import { useNavigate } from "react-router-dom";
-import DAFFI from "../images/DAFFI logo.jpg"
+import DAFFI from "../images/DAFFI png.png"
 
 const funcionariosLista = [
     "Antônio", "Denis", "Erivaldo", "Jorge Linces", "Marcelo", "Rafael"

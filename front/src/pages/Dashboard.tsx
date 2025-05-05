@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Resp
 import StyledComponents from "../styled/GlobalStyles";
 import LogoutButton from "../components/LogoutButton";
 import { useNavigate } from "react-router-dom";
-import DAFFI from "../images/DAFFI logo.jpg"
+import DAFFI from "../images/DAFFI png.png"
 
 const Dashboard = () => {
       const navigate = useNavigate();

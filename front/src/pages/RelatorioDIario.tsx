@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import LogoutButton from '../components/LogoutButton';
 import { useNavigate } from 'react-router-dom';
-import DAFFI from "../images/DAFFI logo.jpg";
+import DAFFI from "../images/DAFFI png.png";
 import StyledComponents from '../styled/GlobalStyles';
 
 const RelatorioDiario: React.FC = () => {
