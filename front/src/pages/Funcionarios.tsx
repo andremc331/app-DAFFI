@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import DAFFI from "../images/DAFFI png.png"
 
 const funcionariosLista = [
-    "Antônio", "Denis", "Erivaldo", "Jorge Linces", "Marcelo", "Rafael"
+    "Denis", "Erivaldo", "Marcelo", "Rafael"
 ];
 
 const diasDaSemana = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"];
