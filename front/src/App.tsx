@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';  // Importando os componentes do react-router-dom
 import LoginCadastro from './pages/Login';  // Importando a página única de login e cadastro
 import GerarContrato from './pages/GerarContrato';
-import RelatorioDiario from './pages/RelatorioDIario';
+// import RelatorioDiario from './pages/RelatorioDIario';
 import Orcamentos from './pages/Orcamentos';
 import HomePage from './pages/HomePage';
 import Sobre from './pages/Sobre';
@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import Funcionarios from './pages/Funcionarios';
 import Dashboard from './pages/Dashboard';
+import Obras from './pages/Obras';
 
 const App: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const App: React.FC = () => {
           <Route path="/funcionarios" element={<Funcionarios/>}/>
           <Route path="/orcamentos" element={<Orcamentos />} />
           <Route path="/gerar-contrato" element={<GerarContrato />}/>
-          <Route path="/relatorios" element={<RelatorioDiario />}/>
+          <Route path="/obras" element={<Obras />}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
       </BrowserRouter>

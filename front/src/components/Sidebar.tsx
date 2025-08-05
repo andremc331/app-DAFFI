@@ -24,8 +24,8 @@ const Sidebar: React.FC = () => {
         <span role="img" aria-label="Orçamentos">💰</span> Orçamentos
       </StyledComponents.SidebarItem>
 
-      <StyledComponents.SidebarItem onClick={() => navigate('/relatorios')}>
-        <span role="img" aria-label="Relatórios">📑</span> Relatórios
+      <StyledComponents.SidebarItem onClick={() => navigate('/obras')}>
+        <span role="img" aria-label="Obras">📑</span> Obras
       </StyledComponents.SidebarItem>
 
       <StyledComponents.SidebarItem>
