@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import html2canvas from 'html2canvas';
 
 interface Props {
   obra: {
@@ -21,6 +22,19 @@ const RelatorioForm: React.FC<Props> = ({ obra, onClose }) => {
 
 
   const [isLoading, setIsLoading] = useState(false);
+
+const downloadAsImage = async () => {
+  const formElement = document.getElementById('relatorio-form');
+
+  if (formElement) {
+    const canvas = await html2canvas(formElement);
+    const imgData = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = imgData;
+    link.download = `Relatorio_${obra.nome}_${data}.jpg`;
+    link.click();
+  }
+};
 
   const handleSave = async () => {
     setIsLoading(true);
@@ -62,7 +76,7 @@ const RelatorioForm: React.FC<Props> = ({ obra, onClose }) => {
 
   return (
     <Overlay>
-      <FormContainer>
+    <FormContainer id="relatorio-form">
         <h2>Relatório Diário - {obra.nome}</h2>
         <label>Data:</label>
         <input type="date" value={data} onChange={(e) => setData(e.target.value)} />
@@ -80,7 +94,7 @@ const RelatorioForm: React.FC<Props> = ({ obra, onClose }) => {
         <textarea value={observacoes} onChange={(e) => setObservacoes(e.target.value)} />
 
         <ButtonGroup>
-          <button onClick={handleSave} disabled={isLoading}>
+          <button onClick={downloadAsImage} disabled={isLoading}>
             {isLoading ? 'Gerando...' : 'Salvar'}
           </button>
           <button onClick={onClose}>Cancelar</button>
