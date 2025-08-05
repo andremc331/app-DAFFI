@@ -7,6 +7,7 @@ import { debounce } from 'lodash';
 import DAFFI from "../images/DAFFI png.png"
 import { useNavigate } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
+import Sidebar from '../components/Sidebar';
 
 const {
   TotalWrapper,
@@ -33,8 +34,8 @@ const {
   DetalhesWrapper,
   ExcluirButton,
   VerDetalhesButton,
-  Sidebar,
-  SidebarItem,
+  // Sidebar,
+  // SidebarItem,
   MainWrapper,
   Content,
   LixeiraButton,
@@ -344,15 +345,8 @@ const Orcamentos: React.FC = () => {
       <MainWrapper>
 
         {/* Barra Lateral */}
-        <Sidebar>
-          <SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</SidebarItem>
-          <SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</SidebarItem>
-          <SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</SidebarItem>
-          <SidebarItem onClick={() => navigate('/funcionarios')}>Funcionários</SidebarItem>
-          <SidebarItem onClick={() => navigate('/dashboard')}>Dashboard</SidebarItem>
-          <SidebarItem>      <LogoutButton />
-          </SidebarItem>
-        </Sidebar>
+        <Sidebar />
+
 
         <Content>
 

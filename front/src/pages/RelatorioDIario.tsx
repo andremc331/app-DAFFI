@@ -5,6 +5,7 @@ import LogoutButton from '../components/LogoutButton';
 import { useNavigate } from 'react-router-dom';
 import DAFFI from "../images/DAFFI png.png";
 import StyledComponents from '../styled/GlobalStyles';
+import Sidebar from '../components/Sidebar';
 
 const RelatorioDiario: React.FC = () => {
   const [data, setData] = useState('');
@@ -83,15 +84,8 @@ const RelatorioDiario: React.FC = () => {
       <MainWrapper>
 
         {/* Barra Lateral */}
-        <StyledComponents.Sidebar>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/funcionarios')}>Funcionários</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/dashboard')}>Dashboard</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem>      <LogoutButton />
-                    </StyledComponents.SidebarItem>
-                </StyledComponents.Sidebar>
+        <Sidebar />
+
   
         {/* Conteúdo Principal */}
         <Content>

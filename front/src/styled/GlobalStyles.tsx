@@ -81,7 +81,7 @@ const Sidebar = styled.div`
   transition: width 0.3s ease; /* Animação para expandir suavemente */
   
   &:hover {
-    width: 110px; /* Largura ao passar o mouse */
+    width: 135px; /* Largura ao passar o mouse */
   }
 
   @media (max-width: 768px) {

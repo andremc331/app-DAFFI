@@ -23,11 +23,11 @@ const App: React.FC = () => {
           <Route path="/faleconosco" element={<FaleConosco />} />
           
           {/* Rotas protegidas */}
-          <Route path="/orcamentos" element=/*{<ProtectedRoute element=*/{<Orcamentos />} /*/>}*/ />
-          <Route path="/gerar-contrato" element={<ProtectedRoute element={<GerarContrato />} />} />
-          <Route path="/relatorios" element={<ProtectedRoute element={<RelatorioDiario />} />} />
-          <Route path="/funcionarios" element=/*{<ProtectedRoute element=*/{<Funcionarios/>}/*/>}*//>
-          <Route path="/dashboard" element=/*{<ProtectedRoute element=*/{<Dashboard/>}/*/>}*//>
+          <Route path="/funcionarios" element={<Funcionarios/>}/>
+          <Route path="/orcamentos" element={<Orcamentos />} />
+          <Route path="/gerar-contrato" element={<GerarContrato />}/>
+          <Route path="/relatorios" element={<RelatorioDiario />}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

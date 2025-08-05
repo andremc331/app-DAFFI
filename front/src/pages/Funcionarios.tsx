@@ -5,6 +5,7 @@ import LogoutButton from "../components/LogoutButton";
 import StyledComponents from "../styled/GlobalStyles";
 import { useNavigate } from "react-router-dom";
 import DAFFI from "../images/DAFFI png.png"
+import Sidebar from "../components/Sidebar";
 
 const funcionariosLista = [
     "Denis", "Erivaldo", "Marcelo", "Rafael"
@@ -162,15 +163,8 @@ const Funcionarios = () => {
             <StyledComponents.MainWrapper>
 
                 {/* Barra Lateral */}
-                <StyledComponents.Sidebar>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/funcionarios')}>Funcionários</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem onClick={() => navigate('/dashboard')}>Dashboard</StyledComponents.SidebarItem>
-                    <StyledComponents.SidebarItem>      <LogoutButton />
-                    </StyledComponents.SidebarItem>
-                </StyledComponents.Sidebar>
+                <Sidebar />
+
 
                 <StyledComponents.Content>
 

@@ -4,9 +4,10 @@ import StyledComponents from "../styled/GlobalStyles";
 import LogoutButton from "../components/LogoutButton";
 import { useNavigate } from "react-router-dom";
 import DAFFI from "../images/DAFFI png.png"
+import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
-      const navigate = useNavigate();
+    const navigate = useNavigate();
     // Carrega os dados do localStorage ou usa valores padrão
     const [dados, setDados] = useState(() => {
         const dadosSalvos = localStorage.getItem("dashboard");
@@ -80,130 +81,147 @@ const Dashboard = () => {
         <StyledComponents.Container>
 
             <StyledComponents.MainWrapper>
-            
-                    {/* Barra Lateral */}
-                    <StyledComponents.Sidebar>
-                      <StyledComponents.SidebarItem onClick={() => navigate('/orcamentos')}>Orçamentos</StyledComponents.SidebarItem>
-                      <StyledComponents.SidebarItem onClick={() => navigate('/gerar-contrato')}>Contratos</StyledComponents.SidebarItem>
-                      <StyledComponents.SidebarItem onClick={() => navigate('/relatorios')}>Relatórios</StyledComponents.SidebarItem>
-                      <StyledComponents.SidebarItem onClick={() => navigate('/funcionarios')}>Funcionários</StyledComponents.SidebarItem>
-                      <StyledComponents.SidebarItem onClick={() => navigate('/dashboard')}>Dashboard</StyledComponents.SidebarItem>
-                      <StyledComponents.SidebarItem>      <LogoutButton />
-                      </StyledComponents.SidebarItem>
-                    </StyledComponents.Sidebar>
-            
-                    <StyledComponents.Content>
 
-{/* logo daffi dentro do cabeçalho */}
-          <StyledComponents.Header>
-            <StyledComponents.ImageContainer>
-              <img src={DAFFI} alt="Logo DAFFI" />
-            </StyledComponents.ImageContainer>
-            📊 Dashboard de Indicadores
-          </StyledComponents.Header>
+                {/* Barra Lateral */}
+                <Sidebar />
 
-        <div style={{ padding: "20px" }}>
 
-            {/* Obras em Andamento vs Concluídas */}
-            <div>
-                <h3>🏗️ Obras</h3>
-                <label>Em Andamento:</label>
-                <input
-                    type="number"
-                    value={dados.obras.emAndamento}
-                    onChange={(e) => atualizarDados("obras", "emAndamento", Number(e.target.value))}
-                />
-                <label>Concluídas:</label>
-                <input
-                    type="number"
-                    value={dados.obras.concluidas}
-                    onChange={(e) => atualizarDados("obras", "concluidas", Number(e.target.value))}
-                />
-            </div>
+                <StyledComponents.Content>
 
-            <PieChart width={300} height={250}>
-                <Pie data={[
-                    { name: "Em Andamento", value: dados.obras.emAndamento || 1 },
-                    { name: "Concluídas", value: dados.obras.concluidas || 1 }
-                ]} dataKey="value" cx="50%" cy="50%" outerRadius={80}>
-                    <Cell fill="#ffcc00" />
-                    <Cell fill="#00cc66" />
-                </Pie>
-                <Tooltip />
-                <Legend />
-            </PieChart>
+                    {/* logo daffi dentro do cabeçalho */}
+                    <StyledComponents.Header>
+                        <StyledComponents.ImageContainer>
+                            <img src={DAFFI} alt="Logo DAFFI" />
+                        </StyledComponents.ImageContainer>
+                        📊 Indicadores DAFFI
+                    </StyledComponents.Header>
 
-            {/* Orçamentos Aprovados x Pendentes */}
-            <h3>📑 Orçamentos</h3>
-            <label>Aprovados:</label>
-            <input
-                type="number"
-                value={dados.orcamentos.aprovados}
-                onChange={(e) => atualizarDados("orcamentos", "aprovados", Number(e.target.value))}
-            />
-            <label>Pendentes:</label>
-            <input
-                type="number"
-                value={dados.orcamentos.pendentes}
-                onChange={(e) => atualizarDados("orcamentos", "pendentes", Number(e.target.value))}
-            />
+                    <div style={{ padding: "20px" }}>
 
-            <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={[
-                    { tipo: "Aprovados", valor: dados.orcamentos.aprovados },
-                    { tipo: "Pendentes", valor: dados.orcamentos.pendentes }
-                ]}>
-                    <XAxis dataKey="tipo" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="valor" fill="#0088cc" />
-                </BarChart>
-            </ResponsiveContainer>
+                        {/* Obras em Andamento vs Concluídas */}
+                        <div>
+                            <h3>🏗️ Obras</h3>
+                            <label>Em Andamento:</label>
+                            <input
+                                type="number"
+                                value={dados.obras.emAndamento}
+                                onChange={(e) => atualizarDados("obras", "emAndamento", Number(e.target.value))}
+                            />
+                            <label>Concluídas:</label>
+                            <input
+                                type="number"
+                                value={dados.obras.concluidas}
+                                onChange={(e) => atualizarDados("obras", "concluidas", Number(e.target.value))}
+                            />
+                        </div>
 
-            {/* Funcionários X Dias Trabalhados*/}
-            <h3>⏳ Dias Trabalhados por Funcionário</h3>
-            {dados.diasTrabalhados && Array.isArray(dados.diasTrabalhados) && dados.diasTrabalhados.length > 0 ? (
-                dados.diasTrabalhados.map((dia: any, index: number) => (
-                    <div key={index}>
-                        <h4>{dia.funcionario}</h4> {/* Nome do funcionário */}
-                        <p>{dia.diasTrabalhados} dia(s) trabalhado(s)</p> {/* Total de dias trabalhados */}
+                        <PieChart width={300} height={250}>
+                            <Pie data={[
+                                { name: "Em Andamento", value: dados.obras.emAndamento || 1 },
+                                { name: "Concluídas", value: dados.obras.concluidas || 1 }
+                            ]} dataKey="value" cx="50%" cy="50%" outerRadius={80}>
+                                <Cell fill="#ffcc00" />
+                                <Cell fill="#00cc66" />
+                            </Pie>
+                            <Tooltip />
+                            <Legend />
+                        </PieChart>
+
+                        {/* Orçamentos Aprovados x Pendentes */}
+                        <div style={{
+                            marginTop: "32px",
+                            marginBottom: "32px",
+                            padding: "3px",
+                            background: "#030202",
+                            borderRadius: "10px",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.07)"
+                        }}></div>
+                        <h3>📑 Orçamentos Aprovados x Pendentes</h3>
+                        <label>Aprovados:</label>
+                        <input
+                            type="number"
+                            value={dados.orcamentos.aprovados}
+                            onChange={(e) => atualizarDados("orcamentos", "aprovados", Number(e.target.value))}
+                        />
+                        <label>Pendentes:</label>
+                        <input
+                            type="number"
+                            value={dados.orcamentos.pendentes}
+                            onChange={(e) => atualizarDados("orcamentos", "pendentes", Number(e.target.value))}
+                        />
+
+                        <ResponsiveContainer width="100%" height={300}>
+                            <BarChart data={[
+                                { tipo: "Aprovados", valor: dados.orcamentos.aprovados },
+                                { tipo: "Pendentes", valor: dados.orcamentos.pendentes }
+                            ]}>
+                                <XAxis dataKey="tipo" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="valor" fill="#0088cc" />
+                            </BarChart>
+                        </ResponsiveContainer>
+
+                        {/* Funcionários X Dias Trabalhados*/}
+                        <div style={{
+                            marginTop: "32px",
+                            marginBottom: "32px",
+                            padding: "3px",
+                            background: "#030202",
+                            borderRadius: "10px",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.07)"
+                        }}></div>
+                        <h3>⏳ Dias Trabalhados na Semana</h3>
+                        {dados.diasTrabalhados && Array.isArray(dados.diasTrabalhados) && dados.diasTrabalhados.length > 0 ? (
+                            dados.diasTrabalhados.map((dia: any, index: number) => (
+                                <div key={index}>
+                                    <h4>{dia.funcionario}</h4> {/* Nome do funcionário */}
+                                    <p>{dia.diasTrabalhados} dia(s) trabalhado(s)</p> {/* Total de dias trabalhados */}
+                                </div>
+                            ))
+                        ) : (
+                            <p>Nenhum dia trabalhado encontrado.</p>
+                        )}
+
+                        {/* Gastos vs Orçamento Planejado */}
+                        <div style={{
+                            marginTop: "32px",
+                            marginBottom: "32px",
+                            padding: "3px",
+                            background: "#030202",
+                            borderRadius: "10px",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.07)"
+                        }}></div>
+                        <h3>💰 Gastos vs Orçamento Planejado</h3>
+                        <label>Gasto:</label>
+                        <input
+                            type="number"
+                            value={dados.gastosObras.gasto}
+                            onChange={(e) => atualizarDados("gastosObras", "gasto", Number(e.target.value))}
+                        />
+                        <label>Planejado:</label>
+                        <input
+                            type="number"
+                            value={dados.gastosObras.planejado}
+                            onChange={(e) => atualizarDados("gastosObras", "planejado", Number(e.target.value))}
+                        />
+
+                        <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+                            <div style={{
+                                backgroundColor: "#ff6666", padding: "10px", borderRadius: "5px", minWidth: "150px"
+                            }}>
+                                Gasto: R$ {dados.gastosObras.gasto.toLocaleString("pt-BR")}
+                            </div>
+                            <div style={{
+                                backgroundColor: "#66ccff", padding: "10px", borderRadius: "5px", minWidth: "150px"
+                            }}>
+                                Planejado: R$ {dados.gastosObras.planejado.toLocaleString("pt-BR")}
+                            </div>
+                        </div>
                     </div>
-                ))
-            ) : (
-                <p>Nenhum dia trabalhado encontrado.</p>
-            )}
-
-            {/* Gastos vs Orçamento Planejado */}
-            <h3>💰 Gastos vs Orçamento Planejado</h3>
-            <label>Gasto:</label>
-            <input
-                type="number"
-                value={dados.gastosObras.gasto}
-                onChange={(e) => atualizarDados("gastosObras", "gasto", Number(e.target.value))}
-            />
-            <label>Planejado:</label>
-            <input
-                type="number"
-                value={dados.gastosObras.planejado}
-                onChange={(e) => atualizarDados("gastosObras", "planejado", Number(e.target.value))}
-            />
-
-            <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-                <div style={{
-                    backgroundColor: "#ff6666", padding: "10px", borderRadius: "5px", minWidth: "150px"
-                }}>
-                    Gasto: R$ {dados.gastosObras.gasto.toLocaleString("pt-BR")}
-                </div>
-                <div style={{
-                    backgroundColor: "#66ccff", padding: "10px", borderRadius: "5px", minWidth: "150px"
-                }}>
-                    Planejado: R$ {dados.gastosObras.planejado.toLocaleString("pt-BR")}
-                </div>
-            </div>
-        </div>
-        </StyledComponents.Content>
-        </StyledComponents.MainWrapper>
+                </StyledComponents.Content>
+            </StyledComponents.MainWrapper>
         </StyledComponents.Container>
     );
 };
