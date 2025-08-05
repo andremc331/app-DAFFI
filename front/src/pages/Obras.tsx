@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Sidebar from '../components/Sidebar';
 import ObraModal from '../components/ObraModal';
@@ -15,7 +15,27 @@ const Obras: React.FC = () => {
   const [modalAberto, setModalAberto] = useState(false);
   const [relatorioObra, setRelatorioObra] = useState<Obra | null>(null);
 
-  const salvarObra = (obra: Obra) => setObras([...obras, obra]);
+  // Carrega do localStorage na inicialização
+  useEffect(() => {
+    const obrasSalvas = localStorage.getItem('obras');
+    if (obrasSalvas) {
+      try {
+        const parsed = JSON.parse(obrasSalvas);
+        setObras(Array.isArray(parsed) ? parsed : []);
+      } catch {
+        setObras([]);
+      }
+    }
+  }, []);
+
+  // Salva no localStorage sempre que obras mudar
+  useEffect(() => {
+    localStorage.setItem('obras', JSON.stringify(obras));
+  }, [obras]);
+
+  const salvarObra = (obra: Obra) => {
+    setObras([...obras, obra]);
+  };
 
   return (
     <Wrapper>
