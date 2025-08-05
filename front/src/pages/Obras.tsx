@@ -88,6 +88,8 @@ export default Obras;
 
 const Wrapper = styled.div`
   display: flex;
+    font-family: Arial, sans-serif;
+
 `;
 
 const Conteudo = styled.div`
