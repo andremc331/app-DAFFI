@@ -12,6 +12,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import Funcionarios from './pages/Funcionarios';
 import Dashboard from './pages/Dashboard';
 import Obras from './pages/Obras';
+import Estoque from './pages/Estoque';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const App: React.FC = () => {
           <Route path="/gerar-contrato" element={<GerarContrato />}/>
           <Route path="/obras" element={<Obras />}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/estoque" element={<Estoque/>}/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

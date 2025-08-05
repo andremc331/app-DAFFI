@@ -16,6 +16,14 @@ const Sidebar: React.FC = () => {
         <span role="img" aria-label="Controle">📊</span> Indicadores
       </StyledComponents.SidebarItem>
 
+      <StyledComponents.SidebarItem onClick={() => navigate('/obras')}>
+        <span role="img" aria-label="Obras">📑</span> Obras
+      </StyledComponents.SidebarItem>
+
+      <StyledComponents.SidebarItem onClick={() => navigate('/estoque')}>
+        <span role="img" aria-label="Estoque">ℹ️</span> Estoque
+      </StyledComponents.SidebarItem>
+
       <StyledComponents.SidebarItem onClick={() => navigate('/gerar-contrato')}>
         <span role="img" aria-label="Contratos">📄</span> Contratos
       </StyledComponents.SidebarItem>
@@ -23,11 +31,7 @@ const Sidebar: React.FC = () => {
       <StyledComponents.SidebarItem onClick={() => navigate('/orcamentos')}>
         <span role="img" aria-label="Orçamentos">💰</span> Orçamentos
       </StyledComponents.SidebarItem>
-
-      <StyledComponents.SidebarItem onClick={() => navigate('/obras')}>
-        <span role="img" aria-label="Obras">📑</span> Obras
-      </StyledComponents.SidebarItem>
-
+      
       <StyledComponents.SidebarItem>
         <LogoutButton />
       </StyledComponents.SidebarItem>
