@@ -30,8 +30,10 @@ const Obras: React.FC = () => {
 
   // Salva no localStorage sempre que obras mudar
   useEffect(() => {
-    localStorage.setItem('obras', JSON.stringify(obras));
-  }, [obras]);
+    if (obras.length > 0) {
+        localStorage.setItem('obras', JSON.stringify(obras));
+    }
+    }, [obras]);
 
   const salvarObra = (obra: Obra) => {
     setObras([...obras, obra]);
