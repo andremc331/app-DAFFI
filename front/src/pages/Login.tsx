@@ -76,7 +76,7 @@ const LoginCadastro: React.FC = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
       />
-      <p style={{ fontSize: '12px', color: 'gray' }}>teste@gmail.com </p>
+      <p style={{ fontSize: '12px', color: 'gray' }}> </p>
 
       <Input
         type="password"
@@ -84,7 +84,7 @@ const LoginCadastro: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Senha"
       />
-      <p style={{ fontSize: '12px', color: 'gray' }}>123456</p>
+      <p style={{ fontSize: '12px', color: 'gray' }}></p>
 
       {erro && <ErrorMessage>{erro}</ErrorMessage>}
       <Button onClick={handleSubmit} disabled={isLoading}>
